@@ -23,5 +23,12 @@ namespace Airline14
             admAddUserForm.Show();
             this.Hide();
         }
+
+        private void AllUsersButton_Click(object sender, EventArgs e)
+        {
+            AdminAllUsersForm admAllUsersForm = new AdminAllUsersForm();
+            admAllUsersForm.Show();
+            this.Hide();
+        }
     }
 }

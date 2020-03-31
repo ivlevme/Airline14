@@ -70,8 +70,17 @@
     <Compile Include="AdminAddUserForm.Designer.cs">
       <DependentUpon>AdminAddUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminAllUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAllUsersForm.Designer.cs">
+      <DependentUpon>AdminAllUsersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminAllUsersForm.resx">
+      <DependentUpon>AdminAllUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
