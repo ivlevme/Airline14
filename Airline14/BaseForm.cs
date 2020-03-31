@@ -12,9 +12,13 @@ namespace Airline14
 {
     public partial class BaseForm : Form
     {
+
+        public String UserLogin = String.Empty;
+
         public BaseForm()
         {
             InitializeComponent();
+            this.Size = new Size(950, 600);
         }
 
         private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)

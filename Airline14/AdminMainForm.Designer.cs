@@ -32,6 +32,7 @@
             this.AddUserBtn = new System.Windows.Forms.Button();
             this.AdminMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,7 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AllUsersButton = new System.Windows.Forms.Button();
-            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AdminMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,13 +49,13 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(280, 47);
+            this.NameLabel.Location = new System.Drawing.Point(291, 28);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NameLabel.Size = new System.Drawing.Size(413, 41);
+            this.NameLabel.Size = new System.Drawing.Size(368, 41);
             this.NameLabel.TabIndex = 2;
-            this.NameLabel.Text = "Местная Авиакомпания";
+            this.NameLabel.Text = "Администрирование";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // AddUserBtn
@@ -64,7 +65,7 @@
             this.AddUserBtn.FlatAppearance.BorderSize = 0;
             this.AddUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddUserBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddUserBtn.Location = new System.Drawing.Point(352, 147);
+            this.AddUserBtn.Location = new System.Drawing.Point(345, 108);
             this.AddUserBtn.Name = "AddUserBtn";
             this.AddUserBtn.Size = new System.Drawing.Size(241, 32);
             this.AddUserBtn.TabIndex = 8;
@@ -87,16 +88,23 @@
             // программаToolStripMenuItem
             // 
             this.программаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem,
             this.обновитьToolStripMenuItem,
             this.выйтиToolStripMenuItem});
             this.программаToolStripMenuItem.Name = "программаToolStripMenuItem";
             this.программаToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.программаToolStripMenuItem.Text = "Программа";
             // 
+            // обновитьToolStripMenuItem
+            // 
+            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.обновитьToolStripMenuItem.Text = "Обновить";
+            // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             // 
             // пользователиToolStripMenuItem
@@ -131,7 +139,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // AllUsersButton
@@ -141,7 +149,7 @@
             this.AllUsersButton.FlatAppearance.BorderSize = 0;
             this.AllUsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllUsersButton.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllUsersButton.Location = new System.Drawing.Point(352, 209);
+            this.AllUsersButton.Location = new System.Drawing.Point(345, 170);
             this.AllUsersButton.Name = "AllUsersButton";
             this.AllUsersButton.Size = new System.Drawing.Size(241, 32);
             this.AllUsersButton.TabIndex = 10;
@@ -149,11 +157,11 @@
             this.AllUsersButton.UseVisualStyleBackColor = false;
             this.AllUsersButton.Click += new System.EventHandler(this.AllUsersButton_Click);
             // 
-            // обновитьToolStripMenuItem
+            // вернутьсяНаГлавнуюСтраницуToolStripMenuItem
             // 
-            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.обновитьToolStripMenuItem.Text = "Обновить";
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Name = "вернутьсяНаГлавнуюСтраницуToolStripMenuItem";
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Text = "Вернуться на главную страницу";
             // 
             // AdminMainForm
             // 
@@ -191,5 +199,6 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьНовогоПользователяToolStripMenuItem;
         private System.Windows.Forms.Button AllUsersButton;
         private System.Windows.Forms.ToolStripMenuItem обновитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
     }
 }

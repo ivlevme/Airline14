@@ -24,6 +24,10 @@ namespace Airline14
                 AdminMainForm admForm = new AdminMainForm();
                 admForm.Show();
                 this.Hide();
+            } else if (LoginTB.Text == "manager" && PasswordTB.Text == "mng") {
+                ManagerMainForm managerForm = new ManagerMainForm();
+                managerForm.Show();
+                this.Hide();
             }
             else
             {

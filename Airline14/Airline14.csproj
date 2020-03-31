@@ -76,6 +76,84 @@
     <Compile Include="AdminAllUsersForm.Designer.cs">
       <DependentUpon>AdminAllUsersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EngineerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineerMainForm.Designer.cs">
+      <DependentUpon>EngineerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerAllReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineerAllReportsForm.Designer.cs">
+      <DependentUpon>EngineerAllReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerAddReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineerAddReportsForm.Designer.cs">
+      <DependentUpon>EngineerAddReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesmanAllTicketsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesmanAllTicketsForm.Designer.cs">
+      <DependentUpon>SalesmanAllTicketsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesmanAllUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesmanAllUsersForm.Designer.cs">
+      <DependentUpon>SalesmanAllUsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesmanAddTicketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesmanAddTicketForm.Designer.cs">
+      <DependentUpon>SalesmanAddTicketForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesmanAddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesmanAddUserForm.Designer.cs">
+      <DependentUpon>SalesmanAddUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesmanMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesmanMainForm.Designer.cs">
+      <DependentUpon>SalesmanMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerDoneReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerDoneReportForm.Designer.cs">
+      <DependentUpon>ManagerDoneReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerCreateReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerCreateReportForm.Designer.cs">
+      <DependentUpon>ManagerCreateReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerAllFlightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerAllFlightForm.Designer.cs">
+      <DependentUpon>ManagerAllFlightForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerAddFlightForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerAddFlightForm.Designer.cs">
+      <DependentUpon>ManagerAddFlightForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerMainForm.Designer.cs">
+      <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AdminAllUsersForm.resx">
@@ -93,6 +171,30 @@
     <EmbeddedResource Include="AdminAddUserForm.resx">
       <DependentUpon>AdminAddUserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EngineerAddReportsForm.resx">
+      <DependentUpon>EngineerAddReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EngineerAllReportsForm.resx">
+      <DependentUpon>EngineerAllReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EngineerMainForm.resx">
+      <DependentUpon>EngineerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerAddFlightForm.resx">
+      <DependentUpon>ManagerAddFlightForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerAllFlightForm.resx">
+      <DependentUpon>ManagerAllFlightForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerCreateReportForm.resx">
+      <DependentUpon>ManagerCreateReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerDoneReportForm.resx">
+      <DependentUpon>ManagerDoneReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerMainForm.resx">
+      <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -102,6 +204,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SalesmanAddTicketForm.resx">
+      <DependentUpon>SalesmanAddTicketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesmanAddUserForm.resx">
+      <DependentUpon>SalesmanAddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesmanAllTicketsForm.resx">
+      <DependentUpon>SalesmanAllTicketsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesmanAllUsersForm.resx">
+      <DependentUpon>SalesmanAllUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesmanMainForm.resx">
+      <DependentUpon>SalesmanMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
