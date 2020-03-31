@@ -1,6 +1,6 @@
 ﻿namespace Airline14
 {
-    partial class ManagerDoneReportForm
+    partial class ManagerAddDestinationForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,93 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.AddDestinationBtn = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.FirstDateLabel = new System.Windows.Forms.Label();
-            this.LastDateLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуМенеджераToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьАвирейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.пунктНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.пунктыНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотрВсехПунктовНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // AddDestinationBtn
+            // 
+            this.AddDestinationBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.AddDestinationBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AddDestinationBtn.FlatAppearance.BorderSize = 0;
+            this.AddDestinationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddDestinationBtn.ForeColor = System.Drawing.SystemColors.Info;
+            this.AddDestinationBtn.Location = new System.Drawing.Point(381, 178);
+            this.AddDestinationBtn.Name = "AddDestinationBtn";
+            this.AddDestinationBtn.Size = new System.Drawing.Size(176, 32);
+            this.AddDestinationBtn.TabIndex = 38;
+            this.AddDestinationBtn.Text = "Добавить пункт назначения";
+            this.AddDestinationBtn.UseVisualStyleBackColor = false;
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(22, 23);
+            this.NameLabel.Location = new System.Drawing.Point(218, 26);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NameLabel.Size = new System.Drawing.Size(449, 41);
-            this.NameLabel.TabIndex = 18;
-            this.NameLabel.Text = "Сформированный отчет с";
+            this.NameLabel.Size = new System.Drawing.Size(571, 41);
+            this.NameLabel.TabIndex = 36;
+            this.NameLabel.Text = "Добавление пунктов назначения";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // FirstDateLabel
+            // textBox1
             // 
-            this.FirstDateLabel.AutoSize = true;
-            this.FirstDateLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FirstDateLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FirstDateLabel.Location = new System.Drawing.Point(469, 23);
-            this.FirstDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.FirstDateLabel.Name = "FirstDateLabel";
-            this.FirstDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.FirstDateLabel.Size = new System.Drawing.Size(196, 41);
-            this.FirstDateLabel.TabIndex = 19;
-            this.FirstDateLabel.Text = "10.10.2010";
-            this.FirstDateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.textBox1.Location = new System.Drawing.Point(289, 129);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(406, 21);
+            this.textBox1.TabIndex = 41;
             // 
-            // LastDateLabel
+            // label1
             // 
-            this.LastDateLabel.AutoSize = true;
-            this.LastDateLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LastDateLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LastDateLabel.Location = new System.Drawing.Point(712, 23);
-            this.LastDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LastDateLabel.Name = "LastDateLabel";
-            this.LastDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.LastDateLabel.Size = new System.Drawing.Size(196, 41);
-            this.LastDateLabel.TabIndex = 20;
-            this.LastDateLabel.Text = "10.10.2010";
-            this.LastDateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(661, 22);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(59, 41);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "по";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 75);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 429);
-            this.dataGridView1.TabIndex = 22;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(285, 106);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(226, 20);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Название пункта назначения";
             // 
             // ManagerMenuStrip
             // 
@@ -122,12 +102,12 @@
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
-            this.пунктНазначенияToolStripMenuItem,
+            this.пунктыНазначенияToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.ManagerMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ManagerMenuStrip.Name = "ManagerMenuStrip";
             this.ManagerMenuStrip.Size = new System.Drawing.Size(934, 24);
-            this.ManagerMenuStrip.TabIndex = 23;
+            this.ManagerMenuStrip.TabIndex = 43;
             this.ManagerMenuStrip.Text = "menuStrip1";
             // 
             // программаToolStripMenuItem
@@ -161,17 +141,10 @@
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьАвирейсToolStripMenuItem,
             this.просмотрВсехАвиарейсовToolStripMenuItem});
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.пользователиToolStripMenuItem.Text = "Авиарейсы";
-            // 
-            // создатьАвирейсToolStripMenuItem
-            // 
-            this.создатьАвирейсToolStripMenuItem.Name = "создатьАвирейсToolStripMenuItem";
-            this.создатьАвирейсToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.создатьАвирейсToolStripMenuItem.Text = "Создать авиарейс";
             // 
             // просмотрВсехАвиарейсовToolStripMenuItem
             // 
@@ -207,48 +180,37 @@
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
-            // пунктНазначенияToolStripMenuItem
+            // пунктыНазначенияToolStripMenuItem
             // 
-            this.пунктНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.всеПToolStripMenuItem,
-            this.добавлениеПунктаНазначенияToolStripMenuItem});
-            this.пунктНазначенияToolStripMenuItem.Name = "пунктНазначенияToolStripMenuItem";
-            this.пунктНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
-            this.пунктНазначенияToolStripMenuItem.Text = "Пункты назначения";
+            this.пунктыНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотрВсехПунктовНазначенияToolStripMenuItem});
+            this.пунктыНазначенияToolStripMenuItem.Name = "пунктыНазначенияToolStripMenuItem";
+            this.пунктыНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.пунктыНазначенияToolStripMenuItem.Text = "Пункты назначения";
             // 
-            // всеПToolStripMenuItem
+            // просмотрВсехПунктовНазначенияToolStripMenuItem
             // 
-            this.всеПToolStripMenuItem.Name = "всеПToolStripMenuItem";
-            this.всеПToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.всеПToolStripMenuItem.Text = "Просмотр всех пунктов назначения";
+            this.просмотрВсехПунктовНазначенияToolStripMenuItem.Name = "просмотрВсехПунктовНазначенияToolStripMenuItem";
+            this.просмотрВсехПунктовНазначенияToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.просмотрВсехПунктовНазначенияToolStripMenuItem.Text = "Просмотр всех пунктов назначения";
             // 
-            // добавлениеПунктаНазначенияToolStripMenuItem
-            // 
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Name = "добавлениеПунктаНазначенияToolStripMenuItem";
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Text = "Добавление пункта назначения";
-            // 
-            // ManagerDoneReportForm
+            // ManagerAddDestinationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.ManagerMenuStrip);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.LastDateLabel);
-            this.Controls.Add(this.FirstDateLabel);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AddDestinationBtn);
             this.Controls.Add(this.NameLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.Name = "ManagerDoneReportForm";
-            this.Text = "Отчет";
+            this.Name = "ManagerAddDestinationForm";
+            this.Text = "Добавление пунктов назначения";
             this.Controls.SetChildIndex(this.NameLabel, 0);
-            this.Controls.SetChildIndex(this.FirstDateLabel, 0);
-            this.Controls.SetChildIndex(this.LastDateLabel, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.AddDestinationBtn, 0);
+            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -258,25 +220,22 @@
 
         #endregion
 
+        private System.Windows.Forms.Button AddDestinationBtn;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label FirstDateLabel;
-        private System.Windows.Forms.Label LastDateLabel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip ManagerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуМенеджераToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem обновитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьАвирейсToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехАвиарейсовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуМенеджераToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пунктыНазначенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem просмотрВсехПунктовНазначенияToolStripMenuItem;
     }
 }

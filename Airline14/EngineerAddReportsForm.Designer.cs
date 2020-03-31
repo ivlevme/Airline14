@@ -43,7 +43,11 @@
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьНовогоПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.аэротехникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокВсейАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типыАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьТипАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокВсехТиповАэротехникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EngineerMenuStrip.SuspendLayout();
@@ -132,11 +136,14 @@
             this.EngineerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
+            this.аэротехникаToolStripMenuItem,
+            this.типыАэротехнкикиToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.EngineerMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.EngineerMenuStrip.Name = "EngineerMenuStrip";
+            this.EngineerMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.EngineerMenuStrip.Size = new System.Drawing.Size(934, 24);
-            this.EngineerMenuStrip.TabIndex = 12;
+            this.EngineerMenuStrip.TabIndex = 31;
             this.EngineerMenuStrip.Text = "menuStrip1";
             // 
             // программаToolStripMenuItem
@@ -170,8 +177,7 @@
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.просмотрВсехПользователейToolStripMenuItem,
-            this.добавитьНовогоПользователяToolStripMenuItem});
+            this.просмотрВсехПользователейToolStripMenuItem});
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.пользователиToolStripMenuItem.Text = "Отчеты";
@@ -182,11 +188,40 @@
             this.просмотрВсехПользователейToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.просмотрВсехПользователейToolStripMenuItem.Text = "Просмотр всех отчетов";
             // 
-            // добавитьНовогоПользователяToolStripMenuItem
+            // аэротехникаToolStripMenuItem
             // 
-            this.добавитьНовогоПользователяToolStripMenuItem.Name = "добавитьНовогоПользователяToolStripMenuItem";
-            this.добавитьНовогоПользователяToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.добавитьНовогоПользователяToolStripMenuItem.Text = "Добавить новый отчет";
+            this.аэротехникаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.списокВсейАэротехнкикиToolStripMenuItem});
+            this.аэротехникаToolStripMenuItem.Name = "аэротехникаToolStripMenuItem";
+            this.аэротехникаToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.аэротехникаToolStripMenuItem.Text = "Аэротехника";
+            // 
+            // списокВсейАэротехнкикиToolStripMenuItem
+            // 
+            this.списокВсейАэротехнкикиToolStripMenuItem.Name = "списокВсейАэротехнкикиToolStripMenuItem";
+            this.списокВсейАэротехнкикиToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.списокВсейАэротехнкикиToolStripMenuItem.Text = "Список всей аэротехнкики";
+            // 
+            // типыАэротехнкикиToolStripMenuItem
+            // 
+            this.типыАэротехнкикиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьТипАэротехнкикиToolStripMenuItem,
+            this.списокВсехТиповАэротехникиToolStripMenuItem});
+            this.типыАэротехнкикиToolStripMenuItem.Name = "типыАэротехнкикиToolStripMenuItem";
+            this.типыАэротехнкикиToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
+            this.типыАэротехнкикиToolStripMenuItem.Text = "Типы Аэротехнкики";
+            // 
+            // добавитьТипАэротехнкикиToolStripMenuItem
+            // 
+            this.добавитьТипАэротехнкикиToolStripMenuItem.Name = "добавитьТипАэротехнкикиToolStripMenuItem";
+            this.добавитьТипАэротехнкикиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.добавитьТипАэротехнкикиToolStripMenuItem.Text = "Добавить тип аэротехнкики";
+            // 
+            // списокВсехТиповАэротехникиToolStripMenuItem
+            // 
+            this.списокВсехТиповАэротехникиToolStripMenuItem.Name = "списокВсехТиповАэротехникиToolStripMenuItem";
+            this.списокВсехТиповАэротехникиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.списокВсехТиповАэротехникиToolStripMenuItem.Text = "Список всех типов аэротехники";
             // 
             // справкаToolStripMenuItem
             // 
@@ -199,7 +234,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // EngineerAddReportsForm
@@ -251,7 +286,11 @@
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехПользователейToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавитьНовогоПользователяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem аэротехникаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокВсейАэротехнкикиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem типыАэротехнкикиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавитьТипАэротехнкикиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокВсехТиповАэротехникиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }

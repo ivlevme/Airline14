@@ -40,12 +40,12 @@
             this.создатьАвирейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FioTB = new System.Windows.Forms.TextBox();
             this.PassportTB = new System.Windows.Forms.TextBox();
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,6 +111,7 @@
             // программаToolStripMenuItem
             // 
             this.программаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem,
             this.обновитьToolStripMenuItem,
             this.выйтиToolStripMenuItem});
             this.программаToolStripMenuItem.Name = "программаToolStripMenuItem";
@@ -120,13 +121,13 @@
             // обновитьToolStripMenuItem
             // 
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.обновитьToolStripMenuItem.Text = "Обновить";
             // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             // 
             // пользователиToolStripMenuItem
@@ -153,17 +154,10 @@
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сформироватьОтчетToolStripMenuItem,
             this.списрToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.отчетыToolStripMenuItem.Text = "Клиенты";
-            // 
-            // сформироватьОтчетToolStripMenuItem
-            // 
-            this.сформироватьОтчетToolStripMenuItem.Name = "сформироватьОтчетToolStripMenuItem";
-            this.сформироватьОтчетToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.сформироватьОтчетToolStripMenuItem.Text = "Добавить нового клиента";
             // 
             // списрToolStripMenuItem
             // 
@@ -182,7 +176,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // FioTB
@@ -198,6 +192,12 @@
             this.PassportTB.Name = "PassportTB";
             this.PassportTB.Size = new System.Drawing.Size(291, 21);
             this.PassportTB.TabIndex = 34;
+            // 
+            // вернутьсяНаГлавнуюСтраницуToolStripMenuItem
+            // 
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Name = "вернутьсяНаГлавнуюСтраницуToolStripMenuItem";
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Text = "Вернуться на главную страницу";
             // 
             // SalesmanAddUserForm
             // 
@@ -240,11 +240,11 @@
         private System.Windows.Forms.ToolStripMenuItem создатьАвирейсToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехАвиарейсовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.TextBox FioTB;
         private System.Windows.Forms.TextBox PassportTB;
+        private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
     }
 }

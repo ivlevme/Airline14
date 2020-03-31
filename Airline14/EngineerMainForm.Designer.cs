@@ -41,6 +41,16 @@
             this.добавитьНовогоПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AllAirplaneTypeBtn = new System.Windows.Forms.Button();
+            this.AddAirplaneTypeBtn = new System.Windows.Forms.Button();
+            this.AllAerotechnicBtn = new System.Windows.Forms.Button();
+            this.AddAerotechnicBtn = new System.Windows.Forms.Button();
+            this.аэротехникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.типыАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокВсейАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьАэротехнкикуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьТипАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списокВсехТиповАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +61,7 @@
             this.AllUsersButton.FlatAppearance.BorderSize = 0;
             this.AllUsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllUsersButton.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllUsersButton.Location = new System.Drawing.Point(363, 152);
+            this.AllUsersButton.Location = new System.Drawing.Point(363, 145);
             this.AllUsersButton.Name = "AllUsersButton";
             this.AllUsersButton.Size = new System.Drawing.Size(241, 31);
             this.AllUsersButton.TabIndex = 13;
@@ -91,6 +101,8 @@
             this.EngineerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
+            this.аэротехникаToolStripMenuItem,
+            this.типыАэротехнкикиToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.EngineerMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.EngineerMenuStrip.Name = "EngineerMenuStrip";
@@ -158,14 +170,116 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            // 
+            // AllAirplaneTypeBtn
+            // 
+            this.AllAirplaneTypeBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.AllAirplaneTypeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AllAirplaneTypeBtn.FlatAppearance.BorderSize = 0;
+            this.AllAirplaneTypeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AllAirplaneTypeBtn.ForeColor = System.Drawing.SystemColors.Info;
+            this.AllAirplaneTypeBtn.Location = new System.Drawing.Point(363, 387);
+            this.AllAirplaneTypeBtn.Name = "AllAirplaneTypeBtn";
+            this.AllAirplaneTypeBtn.Size = new System.Drawing.Size(241, 31);
+            this.AllAirplaneTypeBtn.TabIndex = 16;
+            this.AllAirplaneTypeBtn.Text = "Список всех типов авиатехники";
+            this.AllAirplaneTypeBtn.UseVisualStyleBackColor = false;
+            // 
+            // AddAirplaneTypeBtn
+            // 
+            this.AddAirplaneTypeBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.AddAirplaneTypeBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AddAirplaneTypeBtn.FlatAppearance.BorderSize = 0;
+            this.AddAirplaneTypeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddAirplaneTypeBtn.ForeColor = System.Drawing.SystemColors.Info;
+            this.AddAirplaneTypeBtn.Location = new System.Drawing.Point(363, 324);
+            this.AddAirplaneTypeBtn.Name = "AddAirplaneTypeBtn";
+            this.AddAirplaneTypeBtn.Size = new System.Drawing.Size(241, 31);
+            this.AddAirplaneTypeBtn.TabIndex = 15;
+            this.AddAirplaneTypeBtn.Text = "Добавить тип авиатехники";
+            this.AddAirplaneTypeBtn.UseVisualStyleBackColor = false;
+            // 
+            // AllAerotechnicBtn
+            // 
+            this.AllAerotechnicBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.AllAerotechnicBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AllAerotechnicBtn.FlatAppearance.BorderSize = 0;
+            this.AllAerotechnicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AllAerotechnicBtn.ForeColor = System.Drawing.SystemColors.Info;
+            this.AllAerotechnicBtn.Location = new System.Drawing.Point(363, 265);
+            this.AllAerotechnicBtn.Name = "AllAerotechnicBtn";
+            this.AllAerotechnicBtn.Size = new System.Drawing.Size(241, 31);
+            this.AllAerotechnicBtn.TabIndex = 18;
+            this.AllAerotechnicBtn.Text = "Список всей авиатехники";
+            this.AllAerotechnicBtn.UseVisualStyleBackColor = false;
+            // 
+            // AddAerotechnicBtn
+            // 
+            this.AddAerotechnicBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.AddAerotechnicBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AddAerotechnicBtn.FlatAppearance.BorderSize = 0;
+            this.AddAerotechnicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddAerotechnicBtn.ForeColor = System.Drawing.SystemColors.Info;
+            this.AddAerotechnicBtn.Location = new System.Drawing.Point(363, 206);
+            this.AddAerotechnicBtn.Name = "AddAerotechnicBtn";
+            this.AddAerotechnicBtn.Size = new System.Drawing.Size(241, 31);
+            this.AddAerotechnicBtn.TabIndex = 17;
+            this.AddAerotechnicBtn.Text = "Добавить авиатехнику";
+            this.AddAerotechnicBtn.UseVisualStyleBackColor = false;
+            // 
+            // аэротехникаToolStripMenuItem
+            // 
+            this.аэротехникаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьАэротехнкикуToolStripMenuItem,
+            this.списокВсейАэротехнкикиToolStripMenuItem});
+            this.аэротехникаToolStripMenuItem.Name = "аэротехникаToolStripMenuItem";
+            this.аэротехникаToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.аэротехникаToolStripMenuItem.Text = "Аэротехника";
+            // 
+            // типыАэротехнкикиToolStripMenuItem
+            // 
+            this.типыАэротехнкикиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьТипАэротехнкикиToolStripMenuItem,
+            this.списокВсехТиповАэротехнкикиToolStripMenuItem});
+            this.типыАэротехнкикиToolStripMenuItem.Name = "типыАэротехнкикиToolStripMenuItem";
+            this.типыАэротехнкикиToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
+            this.типыАэротехнкикиToolStripMenuItem.Text = "Типы Аэротехнкики";
+            // 
+            // списокВсейАэротехнкикиToolStripMenuItem
+            // 
+            this.списокВсейАэротехнкикиToolStripMenuItem.Name = "списокВсейАэротехнкикиToolStripMenuItem";
+            this.списокВсейАэротехнкикиToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.списокВсейАэротехнкикиToolStripMenuItem.Text = "Список всей аэротехнкики";
+            // 
+            // добавитьАэротехнкикуToolStripMenuItem
+            // 
+            this.добавитьАэротехнкикуToolStripMenuItem.Name = "добавитьАэротехнкикуToolStripMenuItem";
+            this.добавитьАэротехнкикуToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.добавитьАэротехнкикуToolStripMenuItem.Text = "Добавить аэротехнкику";
+            // 
+            // добавитьТипАэротехнкикиToolStripMenuItem
+            // 
+            this.добавитьТипАэротехнкикиToolStripMenuItem.Name = "добавитьТипАэротехнкикиToolStripMenuItem";
+            this.добавитьТипАэротехнкикиToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.добавитьТипАэротехнкикиToolStripMenuItem.Text = "Добавить тип аэротехнкики";
+            // 
+            // списокВсехТиповАэротехнкикиToolStripMenuItem
+            // 
+            this.списокВсехТиповАэротехнкикиToolStripMenuItem.Name = "списокВсехТиповАэротехнкикиToolStripMenuItem";
+            this.списокВсехТиповАэротехнкикиToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.списокВсехТиповАэротехнкикиToolStripMenuItem.Text = "Список всех типов аэротехнкики";
             // 
             // EngineerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.AllAerotechnicBtn);
+            this.Controls.Add(this.AddAerotechnicBtn);
+            this.Controls.Add(this.AllAirplaneTypeBtn);
+            this.Controls.Add(this.AddAirplaneTypeBtn);
             this.Controls.Add(this.EngineerMenuStrip);
             this.Controls.Add(this.AllUsersButton);
             this.Controls.Add(this.AddUserBtn);
@@ -176,6 +290,10 @@
             this.Controls.SetChildIndex(this.AddUserBtn, 0);
             this.Controls.SetChildIndex(this.AllUsersButton, 0);
             this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
+            this.Controls.SetChildIndex(this.AddAirplaneTypeBtn, 0);
+            this.Controls.SetChildIndex(this.AllAirplaneTypeBtn, 0);
+            this.Controls.SetChildIndex(this.AddAerotechnicBtn, 0);
+            this.Controls.SetChildIndex(this.AllAerotechnicBtn, 0);
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -198,5 +316,15 @@
         private System.Windows.Forms.ToolStripMenuItem добавитьНовогоПользователяToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.Button AllAirplaneTypeBtn;
+        private System.Windows.Forms.Button AddAirplaneTypeBtn;
+        private System.Windows.Forms.Button AllAerotechnicBtn;
+        private System.Windows.Forms.Button AddAerotechnicBtn;
+        private System.Windows.Forms.ToolStripMenuItem аэротехникаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавитьАэротехнкикуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокВсейАэротехнкикиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem типыАэротехнкикиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавитьТипАэротехнкикиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списокВсехТиповАэротехнкикиToolStripMenuItem;
     }
 }

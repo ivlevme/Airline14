@@ -45,6 +45,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.MakeReportBTN = new System.Windows.Forms.Button();
+            this.пунктНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +71,7 @@
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
+            this.пунктНазначенияToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.ManagerMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ManagerMenuStrip.Name = "ManagerMenuStrip";
@@ -87,13 +91,13 @@
             // обновитьToolStripMenuItem
             // 
             this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.обновитьToolStripMenuItem.Text = "Обновить";
             // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             // 
             // пользователиToolStripMenuItem
@@ -142,7 +146,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // dateTimePicker1
@@ -191,7 +195,28 @@
             this.MakeReportBTN.Text = "Сформировать отчет";
             this.MakeReportBTN.UseVisualStyleBackColor = false;
             // 
-            // ManagerCreateReport
+            // пунктНазначенияToolStripMenuItem
+            // 
+            this.пунктНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.всеПToolStripMenuItem,
+            this.добавлениеПунктаНазначенияToolStripMenuItem});
+            this.пунктНазначенияToolStripMenuItem.Name = "пунктНазначенияToolStripMenuItem";
+            this.пунктНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.пунктНазначенияToolStripMenuItem.Text = "Пункты назначения";
+            // 
+            // всеПToolStripMenuItem
+            // 
+            this.всеПToolStripMenuItem.Name = "всеПToolStripMenuItem";
+            this.всеПToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.всеПToolStripMenuItem.Text = "Просмотр всех пунктов назначения";
+            // 
+            // добавлениеПунктаНазначенияToolStripMenuItem
+            // 
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Name = "добавлениеПунктаНазначенияToolStripMenuItem";
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Text = "Добавление пункта назначения";
+            // 
+            // ManagerCreateReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,7 +228,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.ManagerMenuStrip);
             this.Controls.Add(this.NameLabel);
-            this.Name = "ManagerCreateReport";
+            this.Name = "ManagerCreateReportForm";
             this.Text = "Формирование отчета";
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
@@ -238,5 +263,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button MakeReportBTN;
+        private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
     }
 }

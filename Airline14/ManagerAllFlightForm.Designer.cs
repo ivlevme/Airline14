@@ -37,11 +37,15 @@
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьАвирейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.просмотрВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактироватьВыбранныйАвиарейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьВыбранныйРейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пунктНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +78,7 @@
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
+            this.пунктНазначенияToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.ManagerMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ManagerMenuStrip.Name = "ManagerMenuStrip";
@@ -113,7 +118,8 @@
             // 
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.создатьАвирейсToolStripMenuItem,
-            this.просмотрВсехАвиарейсовToolStripMenuItem});
+            this.редактироватьВыбранныйАвиарейсToolStripMenuItem,
+            this.удалитьВыбранныйРейсToolStripMenuItem});
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.пользователиToolStripMenuItem.Text = "Авиарейсы";
@@ -121,14 +127,20 @@
             // создатьАвирейсToolStripMenuItem
             // 
             this.создатьАвирейсToolStripMenuItem.Name = "создатьАвирейсToolStripMenuItem";
-            this.создатьАвирейсToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.создатьАвирейсToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
             this.создатьАвирейсToolStripMenuItem.Text = "Создать авиарейс";
             // 
-            // просмотрВсехАвиарейсовToolStripMenuItem
+            // редактироватьВыбранныйАвиарейсToolStripMenuItem
             // 
-            this.просмотрВсехАвиарейсовToolStripMenuItem.Name = "просмотрВсехАвиарейсовToolStripMenuItem";
-            this.просмотрВсехАвиарейсовToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.просмотрВсехАвиарейсовToolStripMenuItem.Text = "Просмотреть все авиарейсы";
+            this.редактироватьВыбранныйАвиарейсToolStripMenuItem.Name = "редактироватьВыбранныйАвиарейсToolStripMenuItem";
+            this.редактироватьВыбранныйАвиарейсToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.редактироватьВыбранныйАвиарейсToolStripMenuItem.Text = "Редактировать выбранный авиарейс";
+            // 
+            // удалитьВыбранныйРейсToolStripMenuItem
+            // 
+            this.удалитьВыбранныйРейсToolStripMenuItem.Name = "удалитьВыбранныйРейсToolStripMenuItem";
+            this.удалитьВыбранныйРейсToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
+            this.удалитьВыбранныйРейсToolStripMenuItem.Text = "Удалить выбранный рейс";
             // 
             // отчетыToolStripMenuItem
             // 
@@ -158,7 +170,28 @@
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
-            // ManagerAllFlight
+            // пунктНазначенияToolStripMenuItem
+            // 
+            this.пунктНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.всеПToolStripMenuItem,
+            this.добавлениеПунктаНазначенияToolStripMenuItem});
+            this.пунктНазначенияToolStripMenuItem.Name = "пунктНазначенияToolStripMenuItem";
+            this.пунктНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.пунктНазначенияToolStripMenuItem.Text = "Пункты назначения";
+            // 
+            // всеПToolStripMenuItem
+            // 
+            this.всеПToolStripMenuItem.Name = "всеПToolStripMenuItem";
+            this.всеПToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.всеПToolStripMenuItem.Text = "Просмотр всех пунктов назначения";
+            // 
+            // добавлениеПунктаНазначенияToolStripMenuItem
+            // 
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Name = "добавлениеПунктаНазначенияToolStripMenuItem";
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Text = "Добавление пункта назначения";
+            // 
+            // ManagerAllFlightForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -166,7 +199,7 @@
             this.Controls.Add(this.ManagerMenuStrip);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.NameLabel);
-            this.Name = "ManagerAllFlight";
+            this.Name = "ManagerAllFlightForm";
             this.Text = "Список всех авиарейсов";
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
@@ -190,10 +223,14 @@
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьАвирейсToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem просмотрВсехАвиарейсовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem редактироватьВыбранныйАвиарейсToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьВыбранныйРейсToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
     }
 }

@@ -38,11 +38,13 @@
             this.просмотрВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.списрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.редактироватьВыбранногоКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.удалитьВыбранногоКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EngineerMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +65,7 @@
             // программаToolStripMenuItem
             // 
             this.программаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem,
             this.обновитьToolStripMenuItem,
             this.выйтиToolStripMenuItem});
             this.программаToolStripMenuItem.Name = "программаToolStripMenuItem";
@@ -106,7 +109,8 @@
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сформироватьОтчетToolStripMenuItem,
-            this.списрToolStripMenuItem});
+            this.редактироватьВыбранногоКлиентаToolStripMenuItem,
+            this.удалитьВыбранногоКлиентаToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.отчетыToolStripMenuItem.Text = "Клиенты";
@@ -114,14 +118,8 @@
             // сформироватьОтчетToolStripMenuItem
             // 
             this.сформироватьОтчетToolStripMenuItem.Name = "сформироватьОтчетToolStripMenuItem";
-            this.сформироватьОтчетToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.сформироватьОтчетToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.сформироватьОтчетToolStripMenuItem.Text = "Добавить нового клиента";
-            // 
-            // списрToolStripMenuItem
-            // 
-            this.списрToolStripMenuItem.Name = "списрToolStripMenuItem";
-            this.списрToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.списрToolStripMenuItem.Text = "Посмотреть всех клиентов";
             // 
             // справкаToolStripMenuItem
             // 
@@ -134,7 +132,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             // 
             // NameLabel
@@ -158,6 +156,24 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(910, 431);
             this.dataGridView1.TabIndex = 22;
+            // 
+            // редактироватьВыбранногоКлиентаToolStripMenuItem
+            // 
+            this.редактироватьВыбранногоКлиентаToolStripMenuItem.Name = "редактироватьВыбранногоКлиентаToolStripMenuItem";
+            this.редактироватьВыбранногоКлиентаToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.редактироватьВыбранногоКлиентаToolStripMenuItem.Text = "Редактировать выбранного клиента";
+            // 
+            // удалитьВыбранногоКлиентаToolStripMenuItem
+            // 
+            this.удалитьВыбранногоКлиентаToolStripMenuItem.Name = "удалитьВыбранногоКлиентаToolStripMenuItem";
+            this.удалитьВыбранногоКлиентаToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.удалитьВыбранногоКлиентаToolStripMenuItem.Text = "Удалить выбранного клиента";
+            // 
+            // вернутьсяНаГлавнуюСтраницуToolStripMenuItem
+            // 
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Name = "вернутьсяНаГлавнуюСтраницуToolStripMenuItem";
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Text = "Вернуться на главную страницу";
             // 
             // SalesmanAllUsersForm
             // 
@@ -191,10 +207,12 @@
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехАвиарейсовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem списрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem редактироватьВыбранногоКлиентаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem удалитьВыбранногоКлиентаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
     }
 }

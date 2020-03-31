@@ -94,6 +94,48 @@
     <Compile Include="EngineerAddReportsForm.Designer.cs">
       <DependentUpon>EngineerAddReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AboutProgramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutProgramForm.Designer.cs">
+      <DependentUpon>AboutProgramForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerAllAerotechnicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineerAllAerotechnicsForm.Designer.cs">
+      <DependentUpon>EngineerAllAerotechnicsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerAddAerotechnicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineerAddAerotechnicsForm.Designer.cs">
+      <DependentUpon>EngineerAddAerotechnicsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerAllAirplaneTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineerAllAirplaneTypeForm.Designer.cs">
+      <DependentUpon>EngineerAllAirplaneTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EngineerAddAirplaneTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EngineerAddAirplaneTypeForm.Designer.cs">
+      <DependentUpon>EngineerAddAirplaneTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerAllDestionationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerAllDestionationForm.Designer.cs">
+      <DependentUpon>ManagerAllDestionationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerAddDestinationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerAddDestinationForm.Designer.cs">
+      <DependentUpon>ManagerAddDestinationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesmanAllTicketsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,8 +213,20 @@
     <EmbeddedResource Include="AdminAddUserForm.resx">
       <DependentUpon>AdminAddUserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EngineerAddAerotechnicsForm.resx">
+      <DependentUpon>EngineerAddAerotechnicsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EngineerAddAirplaneTypeForm.resx">
+      <DependentUpon>EngineerAddAirplaneTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EngineerAddReportsForm.resx">
       <DependentUpon>EngineerAddReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EngineerAllAerotechnicsForm.resx">
+      <DependentUpon>EngineerAllAerotechnicsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EngineerAllAirplaneTypeForm.resx">
+      <DependentUpon>EngineerAllAirplaneTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EngineerAllReportsForm.resx">
       <DependentUpon>EngineerAllReportsForm.cs</DependentUpon>
@@ -180,8 +234,17 @@
     <EmbeddedResource Include="EngineerMainForm.resx">
       <DependentUpon>EngineerMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AboutProgramForm.resx">
+      <DependentUpon>AboutProgramForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerAddDestinationForm.resx">
+      <DependentUpon>ManagerAddDestinationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerAddFlightForm.resx">
       <DependentUpon>ManagerAddFlightForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerAllDestionationForm.resx">
+      <DependentUpon>ManagerAllDestionationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerAllFlightForm.resx">
       <DependentUpon>ManagerAllFlightForm.cs</DependentUpon>
