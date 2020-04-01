@@ -55,5 +55,32 @@ namespace Airline14
         {
             exitMenuStrip();
         }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveRecord();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            saveRecord();
+        }
+
+        private void toolStripButtonRemove_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        private void EngineerAllAerotechnicsForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'airlineDBDataSet1.Aerotechnics' table. You can move, or remove it, as needed.
+            this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet1.Aerotechnics);
+
+        }
     }
 }

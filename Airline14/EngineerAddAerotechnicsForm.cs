@@ -55,5 +55,17 @@ namespace Airline14
             engMain.Show();
             this.Hide();
         }
+
+        private void AddReportBtn_Click(object sender, EventArgs e)
+        {
+            if (NameAerotechnicTB.Text == "" || AirplaneTypeCB.SelectedIndex == -1 || CapacityTB.Text == "" || CrewTB.Text == "")
+            {
+                ErrorMessageBox();
+            }
+            else
+            {
+                MessageBox.Show("Новая запись аэротехники успешно создана!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+        }
     }
 }

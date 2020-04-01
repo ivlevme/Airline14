@@ -55,10 +55,24 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
+            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.flightsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.FlightsTableAdapter();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDAerotechnicDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDestinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weekdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soldCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivialTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDManagerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ManagerMenuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -81,7 +95,19 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.numberDataGridViewTextBoxColumn,
+            this.iDAerotechnicDataGridViewTextBoxColumn,
+            this.iDDestinationDataGridViewTextBoxColumn,
+            this.departureTimeDataGridViewTextBoxColumn,
+            this.timeFlightDataGridViewTextBoxColumn,
+            this.weekdayDataGridViewTextBoxColumn,
+            this.soldCountDataGridViewTextBoxColumn,
+            this.arrivialTimeDataGridViewTextBoxColumn,
+            this.iDManagerDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.flightsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 105);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(910, 399);
@@ -226,6 +252,7 @@
             this.toolStripButtonSave.Name = "toolStripButtonSave";
             this.toolStripButtonSave.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonSave.Text = "Сохранить изменения";
+            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // toolStripButtonEdit
             // 
@@ -244,6 +271,7 @@
             this.toolStripButtonRemove.Name = "toolStripButtonRemove";
             this.toolStripButtonRemove.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonRemove.Text = "Удалить";
+            this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
             // 
             // contextMenuStrip1
             // 
@@ -252,25 +280,96 @@
             this.редактироватьToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // редактироватьToolStripMenuItem
             // 
             this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.редактироватьToolStripMenuItem.Text = "Редактировать";
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // flightsBindingSource
+            // 
+            this.flightsBindingSource.DataMember = "Flights";
+            this.flightsBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // flightsTableAdapter
+            // 
+            this.flightsTableAdapter.ClearBeforeFill = true;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDAerotechnicDataGridViewTextBoxColumn
+            // 
+            this.iDAerotechnicDataGridViewTextBoxColumn.DataPropertyName = "ID Aerotechnic";
+            this.iDAerotechnicDataGridViewTextBoxColumn.HeaderText = "ID Aerotechnic";
+            this.iDAerotechnicDataGridViewTextBoxColumn.Name = "iDAerotechnicDataGridViewTextBoxColumn";
+            // 
+            // iDDestinationDataGridViewTextBoxColumn
+            // 
+            this.iDDestinationDataGridViewTextBoxColumn.DataPropertyName = "ID Destination";
+            this.iDDestinationDataGridViewTextBoxColumn.HeaderText = "ID Destination";
+            this.iDDestinationDataGridViewTextBoxColumn.Name = "iDDestinationDataGridViewTextBoxColumn";
+            // 
+            // departureTimeDataGridViewTextBoxColumn
+            // 
+            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "Departure time";
+            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "Departure time";
+            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
+            // 
+            // timeFlightDataGridViewTextBoxColumn
+            // 
+            this.timeFlightDataGridViewTextBoxColumn.DataPropertyName = "Time flight";
+            this.timeFlightDataGridViewTextBoxColumn.HeaderText = "Time flight";
+            this.timeFlightDataGridViewTextBoxColumn.Name = "timeFlightDataGridViewTextBoxColumn";
+            // 
+            // weekdayDataGridViewTextBoxColumn
+            // 
+            this.weekdayDataGridViewTextBoxColumn.DataPropertyName = "Weekday";
+            this.weekdayDataGridViewTextBoxColumn.HeaderText = "Weekday";
+            this.weekdayDataGridViewTextBoxColumn.Name = "weekdayDataGridViewTextBoxColumn";
+            // 
+            // soldCountDataGridViewTextBoxColumn
+            // 
+            this.soldCountDataGridViewTextBoxColumn.DataPropertyName = "Sold count";
+            this.soldCountDataGridViewTextBoxColumn.HeaderText = "Sold count";
+            this.soldCountDataGridViewTextBoxColumn.Name = "soldCountDataGridViewTextBoxColumn";
+            // 
+            // arrivialTimeDataGridViewTextBoxColumn
+            // 
+            this.arrivialTimeDataGridViewTextBoxColumn.DataPropertyName = "Arrivial time";
+            this.arrivialTimeDataGridViewTextBoxColumn.HeaderText = "Arrivial time";
+            this.arrivialTimeDataGridViewTextBoxColumn.Name = "arrivialTimeDataGridViewTextBoxColumn";
+            // 
+            // iDManagerDataGridViewTextBoxColumn
+            // 
+            this.iDManagerDataGridViewTextBoxColumn.DataPropertyName = "ID Manager";
+            this.iDManagerDataGridViewTextBoxColumn.HeaderText = "ID Manager";
+            this.iDManagerDataGridViewTextBoxColumn.Name = "iDManagerDataGridViewTextBoxColumn";
             // 
             // ManagerAllFlightForm
             // 
@@ -283,6 +382,7 @@
             this.Controls.Add(this.ManagerMenuStrip);
             this.Name = "ManagerAllFlightForm";
             this.Text = "Список всех авиарейсов";
+            this.Load += new System.EventHandler(this.ManagerAllFlightForm_Load);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
@@ -294,6 +394,8 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +428,17 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private AirlineDBDataSet2 airlineDBDataSet2;
+        private System.Windows.Forms.BindingSource flightsBindingSource;
+        private AirlineDBDataSet2TableAdapters.FlightsTableAdapter flightsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDAerotechnicDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDestinationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn timeFlightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weekdayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soldCountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrivialTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDManagerDataGridViewTextBoxColumn;
     }
 }

@@ -55,5 +55,32 @@ namespace Airline14
             managerAddDestination.Show();
             this.Hide();
         }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        private void toolStripButtonRemove_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            saveRecord();
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveRecord();
+        }
+
+        private void ManagerAllDestionationForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'airlineDBDataSet2.Destination' table. You can move, or remove it, as needed.
+            this.destinationTableAdapter.Fill(this.airlineDBDataSet2.Destination);
+
+        }
     }
 }

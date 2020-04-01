@@ -41,5 +41,32 @@ namespace Airline14
             admAddUser.Show();
             this.Hide();
         }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveRecord();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        private void toolStripButtonRemove_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            saveRecord();
+        }
+
+        private void AdminAllUsersForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'airlineDBDataSet.Users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.airlineDBDataSet.Users);
+
+        }
     }
 }

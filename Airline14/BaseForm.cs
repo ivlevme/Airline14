@@ -36,6 +36,19 @@ namespace Airline14
             MessageBox.Show("Введенные данные некорректные!", "Что-то пошло не так...", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        public void delRecord()
+        {
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes) { MessageBox.Show("Пользовать удалён успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
+            else { MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        public void saveRecord()
+        {
+            MessageBox.Show("Успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
         public void exitMenuStrip()
         {
             this.Hide();

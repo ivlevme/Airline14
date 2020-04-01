@@ -55,5 +55,32 @@ namespace Airline14
             engAllAero.Show();
             this.Hide();
         }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveRecord();
+        }
+
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            saveRecord();
+        }
+
+        private void toolStripButtonRemove_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        private void EngineerAllReportsForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'airlineDBDataSet2.Reports' table. You can move, or remove it, as needed.
+            this.reportsTableAdapter.Fill(this.airlineDBDataSet2.Reports);
+
+        }
     }
 }

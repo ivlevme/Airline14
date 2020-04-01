@@ -69,6 +69,7 @@
             this.AddReportBtn.TabIndex = 19;
             this.AddReportBtn.Text = "Добавить аэротехнику";
             this.AddReportBtn.UseVisualStyleBackColor = false;
+            this.AddReportBtn.Click += new System.EventHandler(this.AddReportBtn_Click);
             // 
             // NameAerotechnicTB
             // 
