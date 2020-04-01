@@ -45,6 +45,7 @@
             // ExitBtn
             // 
             this.ExitBtn.FlatAppearance.BorderSize = 0;
+            this.ExitBtn.Visible = false;
             // 
             // NameLabel
             // 

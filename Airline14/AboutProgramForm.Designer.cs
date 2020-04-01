@@ -48,7 +48,6 @@
             // 
             this.ExitBtn.FlatAppearance.BorderSize = 0;
             this.ExitBtn.Visible = false;
-            this.toolStrip1.Visible = false;
             // 
             // pictureBox1
             // 

@@ -28,7 +28,7 @@ namespace Airline14
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            exitMenuStrip();
         }
 
         public void ErrorMessageBox() 
