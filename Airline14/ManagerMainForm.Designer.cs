@@ -45,6 +45,8 @@
             this.AddFlightBtn = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
             this.createReportBTN = new System.Windows.Forms.Button();
+            this.AllDestinationBTN = new System.Windows.Forms.Button();
+            this.AddDestinationBTN = new System.Windows.Forms.Button();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -216,11 +218,43 @@
             this.createReportBTN.UseVisualStyleBackColor = false;
             this.createReportBTN.Click += new System.EventHandler(this.createReportBTN_Click);
             // 
+            // AllDestinationBTN
+            // 
+            this.AllDestinationBTN.BackColor = System.Drawing.Color.MediumBlue;
+            this.AllDestinationBTN.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AllDestinationBTN.FlatAppearance.BorderSize = 0;
+            this.AllDestinationBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AllDestinationBTN.ForeColor = System.Drawing.SystemColors.Info;
+            this.AllDestinationBTN.Location = new System.Drawing.Point(337, 389);
+            this.AllDestinationBTN.Name = "AllDestinationBTN";
+            this.AllDestinationBTN.Size = new System.Drawing.Size(241, 32);
+            this.AllDestinationBTN.TabIndex = 16;
+            this.AllDestinationBTN.Text = "Список всех пунктов назначения";
+            this.AllDestinationBTN.UseVisualStyleBackColor = false;
+            this.AllDestinationBTN.Click += new System.EventHandler(this.AllDestinationBTN_Click);
+            // 
+            // AddDestinationBTN
+            // 
+            this.AddDestinationBTN.BackColor = System.Drawing.Color.MediumBlue;
+            this.AddDestinationBTN.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AddDestinationBTN.FlatAppearance.BorderSize = 0;
+            this.AddDestinationBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddDestinationBTN.ForeColor = System.Drawing.SystemColors.Info;
+            this.AddDestinationBTN.Location = new System.Drawing.Point(337, 331);
+            this.AddDestinationBTN.Name = "AddDestinationBTN";
+            this.AddDestinationBTN.Size = new System.Drawing.Size(241, 32);
+            this.AddDestinationBTN.TabIndex = 15;
+            this.AddDestinationBTN.Text = "Добавить новый пункт назначения";
+            this.AddDestinationBTN.UseVisualStyleBackColor = false;
+            this.AddDestinationBTN.Click += new System.EventHandler(this.AddDestinationBTN_Click);
+            // 
             // ManagerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.AllDestinationBTN);
+            this.Controls.Add(this.AddDestinationBTN);
             this.Controls.Add(this.createReportBTN);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.AllFlightBtn);
@@ -235,6 +269,8 @@
             this.Controls.SetChildIndex(this.AllFlightBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.createReportBTN, 0);
+            this.Controls.SetChildIndex(this.AddDestinationBTN, 0);
+            this.Controls.SetChildIndex(this.AllDestinationBTN, 0);
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -261,5 +297,7 @@
         private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
+        private System.Windows.Forms.Button AllDestinationBTN;
+        private System.Windows.Forms.Button AddDestinationBTN;
     }
 }

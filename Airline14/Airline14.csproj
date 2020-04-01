@@ -61,16 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AirlineDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AirlineDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="AirlineDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AirlineDBDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="AirlineDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -294,28 +284,6 @@
     <EmbeddedResource Include="SalesmanMainForm.resx">
       <DependentUpon>SalesmanMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="AirlineDBDataSet.xsc">
-      <DependentUpon>AirlineDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AirlineDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AirlineDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AirlineDBDataSet.xss">
-      <DependentUpon>AirlineDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="AirlineDBDataSet1.xsc">
-      <DependentUpon>AirlineDBDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="AirlineDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AirlineDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="AirlineDBDataSet1.xss">
-      <DependentUpon>AirlineDBDataSet1.xsd</DependentUpon>
-    </None>
     <None Include="AirlineDBDataSet2.xsc">
       <DependentUpon>AirlineDBDataSet2.xsd</DependentUpon>
     </None>

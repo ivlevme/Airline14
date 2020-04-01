@@ -82,5 +82,12 @@ namespace Airline14
             this.destinationTableAdapter.Fill(this.airlineDBDataSet2.Destination);
 
         }
+
+        private void списокВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManagerAllFlightForm managerAllFlight = new ManagerAllFlightForm();
+            managerAllFlight.Show();
+            this.Hide();
+        }
     }
 }

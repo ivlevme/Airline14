@@ -83,5 +83,19 @@ namespace Airline14
             managerCreateReport.Show();
             this.Hide();
         }
+
+        private void AllDestinationBTN_Click(object sender, EventArgs e)
+        {
+            ManagerAllDestionationForm managerAllDestionation = new ManagerAllDestionationForm();
+            managerAllDestionation.Show();
+            this.Hide();
+        }
+
+        private void AddDestinationBTN_Click(object sender, EventArgs e)
+        {
+            ManagerAddDestinationForm managerAddDestination = new ManagerAddDestinationForm();
+            managerAddDestination.Show();
+            this.Hide();
+        }
     }
 }

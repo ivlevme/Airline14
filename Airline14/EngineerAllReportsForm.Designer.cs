@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EngineerAllReportsForm));
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDEngineerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,18 +59,14 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.reportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.ReportsTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDEngineerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.EngineerMenuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +97,46 @@
             this.dateDataGridViewTextBoxColumn,
             this.contentDataGridViewTextBoxColumn,
             this.iDEngineerDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.reportsBindingSource;
+            this.dataGridView1.DataSource = this.reportsBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 100);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(907, 404);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // contentDataGridViewTextBoxColumn
+            // 
+            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
+            this.contentDataGridViewTextBoxColumn.HeaderText = "Content";
+            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
+            // 
+            // iDEngineerDataGridViewTextBoxColumn
+            // 
+            this.iDEngineerDataGridViewTextBoxColumn.DataPropertyName = "ID engineer";
+            this.iDEngineerDataGridViewTextBoxColumn.HeaderText = "ID engineer";
+            this.iDEngineerDataGridViewTextBoxColumn.Name = "iDEngineerDataGridViewTextBoxColumn";
+            // 
+            // reportsBindingSource1
+            // 
+            this.reportsBindingSource1.DataMember = "Reports";
+            this.reportsBindingSource1.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EngineerMenuStrip
             // 
@@ -274,11 +311,6 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // reportsBindingSource
             // 
             this.reportsBindingSource.DataMember = "Reports";
@@ -287,31 +319,6 @@
             // reportsTableAdapter
             // 
             this.reportsTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            // 
-            // contentDataGridViewTextBoxColumn
-            // 
-            this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn.HeaderText = "Content";
-            this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
-            // 
-            // iDEngineerDataGridViewTextBoxColumn
-            // 
-            this.iDEngineerDataGridViewTextBoxColumn.DataPropertyName = "ID engineer";
-            this.iDEngineerDataGridViewTextBoxColumn.HeaderText = "ID engineer";
-            this.iDEngineerDataGridViewTextBoxColumn.Name = "iDEngineerDataGridViewTextBoxColumn";
             // 
             // EngineerAllReportsForm
             // 
@@ -322,6 +329,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.EngineerMenuStrip);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "EngineerAllReportsForm";
             this.Text = "Все отчеты о состоянии авиатехники";
             this.Load += new System.EventHandler(this.EngineerAllReportsForm_Load);
@@ -331,12 +339,13 @@
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -375,5 +384,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDEngineerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource reportsBindingSource1;
     }
 }

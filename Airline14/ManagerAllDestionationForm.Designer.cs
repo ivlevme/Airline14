@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerAllDestionationForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.NameLabel = new System.Windows.Forms.Label();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,17 +58,14 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
-            this.destinationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.destinationTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.DestinationTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.списокВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.ManagerMenuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.destinationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -81,8 +82,31 @@
             this.dataGridView1.DataSource = this.destinationBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 102);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 420);
+            this.dataGridView1.Size = new System.Drawing.Size(910, 402);
             this.dataGridView1.TabIndex = 19;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // destinationBindingSource
+            // 
+            this.destinationBindingSource.DataMember = "Destination";
+            this.destinationBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // NameLabel
             // 
@@ -138,7 +162,8 @@
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.просмотрВсехАвиарейсовToolStripMenuItem});
+            this.просмотрВсехАвиарейсовToolStripMenuItem,
+            this.списокВсехАвиарейсовToolStripMenuItem});
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.пользователиToolStripMenuItem.Text = "Авиарейсы";
@@ -146,7 +171,7 @@
             // просмотрВсехАвиарейсовToolStripMenuItem
             // 
             this.просмотрВсехАвиарейсовToolStripMenuItem.Name = "просмотрВсехАвиарейсовToolStripMenuItem";
-            this.просмотрВсехАвиарейсовToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.просмотрВсехАвиарейсовToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
             this.просмотрВсехАвиарейсовToolStripMenuItem.Text = "Добавить авиарейс";
             this.просмотрВсехАвиарейсовToolStripMenuItem.Click += new System.EventHandler(this.просмотрВсехАвиарейсовToolStripMenuItem_Click);
             // 
@@ -279,32 +304,16 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // destinationBindingSource
-            // 
-            this.destinationBindingSource.DataMember = "Destination";
-            this.destinationBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
             // destinationTableAdapter
             // 
             this.destinationTableAdapter.ClearBeforeFill = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // списокВсехАвиарейсовToolStripMenuItem
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.списокВсехАвиарейсовToolStripMenuItem.Name = "списокВсехАвиарейсовToolStripMenuItem";
+            this.списокВсехАвиарейсовToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.списокВсехАвиарейсовToolStripMenuItem.Text = "Список всех авиарейсов";
+            this.списокВсехАвиарейсовToolStripMenuItem.Click += new System.EventHandler(this.списокВсехАвиарейсовToolStripMenuItem_Click);
             // 
             // ManagerAllDestionationForm
             // 
@@ -315,6 +324,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.ManagerMenuStrip);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "ManagerAllDestionationForm";
             this.Text = "Список пунктов назначения";
             this.Load += new System.EventHandler(this.ManagerAllDestionationForm_Load);
@@ -324,13 +334,13 @@
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.destinationBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +377,6 @@
         private AirlineDBDataSet2TableAdapters.DestinationTableAdapter destinationTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem списокВсехАвиарейсовToolStripMenuItem;
     }
 }

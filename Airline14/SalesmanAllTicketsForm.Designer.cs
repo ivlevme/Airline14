@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesmanAllTicketsForm));
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDPassengerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,18 +56,13 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ticketsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.TicketsTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDPassengerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.EngineerMenuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -94,8 +94,37 @@
             this.dataGridView1.DataSource = this.ticketsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 103);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 414);
+            this.dataGridView1.Size = new System.Drawing.Size(910, 401);
             this.dataGridView1.TabIndex = 24;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDPassengerDataGridViewTextBoxColumn
+            // 
+            this.iDPassengerDataGridViewTextBoxColumn.DataPropertyName = "ID Passenger";
+            this.iDPassengerDataGridViewTextBoxColumn.HeaderText = "ID Passenger";
+            this.iDPassengerDataGridViewTextBoxColumn.Name = "iDPassengerDataGridViewTextBoxColumn";
+            // 
+            // numberFlightDataGridViewTextBoxColumn
+            // 
+            this.numberFlightDataGridViewTextBoxColumn.DataPropertyName = "Number Flight";
+            this.numberFlightDataGridViewTextBoxColumn.HeaderText = "Number Flight";
+            this.numberFlightDataGridViewTextBoxColumn.Name = "numberFlightDataGridViewTextBoxColumn";
+            // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataMember = "Tickets";
+            this.ticketsBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EngineerMenuStrip
             // 
@@ -256,38 +285,9 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ticketsBindingSource
-            // 
-            this.ticketsBindingSource.DataMember = "Tickets";
-            this.ticketsBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
             // ticketsTableAdapter
             // 
             this.ticketsTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDPassengerDataGridViewTextBoxColumn
-            // 
-            this.iDPassengerDataGridViewTextBoxColumn.DataPropertyName = "ID Passenger";
-            this.iDPassengerDataGridViewTextBoxColumn.HeaderText = "ID Passenger";
-            this.iDPassengerDataGridViewTextBoxColumn.Name = "iDPassengerDataGridViewTextBoxColumn";
-            // 
-            // numberFlightDataGridViewTextBoxColumn
-            // 
-            this.numberFlightDataGridViewTextBoxColumn.DataPropertyName = "Number Flight";
-            this.numberFlightDataGridViewTextBoxColumn.HeaderText = "Number Flight";
-            this.numberFlightDataGridViewTextBoxColumn.Name = "numberFlightDataGridViewTextBoxColumn";
             // 
             // SalesmanAllTicketsForm
             // 
@@ -298,6 +298,7 @@
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.EngineerMenuStrip);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "SalesmanAllTicketsForm";
             this.Text = "Список всех билетов";
             this.Load += new System.EventHandler(this.SalesmanAllTicketsForm_Load);
@@ -307,13 +308,13 @@
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

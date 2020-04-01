@@ -53,20 +53,20 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.airlineDBDataSet1 = new Airline14.AirlineDBDataSet1();
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.aerotechnicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aerotechnicsTableAdapter = new Airline14.AirlineDBDataSet1TableAdapters.AerotechnicsTableAdapter();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crewCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDReportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aerotechnicsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.AerotechnicsTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EngineerMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aerotechnicsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,12 +185,12 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn,
-            this.capacityDataGridViewTextBoxColumn,
-            this.crewCountDataGridViewTextBoxColumn,
-            this.iDReportDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6});
             this.dataGridView1.DataSource = this.aerotechnicsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 99);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -282,56 +282,56 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
-            // airlineDBDataSet1
+            // airlineDBDataSet2
             // 
-            this.airlineDBDataSet1.DataSetName = "AirlineDBDataSet1";
-            this.airlineDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // aerotechnicsBindingSource
             // 
             this.aerotechnicsBindingSource.DataMember = "Aerotechnics";
-            this.aerotechnicsBindingSource.DataSource = this.airlineDBDataSet1;
+            this.aerotechnicsBindingSource.DataSource = this.airlineDBDataSet2;
             // 
             // aerotechnicsTableAdapter
             // 
             this.aerotechnicsTableAdapter.ClearBeforeFill = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // nameDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // typeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "Type";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Type";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // capacityDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.capacityDataGridViewTextBoxColumn.DataPropertyName = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.HeaderText = "Capacity";
-            this.capacityDataGridViewTextBoxColumn.Name = "capacityDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Capacity";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Capacity";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // crewCountDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.crewCountDataGridViewTextBoxColumn.DataPropertyName = "Crew Count";
-            this.crewCountDataGridViewTextBoxColumn.HeaderText = "Crew Count";
-            this.crewCountDataGridViewTextBoxColumn.Name = "crewCountDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Crew Count";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Crew Count";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // iDReportDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.iDReportDataGridViewTextBoxColumn.DataPropertyName = "ID Report";
-            this.iDReportDataGridViewTextBoxColumn.HeaderText = "Идентификатор отчета";
-            this.iDReportDataGridViewTextBoxColumn.Name = "iDReportDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ID Report";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ID Report";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // EngineerAllAerotechnicsForm
             // 
@@ -358,7 +358,7 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aerotechnicsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -390,14 +390,20 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
-        private AirlineDBDataSet1 airlineDBDataSet1;
-        private System.Windows.Forms.BindingSource aerotechnicsBindingSource;
-        private AirlineDBDataSet1TableAdapters.AerotechnicsTableAdapter aerotechnicsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn crewCountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDReportDataGridViewTextBoxColumn;
+        private AirlineDBDataSet2 airlineDBDataSet2;
+        private System.Windows.Forms.BindingSource aerotechnicsBindingSource;
+        private AirlineDBDataSet2TableAdapters.AerotechnicsTableAdapter aerotechnicsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }

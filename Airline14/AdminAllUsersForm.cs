@@ -64,9 +64,8 @@ namespace Airline14
 
         private void AdminAllUsersForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'airlineDBDataSet.Users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.airlineDBDataSet.Users);
-
+            // TODO: This line of code loads data into the 'airlineDBDataSet2.Users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.airlineDBDataSet2.Users);
         }
     }
 }
