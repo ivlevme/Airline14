@@ -58,7 +58,7 @@
             this.AllUsersButton.FlatAppearance.BorderSize = 0;
             this.AllUsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllUsersButton.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllUsersButton.Location = new System.Drawing.Point(363, 145);
+            this.AllUsersButton.Location = new System.Drawing.Point(365, 193);
             this.AllUsersButton.Name = "AllUsersButton";
             this.AllUsersButton.Size = new System.Drawing.Size(241, 31);
             this.AllUsersButton.TabIndex = 13;
@@ -73,7 +73,7 @@
             this.AddUserBtn.FlatAppearance.BorderSize = 0;
             this.AddUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddUserBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddUserBtn.Location = new System.Drawing.Point(363, 90);
+            this.AddUserBtn.Location = new System.Drawing.Point(365, 138);
             this.AddUserBtn.Name = "AddUserBtn";
             this.AddUserBtn.Size = new System.Drawing.Size(241, 31);
             this.AddUserBtn.TabIndex = 12;
@@ -86,7 +86,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(332, 27);
+            this.NameLabel.Location = new System.Drawing.Point(334, 75);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -180,7 +180,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
@@ -191,7 +191,7 @@
             this.AllAerotechnicBtn.FlatAppearance.BorderSize = 0;
             this.AllAerotechnicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllAerotechnicBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllAerotechnicBtn.Location = new System.Drawing.Point(363, 265);
+            this.AllAerotechnicBtn.Location = new System.Drawing.Point(365, 313);
             this.AllAerotechnicBtn.Name = "AllAerotechnicBtn";
             this.AllAerotechnicBtn.Size = new System.Drawing.Size(241, 31);
             this.AllAerotechnicBtn.TabIndex = 18;
@@ -206,7 +206,7 @@
             this.AddAerotechnicBtn.FlatAppearance.BorderSize = 0;
             this.AddAerotechnicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddAerotechnicBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddAerotechnicBtn.Location = new System.Drawing.Point(363, 206);
+            this.AddAerotechnicBtn.Location = new System.Drawing.Point(365, 254);
             this.AddAerotechnicBtn.Name = "AddAerotechnicBtn";
             this.AddAerotechnicBtn.Size = new System.Drawing.Size(241, 31);
             this.AddAerotechnicBtn.TabIndex = 17;
@@ -221,17 +221,17 @@
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.AllAerotechnicBtn);
             this.Controls.Add(this.AddAerotechnicBtn);
-            this.Controls.Add(this.EngineerMenuStrip);
             this.Controls.Add(this.AllUsersButton);
             this.Controls.Add(this.AddUserBtn);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.EngineerMenuStrip);
             this.Name = "EngineerMainForm";
             this.Text = "Панель инженера";
+            this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.AddUserBtn, 0);
             this.Controls.SetChildIndex(this.AllUsersButton, 0);
-            this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.Controls.SetChildIndex(this.AddAerotechnicBtn, 0);
             this.Controls.SetChildIndex(this.AllAerotechnicBtn, 0);
             this.EngineerMenuStrip.ResumeLayout(false);

@@ -41,8 +41,8 @@
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пунктНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,7 +58,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(244, 21);
+            this.NameLabel.Location = new System.Drawing.Point(244, 56);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -70,9 +70,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 105);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 439);
+            this.dataGridView1.Size = new System.Drawing.Size(910, 399);
             this.dataGridView1.TabIndex = 17;
             // 
             // ManagerMenuStrip
@@ -165,19 +165,19 @@
             this.пунктНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.пунктНазначенияToolStripMenuItem.Text = "Пункты назначения";
             // 
-            // всеПToolStripMenuItem
-            // 
-            this.всеПToolStripMenuItem.Name = "всеПToolStripMenuItem";
-            this.всеПToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.всеПToolStripMenuItem.Text = "Просмотр всех пунктов назначения";
-            this.всеПToolStripMenuItem.Click += new System.EventHandler(this.всеПToolStripMenuItem_Click);
-            // 
             // добавлениеПунктаНазначенияToolStripMenuItem
             // 
             this.добавлениеПунктаНазначенияToolStripMenuItem.Name = "добавлениеПунктаНазначенияToolStripMenuItem";
             this.добавлениеПунктаНазначенияToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.добавлениеПунктаНазначенияToolStripMenuItem.Text = "Добавление пункта назначения";
             this.добавлениеПунктаНазначенияToolStripMenuItem.Click += new System.EventHandler(this.добавлениеПунктаНазначенияToolStripMenuItem_Click);
+            // 
+            // всеПToolStripMenuItem
+            // 
+            this.всеПToolStripMenuItem.Name = "всеПToolStripMenuItem";
+            this.всеПToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.всеПToolStripMenuItem.Text = "Просмотр всех пунктов назначения";
+            this.всеПToolStripMenuItem.Click += new System.EventHandler(this.всеПToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -199,15 +199,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.ManagerMenuStrip);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.ManagerMenuStrip);
             this.Name = "ManagerAllFlightForm";
             this.Text = "Список всех авиарейсов";
+            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();

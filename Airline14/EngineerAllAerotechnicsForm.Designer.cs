@@ -158,10 +158,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 79);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 99);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(915, 424);
+            this.dataGridView1.Size = new System.Drawing.Size(915, 404);
             this.dataGridView1.TabIndex = 18;
             // 
             // NameLabel
@@ -169,7 +169,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(279, 34);
+            this.NameLabel.Location = new System.Drawing.Point(279, 54);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -189,8 +189,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "EngineerAllAerotechnicsForm";
             this.Text = "Список аэротехники";
-            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
+            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.EngineerMenuStrip.ResumeLayout(false);

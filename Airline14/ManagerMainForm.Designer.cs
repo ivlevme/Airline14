@@ -153,7 +153,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -229,8 +229,8 @@
             this.MainMenuStrip = this.ManagerMenuStrip;
             this.Name = "ManagerMainForm";
             this.Text = "Панель менеджера";
-            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
+            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.AddFlightBtn, 0);
             this.Controls.SetChildIndex(this.AllFlightBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);

@@ -58,7 +58,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(22, 23);
+            this.NameLabel.Location = new System.Drawing.Point(22, 52);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -72,7 +72,7 @@
             this.FirstDateLabel.AutoSize = true;
             this.FirstDateLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FirstDateLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FirstDateLabel.Location = new System.Drawing.Point(469, 23);
+            this.FirstDateLabel.Location = new System.Drawing.Point(469, 52);
             this.FirstDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FirstDateLabel.Name = "FirstDateLabel";
             this.FirstDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -86,7 +86,7 @@
             this.LastDateLabel.AutoSize = true;
             this.LastDateLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.LastDateLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LastDateLabel.Location = new System.Drawing.Point(712, 23);
+            this.LastDateLabel.Location = new System.Drawing.Point(712, 52);
             this.LastDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LastDateLabel.Name = "LastDateLabel";
             this.LastDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -100,7 +100,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(661, 22);
+            this.label3.Location = new System.Drawing.Point(661, 53);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -112,9 +112,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 97);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 429);
+            this.dataGridView1.Size = new System.Drawing.Size(910, 407);
             this.dataGridView1.TabIndex = 22;
             // 
             // ManagerMenuStrip
@@ -210,7 +210,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -219,22 +219,22 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.ManagerMenuStrip);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LastDateLabel);
             this.Controls.Add(this.FirstDateLabel);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.ManagerMenuStrip);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "ManagerDoneReportForm";
             this.Text = "Отчет";
+            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.FirstDateLabel, 0);
             this.Controls.SetChildIndex(this.LastDateLabel, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
-            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();

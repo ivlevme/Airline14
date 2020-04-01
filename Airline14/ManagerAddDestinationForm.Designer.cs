@@ -38,13 +38,13 @@
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьАвиарейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пунктыНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехПунктовНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьАвиарейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.AddDestinationBtn.FlatAppearance.BorderSize = 0;
             this.AddDestinationBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddDestinationBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddDestinationBtn.Location = new System.Drawing.Point(381, 178);
+            this.AddDestinationBtn.Location = new System.Drawing.Point(381, 208);
             this.AddDestinationBtn.Name = "AddDestinationBtn";
             this.AddDestinationBtn.Size = new System.Drawing.Size(176, 32);
             this.AddDestinationBtn.TabIndex = 38;
@@ -71,7 +71,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(218, 26);
+            this.NameLabel.Location = new System.Drawing.Point(218, 56);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -82,7 +82,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(289, 129);
+            this.textBox1.Location = new System.Drawing.Point(289, 159);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(406, 21);
@@ -93,7 +93,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(285, 106);
+            this.label1.Location = new System.Drawing.Point(285, 136);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(226, 20);
@@ -153,6 +153,13 @@
             this.просмотрВсехАвиарейсовToolStripMenuItem.Text = "Просмотреть все авиарейсы";
             this.просмотрВсехАвиарейсовToolStripMenuItem.Click += new System.EventHandler(this.просмотрВсехАвиарейсовToolStripMenuItem_Click);
             // 
+            // добавитьАвиарейсToolStripMenuItem
+            // 
+            this.добавитьАвиарейсToolStripMenuItem.Name = "добавитьАвиарейсToolStripMenuItem";
+            this.добавитьАвиарейсToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.добавитьАвиарейсToolStripMenuItem.Text = "Добавить авиарейс";
+            this.добавитьАвиарейсToolStripMenuItem.Click += new System.EventHandler(this.добавитьАвиарейсToolStripMenuItem_Click);
+            // 
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -198,31 +205,24 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
-            // добавитьАвиарейсToolStripMenuItem
-            // 
-            this.добавитьАвиарейсToolStripMenuItem.Name = "добавитьАвиарейсToolStripMenuItem";
-            this.добавитьАвиарейсToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.добавитьАвиарейсToolStripMenuItem.Text = "Добавить авиарейс";
-            this.добавитьАвиарейсToolStripMenuItem.Click += new System.EventHandler(this.добавитьАвиарейсToolStripMenuItem_Click);
-            // 
             // ManagerAddDestinationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.ManagerMenuStrip);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.AddDestinationBtn);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.ManagerMenuStrip);
             this.Name = "ManagerAddDestinationForm";
             this.Text = "Добавление пунктов назначения";
+            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.AddDestinationBtn, 0);
             this.Controls.SetChildIndex(this.textBox1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.ResumeLayout(false);

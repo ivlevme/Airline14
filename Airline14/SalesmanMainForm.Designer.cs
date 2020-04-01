@@ -56,7 +56,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(239, 35);
+            this.NameLabel.Location = new System.Drawing.Point(239, 57);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -72,7 +72,7 @@
             this.AllClientBtn.FlatAppearance.BorderSize = 0;
             this.AllClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllClientBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllClientBtn.Location = new System.Drawing.Point(334, 194);
+            this.AllClientBtn.Location = new System.Drawing.Point(334, 216);
             this.AllClientBtn.Name = "AllClientBtn";
             this.AllClientBtn.Size = new System.Drawing.Size(241, 32);
             this.AllClientBtn.TabIndex = 16;
@@ -87,7 +87,7 @@
             this.AddClientBtn.FlatAppearance.BorderSize = 0;
             this.AddClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddClientBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddClientBtn.Location = new System.Drawing.Point(334, 132);
+            this.AddClientBtn.Location = new System.Drawing.Point(334, 154);
             this.AddClientBtn.Name = "AddClientBtn";
             this.AddClientBtn.Size = new System.Drawing.Size(241, 32);
             this.AddClientBtn.TabIndex = 15;
@@ -102,7 +102,7 @@
             this.AllTickettBtn.FlatAppearance.BorderSize = 0;
             this.AllTickettBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllTickettBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllTickettBtn.Location = new System.Drawing.Point(334, 315);
+            this.AllTickettBtn.Location = new System.Drawing.Point(334, 337);
             this.AllTickettBtn.Name = "AllTickettBtn";
             this.AllTickettBtn.Size = new System.Drawing.Size(241, 32);
             this.AllTickettBtn.TabIndex = 19;
@@ -117,7 +117,7 @@
             this.AddTickettBtn.FlatAppearance.BorderSize = 0;
             this.AddTickettBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddTickettBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddTickettBtn.Location = new System.Drawing.Point(334, 253);
+            this.AddTickettBtn.Location = new System.Drawing.Point(334, 275);
             this.AddTickettBtn.Name = "AddTickettBtn";
             this.AddTickettBtn.Size = new System.Drawing.Size(241, 32);
             this.AddTickettBtn.TabIndex = 18;
@@ -149,7 +149,7 @@
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
@@ -219,21 +219,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.EngineerMenuStrip);
             this.Controls.Add(this.AllTickettBtn);
             this.Controls.Add(this.AddTickettBtn);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.AllClientBtn);
             this.Controls.Add(this.AddClientBtn);
+            this.Controls.Add(this.EngineerMenuStrip);
             this.Name = "SalesmanMainForm";
             this.Text = "Панель агента по продажам";
+            this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.AddClientBtn, 0);
             this.Controls.SetChildIndex(this.AllClientBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.AddTickettBtn, 0);
             this.Controls.SetChildIndex(this.AllTickettBtn, 0);
-            this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.ResumeLayout(false);

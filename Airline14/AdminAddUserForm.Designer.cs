@@ -58,7 +58,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(133, 37);
+            this.NameLabel.Location = new System.Drawing.Point(133, 55);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -231,7 +231,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.AdminMenuStrip);
             this.Controls.Add(this.PersonalTB);
             this.Controls.Add(this.InformationLabel);
             this.Controls.Add(this.RoleCB);
@@ -242,8 +241,10 @@
             this.Controls.Add(this.LoginTB);
             this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.AdminMenuStrip);
             this.Name = "AdminAddUserForm";
             this.Text = "Добавление пользователей";
+            this.Controls.SetChildIndex(this.AdminMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.LoginLabel, 0);
@@ -255,7 +256,6 @@
             this.Controls.SetChildIndex(this.RoleCB, 0);
             this.Controls.SetChildIndex(this.InformationLabel, 0);
             this.Controls.SetChildIndex(this.PersonalTB, 0);
-            this.Controls.SetChildIndex(this.AdminMenuStrip, 0);
             this.AdminMenuStrip.ResumeLayout(false);
             this.AdminMenuStrip.PerformLayout();
             this.ResumeLayout(false);

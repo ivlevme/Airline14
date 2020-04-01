@@ -66,7 +66,7 @@
             // 
             // NumberFlightTB
             // 
-            this.NumberFlightTB.Location = new System.Drawing.Point(286, 102);
+            this.NumberFlightTB.Location = new System.Drawing.Point(286, 137);
             this.NumberFlightTB.Name = "NumberFlightTB";
             this.NumberFlightTB.ReadOnly = true;
             this.NumberFlightTB.Size = new System.Drawing.Size(406, 21);
@@ -77,7 +77,7 @@
             this.NuberFlightLabel.AutoSize = true;
             this.NuberFlightLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.NuberFlightLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NuberFlightLabel.Location = new System.Drawing.Point(282, 79);
+            this.NuberFlightLabel.Location = new System.Drawing.Point(282, 114);
             this.NuberFlightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NuberFlightLabel.Name = "NuberFlightLabel";
             this.NuberFlightLabel.Size = new System.Drawing.Size(142, 20);
@@ -91,7 +91,7 @@
             this.AddFlightBtn.FlatAppearance.BorderSize = 0;
             this.AddFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddFlightBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddFlightBtn.Location = new System.Drawing.Point(392, 398);
+            this.AddFlightBtn.Location = new System.Drawing.Point(392, 433);
             this.AddFlightBtn.Name = "AddFlightBtn";
             this.AddFlightBtn.Size = new System.Drawing.Size(176, 32);
             this.AddFlightBtn.TabIndex = 20;
@@ -103,7 +103,7 @@
             this.AerotechnicLabel.AutoSize = true;
             this.AerotechnicLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.AerotechnicLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AerotechnicLabel.Location = new System.Drawing.Point(282, 130);
+            this.AerotechnicLabel.Location = new System.Drawing.Point(282, 165);
             this.AerotechnicLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AerotechnicLabel.Name = "AerotechnicLabel";
             this.AerotechnicLabel.Size = new System.Drawing.Size(75, 20);
@@ -115,7 +115,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(224, 24);
+            this.NameLabel.Location = new System.Drawing.Point(224, 59);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -127,7 +127,7 @@
             // AerotechnicCB
             // 
             this.AerotechnicCB.FormattingEnabled = true;
-            this.AerotechnicCB.Location = new System.Drawing.Point(286, 153);
+            this.AerotechnicCB.Location = new System.Drawing.Point(286, 188);
             this.AerotechnicCB.Name = "AerotechnicCB";
             this.AerotechnicCB.Size = new System.Drawing.Size(406, 24);
             this.AerotechnicCB.TabIndex = 25;
@@ -135,7 +135,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(286, 203);
+            this.comboBox1.Location = new System.Drawing.Point(286, 238);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(406, 24);
             this.comboBox1.TabIndex = 27;
@@ -145,7 +145,7 @@
             this.DestinationLabel.AutoSize = true;
             this.DestinationLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.DestinationLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DestinationLabel.Location = new System.Drawing.Point(282, 180);
+            this.DestinationLabel.Location = new System.Drawing.Point(282, 215);
             this.DestinationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DestinationLabel.Name = "DestinationLabel";
             this.DestinationLabel.Size = new System.Drawing.Size(146, 20);
@@ -155,7 +155,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(286, 253);
+            this.comboBox2.Location = new System.Drawing.Point(286, 288);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(406, 24);
             this.comboBox2.TabIndex = 29;
@@ -165,7 +165,7 @@
             this.DepartureTimeLabel.AutoSize = true;
             this.DepartureTimeLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.DepartureTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DepartureTimeLabel.Location = new System.Drawing.Point(282, 230);
+            this.DepartureTimeLabel.Location = new System.Drawing.Point(282, 265);
             this.DepartureTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DepartureTimeLabel.Name = "DepartureTimeLabel";
             this.DepartureTimeLabel.Size = new System.Drawing.Size(117, 20);
@@ -175,7 +175,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(286, 303);
+            this.comboBox3.Location = new System.Drawing.Point(286, 338);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(406, 24);
             this.comboBox3.TabIndex = 31;
@@ -185,7 +185,7 @@
             this.ArrivialTimeLabel.AutoSize = true;
             this.ArrivialTimeLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.ArrivialTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ArrivialTimeLabel.Location = new System.Drawing.Point(282, 280);
+            this.ArrivialTimeLabel.Location = new System.Drawing.Point(282, 315);
             this.ArrivialTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ArrivialTimeLabel.Name = "ArrivialTimeLabel";
             this.ArrivialTimeLabel.Size = new System.Drawing.Size(137, 20);
@@ -194,7 +194,7 @@
             // 
             // TimeInFlightTB
             // 
-            this.TimeInFlightTB.Location = new System.Drawing.Point(710, 279);
+            this.TimeInFlightTB.Location = new System.Drawing.Point(710, 314);
             this.TimeInFlightTB.Name = "TimeInFlightTB";
             this.TimeInFlightTB.ReadOnly = true;
             this.TimeInFlightTB.Size = new System.Drawing.Size(154, 21);
@@ -205,7 +205,7 @@
             this.TimeInFlightLabel.AutoSize = true;
             this.TimeInFlightLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.TimeInFlightLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.TimeInFlightLabel.Location = new System.Drawing.Point(727, 252);
+            this.TimeInFlightLabel.Location = new System.Drawing.Point(727, 287);
             this.TimeInFlightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TimeInFlightLabel.Name = "TimeInFlightLabel";
             this.TimeInFlightLabel.Size = new System.Drawing.Size(107, 20);
@@ -215,7 +215,7 @@
             // WeekdayCB
             // 
             this.WeekdayCB.FormattingEnabled = true;
-            this.WeekdayCB.Location = new System.Drawing.Point(286, 353);
+            this.WeekdayCB.Location = new System.Drawing.Point(286, 388);
             this.WeekdayCB.Name = "WeekdayCB";
             this.WeekdayCB.Size = new System.Drawing.Size(406, 24);
             this.WeekdayCB.TabIndex = 35;
@@ -225,7 +225,7 @@
             this.WeekdayLabel.AutoSize = true;
             this.WeekdayLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.WeekdayLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.WeekdayLabel.Location = new System.Drawing.Point(282, 330);
+            this.WeekdayLabel.Location = new System.Drawing.Point(282, 365);
             this.WeekdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WeekdayLabel.Name = "WeekdayLabel";
             this.WeekdayLabel.Size = new System.Drawing.Size(137, 20);
@@ -342,7 +342,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.ManagerMenuStrip);
             this.Controls.Add(this.WeekdayCB);
             this.Controls.Add(this.WeekdayLabel);
             this.Controls.Add(this.TimeInFlightTB);
@@ -359,8 +358,10 @@
             this.Controls.Add(this.AddFlightBtn);
             this.Controls.Add(this.AerotechnicLabel);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.ManagerMenuStrip);
             this.Name = "ManagerAddFlightForm";
             this.Text = "Добавление новых авиарейсов";
+            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.AerotechnicLabel, 0);
@@ -378,7 +379,6 @@
             this.Controls.SetChildIndex(this.TimeInFlightTB, 0);
             this.Controls.SetChildIndex(this.WeekdayLabel, 0);
             this.Controls.SetChildIndex(this.WeekdayCB, 0);
-            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.ResumeLayout(false);

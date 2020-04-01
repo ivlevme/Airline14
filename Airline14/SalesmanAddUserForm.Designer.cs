@@ -55,7 +55,7 @@
             // PassportLabel
             // 
             this.PassportLabel.AutoSize = true;
-            this.PassportLabel.Location = new System.Drawing.Point(323, 142);
+            this.PassportLabel.Location = new System.Drawing.Point(323, 167);
             this.PassportLabel.Name = "PassportLabel";
             this.PassportLabel.Size = new System.Drawing.Size(124, 16);
             this.PassportLabel.TabIndex = 30;
@@ -64,7 +64,7 @@
             // FioLabel
             // 
             this.FioLabel.AutoSize = true;
-            this.FioLabel.Location = new System.Drawing.Point(323, 86);
+            this.FioLabel.Location = new System.Drawing.Point(323, 111);
             this.FioLabel.Name = "FioLabel";
             this.FioLabel.Size = new System.Drawing.Size(37, 16);
             this.FioLabel.TabIndex = 27;
@@ -77,7 +77,7 @@
             this.AddClientBtn.FlatAppearance.BorderSize = 0;
             this.AddClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddClientBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddClientBtn.Location = new System.Drawing.Point(360, 215);
+            this.AddClientBtn.Location = new System.Drawing.Point(360, 240);
             this.AddClientBtn.Name = "AddClientBtn";
             this.AddClientBtn.Size = new System.Drawing.Size(176, 32);
             this.AddClientBtn.TabIndex = 26;
@@ -89,7 +89,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(248, 34);
+            this.NameLabel.Location = new System.Drawing.Point(248, 59);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -189,14 +189,14 @@
             // 
             // FioTB
             // 
-            this.FioTB.Location = new System.Drawing.Point(326, 105);
+            this.FioTB.Location = new System.Drawing.Point(326, 130);
             this.FioTB.Name = "FioTB";
             this.FioTB.Size = new System.Drawing.Size(291, 21);
             this.FioTB.TabIndex = 33;
             // 
             // PassportTB
             // 
-            this.PassportTB.Location = new System.Drawing.Point(326, 161);
+            this.PassportTB.Location = new System.Drawing.Point(326, 186);
             this.PassportTB.Name = "PassportTB";
             this.PassportTB.Size = new System.Drawing.Size(291, 21);
             this.PassportTB.TabIndex = 34;
@@ -208,19 +208,19 @@
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.PassportTB);
             this.Controls.Add(this.FioTB);
-            this.Controls.Add(this.EngineerMenuStrip);
             this.Controls.Add(this.PassportLabel);
             this.Controls.Add(this.FioLabel);
             this.Controls.Add(this.AddClientBtn);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.EngineerMenuStrip);
             this.Name = "SalesmanAddUserForm";
             this.Text = "Добавление нового клиента";
+            this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.AddClientBtn, 0);
             this.Controls.SetChildIndex(this.FioLabel, 0);
             this.Controls.SetChildIndex(this.PassportLabel, 0);
-            this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.Controls.SetChildIndex(this.FioTB, 0);
             this.Controls.SetChildIndex(this.PassportTB, 0);
             this.EngineerMenuStrip.ResumeLayout(false);

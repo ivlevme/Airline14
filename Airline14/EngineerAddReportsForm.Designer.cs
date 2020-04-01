@@ -43,10 +43,10 @@
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.аэротехникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавитьАэротехникуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокВсейАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьАэротехникуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(90, 21);
+            this.NameLabel.Location = new System.Drawing.Point(90, 56);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -71,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(338, 88);
+            this.label1.Location = new System.Drawing.Point(338, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 16);
             this.label1.TabIndex = 4;
@@ -79,7 +79,7 @@
             // 
             // IDReportTB
             // 
-            this.IDReportTB.Location = new System.Drawing.Point(341, 107);
+            this.IDReportTB.Location = new System.Drawing.Point(341, 123);
             this.IDReportTB.Name = "IDReportTB";
             this.IDReportTB.ReadOnly = true;
             this.IDReportTB.Size = new System.Drawing.Size(256, 21);
@@ -88,7 +88,7 @@
             // DateReport
             // 
             this.DateReport.AutoSize = true;
-            this.DateReport.Location = new System.Drawing.Point(338, 143);
+            this.DateReport.Location = new System.Drawing.Point(338, 159);
             this.DateReport.Name = "DateReport";
             this.DateReport.Size = new System.Drawing.Size(75, 16);
             this.DateReport.TabIndex = 6;
@@ -96,14 +96,14 @@
             // 
             // ReportDateTimePicker
             // 
-            this.ReportDateTimePicker.Location = new System.Drawing.Point(341, 162);
+            this.ReportDateTimePicker.Location = new System.Drawing.Point(341, 178);
             this.ReportDateTimePicker.Name = "ReportDateTimePicker";
             this.ReportDateTimePicker.Size = new System.Drawing.Size(256, 21);
             this.ReportDateTimePicker.TabIndex = 7;
             // 
             // ContentReportTB
             // 
-            this.ContentReportTB.Location = new System.Drawing.Point(341, 219);
+            this.ContentReportTB.Location = new System.Drawing.Point(341, 235);
             this.ContentReportTB.Name = "ContentReportTB";
             this.ContentReportTB.ReadOnly = true;
             this.ContentReportTB.Size = new System.Drawing.Size(256, 21);
@@ -112,7 +112,7 @@
             // ContentReportLabel
             // 
             this.ContentReportLabel.AutoSize = true;
-            this.ContentReportLabel.Location = new System.Drawing.Point(338, 200);
+            this.ContentReportLabel.Location = new System.Drawing.Point(338, 216);
             this.ContentReportLabel.Name = "ContentReportLabel";
             this.ContentReportLabel.Size = new System.Drawing.Size(119, 16);
             this.ContentReportLabel.TabIndex = 8;
@@ -125,7 +125,7 @@
             this.AddReportBtn.FlatAppearance.BorderSize = 0;
             this.AddReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddReportBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddReportBtn.Location = new System.Drawing.Point(373, 264);
+            this.AddReportBtn.Location = new System.Drawing.Point(373, 280);
             this.AddReportBtn.Name = "AddReportBtn";
             this.AddReportBtn.Size = new System.Drawing.Size(176, 32);
             this.AddReportBtn.TabIndex = 11;
@@ -193,6 +193,13 @@
             this.аэротехникаToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.аэротехникаToolStripMenuItem.Text = "Аэротехника";
             // 
+            // добавитьАэротехникуToolStripMenuItem
+            // 
+            this.добавитьАэротехникуToolStripMenuItem.Name = "добавитьАэротехникуToolStripMenuItem";
+            this.добавитьАэротехникуToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.добавитьАэротехникуToolStripMenuItem.Text = "Добавить аэротехнику";
+            this.добавитьАэротехникуToolStripMenuItem.Click += new System.EventHandler(this.добавитьАэротехникуToolStripMenuItem_Click);
+            // 
             // списокВсейАэротехнкикиToolStripMenuItem
             // 
             this.списокВсейАэротехнкикиToolStripMenuItem.Name = "списокВсейАэротехнкикиToolStripMenuItem";
@@ -215,19 +222,11 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
-            // добавитьАэротехникуToolStripMenuItem
-            // 
-            this.добавитьАэротехникуToolStripMenuItem.Name = "добавитьАэротехникуToolStripMenuItem";
-            this.добавитьАэротехникуToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.добавитьАэротехникуToolStripMenuItem.Text = "Добавить аэротехнику";
-            this.добавитьАэротехникуToolStripMenuItem.Click += new System.EventHandler(this.добавитьАэротехникуToolStripMenuItem_Click);
-            // 
             // EngineerAddReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.EngineerMenuStrip);
             this.Controls.Add(this.AddReportBtn);
             this.Controls.Add(this.ContentReportTB);
             this.Controls.Add(this.ContentReportLabel);
@@ -236,8 +235,10 @@
             this.Controls.Add(this.IDReportTB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.EngineerMenuStrip);
             this.Name = "EngineerAddReportsForm";
             this.Text = "Добавление отчета";
+            this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -247,7 +248,6 @@
             this.Controls.SetChildIndex(this.ContentReportLabel, 0);
             this.Controls.SetChildIndex(this.ContentReportTB, 0);
             this.Controls.SetChildIndex(this.AddReportBtn, 0);
-            this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.ResumeLayout(false);

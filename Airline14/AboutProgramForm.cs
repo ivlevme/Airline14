@@ -21,5 +21,9 @@ namespace Airline14
         {
             this.Hide();
         }
+
+        private void AboutProgramForm_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

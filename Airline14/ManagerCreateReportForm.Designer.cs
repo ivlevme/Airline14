@@ -31,6 +31,7 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вернутьсяНаГлавнуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьАвирейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.MakeReportBTN = new System.Windows.Forms.Button();
-            this.вернутьсяНаГлавнуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(260, 24);
+            this.NameLabel.Location = new System.Drawing.Point(260, 59);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -88,6 +88,13 @@
             this.программаToolStripMenuItem.Name = "программаToolStripMenuItem";
             this.программаToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.программаToolStripMenuItem.Text = "Программа";
+            // 
+            // вернутьсяНаГлавнуюToolStripMenuItem
+            // 
+            this.вернутьсяНаГлавнуюToolStripMenuItem.Name = "вернутьсяНаГлавнуюToolStripMenuItem";
+            this.вернутьсяНаГлавнуюToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.вернутьсяНаГлавнуюToolStripMenuItem.Text = "Вернуться на главную страницу";
+            this.вернутьсяНаГлавнуюToolStripMenuItem.Click += new System.EventHandler(this.вернутьсяНаГлавнуюToolStripMenuItem_Click);
             // 
             // выйтиToolStripMenuItem
             // 
@@ -153,13 +160,13 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(267, 124);
+            this.dateTimePicker1.Location = new System.Drawing.Point(267, 159);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(153, 21);
             this.dateTimePicker1.TabIndex = 19;
@@ -167,7 +174,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(264, 105);
+            this.label1.Location = new System.Drawing.Point(264, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 16);
             this.label1.TabIndex = 20;
@@ -176,7 +183,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(489, 105);
+            this.label2.Location = new System.Drawing.Point(489, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 16);
             this.label2.TabIndex = 22;
@@ -184,7 +191,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(492, 124);
+            this.dateTimePicker2.Location = new System.Drawing.Point(492, 159);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(153, 21);
             this.dateTimePicker2.TabIndex = 21;
@@ -196,19 +203,12 @@
             this.MakeReportBTN.FlatAppearance.BorderSize = 0;
             this.MakeReportBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MakeReportBTN.ForeColor = System.Drawing.SystemColors.Info;
-            this.MakeReportBTN.Location = new System.Drawing.Point(364, 194);
+            this.MakeReportBTN.Location = new System.Drawing.Point(364, 229);
             this.MakeReportBTN.Name = "MakeReportBTN";
             this.MakeReportBTN.Size = new System.Drawing.Size(176, 32);
             this.MakeReportBTN.TabIndex = 23;
             this.MakeReportBTN.Text = "Сформировать отчет";
             this.MakeReportBTN.UseVisualStyleBackColor = false;
-            // 
-            // вернутьсяНаГлавнуюToolStripMenuItem
-            // 
-            this.вернутьсяНаГлавнуюToolStripMenuItem.Name = "вернутьсяНаГлавнуюToolStripMenuItem";
-            this.вернутьсяНаГлавнуюToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
-            this.вернутьсяНаГлавнуюToolStripMenuItem.Text = "Вернуться на главную страницу";
-            this.вернутьсяНаГлавнуюToolStripMenuItem.Click += new System.EventHandler(this.вернутьсяНаГлавнуюToolStripMenuItem_Click);
             // 
             // ManagerCreateReportForm
             // 
@@ -220,13 +220,13 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.ManagerMenuStrip);
             this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.ManagerMenuStrip);
             this.Name = "ManagerCreateReportForm";
             this.Text = "Формирование отчета";
+            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
-            this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.dateTimePicker1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.dateTimePicker2, 0);
