@@ -33,7 +33,6 @@
             this.AdminMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьНовогоПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +43,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.AdminMenuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ExitBtn
+            // 
+            this.ExitBtn.FlatAppearance.BorderSize = 0;
             // 
             // dataGridView1
             // 
@@ -83,7 +86,6 @@
             // 
             this.программаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem,
-            this.обновитьToolStripMenuItem,
             this.выйтиToolStripMenuItem});
             this.программаToolStripMenuItem.Name = "программаToolStripMenuItem";
             this.программаToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
@@ -94,18 +96,14 @@
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Name = "вернутьсяНаГлавнуюСтраницуToolStripMenuItem";
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Text = "Вернуться на главную страницу";
-            // 
-            // обновитьToolStripMenuItem
-            // 
-            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
-            this.обновитьToolStripMenuItem.Text = "Обновить";
+            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Click += new System.EventHandler(this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem_Click);
             // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
             this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
+            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
             // пользователиToolStripMenuItem
             // 
@@ -122,6 +120,7 @@
             this.добавитьНовогоПользователяToolStripMenuItem.Name = "добавитьНовогоПользователяToolStripMenuItem";
             this.добавитьНовогоПользователяToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.добавитьНовогоПользователяToolStripMenuItem.Text = "Добавить нового пользователя";
+            this.добавитьНовогоПользователяToolStripMenuItem.Click += new System.EventHandler(this.добавитьНовогоПользователяToolStripMenuItem_Click);
             // 
             // редактироватьПользователяToolStripMenuItem
             // 
@@ -146,8 +145,9 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // AdminAllUsersForm
             // 
@@ -159,6 +159,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "AdminAllUsersForm";
             this.Text = "Список всех пользователей";
+            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.AdminMenuStrip, 0);
@@ -184,6 +185,5 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem обновитьToolStripMenuItem;
     }
 }

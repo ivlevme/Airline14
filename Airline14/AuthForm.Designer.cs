@@ -42,6 +42,10 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // ExitBtn
+            // 
+            this.ExitBtn.FlatAppearance.BorderSize = 0;
+            // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
@@ -136,7 +140,8 @@
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
             this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.выйтиToolStripMenuItem.Text = "Выйти";
+            this.выйтиToolStripMenuItem.Text = "Закрыть";
+            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -149,8 +154,9 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
             // AuthForm
             // 
@@ -168,6 +174,7 @@
             this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "AuthForm";
             this.Text = "Авторизация";
+            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.menuStrip1, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.LoginLabel, 0);

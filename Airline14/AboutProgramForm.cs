@@ -16,5 +16,10 @@ namespace Airline14
         {
             InitializeComponent();
         }
+
+        protected override void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

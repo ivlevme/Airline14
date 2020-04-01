@@ -16,5 +16,30 @@ namespace Airline14
         {
             InitializeComponent();
         }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
+        }
+
+        private void вернутьсяНаГлавнуюСтраницуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminMainForm admForm = new AdminMainForm();
+            admForm.Show();
+            this.Hide();
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exitMenuStrip();
+        }
+
+        private void добавитьНовогоПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminAddUserForm admAddUser = new AdminAddUserForm();
+            admAddUser.Show();
+            this.Hide();
+        }
     }
 }

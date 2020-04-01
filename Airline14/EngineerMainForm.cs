@@ -16,5 +16,72 @@ namespace Airline14
         {
             InitializeComponent();
         }
+
+        private void оПрограммеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exitMenuStrip();
+        }
+
+        private void просмотрВсехПользователейToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EngineerAllReportsForm engAllReports = new EngineerAllReportsForm();
+            engAllReports.Show();
+            this.Hide();
+        }
+
+        private void AllUsersButton_Click(object sender, EventArgs e)
+        {
+            EngineerAllReportsForm engAllReports = new EngineerAllReportsForm();
+            engAllReports.Show();
+            this.Hide();
+        }
+
+        private void добавитьНовогоПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EngineerAddReportsForm engAddReports = new EngineerAddReportsForm();
+            engAddReports.Show();
+            this.Hide();
+        }
+
+        private void AddUserBtn_Click(object sender, EventArgs e)
+        {
+            EngineerAddReportsForm engAddReports = new EngineerAddReportsForm();
+            engAddReports.Show();
+            this.Hide();
+        }
+
+        private void добавитьАэротехнкикуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EngineerAddAerotechnicsForm engineerAddAerotechnics = new EngineerAddAerotechnicsForm();
+            engineerAddAerotechnics.Show();
+            this.Hide();
+        }
+
+        private void AddAerotechnicBtn_Click(object sender, EventArgs e)
+        {
+            EngineerAddAerotechnicsForm engineerAddAerotechnics = new EngineerAddAerotechnicsForm();
+            engineerAddAerotechnics.Show();
+            this.Hide();
+        }
+
+        private void списокВсейАэротехнкикиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EngineerAllAerotechnicsForm engAllAero = new EngineerAllAerotechnicsForm();
+            engAllAero.Show();
+            this.Hide();
+        }
+
+        private void AllAerotechnicBtn_Click(object sender, EventArgs e)
+        {
+            EngineerAllAerotechnicsForm engAllAero = new EngineerAllAerotechnicsForm();
+            engAllAero.Show();
+            this.Hide();
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace Airline14
             this.Size = new Size(950, 600);
         }
 
-        private void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
+        protected virtual void BaseForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
@@ -35,5 +35,12 @@ namespace Airline14
         {
             MessageBox.Show("Введенные данные некорректные!", "Что-то пошло не так...", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public void exitMenuStrip()
+        {
+            this.Hide();
+            AuthForm auth = new AuthForm();
+            auth.Show();
+        } 
     }
 }

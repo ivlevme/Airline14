@@ -30,5 +30,30 @@ namespace Airline14
             admAllUsersForm.Show();
             this.Hide();
         }
+
+        private void оПрограммеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exitMenuStrip();
+        }
+
+        private void просмотрВсехПользователейToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminAllUsersForm admAllUsers = new AdminAllUsersForm();
+            admAllUsers.Show();
+            this.Hide();
+        }
+
+        private void добавитьНовогоПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminAddUserForm admAddUsers = new AdminAddUserForm();
+            admAddUsers.Show();
+            this.Hide();
+        }
     }
 }

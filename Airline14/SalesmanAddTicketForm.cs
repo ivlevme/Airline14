@@ -21,5 +21,44 @@ namespace Airline14
         {
 
         }
+
+        private void оПрограммеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
+        }
+
+        private void вернутьсяНаГлавнуюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanMainForm salesmanMain = new SalesmanMainForm();
+            salesmanMain.Show();
+            this.Hide();
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exitMenuStrip();
+        }
+
+        private void просмотрВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAllTicketsForm salesmanAllTicketsForm = new SalesmanAllTicketsForm();
+            salesmanAllTicketsForm.Show();
+            this.Hide();
+        }
+
+        private void сформироватьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAddUserForm salesmanAddUser = new SalesmanAddUserForm();
+            salesmanAddUser.Show();
+            this.Hide();
+        }
+
+        private void списрToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAllUsersForm salesmanAllUsers = new SalesmanAllUsersForm();
+            salesmanAllUsers.Show();
+            this.Hide();
+        }
     }
 }

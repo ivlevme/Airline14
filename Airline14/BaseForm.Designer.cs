@@ -90,7 +90,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button ExitBtn;
+        public System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Label LoginLabel;
         private System.Windows.Forms.Label LoginContentLabel;
     }

@@ -16,5 +16,72 @@ namespace Airline14
         {
             InitializeComponent();
         }
+
+        private void оПрограммеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exitMenuStrip();
+        }
+
+        private void создатьАвирейсToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAddTicketForm salesmanAddTicket = new SalesmanAddTicketForm();
+            salesmanAddTicket.Show();
+            this.Hide();
+        }
+
+        private void AddTickettBtn_Click(object sender, EventArgs e)
+        {
+            SalesmanAddTicketForm salesmanAddTicket = new SalesmanAddTicketForm();
+            salesmanAddTicket.Show();
+            this.Hide();
+        }
+
+        private void просмотрВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAllTicketsForm salesmanAllTicketsForm = new SalesmanAllTicketsForm();
+            salesmanAllTicketsForm.Show();
+            this.Hide();
+        }
+
+        private void AllTickettBtn_Click(object sender, EventArgs e)
+        {
+            SalesmanAllTicketsForm salesmanAllTicketsForm = new SalesmanAllTicketsForm();
+            salesmanAllTicketsForm.Show();
+            this.Hide();
+        }
+
+        private void сформироватьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAddUserForm salesmanAddUser = new SalesmanAddUserForm();
+            salesmanAddUser.Show();
+            this.Hide();
+        }
+
+        private void AddClientBtn_Click(object sender, EventArgs e)
+        {
+            SalesmanAddUserForm salesmanAddUser = new SalesmanAddUserForm();
+            salesmanAddUser.Show();
+            this.Hide();
+        }
+
+        private void списрToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAllUsersForm salesmanAllUsers = new SalesmanAllUsersForm();
+            salesmanAllUsers.Show();
+            this.Hide();
+        }
+
+        private void AllClientBtn_Click(object sender, EventArgs e)
+        {
+            SalesmanAllUsersForm salesmanAllUsers = new SalesmanAllUsersForm();
+            salesmanAllUsers.Show();
+            this.Hide();
+        }
     }
 }

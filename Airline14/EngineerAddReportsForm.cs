@@ -21,5 +21,44 @@ namespace Airline14
         {
 
         }
+
+        private void оПрограммеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
+        }
+
+        private void вернутьсяНаГлавнуюСтраницуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EngineerMainForm engMain = new EngineerMainForm();
+            engMain.Show();
+            this.Hide();
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exitMenuStrip();
+        }
+
+        private void просмотрВсехПользователейToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EngineerAllReportsForm engAllReports = new EngineerAllReportsForm();
+            engAllReports.Show();
+            this.Hide();
+        }
+
+        private void списокВсейАэротехнкикиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EngineerAllAerotechnicsForm engAllAero = new EngineerAllAerotechnicsForm();
+            engAllAero.Show();
+            this.Hide();
+        }
+
+        private void добавитьАэротехникуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EngineerAddAerotechnicsForm engineerAddAerotechnics =  new EngineerAddAerotechnicsForm();
+            engineerAddAerotechnics.Show();
+            this.Hide();
+        }
     }
 }

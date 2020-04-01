@@ -31,13 +31,13 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.обновитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьАвирейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пунктНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -45,11 +45,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.MakeReportBTN = new System.Windows.Forms.Button();
-            this.пунктНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вернутьсяНаГлавнуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // ExitBtn
+            // 
+            this.ExitBtn.FlatAppearance.BorderSize = 0;
             // 
             // NameLabel
             // 
@@ -70,7 +72,6 @@
             this.ManagerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
-            this.отчетыToolStripMenuItem,
             this.пунктНазначенияToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.ManagerMenuStrip.Location = new System.Drawing.Point(0, 0);
@@ -82,23 +83,18 @@
             // программаToolStripMenuItem
             // 
             this.программаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.обновитьToolStripMenuItem,
+            this.вернутьсяНаГлавнуюToolStripMenuItem,
             this.выйтиToolStripMenuItem});
             this.программаToolStripMenuItem.Name = "программаToolStripMenuItem";
             this.программаToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.программаToolStripMenuItem.Text = "Программа";
             // 
-            // обновитьToolStripMenuItem
-            // 
-            this.обновитьToolStripMenuItem.Name = "обновитьToolStripMenuItem";
-            this.обновитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.обновитьToolStripMenuItem.Text = "Обновить";
-            // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
+            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
             // пользователиToolStripMenuItem
             // 
@@ -113,27 +109,38 @@
             // 
             this.создатьАвирейсToolStripMenuItem.Name = "создатьАвирейсToolStripMenuItem";
             this.создатьАвирейсToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.создатьАвирейсToolStripMenuItem.Text = "Создать авиарейс";
+            this.создатьАвирейсToolStripMenuItem.Text = "Добавить авиарейс";
+            this.создатьАвирейсToolStripMenuItem.Click += new System.EventHandler(this.создатьАвирейсToolStripMenuItem_Click);
             // 
             // просмотрВсехАвиарейсовToolStripMenuItem
             // 
             this.просмотрВсехАвиарейсовToolStripMenuItem.Name = "просмотрВсехАвиарейсовToolStripMenuItem";
             this.просмотрВсехАвиарейсовToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
             this.просмотрВсехАвиарейсовToolStripMenuItem.Text = "Просмотреть все авиарейсы";
+            this.просмотрВсехАвиарейсовToolStripMenuItem.Click += new System.EventHandler(this.просмотрВсехАвиарейсовToolStripMenuItem_Click);
             // 
-            // отчетыToolStripMenuItem
+            // пунктНазначенияToolStripMenuItem
             // 
-            this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сформироватьОтчетToolStripMenuItem});
-            this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
-            this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.отчетыToolStripMenuItem.Text = "Отчет";
+            this.пунктНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.всеПToolStripMenuItem,
+            this.добавлениеПунктаНазначенияToolStripMenuItem});
+            this.пунктНазначенияToolStripMenuItem.Name = "пунктНазначенияToolStripMenuItem";
+            this.пунктНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.пунктНазначенияToolStripMenuItem.Text = "Пункты назначения";
             // 
-            // сформироватьОтчетToolStripMenuItem
+            // всеПToolStripMenuItem
             // 
-            this.сформироватьОтчетToolStripMenuItem.Name = "сформироватьОтчетToolStripMenuItem";
-            this.сформироватьОтчетToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.сформироватьОтчетToolStripMenuItem.Text = "Сформировать отчет";
+            this.всеПToolStripMenuItem.Name = "всеПToolStripMenuItem";
+            this.всеПToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.всеПToolStripMenuItem.Text = "Просмотр всех пунктов назначения";
+            this.всеПToolStripMenuItem.Click += new System.EventHandler(this.всеПToolStripMenuItem_Click);
+            // 
+            // добавлениеПунктаНазначенияToolStripMenuItem
+            // 
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Name = "добавлениеПунктаНазначенияToolStripMenuItem";
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Text = "Добавление пункта назначения";
+            this.добавлениеПунктаНазначенияToolStripMenuItem.Click += new System.EventHandler(this.добавлениеПунктаНазначенияToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -148,6 +155,7 @@
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
             // dateTimePicker1
             // 
@@ -195,26 +203,12 @@
             this.MakeReportBTN.Text = "Сформировать отчет";
             this.MakeReportBTN.UseVisualStyleBackColor = false;
             // 
-            // пунктНазначенияToolStripMenuItem
+            // вернутьсяНаГлавнуюToolStripMenuItem
             // 
-            this.пунктНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.всеПToolStripMenuItem,
-            this.добавлениеПунктаНазначенияToolStripMenuItem});
-            this.пунктНазначенияToolStripMenuItem.Name = "пунктНазначенияToolStripMenuItem";
-            this.пунктНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
-            this.пунктНазначенияToolStripMenuItem.Text = "Пункты назначения";
-            // 
-            // всеПToolStripMenuItem
-            // 
-            this.всеПToolStripMenuItem.Name = "всеПToolStripMenuItem";
-            this.всеПToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.всеПToolStripMenuItem.Text = "Просмотр всех пунктов назначения";
-            // 
-            // добавлениеПунктаНазначенияToolStripMenuItem
-            // 
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Name = "добавлениеПунктаНазначенияToolStripMenuItem";
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Text = "Добавление пункта назначения";
+            this.вернутьсяНаГлавнуюToolStripMenuItem.Name = "вернутьсяНаГлавнуюToolStripMenuItem";
+            this.вернутьсяНаГлавнуюToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.вернутьсяНаГлавнуюToolStripMenuItem.Text = "Вернуться на главную страницу";
+            this.вернутьсяНаГлавнуюToolStripMenuItem.Click += new System.EventHandler(this.вернутьсяНаГлавнуюToolStripMenuItem_Click);
             // 
             // ManagerCreateReportForm
             // 
@@ -230,6 +224,7 @@
             this.Controls.Add(this.NameLabel);
             this.Name = "ManagerCreateReportForm";
             this.Text = "Формирование отчета";
+            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.dateTimePicker1, 0);
@@ -249,13 +244,10 @@
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.MenuStrip ManagerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem обновитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьАвирейсToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехАвиарейсовToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -266,5 +258,6 @@
         private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюToolStripMenuItem;
     }
 }

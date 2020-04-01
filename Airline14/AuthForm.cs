@@ -28,6 +28,17 @@ namespace Airline14
                 ManagerMainForm managerForm = new ManagerMainForm();
                 managerForm.Show();
                 this.Hide();
+            } else if (LoginTB.Text == "salesman" && PasswordTB.Text == "sls")
+            {
+                SalesmanMainForm salesman = new SalesmanMainForm();
+                salesman.Show();
+                this.Hide();
+            }
+            else if (LoginTB.Text == "engineer" && PasswordTB.Text == "eng")
+            {
+                EngineerMainForm engineer = new EngineerMainForm();
+                engineer.Show();
+                this.Hide();
             }
             else
             {
@@ -43,6 +54,17 @@ namespace Airline14
         private void PasswordLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void оПрограммеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
+        }
+
+        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
