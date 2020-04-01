@@ -67,5 +67,12 @@ namespace Airline14
             managerAddDestination.Show();
             this.Hide();
         }
+
+        private void MakeReportBTN_Click(object sender, EventArgs e)
+        {
+            ManagerDoneReportForm managerDoneReport = new ManagerDoneReportForm();
+            managerDoneReport.Show();
+            this.Hide();
+        }
     }
 }

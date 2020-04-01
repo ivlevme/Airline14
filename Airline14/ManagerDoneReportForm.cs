@@ -68,5 +68,11 @@ namespace Airline14
             AboutProgramForm aboutProgram = new AboutProgramForm();
             aboutProgram.Show();
         }
+
+        private void ManagerDoneReportForm_Load(object sender, EventArgs e)
+        {
+
+            dataGridView1.Rows.Add("1", "65", (65 * 200).ToString());
+        }
     }
 }
