@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseForm));
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.LoginLabel = new System.Windows.Forms.Label();
-            this.LoginContentLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -49,32 +47,12 @@
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // LoginLabel
-            // 
-            this.LoginLabel.AutoSize = true;
-            this.LoginLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LoginLabel.Location = new System.Drawing.Point(4, 523);
-            this.LoginLabel.Name = "LoginLabel";
-            this.LoginLabel.Size = new System.Drawing.Size(84, 16);
-            this.LoginLabel.TabIndex = 1;
-            this.LoginLabel.Text = "Авторизован:";
-            // 
-            // LoginContentLabel
-            // 
-            this.LoginContentLabel.AutoSize = true;
-            this.LoginContentLabel.Location = new System.Drawing.Point(94, 523);
-            this.LoginContentLabel.Name = "LoginContentLabel";
-            this.LoginContentLabel.Size = new System.Drawing.Size(0, 16);
-            this.LoginContentLabel.TabIndex = 2;
-            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.LoginContentLabel);
-            this.Controls.Add(this.LoginLabel);
             this.Controls.Add(this.ExitBtn);
             this.Font = new System.Drawing.Font("Ubuntu", 9F);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -83,14 +61,12 @@
             this.Name = "BaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BaseForm_FormClosed);
+            this.Load += new System.EventHandler(this.BaseForm_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label LoginLabel;
-        private System.Windows.Forms.Label LoginContentLabel;
         public System.Windows.Forms.Button ExitBtn;
     }
 }

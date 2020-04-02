@@ -24,7 +24,8 @@ namespace Airline14
                 AdminMainForm admForm = new AdminMainForm();
                 admForm.Show();
                 this.Hide();
-            } else if (LoginTB.Text == "manager" && PasswordTB.Text == "mng") {
+            }
+            else if (LoginTB.Text == "manager" && PasswordTB.Text == "mng") {
                 ManagerMainForm managerForm = new ManagerMainForm();
                 managerForm.Show();
                 this.Hide();
@@ -44,6 +45,7 @@ namespace Airline14
             {
                 ErrorMessageBox();
             }
+
         }
 
         private void PasswordTB_TextChanged(object sender, EventArgs e)
@@ -65,6 +67,11 @@ namespace Airline14
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void AuthForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

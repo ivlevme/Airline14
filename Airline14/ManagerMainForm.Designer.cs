@@ -110,6 +110,7 @@
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сформироватьОтчетToolStripMenuItem});
+            this.отчетыToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.отчетыToolStripMenuItem.Text = "Отчет";

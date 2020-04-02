@@ -58,7 +58,7 @@ namespace Airline14
 
         private void AddReportBtn_Click(object sender, EventArgs e)
         {
-            if (NameAerotechnicTB.Text == "" || AirplaneTypeCB.SelectedIndex == -1 || CapacityTB.Text == "" || CrewTB.Text == "")
+            if (NameAerotechnicTB.Text == "" || CapacityTB.Text == "" || CrewTB.Text == "")
             {
                 ErrorMessageBox();
             }

@@ -55,5 +55,9 @@ namespace Airline14
             admAddUsers.Show();
             this.Hide();
         }
+
+        private void AdminMainForm_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

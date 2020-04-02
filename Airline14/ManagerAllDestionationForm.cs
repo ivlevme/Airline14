@@ -63,7 +63,22 @@ namespace Airline14
 
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
         {
-            delRecord();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes) {
+                    dataGridView1.Rows.Remove(dataGridView1.Rows[indexCurrentRow]);
+                    MessageBox.Show("Пользовать удалён успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else { MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            else
+            {
+                MessageBox.Show("Ничего не выбранно!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)

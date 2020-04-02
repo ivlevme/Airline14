@@ -32,8 +32,6 @@
             this.NameAerotechnicTB = new System.Windows.Forms.TextBox();
             this.NameAerotechnicLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.AirplaneTypeCB = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.CapacityTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.CrewTB = new System.Windows.Forms.TextBox();
@@ -63,7 +61,7 @@
             this.AddReportBtn.FlatAppearance.BorderSize = 0;
             this.AddReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddReportBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddReportBtn.Location = new System.Drawing.Point(392, 292);
+            this.AddReportBtn.Location = new System.Drawing.Point(392, 245);
             this.AddReportBtn.Name = "AddReportBtn";
             this.AddReportBtn.Size = new System.Drawing.Size(176, 32);
             this.AddReportBtn.TabIndex = 19;
@@ -101,26 +99,9 @@
             this.NameLabel.Text = "Добавление аэротехники";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // AirplaneTypeCB
-            // 
-            this.AirplaneTypeCB.FormattingEnabled = true;
-            this.AirplaneTypeCB.Location = new System.Drawing.Point(361, 160);
-            this.AirplaneTypeCB.Name = "AirplaneTypeCB";
-            this.AirplaneTypeCB.Size = new System.Drawing.Size(256, 24);
-            this.AirplaneTypeCB.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(358, 141);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Тип";
-            // 
             // CapacityTB
             // 
-            this.CapacityTB.Location = new System.Drawing.Point(361, 206);
+            this.CapacityTB.Location = new System.Drawing.Point(361, 159);
             this.CapacityTB.Name = "CapacityTB";
             this.CapacityTB.Size = new System.Drawing.Size(256, 21);
             this.CapacityTB.TabIndex = 23;
@@ -128,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(358, 187);
+            this.label2.Location = new System.Drawing.Point(358, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 16);
             this.label2.TabIndex = 22;
@@ -136,7 +117,7 @@
             // 
             // CrewTB
             // 
-            this.CrewTB.Location = new System.Drawing.Point(361, 249);
+            this.CrewTB.Location = new System.Drawing.Point(361, 202);
             this.CrewTB.Name = "CrewTB";
             this.CrewTB.Size = new System.Drawing.Size(256, 21);
             this.CrewTB.TabIndex = 25;
@@ -144,7 +125,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(358, 230);
+            this.label3.Location = new System.Drawing.Point(358, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 16);
             this.label3.TabIndex = 24;
@@ -192,6 +173,7 @@
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.просмотрВсехПользователейToolStripMenuItem,
             this.добавитьНовогоПользователяToolStripMenuItem});
+            this.пользователиToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.пользователиToolStripMenuItem.Text = "Отчеты";
@@ -249,8 +231,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CapacityTB);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.AirplaneTypeCB);
             this.Controls.Add(this.AddReportBtn);
             this.Controls.Add(this.NameAerotechnicTB);
             this.Controls.Add(this.NameAerotechnicLabel);
@@ -264,8 +244,6 @@
             this.Controls.SetChildIndex(this.NameAerotechnicLabel, 0);
             this.Controls.SetChildIndex(this.NameAerotechnicTB, 0);
             this.Controls.SetChildIndex(this.AddReportBtn, 0);
-            this.Controls.SetChildIndex(this.AirplaneTypeCB, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.CapacityTB, 0);
             this.Controls.SetChildIndex(this.label3, 0);
@@ -283,8 +261,6 @@
         private System.Windows.Forms.TextBox NameAerotechnicTB;
         private System.Windows.Forms.Label NameAerotechnicLabel;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.ComboBox AirplaneTypeCB;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox CapacityTB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox CrewTB;

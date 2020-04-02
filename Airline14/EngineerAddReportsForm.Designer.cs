@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.IDReportTB = new System.Windows.Forms.TextBox();
             this.DateReport = new System.Windows.Forms.Label();
-            this.ReportDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ContentReportTB = new System.Windows.Forms.TextBox();
             this.ContentReportLabel = new System.Windows.Forms.Label();
             this.AddReportBtn = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.списокВсейАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DateTimeTB = new System.Windows.Forms.TextBox();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,13 +93,6 @@
             this.DateReport.Size = new System.Drawing.Size(75, 16);
             this.DateReport.TabIndex = 6;
             this.DateReport.Text = "Дата Отчета";
-            // 
-            // ReportDateTimePicker
-            // 
-            this.ReportDateTimePicker.Location = new System.Drawing.Point(341, 178);
-            this.ReportDateTimePicker.Name = "ReportDateTimePicker";
-            this.ReportDateTimePicker.Size = new System.Drawing.Size(256, 21);
-            this.ReportDateTimePicker.TabIndex = 7;
             // 
             // ContentReportTB
             // 
@@ -189,6 +182,7 @@
             this.аэротехникаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьАэротехникуToolStripMenuItem,
             this.списокВсейАэротехнкикиToolStripMenuItem});
+            this.аэротехникаToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.аэротехникаToolStripMenuItem.Name = "аэротехникаToolStripMenuItem";
             this.аэротехникаToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.аэротехникаToolStripMenuItem.Text = "Аэротехника";
@@ -222,15 +216,23 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
+            // DateTimeTB
+            // 
+            this.DateTimeTB.Location = new System.Drawing.Point(341, 178);
+            this.DateTimeTB.Name = "DateTimeTB";
+            this.DateTimeTB.ReadOnly = true;
+            this.DateTimeTB.Size = new System.Drawing.Size(256, 21);
+            this.DateTimeTB.TabIndex = 32;
+            // 
             // EngineerAddReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.DateTimeTB);
             this.Controls.Add(this.AddReportBtn);
             this.Controls.Add(this.ContentReportTB);
             this.Controls.Add(this.ContentReportLabel);
-            this.Controls.Add(this.ReportDateTimePicker);
             this.Controls.Add(this.DateReport);
             this.Controls.Add(this.IDReportTB);
             this.Controls.Add(this.label1);
@@ -244,10 +246,10 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.IDReportTB, 0);
             this.Controls.SetChildIndex(this.DateReport, 0);
-            this.Controls.SetChildIndex(this.ReportDateTimePicker, 0);
             this.Controls.SetChildIndex(this.ContentReportLabel, 0);
             this.Controls.SetChildIndex(this.ContentReportTB, 0);
             this.Controls.SetChildIndex(this.AddReportBtn, 0);
+            this.Controls.SetChildIndex(this.DateTimeTB, 0);
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -261,7 +263,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox IDReportTB;
         private System.Windows.Forms.Label DateReport;
-        private System.Windows.Forms.DateTimePicker ReportDateTimePicker;
         private System.Windows.Forms.TextBox ContentReportTB;
         private System.Windows.Forms.Label ContentReportLabel;
         private System.Windows.Forms.Button AddReportBtn;
@@ -276,5 +277,6 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьАэротехникуToolStripMenuItem;
+        private System.Windows.Forms.TextBox DateTimeTB;
     }
 }

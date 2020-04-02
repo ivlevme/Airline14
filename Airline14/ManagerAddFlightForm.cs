@@ -62,5 +62,14 @@ namespace Airline14
             managerAddDestination.Show();
             this.Hide();
         }
+
+        private void ManagerAddFlightForm_Load(object sender, EventArgs e)
+        {
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.ShowUpDown = true;
+
+            dateTimePicker2.Format = DateTimePickerFormat.Time;
+            dateTimePicker2.ShowUpDown = true;
+        }
     }
 }

@@ -107,6 +107,7 @@
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.просмотрВсехПользователейToolStripMenuItem,
             this.добавитьНовогоПользователяToolStripMenuItem});
+            this.пользователиToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.пользователиToolStripMenuItem.Text = "Пользователи";
@@ -166,6 +167,7 @@
             this.Controls.Add(this.AdminMenuStrip);
             this.Name = "AdminMainForm";
             this.Text = "Администирование";
+            this.Load += new System.EventHandler(this.AdminMainForm_Load);
             this.Controls.SetChildIndex(this.AdminMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);

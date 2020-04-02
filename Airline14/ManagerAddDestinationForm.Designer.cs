@@ -179,6 +179,7 @@
             // 
             this.пунктыНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.просмотрВсехПунктовНазначенияToolStripMenuItem});
+            this.пунктыНазначенияToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.пунктыНазначенияToolStripMenuItem.Name = "пунктыНазначенияToolStripMenuItem";
             this.пунктыНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.пунктыНазначенияToolStripMenuItem.Text = "Пункты назначения";

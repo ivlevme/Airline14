@@ -54,6 +54,11 @@ namespace Airline14
             this.Hide();
             AuthForm auth = new AuthForm();
             auth.Show();
-        } 
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,8 +36,6 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.RoleCB = new System.Windows.Forms.ComboBox();
-            this.PersonalTB = new System.Windows.Forms.TextBox();
-            this.InformationLabel = new System.Windows.Forms.Label();
             this.AdminMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +67,7 @@
             // 
             // LoginTB
             // 
-            this.LoginTB.Location = new System.Drawing.Point(282, 200);
+            this.LoginTB.Location = new System.Drawing.Point(282, 144);
             this.LoginTB.Name = "LoginTB";
             this.LoginTB.Size = new System.Drawing.Size(406, 21);
             this.LoginTB.TabIndex = 6;
@@ -79,7 +77,7 @@
             this.LoginLabel.AutoSize = true;
             this.LoginLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.LoginLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LoginLabel.Location = new System.Drawing.Point(278, 177);
+            this.LoginLabel.Location = new System.Drawing.Point(278, 121);
             this.LoginLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(56, 20);
@@ -93,7 +91,7 @@
             this.AddUserBtn.FlatAppearance.BorderSize = 0;
             this.AddUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddUserBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddUserBtn.Location = new System.Drawing.Point(384, 383);
+            this.AddUserBtn.Location = new System.Drawing.Point(384, 327);
             this.AddUserBtn.Name = "AddUserBtn";
             this.AddUserBtn.Size = new System.Drawing.Size(176, 32);
             this.AddUserBtn.TabIndex = 10;
@@ -103,7 +101,7 @@
             // 
             // PasswordTB
             // 
-            this.PasswordTB.Location = new System.Drawing.Point(282, 260);
+            this.PasswordTB.Location = new System.Drawing.Point(282, 204);
             this.PasswordTB.Name = "PasswordTB";
             this.PasswordTB.Size = new System.Drawing.Size(406, 21);
             this.PasswordTB.TabIndex = 9;
@@ -113,7 +111,7 @@
             this.PasswordLabel.AutoSize = true;
             this.PasswordLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.PasswordLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.PasswordLabel.Location = new System.Drawing.Point(278, 237);
+            this.PasswordLabel.Location = new System.Drawing.Point(278, 181);
             this.PasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(65, 20);
@@ -125,7 +123,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(278, 293);
+            this.label1.Location = new System.Drawing.Point(278, 237);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 20);
@@ -137,29 +135,10 @@
             this.RoleCB.FormattingEnabled = true;
             this.RoleCB.Items.AddRange(new object[] {
             "Менеджер"});
-            this.RoleCB.Location = new System.Drawing.Point(282, 316);
+            this.RoleCB.Location = new System.Drawing.Point(282, 260);
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(406, 24);
             this.RoleCB.TabIndex = 12;
-            // 
-            // PersonalTB
-            // 
-            this.PersonalTB.Location = new System.Drawing.Point(282, 149);
-            this.PersonalTB.Name = "PersonalTB";
-            this.PersonalTB.Size = new System.Drawing.Size(406, 21);
-            this.PersonalTB.TabIndex = 14;
-            // 
-            // InformationLabel
-            // 
-            this.InformationLabel.AutoSize = true;
-            this.InformationLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
-            this.InformationLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.InformationLabel.Location = new System.Drawing.Point(278, 126);
-            this.InformationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.InformationLabel.Name = "InformationLabel";
-            this.InformationLabel.Size = new System.Drawing.Size(156, 20);
-            this.InformationLabel.TabIndex = 13;
-            this.InformationLabel.Text = "ФИО пользователя";
             // 
             // AdminMenuStrip
             // 
@@ -200,6 +179,7 @@
             // 
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.просмотрВсехПользователейToolStripMenuItem});
+            this.пользователиToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
             this.пользователиToolStripMenuItem.Text = "Пользователи";
@@ -231,8 +211,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.PersonalTB);
-            this.Controls.Add(this.InformationLabel);
             this.Controls.Add(this.RoleCB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddUserBtn);
@@ -254,8 +232,6 @@
             this.Controls.SetChildIndex(this.AddUserBtn, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.RoleCB, 0);
-            this.Controls.SetChildIndex(this.InformationLabel, 0);
-            this.Controls.SetChildIndex(this.PersonalTB, 0);
             this.AdminMenuStrip.ResumeLayout(false);
             this.AdminMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -273,8 +249,6 @@
         private System.Windows.Forms.Label PasswordLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox RoleCB;
-        private System.Windows.Forms.TextBox PersonalTB;
-        private System.Windows.Forms.Label InformationLabel;
         private System.Windows.Forms.MenuStrip AdminMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;

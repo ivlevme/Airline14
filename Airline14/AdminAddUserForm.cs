@@ -19,7 +19,7 @@ namespace Airline14
 
         private void SinginBtn_Click(object sender, EventArgs e)
         {
-            if (PersonalTB.Text == "" || LoginTB.Text == "" || PasswordTB.Text == "" || RoleCB.SelectedIndex == -1)
+            if (LoginTB.Text == "" || PasswordTB.Text == "" || RoleCB.SelectedIndex == -1)
             {
                 ErrorMessageBox();
             }

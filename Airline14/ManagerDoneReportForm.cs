@@ -73,6 +73,19 @@ namespace Airline14
         {
 
             dataGridView1.Rows.Add("1", "65", (65 * 200).ToString());
+            dataGridView1.Rows.Add("1", "65", (65 * 200).ToString());
+            dataGridView1.Rows.Add("1", "65", (65 * 200).ToString());
+            dataGridView1.Rows.Add("1", "65", (65 * 200).ToString());
+            dataGridView1.Rows.Add("1", "65", (65 * 200).ToString());
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                MessageBox.Show(dataGridView1.SelectedCells[0].RowIndex.ToString());
+            }
         }
     }
 }

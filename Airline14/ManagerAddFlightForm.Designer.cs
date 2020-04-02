@@ -34,11 +34,9 @@
             this.AerotechnicLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.AerotechnicCB = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DestinationCB = new System.Windows.Forms.ComboBox();
             this.DestinationLabel = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.DepartureTimeLabel = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.ArrivialTimeLabel = new System.Windows.Forms.Label();
             this.TimeInFlightTB = new System.Windows.Forms.TextBox();
             this.TimeInFlightLabel = new System.Windows.Forms.Label();
@@ -57,6 +55,8 @@
             this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +91,7 @@
             this.AddFlightBtn.FlatAppearance.BorderSize = 0;
             this.AddFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddFlightBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddFlightBtn.Location = new System.Drawing.Point(392, 433);
+            this.AddFlightBtn.Location = new System.Drawing.Point(391, 418);
             this.AddFlightBtn.Name = "AddFlightBtn";
             this.AddFlightBtn.Size = new System.Drawing.Size(176, 32);
             this.AddFlightBtn.TabIndex = 20;
@@ -132,13 +132,13 @@
             this.AerotechnicCB.Size = new System.Drawing.Size(406, 24);
             this.AerotechnicCB.TabIndex = 25;
             // 
-            // comboBox1
+            // DestinationCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(286, 238);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(406, 24);
-            this.comboBox1.TabIndex = 27;
+            this.DestinationCB.FormattingEnabled = true;
+            this.DestinationCB.Location = new System.Drawing.Point(286, 238);
+            this.DestinationCB.Name = "DestinationCB";
+            this.DestinationCB.Size = new System.Drawing.Size(406, 24);
+            this.DestinationCB.TabIndex = 27;
             // 
             // DestinationLabel
             // 
@@ -152,14 +152,6 @@
             this.DestinationLabel.TabIndex = 26;
             this.DestinationLabel.Text = "Пункт Назначения";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(286, 288);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(406, 24);
-            this.comboBox2.TabIndex = 29;
-            // 
             // DepartureTimeLabel
             // 
             this.DepartureTimeLabel.AutoSize = true;
@@ -171,14 +163,6 @@
             this.DepartureTimeLabel.Size = new System.Drawing.Size(117, 20);
             this.DepartureTimeLabel.TabIndex = 28;
             this.DepartureTimeLabel.Text = "Время Вылета";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(286, 338);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(406, 24);
-            this.comboBox3.TabIndex = 31;
             // 
             // ArrivialTimeLabel
             // 
@@ -194,7 +178,7 @@
             // 
             // TimeInFlightTB
             // 
-            this.TimeInFlightTB.Location = new System.Drawing.Point(710, 314);
+            this.TimeInFlightTB.Location = new System.Drawing.Point(538, 314);
             this.TimeInFlightTB.Name = "TimeInFlightTB";
             this.TimeInFlightTB.ReadOnly = true;
             this.TimeInFlightTB.Size = new System.Drawing.Size(154, 21);
@@ -205,7 +189,7 @@
             this.TimeInFlightLabel.AutoSize = true;
             this.TimeInFlightLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
             this.TimeInFlightLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.TimeInFlightLabel.Location = new System.Drawing.Point(727, 287);
+            this.TimeInFlightLabel.Location = new System.Drawing.Point(564, 291);
             this.TimeInFlightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.TimeInFlightLabel.Name = "TimeInFlightLabel";
             this.TimeInFlightLabel.Size = new System.Drawing.Size(107, 20);
@@ -228,9 +212,9 @@
             this.WeekdayLabel.Location = new System.Drawing.Point(282, 365);
             this.WeekdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WeekdayLabel.Name = "WeekdayLabel";
-            this.WeekdayLabel.Size = new System.Drawing.Size(137, 20);
+            this.WeekdayLabel.Size = new System.Drawing.Size(108, 20);
             this.WeekdayLabel.TabIndex = 34;
-            this.WeekdayLabel.Text = "Время прибытия";
+            this.WeekdayLabel.Text = "День недели";
             // 
             // ManagerMenuStrip
             // 
@@ -304,6 +288,7 @@
             this.пунктНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.всеПToolStripMenuItem,
             this.добавлениеПунктаНазначенияToolStripMenuItem});
+            this.пунктНазначенияToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.пунктНазначенияToolStripMenuItem.Name = "пунктНазначенияToolStripMenuItem";
             this.пунктНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.пунктНазначенияToolStripMenuItem.Text = "Пункты назначения";
@@ -337,20 +322,34 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(286, 291);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(236, 21);
+            this.dateTimePicker1.TabIndex = 37;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(286, 341);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(236, 21);
+            this.dateTimePicker2.TabIndex = 38;
+            // 
             // ManagerAddFlightForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.WeekdayCB);
             this.Controls.Add(this.WeekdayLabel);
             this.Controls.Add(this.TimeInFlightTB);
             this.Controls.Add(this.TimeInFlightLabel);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.ArrivialTimeLabel);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.DepartureTimeLabel);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.DestinationCB);
             this.Controls.Add(this.DestinationLabel);
             this.Controls.Add(this.AerotechnicCB);
             this.Controls.Add(this.NumberFlightTB);
@@ -361,6 +360,7 @@
             this.Controls.Add(this.ManagerMenuStrip);
             this.Name = "ManagerAddFlightForm";
             this.Text = "Добавление новых авиарейсов";
+            this.Load += new System.EventHandler(this.ManagerAddFlightForm_Load);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
@@ -370,15 +370,15 @@
             this.Controls.SetChildIndex(this.NumberFlightTB, 0);
             this.Controls.SetChildIndex(this.AerotechnicCB, 0);
             this.Controls.SetChildIndex(this.DestinationLabel, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.DestinationCB, 0);
             this.Controls.SetChildIndex(this.DepartureTimeLabel, 0);
-            this.Controls.SetChildIndex(this.comboBox2, 0);
             this.Controls.SetChildIndex(this.ArrivialTimeLabel, 0);
-            this.Controls.SetChildIndex(this.comboBox3, 0);
             this.Controls.SetChildIndex(this.TimeInFlightLabel, 0);
             this.Controls.SetChildIndex(this.TimeInFlightTB, 0);
             this.Controls.SetChildIndex(this.WeekdayLabel, 0);
             this.Controls.SetChildIndex(this.WeekdayCB, 0);
+            this.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.Controls.SetChildIndex(this.dateTimePicker2, 0);
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -394,11 +394,9 @@
         private System.Windows.Forms.Label AerotechnicLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.ComboBox AerotechnicCB;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox DestinationCB;
         private System.Windows.Forms.Label DestinationLabel;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label DepartureTimeLabel;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label ArrivialTimeLabel;
         private System.Windows.Forms.TextBox TimeInFlightTB;
         private System.Windows.Forms.Label TimeInFlightLabel;
@@ -417,5 +415,7 @@
         private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }

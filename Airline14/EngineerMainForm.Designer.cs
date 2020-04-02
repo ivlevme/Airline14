@@ -151,6 +151,7 @@
             this.аэротехникаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьАэротехнкикуToolStripMenuItem,
             this.списокВсейАэротехнкикиToolStripMenuItem});
+            this.аэротехникаToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.аэротехникаToolStripMenuItem.Name = "аэротехникаToolStripMenuItem";
             this.аэротехникаToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.аэротехникаToolStripMenuItem.Text = "Аэротехника";
