@@ -32,9 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesmanAllTicketsForm));
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDPassengerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
@@ -57,6 +54,8 @@
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.TicketsTableAdapter();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
@@ -88,33 +87,13 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.iDPassengerDataGridViewTextBoxColumn,
-            this.numberFlightDataGridViewTextBoxColumn});
+            this.numberDataGridViewTextBoxColumn,
+            this.personalInformationDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ticketsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 103);
+            this.dataGridView1.Location = new System.Drawing.Point(241, 103);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 401);
+            this.dataGridView1.Size = new System.Drawing.Size(393, 401);
             this.dataGridView1.TabIndex = 24;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDPassengerDataGridViewTextBoxColumn
-            // 
-            this.iDPassengerDataGridViewTextBoxColumn.DataPropertyName = "ID Passenger";
-            this.iDPassengerDataGridViewTextBoxColumn.HeaderText = "ID Passenger";
-            this.iDPassengerDataGridViewTextBoxColumn.Name = "iDPassengerDataGridViewTextBoxColumn";
-            // 
-            // numberFlightDataGridViewTextBoxColumn
-            // 
-            this.numberFlightDataGridViewTextBoxColumn.DataPropertyName = "Number Flight";
-            this.numberFlightDataGridViewTextBoxColumn.HeaderText = "Number Flight";
-            this.numberFlightDataGridViewTextBoxColumn.Name = "numberFlightDataGridViewTextBoxColumn";
             // 
             // ticketsBindingSource
             // 
@@ -289,6 +268,20 @@
             // 
             this.ticketsTableAdapter.ClearBeforeFill = true;
             // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер авиарейса";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // personalInformationDataGridViewTextBoxColumn
+            // 
+            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
+            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
+            this.personalInformationDataGridViewTextBoxColumn.Width = 250;
+            // 
             // SalesmanAllTicketsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -298,7 +291,6 @@
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.EngineerMenuStrip);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "SalesmanAllTicketsForm";
             this.Text = "Список всех билетов";
             this.Load += new System.EventHandler(this.SalesmanAllTicketsForm_Load);
@@ -346,8 +338,7 @@
         private AirlineDBDataSet2 airlineDBDataSet2;
         private System.Windows.Forms.BindingSource ticketsBindingSource;
         private AirlineDBDataSet2TableAdapters.TicketsTableAdapter ticketsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDPassengerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberFlightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personalInformationDataGridViewTextBoxColumn;
     }
 }

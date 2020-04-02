@@ -32,11 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EngineerAllReportsForm));
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDEngineerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reportsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,15 +58,13 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.ReportsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.EngineerMenuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -83,9 +80,9 @@
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NameLabel.Size = new System.Drawing.Size(638, 41);
+            this.NameLabel.Size = new System.Drawing.Size(639, 41);
             this.NameLabel.TabIndex = 4;
-            this.NameLabel.Text = "Все отчеты о состоянии авиатехники";
+            this.NameLabel.Text = "Все отчеты о состоянии аэротехники";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dataGridView1
@@ -93,45 +90,37 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.contentDataGridViewTextBoxColumn,
-            this.iDEngineerDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.reportsBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 100);
+            this.loginDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.reportsBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(291, 100);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(907, 404);
+            this.dataGridView1.Size = new System.Drawing.Size(343, 404);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
             // contentDataGridViewTextBoxColumn
             // 
             this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
-            this.contentDataGridViewTextBoxColumn.HeaderText = "Content";
+            this.contentDataGridViewTextBoxColumn.HeaderText = "Содержание";
             this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
             // 
-            // iDEngineerDataGridViewTextBoxColumn
+            // loginDataGridViewTextBoxColumn
             // 
-            this.iDEngineerDataGridViewTextBoxColumn.DataPropertyName = "ID engineer";
-            this.iDEngineerDataGridViewTextBoxColumn.HeaderText = "ID engineer";
-            this.iDEngineerDataGridViewTextBoxColumn.Name = "iDEngineerDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Инженер";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
             // 
-            // reportsBindingSource1
+            // reportsBindingSource
             // 
-            this.reportsBindingSource1.DataMember = "Reports";
-            this.reportsBindingSource1.DataSource = this.airlineDBDataSet2;
+            this.reportsBindingSource.DataMember = "Reports";
+            this.reportsBindingSource.DataSource = this.airlineDBDataSet2;
             // 
             // airlineDBDataSet2
             // 
@@ -311,11 +300,6 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
-            // reportsBindingSource
-            // 
-            this.reportsBindingSource.DataMember = "Reports";
-            this.reportsBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
             // reportsTableAdapter
             // 
             this.reportsTableAdapter.ClearBeforeFill = true;
@@ -329,7 +313,6 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.EngineerMenuStrip);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "EngineerAllReportsForm";
             this.Text = "Все отчеты о состоянии авиатехники";
             this.Load += new System.EventHandler(this.EngineerAllReportsForm_Load);
@@ -339,14 +322,13 @@
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,10 +362,8 @@
         private AirlineDBDataSet2 airlineDBDataSet2;
         private System.Windows.Forms.BindingSource reportsBindingSource;
         private AirlineDBDataSet2TableAdapters.ReportsTableAdapter reportsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDEngineerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource reportsBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
     }
 }

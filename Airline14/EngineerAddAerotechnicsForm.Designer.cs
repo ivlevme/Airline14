@@ -79,6 +79,7 @@
             // NameAerotechnicLabel
             // 
             this.NameAerotechnicLabel.AutoSize = true;
+            this.NameAerotechnicLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.NameAerotechnicLabel.Location = new System.Drawing.Point(358, 97);
             this.NameAerotechnicLabel.Name = "NameAerotechnicLabel";
             this.NameAerotechnicLabel.Size = new System.Drawing.Size(62, 16);
@@ -109,6 +110,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(358, 140);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 16);
@@ -125,6 +127,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(358, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 16);

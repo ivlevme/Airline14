@@ -46,12 +46,6 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passportInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
@@ -59,13 +53,17 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
+            this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.passengersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.PassengersTableAdapter();
+            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passportInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EngineerMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -194,50 +192,13 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
             this.personalInformationDataGridViewTextBoxColumn,
-            this.numberFlightDataGridViewTextBoxColumn,
             this.passportInformationDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.passengersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(261, 99);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 405);
+            this.dataGridView1.Size = new System.Drawing.Size(393, 405);
             this.dataGridView1.TabIndex = 22;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // personalInformationDataGridViewTextBoxColumn
-            // 
-            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
-            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "Personal information";
-            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
-            // 
-            // numberFlightDataGridViewTextBoxColumn
-            // 
-            this.numberFlightDataGridViewTextBoxColumn.DataPropertyName = "Number flight";
-            this.numberFlightDataGridViewTextBoxColumn.HeaderText = "Number flight";
-            this.numberFlightDataGridViewTextBoxColumn.Name = "numberFlightDataGridViewTextBoxColumn";
-            // 
-            // passportInformationDataGridViewTextBoxColumn
-            // 
-            this.passportInformationDataGridViewTextBoxColumn.DataPropertyName = "Passport information";
-            this.passportInformationDataGridViewTextBoxColumn.HeaderText = "Passport information";
-            this.passportInformationDataGridViewTextBoxColumn.Name = "passportInformationDataGridViewTextBoxColumn";
-            // 
-            // passengersBindingSource
-            // 
-            this.passengersBindingSource.DataMember = "Passengers";
-            this.passengersBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip2
             // 
@@ -298,9 +259,32 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // passengersBindingSource
+            // 
+            this.passengersBindingSource.DataMember = "Passengers";
+            this.passengersBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
             // passengersTableAdapter
             // 
             this.passengersTableAdapter.ClearBeforeFill = true;
+            // 
+            // personalInformationDataGridViewTextBoxColumn
+            // 
+            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
+            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "Фамилия Имя Отчество";
+            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
+            this.personalInformationDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // passportInformationDataGridViewTextBoxColumn
+            // 
+            this.passportInformationDataGridViewTextBoxColumn.DataPropertyName = "Passport information";
+            this.passportInformationDataGridViewTextBoxColumn.HeaderText = "Паспортные данные";
+            this.passportInformationDataGridViewTextBoxColumn.Name = "passportInformationDataGridViewTextBoxColumn";
             // 
             // SalesmanAllUsersForm
             // 
@@ -311,7 +295,6 @@
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.EngineerMenuStrip);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "SalesmanAllUsersForm";
             this.Text = "Список всех клиентов";
             this.Load += new System.EventHandler(this.SalesmanAllUsersForm_Load);
@@ -323,11 +306,11 @@
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,9 +343,7 @@
         private AirlineDBDataSet2 airlineDBDataSet2;
         private System.Windows.Forms.BindingSource passengersBindingSource;
         private AirlineDBDataSet2TableAdapters.PassengersTableAdapter passengersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personalInformationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberFlightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passportInformationDataGridViewTextBoxColumn;
     }
 }

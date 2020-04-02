@@ -196,7 +196,7 @@
             this.AllAerotechnicBtn.Name = "AllAerotechnicBtn";
             this.AllAerotechnicBtn.Size = new System.Drawing.Size(241, 31);
             this.AllAerotechnicBtn.TabIndex = 18;
-            this.AllAerotechnicBtn.Text = "Список всей авиатехники";
+            this.AllAerotechnicBtn.Text = "Список всей аэротехники";
             this.AllAerotechnicBtn.UseVisualStyleBackColor = false;
             this.AllAerotechnicBtn.Click += new System.EventHandler(this.AllAerotechnicBtn_Click);
             // 
@@ -211,7 +211,7 @@
             this.AddAerotechnicBtn.Name = "AddAerotechnicBtn";
             this.AddAerotechnicBtn.Size = new System.Drawing.Size(241, 31);
             this.AddAerotechnicBtn.TabIndex = 17;
-            this.AddAerotechnicBtn.Text = "Добавить авиатехнику";
+            this.AddAerotechnicBtn.Text = "Добавить аэротехнику";
             this.AddAerotechnicBtn.UseVisualStyleBackColor = false;
             this.AddAerotechnicBtn.Click += new System.EventHandler(this.AddAerotechnicBtn_Click);
             // 

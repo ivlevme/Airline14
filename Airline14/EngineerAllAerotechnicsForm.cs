@@ -80,6 +80,8 @@ namespace Airline14
         {
             // TODO: This line of code loads data into the 'airlineDBDataSet2.Aerotechnics' table. You can move, or remove it, as needed.
             this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
+            // TODO: This line of code loads data into the 'airlineDBDataSet2.Aerotechnics' table. You can move, or remove it, as needed.
+            this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
         }
     }
 }

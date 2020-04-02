@@ -55,7 +55,7 @@
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.ExitBtn);
             this.Font = new System.Drawing.Font("Ubuntu", 9F);
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BaseForm";

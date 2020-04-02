@@ -84,6 +84,7 @@
             // ClientLabel
             // 
             this.ClientLabel.AutoSize = true;
+            this.ClientLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientLabel.Location = new System.Drawing.Point(359, 106);
             this.ClientLabel.Name = "ClientLabel";
             this.ClientLabel.Size = new System.Drawing.Size(49, 16);
@@ -123,6 +124,7 @@
             // FlightLabel
             // 
             this.FlightLabel.AutoSize = true;
+            this.FlightLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FlightLabel.Location = new System.Drawing.Point(359, 162);
             this.FlightLabel.Name = "FlightLabel";
             this.FlightLabel.Size = new System.Drawing.Size(36, 16);
@@ -215,7 +217,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 

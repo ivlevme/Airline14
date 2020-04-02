@@ -7,70 +7,66 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-10" ViewPortY="-47" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Destination" ZOrder="14" X="323" Y="554" Height="115" Width="211" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
-    <Shape ID="DesignTable:Flights" ZOrder="13" X="70" Y="70" Height="248" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
-    <Shape ID="DesignTable:Passengers" ZOrder="12" X="578" Y="739" Height="153" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:Reports" ZOrder="11" X="612" Y="70" Height="153" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:Tickets" ZOrder="10" X="323" Y="739" Height="134" Width="185" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:Users" ZOrder="9" X="323" Y="331" Height="153" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:Aerotechnics" ZOrder="3" X="326" Y="69" Height="172" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:Flights" ZOrder="1" X="47" Y="53" Height="324" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Passengers" ZOrder="13" X="578" Y="739" Height="153" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:Reports" ZOrder="12" X="658" Y="223" Height="153" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:Tickets" ZOrder="11" X="323" Y="739" Height="134" Width="185" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
+    <Shape ID="DesignTable:Users" ZOrder="10" X="323" Y="331" Height="153" Width="176" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
+    <Shape ID="DesignTable:Aerotechnics" ZOrder="5" X="326" Y="69" Height="210" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK_Flights_Destination" ZOrder="8" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Flights_Destination" ZOrder="9" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>323</X>
           <Y>571</Y>
         </Point>
         <Point>
-          <X>228</X>
+          <X>205</X>
           <Y>571</Y>
         </Point>
         <Point>
-          <X>228</X>
-          <Y>318</Y>
+          <X>205</X>
+          <Y>377</Y>
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Flights_Users" ZOrder="7" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Flights_Users" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>323</X>
-          <Y>348</Y>
+          <Y>478</Y>
         </Point>
         <Point>
-          <X>236</X>
-          <Y>348</Y>
+          <X>213</X>
+          <Y>478</Y>
         </Point>
         <Point>
-          <X>236</X>
-          <Y>318</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_Reports_Users" ZOrder="6" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>482</X>
-          <Y>331</Y>
-        </Point>
-        <Point>
-          <X>482</X>
-          <Y>206</Y>
-        </Point>
-        <Point>
-          <X>612</X>
-          <Y>206</Y>
+          <X>213</X>
+          <Y>377</Y>
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Tickets_Flights" ZOrder="5" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Reports_Users" ZOrder="8" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>220</X>
-          <Y>318</Y>
+          <X>499</X>
+          <Y>353</Y>
         </Point>
         <Point>
-          <X>220</X>
+          <X>658</X>
+          <Y>353</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_Tickets_Flights" ZOrder="7" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>197</X>
+          <Y>377</Y>
+        </Point>
+        <Point>
+          <X>197</X>
           <Y>756</Y>
         </Point>
         <Point>
@@ -79,7 +75,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Tickets_Passengers" ZOrder="4" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Tickets_Passengers" ZOrder="6" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>578</X>
@@ -91,27 +87,27 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Flights_Aerotechnics" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Flights_Aerotechnics" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>326</X>
-          <Y>117</Y>
+          <Y>100</Y>
         </Point>
         <Point>
-          <X>253</X>
-          <Y>117</Y>
+          <X>230</X>
+          <Y>100</Y>
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Aerotechnics_Reports" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Aerotechnics_Reports" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>612</X>
-          <Y>129</Y>
+          <X>658</X>
+          <Y>241</Y>
         </Point>
         <Point>
           <X>545</X>
-          <Y>129</Y>
+          <Y>241</Y>
         </Point>
       </RoutePoints>
     </Connector>

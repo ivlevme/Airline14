@@ -61,6 +61,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AirlineDBDataSet2.cs">
+      <DependentUpon>AirlineDBDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AirlineDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

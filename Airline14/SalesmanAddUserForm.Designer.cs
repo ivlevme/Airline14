@@ -55,6 +55,7 @@
             // PassportLabel
             // 
             this.PassportLabel.AutoSize = true;
+            this.PassportLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PassportLabel.Location = new System.Drawing.Point(323, 167);
             this.PassportLabel.Name = "PassportLabel";
             this.PassportLabel.Size = new System.Drawing.Size(124, 16);
@@ -64,6 +65,7 @@
             // FioLabel
             // 
             this.FioLabel.AutoSize = true;
+            this.FioLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.FioLabel.Location = new System.Drawing.Point(323, 111);
             this.FioLabel.Name = "FioLabel";
             this.FioLabel.Size = new System.Drawing.Size(37, 16);
@@ -184,7 +186,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 

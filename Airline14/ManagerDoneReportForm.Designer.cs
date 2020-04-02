@@ -81,7 +81,7 @@
             this.FirstDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.FirstDateLabel.Size = new System.Drawing.Size(196, 41);
             this.FirstDateLabel.TabIndex = 19;
-            this.FirstDateLabel.Text = "10.10.2010";
+            this.FirstDateLabel.Text = "15.03.2020";
             this.FirstDateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LastDateLabel
@@ -95,7 +95,7 @@
             this.LastDateLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.LastDateLabel.Size = new System.Drawing.Size(196, 41);
             this.LastDateLabel.TabIndex = 20;
-            this.LastDateLabel.Text = "10.10.2010";
+            this.LastDateLabel.Text = "16.03.2020";
             this.LastDateLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label3
@@ -119,9 +119,9 @@
             this.NumberFlight,
             this.CountSoldTicket,
             this.ResumeCost});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(322, 109);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(910, 407);
+            this.dataGridView1.Size = new System.Drawing.Size(343, 407);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -248,7 +248,6 @@
             this.Controls.Add(this.FirstDateLabel);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.ManagerMenuStrip);
-            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "ManagerDoneReportForm";
             this.Text = "Отчет";

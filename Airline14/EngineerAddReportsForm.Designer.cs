@@ -63,14 +63,15 @@
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NameLabel.Size = new System.Drawing.Size(777, 41);
+            this.NameLabel.Size = new System.Drawing.Size(778, 41);
             this.NameLabel.TabIndex = 3;
-            this.NameLabel.Text = "Добавление отчета о состоянии авиатехники";
+            this.NameLabel.Text = "Добавление отчета о состоянии аэротехники";
             this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(338, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 16);
@@ -88,6 +89,7 @@
             // DateReport
             // 
             this.DateReport.AutoSize = true;
+            this.DateReport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DateReport.Location = new System.Drawing.Point(338, 159);
             this.DateReport.Name = "DateReport";
             this.DateReport.Size = new System.Drawing.Size(75, 16);
@@ -105,6 +107,7 @@
             // ContentReportLabel
             // 
             this.ContentReportLabel.AutoSize = true;
+            this.ContentReportLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ContentReportLabel.Location = new System.Drawing.Point(338, 216);
             this.ContentReportLabel.Name = "ContentReportLabel";
             this.ContentReportLabel.Size = new System.Drawing.Size(119, 16);
@@ -182,7 +185,7 @@
             this.аэротехникаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьАэротехникуToolStripMenuItem,
             this.списокВсейАэротехнкикиToolStripMenuItem});
-            this.аэротехникаToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.аэротехникаToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.аэротехникаToolStripMenuItem.Name = "аэротехникаToolStripMenuItem";
             this.аэротехникаToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.аэротехникаToolStripMenuItem.Text = "Аэротехника";
