@@ -97,6 +97,7 @@
             this.AddFlightBtn.TabIndex = 20;
             this.AddFlightBtn.Text = "Добавить авиарейс";
             this.AddFlightBtn.UseVisualStyleBackColor = false;
+            this.AddFlightBtn.Click += new System.EventHandler(this.AddFlightBtn_Click);
             // 
             // AerotechnicLabel
             // 

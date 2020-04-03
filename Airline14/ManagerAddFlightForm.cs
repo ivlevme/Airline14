@@ -71,5 +71,10 @@ namespace Airline14
             dateTimePicker2.Format = DateTimePickerFormat.Time;
             dateTimePicker2.ShowUpDown = true;
         }
+
+        private void AddFlightBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Проверка даты, чтобы не была позднее настоящей даты!");
+        }
     }
 }
