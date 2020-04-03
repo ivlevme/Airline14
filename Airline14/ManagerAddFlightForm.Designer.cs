@@ -40,7 +40,6 @@
             this.ArrivialTimeLabel = new System.Windows.Forms.Label();
             this.TimeInFlightTB = new System.Windows.Forms.TextBox();
             this.TimeInFlightLabel = new System.Windows.Forms.Label();
-            this.WeekdayCB = new System.Windows.Forms.ComboBox();
             this.WeekdayLabel = new System.Windows.Forms.Label();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +56,7 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.FlightDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,7 +91,7 @@
             this.AddFlightBtn.FlatAppearance.BorderSize = 0;
             this.AddFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddFlightBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddFlightBtn.Location = new System.Drawing.Point(391, 418);
+            this.AddFlightBtn.Location = new System.Drawing.Point(391, 420);
             this.AddFlightBtn.Name = "AddFlightBtn";
             this.AddFlightBtn.Size = new System.Drawing.Size(176, 32);
             this.AddFlightBtn.TabIndex = 20;
@@ -196,14 +196,6 @@
             this.TimeInFlightLabel.TabIndex = 32;
             this.TimeInFlightLabel.Text = "Время в пути";
             // 
-            // WeekdayCB
-            // 
-            this.WeekdayCB.FormattingEnabled = true;
-            this.WeekdayCB.Location = new System.Drawing.Point(286, 388);
-            this.WeekdayCB.Name = "WeekdayCB";
-            this.WeekdayCB.Size = new System.Drawing.Size(406, 24);
-            this.WeekdayCB.TabIndex = 35;
-            // 
             // WeekdayLabel
             // 
             this.WeekdayLabel.AutoSize = true;
@@ -212,9 +204,9 @@
             this.WeekdayLabel.Location = new System.Drawing.Point(282, 365);
             this.WeekdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WeekdayLabel.Name = "WeekdayLabel";
-            this.WeekdayLabel.Size = new System.Drawing.Size(108, 20);
+            this.WeekdayLabel.Size = new System.Drawing.Size(127, 20);
             this.WeekdayLabel.TabIndex = 34;
-            this.WeekdayLabel.Text = "День недели";
+            this.WeekdayLabel.Text = "Дата авиарейса";
             // 
             // ManagerMenuStrip
             // 
@@ -336,14 +328,21 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(236, 21);
             this.dateTimePicker2.TabIndex = 38;
             // 
+            // FlightDateTimePicker
+            // 
+            this.FlightDateTimePicker.Location = new System.Drawing.Point(286, 388);
+            this.FlightDateTimePicker.Name = "FlightDateTimePicker";
+            this.FlightDateTimePicker.Size = new System.Drawing.Size(406, 21);
+            this.FlightDateTimePicker.TabIndex = 39;
+            // 
             // ManagerAddFlightForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.FlightDateTimePicker);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.WeekdayCB);
             this.Controls.Add(this.WeekdayLabel);
             this.Controls.Add(this.TimeInFlightTB);
             this.Controls.Add(this.TimeInFlightLabel);
@@ -376,9 +375,9 @@
             this.Controls.SetChildIndex(this.TimeInFlightLabel, 0);
             this.Controls.SetChildIndex(this.TimeInFlightTB, 0);
             this.Controls.SetChildIndex(this.WeekdayLabel, 0);
-            this.Controls.SetChildIndex(this.WeekdayCB, 0);
             this.Controls.SetChildIndex(this.dateTimePicker1, 0);
             this.Controls.SetChildIndex(this.dateTimePicker2, 0);
+            this.Controls.SetChildIndex(this.FlightDateTimePicker, 0);
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -400,7 +399,6 @@
         private System.Windows.Forms.Label ArrivialTimeLabel;
         private System.Windows.Forms.TextBox TimeInFlightTB;
         private System.Windows.Forms.Label TimeInFlightLabel;
-        private System.Windows.Forms.ComboBox WeekdayCB;
         private System.Windows.Forms.Label WeekdayLabel;
         private System.Windows.Forms.MenuStrip ManagerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
@@ -417,5 +415,6 @@
         private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker FlightDateTimePicker;
     }
 }

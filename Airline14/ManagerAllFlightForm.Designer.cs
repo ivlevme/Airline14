@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerAllFlightForm));
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуМенеджераToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,22 +55,24 @@
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
+            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flightsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.FlightsTableAdapter();
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameAeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.expr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.weekdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soldCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrivialTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.ManagerMenuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -101,11 +101,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numberDataGridViewTextBoxColumn,
-            this.nameAeroDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn1,
             this.expr1DataGridViewTextBoxColumn,
+            this.dateFlightDataGridViewTextBoxColumn,
             this.departureTimeDataGridViewTextBoxColumn,
             this.timeFlightDataGridViewTextBoxColumn,
-            this.weekdayDataGridViewTextBoxColumn,
             this.soldCountDataGridViewTextBoxColumn,
             this.arrivialTimeDataGridViewTextBoxColumn,
             this.loginDataGridViewTextBoxColumn});
@@ -115,16 +115,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(910, 399);
             this.dataGridView1.TabIndex = 17;
-            // 
-            // flightsBindingSource
-            // 
-            this.flightsBindingSource.DataMember = "Flights";
-            this.flightsBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ManagerMenuStrip
             // 
@@ -315,6 +305,16 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
             // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // flightsBindingSource
+            // 
+            this.flightsBindingSource.DataMember = "Flights";
+            this.flightsBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
             // flightsTableAdapter
             // 
             this.flightsTableAdapter.ClearBeforeFill = true;
@@ -326,12 +326,12 @@
             this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
             this.numberDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // nameAeroDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.nameAeroDataGridViewTextBoxColumn.DataPropertyName = "Name Aero";
-            this.nameAeroDataGridViewTextBoxColumn.HeaderText = "Аэротехника";
-            this.nameAeroDataGridViewTextBoxColumn.Name = "nameAeroDataGridViewTextBoxColumn";
-            this.nameAeroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Самолет";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // expr1DataGridViewTextBoxColumn
             // 
@@ -339,6 +339,13 @@
             this.expr1DataGridViewTextBoxColumn.HeaderText = "Пункт назначения";
             this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
             this.expr1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateFlightDataGridViewTextBoxColumn
+            // 
+            this.dateFlightDataGridViewTextBoxColumn.DataPropertyName = "Date flight";
+            this.dateFlightDataGridViewTextBoxColumn.HeaderText = "Дата авиарейса";
+            this.dateFlightDataGridViewTextBoxColumn.Name = "dateFlightDataGridViewTextBoxColumn";
+            this.dateFlightDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // departureTimeDataGridViewTextBoxColumn
             // 
@@ -353,13 +360,6 @@
             this.timeFlightDataGridViewTextBoxColumn.HeaderText = "Время в полете";
             this.timeFlightDataGridViewTextBoxColumn.Name = "timeFlightDataGridViewTextBoxColumn";
             this.timeFlightDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // weekdayDataGridViewTextBoxColumn
-            // 
-            this.weekdayDataGridViewTextBoxColumn.DataPropertyName = "Weekday";
-            this.weekdayDataGridViewTextBoxColumn.HeaderText = "Номер дня недели";
-            this.weekdayDataGridViewTextBoxColumn.Name = "weekdayDataGridViewTextBoxColumn";
-            this.weekdayDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // soldCountDataGridViewTextBoxColumn
             // 
@@ -378,7 +378,7 @@
             // loginDataGridViewTextBoxColumn
             // 
             this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "Ответственный менеджер";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Менеджер";
             this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
             this.loginDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -400,13 +400,13 @@
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,11 +448,11 @@
         private System.Windows.Forms.BindingSource flightsBindingSource;
         private AirlineDBDataSet2TableAdapters.FlightsTableAdapter flightsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameAeroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn expr1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateFlightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn timeFlightDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn weekdayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soldCountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn arrivialTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;

@@ -59,8 +59,8 @@ SELECT ID, Name FROM Destination WHERE (ID = @ID)</CommandText>
               <DbSource ConnectionRef="AirlineDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Flights.Number, Flights.[ID Aerotechnic], Flights.[ID Destination], Flights.[Departure time], Flights.[Time flight], Flights.Weekday, Flights.[Sold count], Flights.[Arrivial time], Flights.[ID Manager], Aerotechnics.Name, 
-                         Destination.Name AS Expr1, Users.Login
+                    <CommandText>SELECT        Flights.Number, Flights.[ID Aerotechnic], Flights.[ID Destination], Flights.[Departure time], Flights.[Time flight], Flights.[Date flight], Flights.[Sold count], Flights.[Arrivial time], Flights.[ID Manager], Aerotechnics.Name, 
+                         Destination.Name AS Expr1, Users.Login, Flights.[Date flight] AS Expr2
 FROM            Flights INNER JOIN
                          Aerotechnics ON Flights.[ID Aerotechnic] = Aerotechnics.ID INNER JOIN
                          Destination ON Flights.[ID Destination] = Destination.ID INNER JOIN
@@ -76,13 +76,14 @@ FROM            Flights INNER JOIN
               <Mapping SourceColumn="ID Destination" DataSetColumn="ID Destination" />
               <Mapping SourceColumn="Departure time" DataSetColumn="Departure time" />
               <Mapping SourceColumn="Time flight" DataSetColumn="Time flight" />
-              <Mapping SourceColumn="Weekday" DataSetColumn="Weekday" />
               <Mapping SourceColumn="Sold count" DataSetColumn="Sold count" />
               <Mapping SourceColumn="Arrivial time" DataSetColumn="Arrivial time" />
               <Mapping SourceColumn="ID Manager" DataSetColumn="ID Manager" />
-              <Mapping SourceColumn="Name" DataSetColumn="Name Aero" />
               <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
               <Mapping SourceColumn="Login" DataSetColumn="Login" />
+              <Mapping SourceColumn="Date flight" DataSetColumn="Date flight" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="AirlineDBConnectionString (Settings)" DbObjectName="dbo.Flights" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByTest" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByTest" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByTest">
@@ -309,17 +310,9 @@ FROM            Aerotechnics INNER JOIN
               <xs:element name="ID_x0020_Destination" msprop:Generator_ColumnVarNameInTable="columnID_Destination" msprop:Generator_ColumnPropNameInRow="ID_Destination" msprop:Generator_ColumnPropNameInTable="ID_DestinationColumn" msprop:Generator_UserColumnName="ID Destination" type="xs:int" />
               <xs:element name="Departure_x0020_time" msprop:Generator_ColumnVarNameInTable="columnDeparture_time" msprop:Generator_ColumnPropNameInRow="Departure_time" msprop:Generator_ColumnPropNameInTable="Departure_timeColumn" msprop:Generator_UserColumnName="Departure time" type="xs:duration" />
               <xs:element name="Time_x0020_flight" msprop:Generator_ColumnVarNameInTable="columnTime_flight" msprop:Generator_ColumnPropNameInRow="Time_flight" msprop:Generator_ColumnPropNameInTable="Time_flightColumn" msprop:Generator_UserColumnName="Time flight" type="xs:duration" />
-              <xs:element name="Weekday" msprop:Generator_ColumnVarNameInTable="columnWeekday" msprop:Generator_ColumnPropNameInRow="Weekday" msprop:Generator_ColumnPropNameInTable="WeekdayColumn" msprop:Generator_UserColumnName="Weekday" type="xs:int" />
               <xs:element name="Sold_x0020_count" msprop:Generator_ColumnVarNameInTable="columnSold_count" msprop:Generator_ColumnPropNameInRow="Sold_count" msprop:Generator_ColumnPropNameInTable="Sold_countColumn" msprop:Generator_UserColumnName="Sold count" type="xs:int" />
               <xs:element name="Arrivial_x0020_time" msprop:Generator_ColumnVarNameInTable="columnArrivial_time" msprop:Generator_ColumnPropNameInRow="Arrivial_time" msprop:Generator_ColumnPropNameInTable="Arrivial_timeColumn" msprop:Generator_UserColumnName="Arrivial time" type="xs:duration" />
               <xs:element name="ID_x0020_Manager" msprop:Generator_ColumnVarNameInTable="columnID_Manager" msprop:Generator_ColumnPropNameInRow="ID_Manager" msprop:Generator_ColumnPropNameInTable="ID_ManagerColumn" msprop:Generator_UserColumnName="ID Manager" type="xs:int" />
-              <xs:element name="Name_x0020_Aero" msdata:Caption="Name" msprop:Generator_ColumnVarNameInTable="columnName_Aero" msprop:Generator_ColumnPropNameInRow="Name_Aero" msprop:Generator_ColumnPropNameInTable="Name_AeroColumn" msprop:Generator_UserColumnName="Name Aero" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="40" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -334,6 +327,15 @@ FROM            Aerotechnics INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Date_x0020_flight" msprop:Generator_ColumnVarNameInTable="columnDate_flight" msprop:Generator_ColumnPropNameInRow="Date_flight" msprop:Generator_ColumnPropNameInTable="Date_flightColumn" msprop:Generator_UserColumnName="Date flight" type="xs:dateTime" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr2" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

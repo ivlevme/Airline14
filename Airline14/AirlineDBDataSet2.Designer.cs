@@ -838,19 +838,21 @@ namespace Airline14 {
             
             private global::System.Data.DataColumn columnTime_flight;
             
-            private global::System.Data.DataColumn columnWeekday;
-            
             private global::System.Data.DataColumn columnSold_count;
             
             private global::System.Data.DataColumn columnArrivial_time;
             
             private global::System.Data.DataColumn columnID_Manager;
             
-            private global::System.Data.DataColumn columnName_Aero;
-            
             private global::System.Data.DataColumn columnExpr1;
             
             private global::System.Data.DataColumn columnLogin;
+            
+            private global::System.Data.DataColumn columnDate_flight;
+            
+            private global::System.Data.DataColumn columnName;
+            
+            private global::System.Data.DataColumn columnExpr2;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -927,14 +929,6 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn WeekdayColumn {
-                get {
-                    return this.columnWeekday;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn Sold_countColumn {
                 get {
                     return this.columnSold_count;
@@ -959,14 +953,6 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Name_AeroColumn {
-                get {
-                    return this.columnName_Aero;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn Expr1Column {
                 get {
                     return this.columnExpr1;
@@ -978,6 +964,30 @@ namespace Airline14 {
             public global::System.Data.DataColumn LoginColumn {
                 get {
                     return this.columnLogin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Date_flightColumn {
+                get {
+                    return this.columnDate_flight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Expr2Column {
+                get {
+                    return this.columnExpr2;
                 }
             }
             
@@ -1018,7 +1028,7 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FlightsRow AddFlightsRow(AerotechnicsRow parentAerotechnicsRowByFK_Flights_Aerotechnics, DestinationRow parentDestinationRowByFK_Flights_Destination, System.TimeSpan Departure_time, System.TimeSpan Time_flight, int Weekday, int Sold_count, System.TimeSpan Arrivial_time, UsersRow parentUsersRowByFK_Flights_Users, string Name_Aero, string Expr1, string Login) {
+            public FlightsRow AddFlightsRow(AerotechnicsRow parentAerotechnicsRowByFK_Flights_Aerotechnics, DestinationRow parentDestinationRowByFK_Flights_Destination, System.TimeSpan Departure_time, System.TimeSpan Time_flight, int Sold_count, System.TimeSpan Arrivial_time, UsersRow parentUsersRowByFK_Flights_Users, string Expr1, string Login, System.DateTime Date_flight, string Name, System.DateTime Expr2) {
                 FlightsRow rowFlightsRow = ((FlightsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1026,13 +1036,14 @@ namespace Airline14 {
                         null,
                         Departure_time,
                         Time_flight,
-                        Weekday,
                         Sold_count,
                         Arrivial_time,
                         null,
-                        Name_Aero,
                         Expr1,
-                        Login};
+                        Login,
+                        Date_flight,
+                        Name,
+                        Expr2};
                 if ((parentAerotechnicsRowByFK_Flights_Aerotechnics != null)) {
                     columnValuesArray[1] = parentAerotechnicsRowByFK_Flights_Aerotechnics[0];
                 }
@@ -1040,7 +1051,7 @@ namespace Airline14 {
                     columnValuesArray[2] = parentDestinationRowByFK_Flights_Destination[0];
                 }
                 if ((parentUsersRowByFK_Flights_Users != null)) {
-                    columnValuesArray[8] = parentUsersRowByFK_Flights_Users[0];
+                    columnValuesArray[7] = parentUsersRowByFK_Flights_Users[0];
                 }
                 rowFlightsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFlightsRow);
@@ -1076,13 +1087,14 @@ namespace Airline14 {
                 this.columnID_Destination = base.Columns["ID Destination"];
                 this.columnDeparture_time = base.Columns["Departure time"];
                 this.columnTime_flight = base.Columns["Time flight"];
-                this.columnWeekday = base.Columns["Weekday"];
                 this.columnSold_count = base.Columns["Sold count"];
                 this.columnArrivial_time = base.Columns["Arrivial time"];
                 this.columnID_Manager = base.Columns["ID Manager"];
-                this.columnName_Aero = base.Columns["Name Aero"];
                 this.columnExpr1 = base.Columns["Expr1"];
                 this.columnLogin = base.Columns["Login"];
+                this.columnDate_flight = base.Columns["Date flight"];
+                this.columnName = base.Columns["Name"];
+                this.columnExpr2 = base.Columns["Expr2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1098,20 +1110,22 @@ namespace Airline14 {
                 base.Columns.Add(this.columnDeparture_time);
                 this.columnTime_flight = new global::System.Data.DataColumn("Time flight", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTime_flight);
-                this.columnWeekday = new global::System.Data.DataColumn("Weekday", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWeekday);
                 this.columnSold_count = new global::System.Data.DataColumn("Sold count", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSold_count);
                 this.columnArrivial_time = new global::System.Data.DataColumn("Arrivial time", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnArrivial_time);
                 this.columnID_Manager = new global::System.Data.DataColumn("ID Manager", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Manager);
-                this.columnName_Aero = new global::System.Data.DataColumn("Name Aero", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName_Aero);
                 this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExpr1);
                 this.columnLogin = new global::System.Data.DataColumn("Login", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLogin);
+                this.columnDate_flight = new global::System.Data.DataColumn("Date flight", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate_flight);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
+                this.columnExpr2 = new global::System.Data.DataColumn("Expr2", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNumber}, true));
                 this.columnNumber.AutoIncrement = true;
@@ -1124,16 +1138,16 @@ namespace Airline14 {
                 this.columnID_Destination.AllowDBNull = false;
                 this.columnDeparture_time.AllowDBNull = false;
                 this.columnTime_flight.AllowDBNull = false;
-                this.columnWeekday.AllowDBNull = false;
                 this.columnSold_count.AllowDBNull = false;
                 this.columnArrivial_time.AllowDBNull = false;
                 this.columnID_Manager.AllowDBNull = false;
-                this.columnName_Aero.Caption = "Name";
-                this.columnName_Aero.MaxLength = 40;
                 this.columnExpr1.AllowDBNull = false;
                 this.columnExpr1.MaxLength = 40;
                 this.columnLogin.AllowDBNull = false;
                 this.columnLogin.MaxLength = 40;
+                this.columnDate_flight.AllowDBNull = false;
+                this.columnName.MaxLength = 40;
+                this.columnExpr2.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3044,17 +3058,6 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Weekday {
-                get {
-                    return ((int)(this[this.tableFlights.WeekdayColumn]));
-                }
-                set {
-                    this[this.tableFlights.WeekdayColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Sold_count {
                 get {
                     return ((int)(this[this.tableFlights.Sold_countColumn]));
@@ -3088,22 +3091,6 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Name_Aero {
-                get {
-                    try {
-                        return ((string)(this[this.tableFlights.Name_AeroColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Name Aero\' in table \'Flights\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableFlights.Name_AeroColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Expr1 {
                 get {
                     return ((string)(this[this.tableFlights.Expr1Column]));
@@ -3121,6 +3108,44 @@ namespace Airline14 {
                 }
                 set {
                     this[this.tableFlights.LoginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Date_flight {
+                get {
+                    return ((global::System.DateTime)(this[this.tableFlights.Date_flightColumn]));
+                }
+                set {
+                    this[this.tableFlights.Date_flightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableFlights.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Flights\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFlights.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Expr2 {
+                get {
+                    return ((global::System.DateTime)(this[this.tableFlights.Expr2Column]));
+                }
+                set {
+                    this[this.tableFlights.Expr2Column] = value;
                 }
             }
             
@@ -3159,14 +3184,14 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsName_AeroNull() {
-                return this.IsNull(this.tableFlights.Name_AeroColumn);
+            public bool IsNameNull() {
+                return this.IsNull(this.tableFlights.NameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetName_AeroNull() {
-                this[this.tableFlights.Name_AeroColumn] = global::System.Convert.DBNull;
+            public void SetNameNull() {
+                this[this.tableFlights.NameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4468,13 +4493,14 @@ namespace Airline14.AirlineDBDataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("ID Destination", "ID Destination");
             tableMapping.ColumnMappings.Add("Departure time", "Departure time");
             tableMapping.ColumnMappings.Add("Time flight", "Time flight");
-            tableMapping.ColumnMappings.Add("Weekday", "Weekday");
             tableMapping.ColumnMappings.Add("Sold count", "Sold count");
             tableMapping.ColumnMappings.Add("Arrivial time", "Arrivial time");
             tableMapping.ColumnMappings.Add("ID Manager", "ID Manager");
-            tableMapping.ColumnMappings.Add("Name", "Name Aero");
             tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             tableMapping.ColumnMappings.Add("Login", "Login");
+            tableMapping.ColumnMappings.Add("Date flight", "Date flight");
+            tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("Expr2", "Expr2");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -4491,8 +4517,8 @@ namespace Airline14.AirlineDBDataSet2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Flights.Number, Flights.[ID Aerotechnic], Flights.[ID Destination], Flights.[Departure time], Flights.[Time flight], Flights.Weekday, Flights.[Sold count], Flights.[Arrivial time], Flights.[ID Manager], Aerotechnics.Name, 
-                         Destination.Name AS Expr1, Users.Login
+            this._commandCollection[0].CommandText = @"SELECT        Flights.Number, Flights.[ID Aerotechnic], Flights.[ID Destination], Flights.[Departure time], Flights.[Time flight], Flights.[Date flight], Flights.[Sold count], Flights.[Arrivial time], Flights.[ID Manager], Aerotechnics.Name, 
+                         Destination.Name AS Expr1, Users.Login, Flights.[Date flight] AS Expr2
 FROM            Flights INNER JOIN
                          Aerotechnics ON Flights.[ID Aerotechnic] = Aerotechnics.ID INNER JOIN
                          Destination ON Flights.[ID Destination] = Destination.ID INNER JOIN

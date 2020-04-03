@@ -91,12 +91,7 @@ namespace Airline14
             this.flightsTableAdapter.Fill(this.airlineDBDataSet2.Flights);
             // TODO: This line of code loads data into the 'airlineDBDataSet2.Flights' table. You can move, or remove it, as needed.
             this.flightsTableAdapter.Fill(this.airlineDBDataSet2.Flights);
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Flights' table. You can move, or remove it, as needed.
-            this.flightsTableAdapter.Fill(this.airlineDBDataSet2.Flights);
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Flights' table. You can move, or remove it, as needed.
-            this.flightsTableAdapter.Fill(this.airlineDBDataSet2.Flights);
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Flights' table. You can move, or remove it, as needed.
-            this.flightsTableAdapter.Fill(this.airlineDBDataSet2.Flights);
+
         }
 
         private void fillByTestToolStripButton_Click(object sender, EventArgs e)
