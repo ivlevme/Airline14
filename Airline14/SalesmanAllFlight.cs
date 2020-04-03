@@ -10,28 +10,24 @@ using System.Windows.Forms;
 
 namespace Airline14
 {
-    public partial class SalesmanAddTicketForm : BaseForm
+    public partial class SalesmanAllFlight : BaseForm
     {
-        public SalesmanAddTicketForm()
+        public SalesmanAllFlight()
         {
             InitializeComponent();
         }
 
-        private void SinginBtn_Click(object sender, EventArgs e)
+        private void SalesmanAllFlight_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'airlineDBDataSet2.Flights' table. You can move, or remove it, as needed.
+            this.flightsTableAdapter.Fill(this.airlineDBDataSet2.Flights);
 
         }
 
-        private void оПрограммеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void создатьАвирейсToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutProgramForm aboutProgram = new AboutProgramForm();
-            aboutProgram.Show();
-        }
-
-        private void вернутьсяНаГлавнуюToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SalesmanMainForm salesmanMain = new SalesmanMainForm();
-            salesmanMain.Show();
+            SalesmanAddTicketForm salesmanAddTicket = new SalesmanAddTicketForm();
+            salesmanAddTicket.Show();
             this.Hide();
         }
 
@@ -61,11 +57,10 @@ namespace Airline14
             this.Hide();
         }
 
-        private void просмотретьВсеАвиарейсыToolStripMenuItem_Click(object sender, EventArgs e)
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SalesmanAllFlight salesmanAllFlight = new SalesmanAllFlight();
-            salesmanAllFlight.Show();
-            this.Hide();
+            AboutProgramForm aboutProgram = new AboutProgramForm();
+            aboutProgram.Show();
         }
     }
 }

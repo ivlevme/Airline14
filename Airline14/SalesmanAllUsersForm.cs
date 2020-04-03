@@ -85,5 +85,12 @@ namespace Airline14
             // TODO: This line of code loads data into the 'airlineDBDataSet2.Passengers' table. You can move, or remove it, as needed.
             this.passengersTableAdapter.Fill(this.airlineDBDataSet2.Passengers);
         }
+
+        private void просмотретьВсеАвиарейсыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAllFlight salesmanAllFlight = new SalesmanAllFlight();
+            salesmanAllFlight.Show();
+            this.Hide();
+        }
     }
 }

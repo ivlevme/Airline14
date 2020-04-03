@@ -135,6 +135,12 @@
     <Compile Include="EngineerAddAerotechnicsForm.Designer.cs">
       <DependentUpon>EngineerAddAerotechnicsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesmanAllFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesmanAllFlight.Designer.cs">
+      <DependentUpon>SalesmanAllFlight.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerAllDestionationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesmanAddUserForm.resx">
       <DependentUpon>SalesmanAddUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesmanAllFlight.resx">
+      <DependentUpon>SalesmanAllFlight.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesmanAllTicketsForm.resx">
       <DependentUpon>SalesmanAllTicketsForm.cs</DependentUpon>

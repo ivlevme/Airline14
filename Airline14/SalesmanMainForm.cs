@@ -83,5 +83,19 @@ namespace Airline14
             salesmanAllUsers.Show();
             this.Hide();
         }
+
+        private void просмотToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAllFlight salesmanAllFlight = new SalesmanAllFlight();
+            salesmanAllFlight.Show();
+            this.Hide();
+        }
+
+        private void AllFlightsBTN_Click(object sender, EventArgs e)
+        {
+            SalesmanAllFlight salesmanAllFlight = new SalesmanAllFlight();
+            salesmanAllFlight.Show();
+            this.Hide();
+        }
     }
 }

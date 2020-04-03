@@ -17,13 +17,13 @@ namespace Airline14
             InitializeComponent();
         }
 
-        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutProgramForm aboutProgram = new AboutProgramForm();
             aboutProgram.Show();
         }
 
-        private void вернутьсяНаГлавнуюСтраницуToolStripMenuItem_Click(object sender, EventArgs e)
+        private void backToMainToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AdminMainForm admForm = new AdminMainForm();
             admForm.Show();
@@ -35,7 +35,7 @@ namespace Airline14
             exitMenuStrip();
         }
 
-        private void добавитьНовогоПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AdminAddUserForm admAddUser = new AdminAddUserForm();
             admAddUser.Show();
@@ -59,13 +59,50 @@ namespace Airline14
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
-            saveRecord();
+            AdminAddUserForm admAddUser = new AdminAddUserForm();
+            admAddUser.Show();
+            this.Hide();
         }
 
         private void AdminAllUsersForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Users' table. You can move, or remove it, as needed.
             this.usersTableAdapter.Fill(this.airlineDBDataSet2.Users);
+            DisplayReadOnlyAdmin();
+        }
+
+        private void удалитьПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            delRecord();
+        }
+
+        public void DisplayReadOnlyAdmin()
+        {
+            toolStripButtonCreate.Enabled = true;
+            toolStripButtonRemove.Enabled = false;
+            editUserToolStripMenuItem.Enabled = false;
+            delUserToolStripMenuItem.Enabled = false;
+            addNewUserToolStripMenuItem.Enabled = true;
+            UnDotoolStripButton.Enabled = false;
+        }
+
+        public void DisplayEditAdmin()
+        {
+            toolStripButtonCreate.Enabled = false;
+            toolStripButtonRemove.Enabled = true;
+            editUserToolStripMenuItem.Enabled = true;
+            delUserToolStripMenuItem.Enabled = true;
+            addNewUserToolStripMenuItem.Enabled = false;
+            UnDotoolStripButton.Enabled = true;
+        }
+
+        private void toolStripButtonEdit_Click(object sender, EventArgs e)
+        {
+            DisplayEditAdmin();
+        }
+
+        private void UnDotoolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayReadOnlyAdmin();
         }
     }
 }

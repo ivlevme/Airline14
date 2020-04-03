@@ -46,6 +46,10 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passportInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
@@ -53,17 +57,15 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
-            this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.passengersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.PassengersTableAdapter();
-            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passportInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.авиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотретьВсеАвиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EngineerMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -76,6 +78,7 @@
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
+            this.авиарейсыToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.EngineerMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.EngineerMenuStrip.Name = "EngineerMenuStrip";
@@ -200,6 +203,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(393, 405);
             this.dataGridView1.TabIndex = 22;
             // 
+            // personalInformationDataGridViewTextBoxColumn
+            // 
+            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
+            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "Фамилия Имя Отчество";
+            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
+            this.personalInformationDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // passportInformationDataGridViewTextBoxColumn
+            // 
+            this.passportInformationDataGridViewTextBoxColumn.DataPropertyName = "Passport information";
+            this.passportInformationDataGridViewTextBoxColumn.HeaderText = "Паспортные данные";
+            this.passportInformationDataGridViewTextBoxColumn.Name = "passportInformationDataGridViewTextBoxColumn";
+            // 
+            // passengersBindingSource
+            // 
+            this.passengersBindingSource.DataMember = "Passengers";
+            this.passengersBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -259,32 +285,24 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // passengersBindingSource
-            // 
-            this.passengersBindingSource.DataMember = "Passengers";
-            this.passengersBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
             // passengersTableAdapter
             // 
             this.passengersTableAdapter.ClearBeforeFill = true;
             // 
-            // personalInformationDataGridViewTextBoxColumn
+            // авиарейсыToolStripMenuItem
             // 
-            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
-            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "Фамилия Имя Отчество";
-            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
-            this.personalInformationDataGridViewTextBoxColumn.Width = 250;
+            this.авиарейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотретьВсеАвиарейсыToolStripMenuItem});
+            this.авиарейсыToolStripMenuItem.Name = "авиарейсыToolStripMenuItem";
+            this.авиарейсыToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.авиарейсыToolStripMenuItem.Text = "Авиарейсы";
             // 
-            // passportInformationDataGridViewTextBoxColumn
+            // просмотретьВсеАвиарейсыToolStripMenuItem
             // 
-            this.passportInformationDataGridViewTextBoxColumn.DataPropertyName = "Passport information";
-            this.passportInformationDataGridViewTextBoxColumn.HeaderText = "Паспортные данные";
-            this.passportInformationDataGridViewTextBoxColumn.Name = "passportInformationDataGridViewTextBoxColumn";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Name = "просмотретьВсеАвиарейсыToolStripMenuItem";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Text = "Просмотреть все авиарейсы";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Click += new System.EventHandler(this.просмотретьВсеАвиарейсыToolStripMenuItem_Click);
             // 
             // SalesmanAllUsersForm
             // 
@@ -306,11 +324,11 @@
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +363,7 @@
         private AirlineDBDataSet2TableAdapters.PassengersTableAdapter passengersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn personalInformationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passportInformationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem авиарейсыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem просмотретьВсеАвиарейсыToolStripMenuItem;
     }
 }

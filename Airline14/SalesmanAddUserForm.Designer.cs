@@ -45,6 +45,8 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FioTB = new System.Windows.Forms.TextBox();
             this.PassportTB = new System.Windows.Forms.TextBox();
+            this.авирейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотретьВсеАвиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +108,7 @@
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
+            this.авирейсыToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.EngineerMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.EngineerMenuStrip.Name = "EngineerMenuStrip";
@@ -204,6 +207,21 @@
             this.PassportTB.Size = new System.Drawing.Size(291, 21);
             this.PassportTB.TabIndex = 34;
             // 
+            // авирейсыToolStripMenuItem
+            // 
+            this.авирейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотретьВсеАвиарейсыToolStripMenuItem});
+            this.авирейсыToolStripMenuItem.Name = "авирейсыToolStripMenuItem";
+            this.авирейсыToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.авирейсыToolStripMenuItem.Text = "Авирейсы";
+            // 
+            // просмотретьВсеАвиарейсыToolStripMenuItem
+            // 
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Name = "просмотретьВсеАвиарейсыToolStripMenuItem";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Text = "Просмотреть все авиарейсы";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Click += new System.EventHandler(this.просмотретьВсеАвиарейсыToolStripMenuItem_Click);
+            // 
             // SalesmanAddUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -251,5 +269,7 @@
         private System.Windows.Forms.TextBox FioTB;
         private System.Windows.Forms.TextBox PassportTB;
         private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem авирейсыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem просмотретьВсеАвиарейсыToolStripMenuItem;
     }
 }

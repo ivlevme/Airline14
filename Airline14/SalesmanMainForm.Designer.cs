@@ -44,6 +44,9 @@
             this.списрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.авиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AllFlightsBTN = new System.Windows.Forms.Button();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +134,7 @@
             this.программаToolStripMenuItem,
             this.пользователиToolStripMenuItem,
             this.отчетыToolStripMenuItem,
+            this.авиарейсыToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.EngineerMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.EngineerMenuStrip.Name = "EngineerMenuStrip";
@@ -211,15 +215,46 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
+            // 
+            // авиарейсыToolStripMenuItem
+            // 
+            this.авиарейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотToolStripMenuItem});
+            this.авиарейсыToolStripMenuItem.Name = "авиарейсыToolStripMenuItem";
+            this.авиарейсыToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.авиарейсыToolStripMenuItem.Text = "Авиарейсы";
+            // 
+            // просмотToolStripMenuItem
+            // 
+            this.просмотToolStripMenuItem.Name = "просмотToolStripMenuItem";
+            this.просмотToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.просмотToolStripMenuItem.Text = "Посмотреть все авиарейсы";
+            this.просмотToolStripMenuItem.Click += new System.EventHandler(this.просмотToolStripMenuItem_Click);
+            // 
+            // AllFlightsBTN
+            // 
+            this.AllFlightsBTN.BackColor = System.Drawing.Color.MediumBlue;
+            this.AllFlightsBTN.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AllFlightsBTN.FlatAppearance.BorderSize = 0;
+            this.AllFlightsBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AllFlightsBTN.ForeColor = System.Drawing.SystemColors.Info;
+            this.AllFlightsBTN.Location = new System.Drawing.Point(334, 390);
+            this.AllFlightsBTN.Name = "AllFlightsBTN";
+            this.AllFlightsBTN.Size = new System.Drawing.Size(241, 32);
+            this.AllFlightsBTN.TabIndex = 21;
+            this.AllFlightsBTN.Text = "Список всех авиарейсов";
+            this.AllFlightsBTN.UseVisualStyleBackColor = false;
+            this.AllFlightsBTN.Click += new System.EventHandler(this.AllFlightsBTN_Click);
             // 
             // SalesmanMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.AllFlightsBTN);
             this.Controls.Add(this.AllTickettBtn);
             this.Controls.Add(this.AddTickettBtn);
             this.Controls.Add(this.NameLabel);
@@ -235,6 +270,7 @@
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.AddTickettBtn, 0);
             this.Controls.SetChildIndex(this.AllTickettBtn, 0);
+            this.Controls.SetChildIndex(this.AllFlightsBTN, 0);
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -260,5 +296,8 @@
         private System.Windows.Forms.ToolStripMenuItem списрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem авиарейсыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem просмотToolStripMenuItem;
+        private System.Windows.Forms.Button AllFlightsBTN;
     }
 }

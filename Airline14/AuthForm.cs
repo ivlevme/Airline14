@@ -73,5 +73,11 @@ namespace Airline14
         {
 
         }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }

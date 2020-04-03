@@ -51,9 +51,20 @@ namespace Airline14
 
         public void exitMenuStrip()
         {
-            this.Hide();
-            AuthForm auth = new AuthForm();
-            auth.Show();
+            DialogResult result = MessageBox.Show("Вы уверены, что хотите выйти?", "Подтверждение выхода", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                AuthForm auth = new AuthForm();
+                auth.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Необходимо подтвердить выход!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void BaseForm_Load(object sender, EventArgs e)

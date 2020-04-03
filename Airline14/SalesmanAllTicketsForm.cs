@@ -84,5 +84,12 @@ namespace Airline14
             this.ticketsTableAdapter.Fill(this.airlineDBDataSet2.Tickets);
 
         }
+
+        private void просмотретьВсеАвиарейсыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanAllFlight salesmanAllFlight = new SalesmanAllFlight();
+            salesmanAllFlight.Show();
+            this.Hide();
+        }
     }
 }
