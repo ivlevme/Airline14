@@ -30,7 +30,7 @@ namespace Airline14
             this.Hide();
         }
 
-        private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             exitMenuStrip();
         }
@@ -42,19 +42,36 @@ namespace Airline14
             this.Hide();
         }
 
-        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveRecord();
         }
 
-        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void delToolStripMenuItem_Click(object sender, EventArgs e)
         {
             delRecord();
         }
 
+        bool delete = false;
+        int idDeletedUser = 0;
+
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
         {
-            delRecord();
+            if (usersDataGridView.SelectedRows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes) {
+                    idDeletedUser = usersDataGridView.SelectedCells[0].RowIndex;
+                    usersDataGridView.Rows.RemoveAt(usersDataGridView.SelectedCells[0].RowIndex);
+                    delete = true;
+
+                    MessageBox.Show("Пользовать удалён успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                else {
+                    MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
@@ -66,11 +83,11 @@ namespace Airline14
 
         private void AdminAllUsersForm_Load(object sender, EventArgs e)
         {
-            this.usersTableAdapter.Fill(this.airlineDBDataSet2.Users);
+            this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
             DisplayReadOnlyAdmin();
         }
 
-        private void удалитьПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        private void delUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (usersDataGridView.SelectedRows.Count > 0)
             {
@@ -125,8 +142,6 @@ namespace Airline14
         {
             if (usersDataGridView.SelectedRows.Count > 0)
             {
-                MessageBox.Show(usersDataGridView.SelectedCells[0].RowIndex.ToString());
-
                 adminAddUser.LoginTB.Text = usersDataGridView.SelectedRows[0].Cells[1].Value.ToString();
                 adminAddUser.PasswordTB.Text = usersDataGridView.SelectedRows[0].Cells[2].Value.ToString();
                 adminAddUser.RoleCB.SelectedItem = usersDataGridView.SelectedRows[0].Cells[3].Value.ToString();
@@ -147,13 +162,30 @@ namespace Airline14
 
         private void CloseEditUserAdminForm(object sender, EventArgs e)
         {
-            MessageBox.Show(usersDataGridView.SelectedRows[0].Cells[3].Value.ToString());
-
-            usersDataGridView.SelectedRows[0].Cells[1].Value = adminAddUser.PasswordTB.Text;
+            usersDataGridView.SelectedRows[0].Cells[1].Value = adminAddUser.LoginTB.Text;
             usersDataGridView.SelectedRows[0].Cells[2].Value = adminAddUser.PasswordTB.Text;
             usersDataGridView.SelectedRows[0].Cells[3].Value = adminAddUser.RoleCB.SelectedItem;
 
             adminAddUser.Hide();
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (delete == true)
+            {
+                MessageBox.Show(idDeletedUser.ToString());
+                this.UsersTableAdapter.Delete(
+                        idDeletedUser,
+                        usersDataGridView.SelectedRows[0].Cells[1].Value.ToString(),
+                        usersDataGridView.SelectedRows[0].Cells[2].Value.ToString(),
+                        usersDataGridView.SelectedRows[0].Cells[3].Value.ToString()
+                        );
+            } else
+            {
+                this.UsersTableAdapter.Update(this.airlineDBDataSet2.Users);
+            }
+
+            MessageBox.Show("Данные успешно обновлены!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

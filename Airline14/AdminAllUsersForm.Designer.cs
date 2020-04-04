@@ -35,8 +35,9 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.usersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
+            this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NameLabel = new System.Windows.Forms.Label();
             this.AdminMenuStrip = new System.Windows.Forms.MenuStrip();
@@ -59,10 +60,11 @@
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCurrentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delCurrentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.UsersTableAdapter();
+            this.UsersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.AdminMenuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -84,7 +86,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.usersDataGridView.DataSource = this.usersBindingSource1;
+            this.usersDataGridView.DataSource = this.usersBindingSource2;
             this.usersDataGridView.Location = new System.Drawing.Point(263, 102);
             this.usersDataGridView.MultiSelect = false;
             this.usersDataGridView.Name = "usersDataGridView";
@@ -121,15 +123,20 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // usersBindingSource1
+            // usersBindingSource2
             // 
-            this.usersBindingSource1.DataMember = "Users";
-            this.usersBindingSource1.DataSource = this.airlineDBDataSet2;
+            this.usersBindingSource2.DataMember = "Users";
+            this.usersBindingSource2.DataSource = this.airlineDBDataSet2;
             // 
             // airlineDBDataSet2
             // 
             this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
             this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersBindingSource1
+            // 
+            this.usersBindingSource1.DataMember = "Users";
+            this.usersBindingSource1.DataSource = this.airlineDBDataSet2;
             // 
             // usersBindingSource
             // 
@@ -182,7 +189,7 @@
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
             this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
-            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
+            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // пользователиToolStripMenuItem
             // 
@@ -213,7 +220,7 @@
             this.delUserToolStripMenuItem.Name = "delUserToolStripMenuItem";
             this.delUserToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.delUserToolStripMenuItem.Text = "Удалить выбранного пользователя";
-            this.delUserToolStripMenuItem.Click += new System.EventHandler(this.удалитьПользователяToolStripMenuItem_Click);
+            this.delUserToolStripMenuItem.Click += new System.EventHandler(this.delUserToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -252,6 +259,7 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "toolStripButton1";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // createToolStripButton
             // 
@@ -307,7 +315,7 @@
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
             this.createToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.createToolStripMenuItem.Text = "Создать нового пользователя";
-            this.createToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // editCurrentUserToolStripMenuItem
             // 
@@ -320,11 +328,11 @@
             this.delCurrentUserToolStripMenuItem.Name = "delCurrentUserToolStripMenuItem";
             this.delCurrentUserToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.delCurrentUserToolStripMenuItem.Text = "Удалить";
-            this.delCurrentUserToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            this.delCurrentUserToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
-            // usersTableAdapter
+            // UsersTableAdapter
             // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.UsersTableAdapter.ClearBeforeFill = true;
             // 
             // AdminAllUsersForm
             // 
@@ -345,8 +353,9 @@
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.AdminMenuStrip.ResumeLayout(false);
             this.AdminMenuStrip.PerformLayout();
@@ -387,12 +396,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private AirlineDBDataSet2 airlineDBDataSet2;
         private System.Windows.Forms.BindingSource usersBindingSource1;
-        private AirlineDBDataSet2TableAdapters.UsersTableAdapter usersTableAdapter;
+        private AirlineDBDataSet2TableAdapters.UsersTableAdapter UsersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.ToolStripButton UnDoToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.BindingSource usersBindingSource2;
     }
 }

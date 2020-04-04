@@ -4,6 +4,10 @@
 
     partial class AirlineDBDataSet2
     {
+        partial class UsersDataTable
+        {
+        }
+
         partial class FlightsDataTable
         {
         }
@@ -12,6 +16,10 @@
 
 namespace Airline14.AirlineDBDataSet2TableAdapters
 {
+    partial class UsersTableAdapter
+    {
+    }
+
     partial class TicketsTableAdapter
     {
     }
