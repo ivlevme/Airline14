@@ -17,7 +17,7 @@ namespace Airline14
             InitializeComponent();
         }
 
-        private void SinginBtn_Click(object sender, EventArgs e)
+        public void SinginBtn_Click(object sender, EventArgs e)
         {
             if (LoginTB.Text == "" || PasswordTB.Text == "" || RoleCB.SelectedIndex == -1)
             {
@@ -25,7 +25,13 @@ namespace Airline14
             }
             else
             {
-                MessageBox.Show("Новый пользователь успешно создан!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                if (checkRepeatDataBase())
+                {
+                    MessageBox.Show("Данные успешно добавлены!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                } else
+                {
+                    ErrorMessageBox();
+                }
             }
         }
 
@@ -40,6 +46,11 @@ namespace Airline14
             AdminMainForm admForm = new AdminMainForm();
             admForm.Show();
             this.Hide();
+        }
+
+        private bool checkRepeatDataBase()
+        {
+            return true;
         }
 
         private void выйтиToolStripMenuItem_Click(object sender, EventArgs e)

@@ -26,7 +26,7 @@ namespace Airline14
             Application.Exit();
         }
 
-        private void ExitButton_Click(object sender, EventArgs e)
+        public void ExitButton_Click(object sender, EventArgs e)
         {
             exitMenuStrip();
         }

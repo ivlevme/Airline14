@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAllUsersForm));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,16 +50,17 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonCreate = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.createToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editCurrentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.delCurrentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.UsersTableAdapter();
-            this.UnDotoolStripButton = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
@@ -72,23 +73,25 @@
             // 
             this.ExitBtn.FlatAppearance.BorderSize = 0;
             // 
-            // dataGridView1
+            // usersDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.usersDataGridView.AllowUserToAddRows = false;
+            this.usersDataGridView.AllowUserToDeleteRows = false;
+            this.usersDataGridView.AutoGenerateColumns = false;
+            this.usersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView1.DataSource = this.usersBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(263, 99);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 405);
-            this.dataGridView1.TabIndex = 1;
+            this.usersDataGridView.DataSource = this.usersBindingSource1;
+            this.usersDataGridView.Location = new System.Drawing.Point(263, 102);
+            this.usersDataGridView.MultiSelect = false;
+            this.usersDataGridView.Name = "usersDataGridView";
+            this.usersDataGridView.ReadOnly = true;
+            this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.usersDataGridView.Size = new System.Drawing.Size(443, 405);
+            this.usersDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -137,7 +140,7 @@
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(256, 55);
+            this.NameLabel.Location = new System.Drawing.Point(256, 58);
             this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -203,6 +206,7 @@
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
             this.editUserToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
             this.editUserToolStripMenuItem.Text = "Редактировать выбранного пользователя";
+            this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
             // 
             // delUserToolStripMenuItem
             // 
@@ -229,88 +233,98 @@
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonCreate,
-            this.toolStripButtonEdit,
-            this.toolStripButtonRemove,
-            this.UnDotoolStripButton});
+            this.saveToolStripButton,
+            this.createToolStripButton,
+            this.editToolStripButton,
+            this.removeToolStripButton,
+            this.UnDoToolStripButton});
             this.toolStrip2.Location = new System.Drawing.Point(0, 24);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(934, 25);
             this.toolStrip2.TabIndex = 17;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // toolStripButtonCreate
+            // saveToolStripButton
             // 
-            this.toolStripButtonCreate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCreate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCreate.Image")));
-            this.toolStripButtonCreate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCreate.Name = "toolStripButtonCreate";
-            this.toolStripButtonCreate.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonCreate.Text = "Создать нового пользователя";
-            this.toolStripButtonCreate.Click += new System.EventHandler(this.toolStripButtonSave_Click);
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "toolStripButton1";
             // 
-            // toolStripButtonEdit
+            // createToolStripButton
             // 
-            this.toolStripButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.Image")));
-            this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEdit.Name = "toolStripButtonEdit";
-            this.toolStripButtonEdit.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonEdit.Text = "Редактировать";
-            this.toolStripButtonEdit.Click += new System.EventHandler(this.toolStripButtonEdit_Click);
+            this.createToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.createToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("createToolStripButton.Image")));
+            this.createToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.createToolStripButton.Name = "createToolStripButton";
+            this.createToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.createToolStripButton.Text = "Создать нового пользователя";
+            this.createToolStripButton.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
-            // toolStripButtonRemove
+            // editToolStripButton
             // 
-            this.toolStripButtonRemove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRemove.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRemove.Image")));
-            this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonRemove.Text = "Удалить";
-            this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
+            this.editToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.editToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripButton.Image")));
+            this.editToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editToolStripButton.Name = "editToolStripButton";
+            this.editToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.editToolStripButton.Text = "Редактировать";
+            this.editToolStripButton.Click += new System.EventHandler(this.toolStripButtonEdit_Click);
+            // 
+            // removeToolStripButton
+            // 
+            this.removeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.removeToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("removeToolStripButton.Image")));
+            this.removeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.removeToolStripButton.Name = "removeToolStripButton";
+            this.removeToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.removeToolStripButton.Text = "Удалить";
+            this.removeToolStripButton.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
+            // 
+            // UnDoToolStripButton
+            // 
+            this.UnDoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.UnDoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("UnDoToolStripButton.Image")));
+            this.UnDoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UnDoToolStripButton.Name = "UnDoToolStripButton";
+            this.UnDoToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.UnDoToolStripButton.Text = "Назад";
+            this.UnDoToolStripButton.Click += new System.EventHandler(this.UnDotoolStripButton_Click);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьToolStripMenuItem,
-            this.редактироватьToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
+            this.createToolStripMenuItem,
+            this.editCurrentUserToolStripMenuItem,
+            this.delCurrentUserToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(238, 70);
             // 
-            // сохранитьToolStripMenuItem
+            // createToolStripMenuItem
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.createToolStripMenuItem.Text = "Создать нового пользователя";
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
-            // редактироватьToolStripMenuItem
+            // editCurrentUserToolStripMenuItem
             // 
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            this.editCurrentUserToolStripMenuItem.Name = "editCurrentUserToolStripMenuItem";
+            this.editCurrentUserToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.editCurrentUserToolStripMenuItem.Text = "Редактировать";
             // 
-            // удалитьToolStripMenuItem
+            // delCurrentUserToolStripMenuItem
             // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
-            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            this.delCurrentUserToolStripMenuItem.Name = "delCurrentUserToolStripMenuItem";
+            this.delCurrentUserToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.delCurrentUserToolStripMenuItem.Text = "Удалить";
+            this.delCurrentUserToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // UnDotoolStripButton
-            // 
-            this.UnDotoolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.UnDotoolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("UnDotoolStripButton.Image")));
-            this.UnDotoolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.UnDotoolStripButton.Name = "UnDotoolStripButton";
-            this.UnDotoolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.UnDotoolStripButton.Text = "toolStripButton1";
-            this.UnDotoolStripButton.Click += new System.EventHandler(this.UnDotoolStripButton_Click);
             // 
             // AdminAllUsersForm
             // 
@@ -320,17 +334,17 @@
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.usersDataGridView);
             this.Controls.Add(this.AdminMenuStrip);
             this.Name = "AdminAllUsersForm";
             this.Text = "Список всех пользователей";
             this.Load += new System.EventHandler(this.AdminAllUsersForm_Load);
             this.Controls.SetChildIndex(this.AdminMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.usersDataGridView, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
@@ -346,7 +360,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView usersDataGridView;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.MenuStrip AdminMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
@@ -359,13 +373,13 @@
         private System.Windows.Forms.ToolStripMenuItem AboutProgramToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backToMainToolStripMenuItem;
         public System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCreate;
-        private System.Windows.Forms.ToolStripButton toolStripButtonEdit;
-        private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
+        private System.Windows.Forms.ToolStripButton createToolStripButton;
+        private System.Windows.Forms.ToolStripButton editToolStripButton;
+        private System.Windows.Forms.ToolStripButton removeToolStripButton;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editCurrentUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem delCurrentUserToolStripMenuItem;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
@@ -378,6 +392,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.ToolStripButton UnDotoolStripButton;
+        private System.Windows.Forms.ToolStripButton UnDoToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
     }
 }

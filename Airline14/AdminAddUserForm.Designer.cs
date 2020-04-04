@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NameLabel = new System.Windows.Forms.Label();
+            this.HeaderLabel = new System.Windows.Forms.Label();
             this.LoginTB = new System.Windows.Forms.TextBox();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.AddUserBtn = new System.Windows.Forms.Button();
             this.PasswordTB = new System.Windows.Forms.TextBox();
             this.PasswordLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.RoleLabel = new System.Windows.Forms.Label();
             this.RoleCB = new System.Windows.Forms.ComboBox();
             this.AdminMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.просмотрВсехПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backToMainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AdminMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,19 +51,19 @@
             // 
             this.ExitBtn.FlatAppearance.BorderSize = 0;
             // 
-            // NameLabel
+            // HeaderLabel
             // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.NameLabel.Location = new System.Drawing.Point(133, 55);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NameLabel.Size = new System.Drawing.Size(770, 41);
-            this.NameLabel.TabIndex = 3;
-            this.NameLabel.Text = "Добавление новых пользователей в систему";
-            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.HeaderLabel.AutoSize = true;
+            this.HeaderLabel.Font = new System.Drawing.Font("Ubuntu", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HeaderLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.HeaderLabel.Location = new System.Drawing.Point(133, 55);
+            this.HeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.HeaderLabel.Name = "HeaderLabel";
+            this.HeaderLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.HeaderLabel.Size = new System.Drawing.Size(770, 41);
+            this.HeaderLabel.TabIndex = 3;
+            this.HeaderLabel.Text = "Добавление новых пользователей в систему";
+            this.HeaderLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // LoginTB
             // 
@@ -118,23 +118,27 @@
             this.PasswordLabel.TabIndex = 8;
             this.PasswordLabel.Text = "Пароль";
             // 
-            // label1
+            // RoleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ubuntu", 12F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(278, 237);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 20);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Роль пользователя";
+            this.RoleLabel.AutoSize = true;
+            this.RoleLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.RoleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RoleLabel.Location = new System.Drawing.Point(278, 237);
+            this.RoleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.RoleLabel.Name = "RoleLabel";
+            this.RoleLabel.Size = new System.Drawing.Size(158, 20);
+            this.RoleLabel.TabIndex = 11;
+            this.RoleLabel.Text = "Роль пользователя";
             // 
             // RoleCB
             // 
+            this.RoleCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RoleCB.FormattingEnabled = true;
             this.RoleCB.Items.AddRange(new object[] {
-            "Менеджер"});
+            "manager",
+            "admin",
+            "salesman",
+            "engineer"});
             this.RoleCB.Location = new System.Drawing.Point(282, 260);
             this.RoleCB.Name = "RoleCB";
             this.RoleCB.Size = new System.Drawing.Size(406, 24);
@@ -143,68 +147,68 @@
             // AdminMenuStrip
             // 
             this.AdminMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.программаToolStripMenuItem,
-            this.пользователиToolStripMenuItem,
-            this.справкаToolStripMenuItem});
+            this.programToolStripMenuItem,
+            this.usersToolStripMenuItem,
+            this.helpToolStripMenuItem});
             this.AdminMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.AdminMenuStrip.Name = "AdminMenuStrip";
             this.AdminMenuStrip.Size = new System.Drawing.Size(934, 24);
             this.AdminMenuStrip.TabIndex = 15;
             this.AdminMenuStrip.Text = "menuStrip1";
             // 
-            // программаToolStripMenuItem
+            // programToolStripMenuItem
             // 
-            this.программаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem,
-            this.выйтиToolStripMenuItem});
-            this.программаToolStripMenuItem.Name = "программаToolStripMenuItem";
-            this.программаToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.программаToolStripMenuItem.Text = "Программа";
+            this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backToMainToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
+            this.programToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.programToolStripMenuItem.Text = "Программа";
             // 
-            // вернутьсяНаГлавнуюСтраницуToolStripMenuItem
+            // backToMainToolStripMenuItem
             // 
-            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Name = "вернутьсяНаГлавнуюСтраницуToolStripMenuItem";
-            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
-            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Text = "Вернуться на главную страницу";
-            this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem.Click += new System.EventHandler(this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem_Click);
+            this.backToMainToolStripMenuItem.Name = "backToMainToolStripMenuItem";
+            this.backToMainToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.backToMainToolStripMenuItem.Text = "Вернуться на главную страницу";
+            this.backToMainToolStripMenuItem.Click += new System.EventHandler(this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem_Click);
             // 
-            // выйтиToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
-            this.выйтиToolStripMenuItem.Text = "Выйти";
-            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.exitToolStripMenuItem.Text = "Выйти";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
-            // пользователиToolStripMenuItem
+            // usersToolStripMenuItem
             // 
-            this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.просмотрВсехПользователейToolStripMenuItem});
-            this.пользователиToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.usersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allUsersToolStripMenuItem});
+            this.usersToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.usersToolStripMenuItem.Text = "Пользователи";
             // 
-            // просмотрВсехПользователейToolStripMenuItem
+            // allUsersToolStripMenuItem
             // 
-            this.просмотрВсехПользователейToolStripMenuItem.Name = "просмотрВсехПользователейToolStripMenuItem";
-            this.просмотрВсехПользователейToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.просмотрВсехПользователейToolStripMenuItem.Text = "Просмотр всех пользователей";
-            this.просмотрВсехПользователейToolStripMenuItem.Click += new System.EventHandler(this.просмотрВсехПользователейToolStripMenuItem_Click);
+            this.allUsersToolStripMenuItem.Name = "allUsersToolStripMenuItem";
+            this.allUsersToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.allUsersToolStripMenuItem.Text = "Просмотр всех пользователей";
+            this.allUsersToolStripMenuItem.Click += new System.EventHandler(this.просмотрВсехПользователейToolStripMenuItem_Click);
             // 
-            // справкаToolStripMenuItem
+            // helpToolStripMenuItem
             // 
-            this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.оПрограммеToolStripMenuItem});
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.helpToolStripMenuItem.Text = "Справка";
             // 
-            // оПрограммеToolStripMenuItem
+            // aboutToolStripMenuItem
             // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
-            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.aboutToolStripMenuItem.Text = "О программе";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // AdminAddUserForm
             // 
@@ -212,25 +216,25 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.RoleCB);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.RoleLabel);
             this.Controls.Add(this.AddUserBtn);
             this.Controls.Add(this.PasswordTB);
             this.Controls.Add(this.PasswordLabel);
             this.Controls.Add(this.LoginTB);
             this.Controls.Add(this.LoginLabel);
-            this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.HeaderLabel);
             this.Controls.Add(this.AdminMenuStrip);
             this.Name = "AdminAddUserForm";
             this.Text = "Добавление пользователей";
             this.Controls.SetChildIndex(this.AdminMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
-            this.Controls.SetChildIndex(this.NameLabel, 0);
+            this.Controls.SetChildIndex(this.HeaderLabel, 0);
             this.Controls.SetChildIndex(this.LoginLabel, 0);
             this.Controls.SetChildIndex(this.LoginTB, 0);
             this.Controls.SetChildIndex(this.PasswordLabel, 0);
             this.Controls.SetChildIndex(this.PasswordTB, 0);
             this.Controls.SetChildIndex(this.AddUserBtn, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.RoleLabel, 0);
             this.Controls.SetChildIndex(this.RoleCB, 0);
             this.AdminMenuStrip.ResumeLayout(false);
             this.AdminMenuStrip.PerformLayout();
@@ -240,22 +244,21 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.TextBox LoginTB;
         private System.Windows.Forms.Label LoginLabel;
-        private System.Windows.Forms.Button AddUserBtn;
-        private System.Windows.Forms.TextBox PasswordTB;
         private System.Windows.Forms.Label PasswordLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox RoleCB;
+        private System.Windows.Forms.Label RoleLabel;
         private System.Windows.Forms.MenuStrip AdminMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem просмотрВсехПользователейToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem programToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backToMainToolStripMenuItem;
+        public System.Windows.Forms.TextBox LoginTB;
+        public System.Windows.Forms.Button AddUserBtn;
+        public System.Windows.Forms.TextBox PasswordTB;
+        public System.Windows.Forms.ComboBox RoleCB;
+        public System.Windows.Forms.Label HeaderLabel;
     }
 }
