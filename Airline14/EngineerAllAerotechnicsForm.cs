@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -79,10 +80,11 @@ namespace Airline14
         private void EngineerAllAerotechnicsForm_Load(object sender, EventArgs e)
         {
             this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
-
             dataGridView1.CurrentRow.Selected = false;
 
             DisplayReadOnlyEngineer();
+
+            AddAeroBtn.Visible = false;
 
 
 
@@ -158,6 +160,54 @@ namespace Airline14
         private void UnDoToolStripButton_Click(object sender, EventArgs e)
         {
             DisplayReadOnlyEngineer();
+        }
+
+        private void AddReportBtn_Click(object sender, EventArgs e)
+        {
+            if (NameAerotechnicTB.Text != "" && CrewTB.Text != "" && CapacityTB.Text != "")
+            {
+                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+
+                SqlConnection connection = new SqlConnection(connectionPath);
+                SqlCommand newUserInsert = new SqlCommand("INSERT INTO[dbo].[Aerotechnics] ([Name], [Capacity], [Crew Count]) VALUES(@Name, @Capacity, @Crew);", connection);
+
+                connection.Open();
+                newUserInsert.Parameters.AddWithValue("Name", NameAerotechnicTB.Text);
+                newUserInsert.Parameters.AddWithValue("Capacity", int.Parse(CapacityTB.Text));
+                newUserInsert.Parameters.AddWithValue("Crew", int.Parse(CrewTB.Text));
+
+                try
+                {
+                    newUserInsert.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                connection.Close();
+
+                this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
+
+                MessageBox.Show("Аэротехника добавлена успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                AddAeroBtn.Visible = false;
+
+                DisplayReadOnlyEngineer();
+            }
+            else
+            {
+                ErrorMessageBox();
+            }
+        }
+
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayEditEngineer();
+            AddAeroBtn.Visible = true;
+
+            NameAerotechnicTB.Text = "";
+            CapacityTB.Text = "";
+            CrewTB.Text = "";
         }
     }
 }

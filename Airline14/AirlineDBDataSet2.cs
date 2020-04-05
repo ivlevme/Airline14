@@ -4,6 +4,10 @@
 
     partial class AirlineDBDataSet2
     {
+        partial class AerotechnicsDataTable
+        {
+        }
+
         partial class UsersDataTable
         {
         }

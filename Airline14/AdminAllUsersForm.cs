@@ -59,6 +59,11 @@ namespace Airline14
         {
             DisplayEditAdmin();
             AddUserBtn.Visible = true;
+            AddUserBtn.Text = "Создать пользователя";
+
+            LoginTB.Text = "";
+            PasswordTB.Text = "";
+            RoleCB.SelectedIndex = -1;
         }
 
         bool appModeEdit = false;
@@ -72,18 +77,6 @@ namespace Airline14
             usersDataGridView.CurrentRow.Selected = false;
 
             DisplayReadOnlyAdmin();
-
-            //string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
-            //SqlConnection connection = new SqlConnection(connectionPath);
-            //SqlCommand roleSelect = new SqlCommand("Select [Role] from [Users]", connection);
-            //connection.Open();
-            //sdr = roleSelect.ExecuteReader();
-            //while (sdr.Read())
-            //{
-            //    RoleCB.Items.Add(sdr["Role"].ToString());
-            //}
-
             this.RoleCB.Items.AddRange(new object[] { "admin", "manager", "engineer", "salesman"});
 
 
@@ -134,12 +127,12 @@ namespace Airline14
             createToolStripMenuItem.Enabled = true;
 
 
-            editUserToolStripMenuItem.Enabled = true;
+            editUserToolStripMenuItem.Enabled = false;
             editCurrentUserToolStripMenuItem.Enabled = true;
 
 
-            delCurrentUserToolStripMenuItem.Enabled = true;
-            delUserToolStripMenuItem.Enabled = true;
+            delUserToolStripMenuItem.Enabled = false;
+            delCurrentUserToolStripMenuItem.Enabled = false;
             removeToolStripButton.Enabled = true;
 
 
@@ -160,7 +153,7 @@ namespace Airline14
             createToolStripMenuItem.Enabled = false;
 
 
-            editUserToolStripMenuItem.Enabled = false;
+            editUserToolStripMenuItem.Enabled = true;
             editCurrentUserToolStripMenuItem.Enabled = false;
 
 
@@ -272,12 +265,10 @@ namespace Airline14
 
                     DisplayReadOnlyAdmin();
                 }
-                else
-                {
-                    ErrorMessageBox();
-                }
+            } else
+            {
+                ErrorMessageBox();
             }
-                
         }
 
         public bool checkRepeatLogin(string login)

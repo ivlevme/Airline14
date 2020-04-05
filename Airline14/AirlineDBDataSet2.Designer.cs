@@ -48,9 +48,9 @@ namespace Airline14 {
         
         private global::System.Data.DataRelation relationFK_Tickets_Passengers;
         
-        private global::System.Data.DataRelation relationFK_Flights_Aerotechnics;
-        
         private global::System.Data.DataRelation relationFK_Aerotechnics_Reports;
+        
+        private global::System.Data.DataRelation relationFK_Flights_Aerotechnics;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -363,8 +363,8 @@ namespace Airline14 {
             this.relationFK_Reports_Users = this.Relations["FK_Reports_Users"];
             this.relationFK_Tickets_Flights = this.Relations["FK_Tickets_Flights"];
             this.relationFK_Tickets_Passengers = this.Relations["FK_Tickets_Passengers"];
-            this.relationFK_Flights_Aerotechnics = this.Relations["FK_Flights_Aerotechnics"];
             this.relationFK_Aerotechnics_Reports = this.Relations["FK_Aerotechnics_Reports"];
+            this.relationFK_Flights_Aerotechnics = this.Relations["FK_Flights_Aerotechnics"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -409,14 +409,14 @@ namespace Airline14 {
                         this.tablePassengers.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableTickets.ID_PassengerColumn}, false);
             this.Relations.Add(this.relationFK_Tickets_Passengers);
-            this.relationFK_Flights_Aerotechnics = new global::System.Data.DataRelation("FK_Flights_Aerotechnics", new global::System.Data.DataColumn[] {
-                        this.tableAerotechnics.IDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableFlights.ID_AerotechnicColumn}, false);
-            this.Relations.Add(this.relationFK_Flights_Aerotechnics);
             this.relationFK_Aerotechnics_Reports = new global::System.Data.DataRelation("FK_Aerotechnics_Reports", new global::System.Data.DataColumn[] {
                         this.tableReports.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableAerotechnics.ID_ReportColumn}, false);
             this.Relations.Add(this.relationFK_Aerotechnics_Reports);
+            this.relationFK_Flights_Aerotechnics = new global::System.Data.DataRelation("FK_Flights_Aerotechnics", new global::System.Data.DataColumn[] {
+                        this.tableAerotechnics.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableFlights.ID_AerotechnicColumn}, false);
+            this.Relations.Add(this.relationFK_Flights_Aerotechnics);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2804,7 +2804,6 @@ namespace Airline14 {
                 this.columnName.MaxLength = 40;
                 this.columnCapacity.MaxLength = 40;
                 this.columnCrew_Count.MaxLength = 40;
-                this.columnID_Report.AllowDBNull = false;
                 this.columnFK_Report.ReadOnly = true;
                 this.columnContent.MaxLength = 300;
             }
@@ -3686,7 +3685,12 @@ namespace Airline14 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID_Report {
                 get {
-                    return ((int)(this[this.tableAerotechnics.ID_ReportColumn]));
+                    try {
+                        return ((int)(this[this.tableAerotechnics.ID_ReportColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ID Report\' in table \'Aerotechnics\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableAerotechnics.ID_ReportColumn] = value;
@@ -3770,6 +3774,18 @@ namespace Airline14 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetCrew_CountNull() {
                 this[this.tableAerotechnics.Crew_CountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsID_ReportNull() {
+                return this.IsNull(this.tableAerotechnics.ID_ReportColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetID_ReportNull() {
+                this[this.tableAerotechnics.ID_ReportColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5794,7 +5810,7 @@ SELECT ID, Login, Password, Role FROM Users WHERE (ID = @ID)";
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        Aerotechnics.ID, Aerotechnics.Name, Aerotechnics.Capacity, Aerotechnics.[Crew Count], Aerotechnics.[ID Report], Reports.[Content]
-FROM            Aerotechnics INNER JOIN
+FROM            Aerotechnics FULL OUTER JOIN
                          Reports ON Aerotechnics.[ID Report] = Reports.ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
