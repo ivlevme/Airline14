@@ -42,11 +42,9 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AllFlightBtn = new System.Windows.Forms.Button();
-            this.AddFlightBtn = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
             this.createReportBTN = new System.Windows.Forms.Button();
             this.AllDestinationBTN = new System.Windows.Forms.Button();
-            this.AddDestinationBTN = new System.Windows.Forms.Button();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,28 +165,13 @@
             this.AllFlightBtn.FlatAppearance.BorderSize = 0;
             this.AllFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllFlightBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllFlightBtn.Location = new System.Drawing.Point(337, 215);
+            this.AllFlightBtn.Location = new System.Drawing.Point(342, 124);
             this.AllFlightBtn.Name = "AllFlightBtn";
             this.AllFlightBtn.Size = new System.Drawing.Size(241, 32);
             this.AllFlightBtn.TabIndex = 12;
             this.AllFlightBtn.Text = "Список всех авиарейсов";
             this.AllFlightBtn.UseVisualStyleBackColor = false;
             this.AllFlightBtn.Click += new System.EventHandler(this.AllFlightBtn_Click);
-            // 
-            // AddFlightBtn
-            // 
-            this.AddFlightBtn.BackColor = System.Drawing.Color.MediumBlue;
-            this.AddFlightBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.AddFlightBtn.FlatAppearance.BorderSize = 0;
-            this.AddFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddFlightBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddFlightBtn.Location = new System.Drawing.Point(337, 153);
-            this.AddFlightBtn.Name = "AddFlightBtn";
-            this.AddFlightBtn.Size = new System.Drawing.Size(241, 32);
-            this.AddFlightBtn.TabIndex = 11;
-            this.AddFlightBtn.Text = "Добавить новый авиарейс";
-            this.AddFlightBtn.UseVisualStyleBackColor = false;
-            this.AddFlightBtn.Click += new System.EventHandler(this.AddFlightBtn_Click);
             // 
             // NameLabel
             // 
@@ -211,7 +194,7 @@
             this.createReportBTN.FlatAppearance.BorderSize = 0;
             this.createReportBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createReportBTN.ForeColor = System.Drawing.SystemColors.Info;
-            this.createReportBTN.Location = new System.Drawing.Point(337, 277);
+            this.createReportBTN.Location = new System.Drawing.Point(342, 186);
             this.createReportBTN.Name = "createReportBTN";
             this.createReportBTN.Size = new System.Drawing.Size(241, 32);
             this.createReportBTN.TabIndex = 14;
@@ -226,7 +209,7 @@
             this.AllDestinationBTN.FlatAppearance.BorderSize = 0;
             this.AllDestinationBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllDestinationBTN.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllDestinationBTN.Location = new System.Drawing.Point(337, 389);
+            this.AllDestinationBTN.Location = new System.Drawing.Point(342, 244);
             this.AllDestinationBTN.Name = "AllDestinationBTN";
             this.AllDestinationBTN.Size = new System.Drawing.Size(241, 32);
             this.AllDestinationBTN.TabIndex = 16;
@@ -234,43 +217,24 @@
             this.AllDestinationBTN.UseVisualStyleBackColor = false;
             this.AllDestinationBTN.Click += new System.EventHandler(this.AllDestinationBTN_Click);
             // 
-            // AddDestinationBTN
-            // 
-            this.AddDestinationBTN.BackColor = System.Drawing.Color.MediumBlue;
-            this.AddDestinationBTN.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.AddDestinationBTN.FlatAppearance.BorderSize = 0;
-            this.AddDestinationBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddDestinationBTN.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddDestinationBTN.Location = new System.Drawing.Point(337, 331);
-            this.AddDestinationBTN.Name = "AddDestinationBTN";
-            this.AddDestinationBTN.Size = new System.Drawing.Size(241, 32);
-            this.AddDestinationBTN.TabIndex = 15;
-            this.AddDestinationBTN.Text = "Добавить новый пункт назначения";
-            this.AddDestinationBTN.UseVisualStyleBackColor = false;
-            this.AddDestinationBTN.Click += new System.EventHandler(this.AddDestinationBTN_Click);
-            // 
             // ManagerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.AllDestinationBTN);
-            this.Controls.Add(this.AddDestinationBTN);
             this.Controls.Add(this.createReportBTN);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.AllFlightBtn);
-            this.Controls.Add(this.AddFlightBtn);
             this.Controls.Add(this.ManagerMenuStrip);
             this.MainMenuStrip = this.ManagerMenuStrip;
             this.Name = "ManagerMainForm";
             this.Text = "Панель менеджера";
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
-            this.Controls.SetChildIndex(this.AddFlightBtn, 0);
             this.Controls.SetChildIndex(this.AllFlightBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.createReportBTN, 0);
-            this.Controls.SetChildIndex(this.AddDestinationBTN, 0);
             this.Controls.SetChildIndex(this.AllDestinationBTN, 0);
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
@@ -292,13 +256,11 @@
         private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.Button AllFlightBtn;
-        private System.Windows.Forms.Button AddFlightBtn;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Button createReportBTN;
         private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
         private System.Windows.Forms.Button AllDestinationBTN;
-        private System.Windows.Forms.Button AddDestinationBTN;
     }
 }

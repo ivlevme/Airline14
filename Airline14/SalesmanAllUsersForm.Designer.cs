@@ -42,6 +42,8 @@
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьВыбранногоКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьВыбранногоКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.авиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.просмотретьВсеАвиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NameLabel = new System.Windows.Forms.Label();
@@ -50,22 +52,30 @@
             this.passportInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.passengersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.PassengersTableAdapter();
-            this.авиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.просмотретьВсеАвиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PassportTB = new System.Windows.Forms.TextBox();
+            this.FioTB = new System.Windows.Forms.TextBox();
+            this.PassportLabel = new System.Windows.Forms.Label();
+            this.FioLabel = new System.Windows.Forms.Label();
+            this.AddClientBtn = new System.Windows.Forms.Button();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.createToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.EngineerMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
-            this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -161,6 +171,21 @@
             this.удалитьВыбранногоКлиентаToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.удалитьВыбранногоКлиентаToolStripMenuItem.Text = "Удалить выбранного клиента";
             // 
+            // авиарейсыToolStripMenuItem
+            // 
+            this.авиарейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотретьВсеАвиарейсыToolStripMenuItem});
+            this.авиарейсыToolStripMenuItem.Name = "авиарейсыToolStripMenuItem";
+            this.авиарейсыToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.авиарейсыToolStripMenuItem.Text = "Авиарейсы";
+            // 
+            // просмотретьВсеАвиарейсыToolStripMenuItem
+            // 
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Name = "просмотретьВсеАвиарейсыToolStripMenuItem";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Text = "Просмотреть все авиарейсы";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Click += new System.EventHandler(this.просмотретьВсеАвиарейсыToolStripMenuItem_Click);
+            // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -192,13 +217,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.personalInformationDataGridViewTextBoxColumn,
             this.passportInformationDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.passengersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(261, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 99);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(393, 405);
             this.dataGridView1.TabIndex = 22;
@@ -225,36 +252,6 @@
             // 
             this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
             this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonSave,
-            this.toolStripButtonEdit});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(934, 25);
-            this.toolStrip2.TabIndex = 24;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripButtonSave
-            // 
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
-            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSave.Text = "Сохранить изменения";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
-            // 
-            // toolStripButtonEdit
-            // 
-            this.toolStripButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.Image")));
-            this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEdit.Name = "toolStripButtonEdit";
-            this.toolStripButtonEdit.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonEdit.Text = "Редактировать";
             // 
             // contextMenuStrip1
             // 
@@ -289,20 +286,124 @@
             // 
             this.passengersTableAdapter.ClearBeforeFill = true;
             // 
-            // авиарейсыToolStripMenuItem
+            // panel1
             // 
-            this.авиарейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.просмотретьВсеАвиарейсыToolStripMenuItem});
-            this.авиарейсыToolStripMenuItem.Name = "авиарейсыToolStripMenuItem";
-            this.авиарейсыToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.авиарейсыToolStripMenuItem.Text = "Авиарейсы";
+            this.panel1.Controls.Add(this.PassportTB);
+            this.panel1.Controls.Add(this.FioTB);
+            this.panel1.Controls.Add(this.PassportLabel);
+            this.panel1.Controls.Add(this.FioLabel);
+            this.panel1.Controls.Add(this.AddClientBtn);
+            this.panel1.Location = new System.Drawing.Point(411, 99);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(511, 405);
+            this.panel1.TabIndex = 25;
             // 
-            // просмотретьВсеАвиарейсыToolStripMenuItem
+            // PassportTB
             // 
-            this.просмотретьВсеАвиарейсыToolStripMenuItem.Name = "просмотретьВсеАвиарейсыToolStripMenuItem";
-            this.просмотретьВсеАвиарейсыToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.просмотретьВсеАвиарейсыToolStripMenuItem.Text = "Просмотреть все авиарейсы";
-            this.просмотретьВсеАвиарейсыToolStripMenuItem.Click += new System.EventHandler(this.просмотретьВсеАвиарейсыToolStripMenuItem_Click);
+            this.PassportTB.Location = new System.Drawing.Point(117, 82);
+            this.PassportTB.Name = "PassportTB";
+            this.PassportTB.Size = new System.Drawing.Size(291, 21);
+            this.PassportTB.TabIndex = 39;
+            // 
+            // FioTB
+            // 
+            this.FioTB.Location = new System.Drawing.Point(117, 26);
+            this.FioTB.Name = "FioTB";
+            this.FioTB.Size = new System.Drawing.Size(291, 21);
+            this.FioTB.TabIndex = 38;
+            // 
+            // PassportLabel
+            // 
+            this.PassportLabel.AutoSize = true;
+            this.PassportLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PassportLabel.Location = new System.Drawing.Point(114, 63);
+            this.PassportLabel.Name = "PassportLabel";
+            this.PassportLabel.Size = new System.Drawing.Size(124, 16);
+            this.PassportLabel.TabIndex = 37;
+            this.PassportLabel.Text = "Паспортные данные";
+            // 
+            // FioLabel
+            // 
+            this.FioLabel.AutoSize = true;
+            this.FioLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FioLabel.Location = new System.Drawing.Point(114, 7);
+            this.FioLabel.Name = "FioLabel";
+            this.FioLabel.Size = new System.Drawing.Size(37, 16);
+            this.FioLabel.TabIndex = 36;
+            this.FioLabel.Text = "ФИО";
+            // 
+            // AddClientBtn
+            // 
+            this.AddClientBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.AddClientBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AddClientBtn.FlatAppearance.BorderSize = 0;
+            this.AddClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddClientBtn.ForeColor = System.Drawing.SystemColors.Info;
+            this.AddClientBtn.Location = new System.Drawing.Point(168, 131);
+            this.AddClientBtn.Name = "AddClientBtn";
+            this.AddClientBtn.Size = new System.Drawing.Size(176, 32);
+            this.AddClientBtn.TabIndex = 35;
+            this.AddClientBtn.Text = "Добавить клиента";
+            this.AddClientBtn.UseVisualStyleBackColor = false;
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripButton,
+            this.saveToolStripButton,
+            this.editToolStripButton,
+            this.removeToolStripButton,
+            this.UnDoToolStripButton});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(934, 25);
+            this.toolStrip2.TabIndex = 26;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // createToolStripButton
+            // 
+            this.createToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.createToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("createToolStripButton.Image")));
+            this.createToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.createToolStripButton.Name = "createToolStripButton";
+            this.createToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.createToolStripButton.Text = "Создать";
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "toolStripButton1";
+            // 
+            // editToolStripButton
+            // 
+            this.editToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.editToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripButton.Image")));
+            this.editToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editToolStripButton.Name = "editToolStripButton";
+            this.editToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.editToolStripButton.Text = "Редактировать";
+            // 
+            // removeToolStripButton
+            // 
+            this.removeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.removeToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("removeToolStripButton.Image")));
+            this.removeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.removeToolStripButton.Name = "removeToolStripButton";
+            this.removeToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.removeToolStripButton.Text = "Удалить";
+            // 
+            // UnDoToolStripButton
+            // 
+            this.UnDoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.UnDoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("UnDoToolStripButton.Image")));
+            this.UnDoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UnDoToolStripButton.Name = "UnDoToolStripButton";
+            this.UnDoToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.UnDoToolStripButton.Text = "Назад";
             // 
             // SalesmanAllUsersForm
             // 
@@ -310,6 +411,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.EngineerMenuStrip);
@@ -320,15 +422,18 @@
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,9 +456,6 @@
         private System.Windows.Forms.ToolStripMenuItem редактироватьВыбранногоКлиентаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьВыбранногоКлиентаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
-        public System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
-        private System.Windows.Forms.ToolStripButton toolStripButtonEdit;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
@@ -365,5 +467,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn passportInformationDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem авиарейсыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотретьВсеАвиарейсыToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox PassportTB;
+        private System.Windows.Forms.TextBox FioTB;
+        private System.Windows.Forms.Label PassportLabel;
+        private System.Windows.Forms.Label FioLabel;
+        private System.Windows.Forms.Button AddClientBtn;
+        public System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton createToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton editToolStripButton;
+        private System.Windows.Forms.ToolStripButton removeToolStripButton;
+        private System.Windows.Forms.ToolStripButton UnDoToolStripButton;
     }
 }

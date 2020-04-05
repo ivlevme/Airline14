@@ -44,10 +44,10 @@
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авирейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотретьВсеАвиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,6 +208,21 @@
             this.списрToolStripMenuItem.Text = "Посмотреть всех клиентов";
             this.списрToolStripMenuItem.Click += new System.EventHandler(this.списрToolStripMenuItem_Click);
             // 
+            // авирейсыToolStripMenuItem
+            // 
+            this.авирейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотретьВсеАвиарейсыToolStripMenuItem});
+            this.авирейсыToolStripMenuItem.Name = "авирейсыToolStripMenuItem";
+            this.авирейсыToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.авирейсыToolStripMenuItem.Text = "Авирейсы";
+            // 
+            // просмотретьВсеАвиарейсыToolStripMenuItem
+            // 
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Name = "просмотретьВсеАвиарейсыToolStripMenuItem";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Text = "Просмотреть все авиарейсы";
+            this.просмотретьВсеАвиарейсыToolStripMenuItem.Click += new System.EventHandler(this.просмотретьВсеАвиарейсыToolStripMenuItem_Click);
+            // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -223,21 +238,6 @@
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
-            // 
-            // авирейсыToolStripMenuItem
-            // 
-            this.авирейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.просмотретьВсеАвиарейсыToolStripMenuItem});
-            this.авирейсыToolStripMenuItem.Name = "авирейсыToolStripMenuItem";
-            this.авирейсыToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.авирейсыToolStripMenuItem.Text = "Авирейсы";
-            // 
-            // просмотретьВсеАвиарейсыToolStripMenuItem
-            // 
-            this.просмотретьВсеАвиарейсыToolStripMenuItem.Name = "просмотретьВсеАвиарейсыToolStripMenuItem";
-            this.просмотретьВсеАвиарейсыToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
-            this.просмотретьВсеАвиарейсыToolStripMenuItem.Text = "Просмотреть все авиарейсы";
-            this.просмотретьВсеАвиарейсыToolStripMenuItem.Click += new System.EventHandler(this.просмотретьВсеАвиарейсыToolStripMenuItem_Click);
             // 
             // SalesmanAddTicketForm
             // 

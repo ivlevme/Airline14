@@ -81,5 +81,10 @@ namespace Airline14
             // TODO: This line of code loads data into the 'airlineDBDataSet2.Reports' table. You can move, or remove it, as needed.
             this.reportsTableAdapter.Fill(this.airlineDBDataSet2.Reports);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

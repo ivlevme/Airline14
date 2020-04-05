@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.AllUsersButton = new System.Windows.Forms.Button();
-            this.AddUserBtn = new System.Windows.Forms.Button();
             this.NameLabel = new System.Windows.Forms.Label();
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +42,6 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AllAerotechnicBtn = new System.Windows.Forms.Button();
-            this.AddAerotechnicBtn = new System.Windows.Forms.Button();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,28 +56,13 @@
             this.AllUsersButton.FlatAppearance.BorderSize = 0;
             this.AllUsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllUsersButton.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllUsersButton.Location = new System.Drawing.Point(365, 193);
+            this.AllUsersButton.Location = new System.Drawing.Point(360, 147);
             this.AllUsersButton.Name = "AllUsersButton";
             this.AllUsersButton.Size = new System.Drawing.Size(241, 31);
             this.AllUsersButton.TabIndex = 13;
             this.AllUsersButton.Text = "Список всех отчетов";
             this.AllUsersButton.UseVisualStyleBackColor = false;
             this.AllUsersButton.Click += new System.EventHandler(this.AllUsersButton_Click);
-            // 
-            // AddUserBtn
-            // 
-            this.AddUserBtn.BackColor = System.Drawing.Color.MediumBlue;
-            this.AddUserBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.AddUserBtn.FlatAppearance.BorderSize = 0;
-            this.AddUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddUserBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddUserBtn.Location = new System.Drawing.Point(365, 138);
-            this.AddUserBtn.Name = "AddUserBtn";
-            this.AddUserBtn.Size = new System.Drawing.Size(241, 31);
-            this.AddUserBtn.TabIndex = 12;
-            this.AddUserBtn.Text = "Добавить новый отчет";
-            this.AddUserBtn.UseVisualStyleBackColor = false;
-            this.AddUserBtn.Click += new System.EventHandler(this.AddUserBtn_Click);
             // 
             // NameLabel
             // 
@@ -192,7 +175,7 @@
             this.AllAerotechnicBtn.FlatAppearance.BorderSize = 0;
             this.AllAerotechnicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllAerotechnicBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllAerotechnicBtn.Location = new System.Drawing.Point(365, 313);
+            this.AllAerotechnicBtn.Location = new System.Drawing.Point(360, 198);
             this.AllAerotechnicBtn.Name = "AllAerotechnicBtn";
             this.AllAerotechnicBtn.Size = new System.Drawing.Size(241, 31);
             this.AllAerotechnicBtn.TabIndex = 18;
@@ -200,30 +183,13 @@
             this.AllAerotechnicBtn.UseVisualStyleBackColor = false;
             this.AllAerotechnicBtn.Click += new System.EventHandler(this.AllAerotechnicBtn_Click);
             // 
-            // AddAerotechnicBtn
-            // 
-            this.AddAerotechnicBtn.BackColor = System.Drawing.Color.MediumBlue;
-            this.AddAerotechnicBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.AddAerotechnicBtn.FlatAppearance.BorderSize = 0;
-            this.AddAerotechnicBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddAerotechnicBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddAerotechnicBtn.Location = new System.Drawing.Point(365, 254);
-            this.AddAerotechnicBtn.Name = "AddAerotechnicBtn";
-            this.AddAerotechnicBtn.Size = new System.Drawing.Size(241, 31);
-            this.AddAerotechnicBtn.TabIndex = 17;
-            this.AddAerotechnicBtn.Text = "Добавить аэротехнику";
-            this.AddAerotechnicBtn.UseVisualStyleBackColor = false;
-            this.AddAerotechnicBtn.Click += new System.EventHandler(this.AddAerotechnicBtn_Click);
-            // 
             // EngineerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.AllAerotechnicBtn);
-            this.Controls.Add(this.AddAerotechnicBtn);
             this.Controls.Add(this.AllUsersButton);
-            this.Controls.Add(this.AddUserBtn);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.EngineerMenuStrip);
             this.Name = "EngineerMainForm";
@@ -231,9 +197,7 @@
             this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
-            this.Controls.SetChildIndex(this.AddUserBtn, 0);
             this.Controls.SetChildIndex(this.AllUsersButton, 0);
-            this.Controls.SetChildIndex(this.AddAerotechnicBtn, 0);
             this.Controls.SetChildIndex(this.AllAerotechnicBtn, 0);
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
@@ -245,7 +209,6 @@
         #endregion
 
         private System.Windows.Forms.Button AllUsersButton;
-        private System.Windows.Forms.Button AddUserBtn;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.MenuStrip EngineerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
@@ -256,7 +219,6 @@
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.Button AllAerotechnicBtn;
-        private System.Windows.Forms.Button AddAerotechnicBtn;
         private System.Windows.Forms.ToolStripMenuItem аэротехникаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьАэротехнкикуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокВсейАэротехнкикиToolStripMenuItem;

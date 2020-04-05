@@ -32,6 +32,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerAllFlightForm));
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timeFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soldCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrivialTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуМенеджераToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,32 +58,40 @@
             this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonRemove = new System.Windows.Forms.ToolStripButton();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
-            this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.flightsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.FlightsTableAdapter();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expr1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timeFlightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soldCountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrivialTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.FlightDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.WeekdayLabel = new System.Windows.Forms.Label();
+            this.TimeInFlightTB = new System.Windows.Forms.TextBox();
+            this.TimeInFlightLabel = new System.Windows.Forms.Label();
+            this.ArrivialTimeLabel = new System.Windows.Forms.Label();
+            this.DepartureTimeLabel = new System.Windows.Forms.Label();
+            this.DestinationCB = new System.Windows.Forms.ComboBox();
+            this.DestinationLabel = new System.Windows.Forms.Label();
+            this.AerotechnicCB = new System.Windows.Forms.ComboBox();
+            this.NumberFlightTB = new System.Windows.Forms.TextBox();
+            this.NuberFlightLabel = new System.Windows.Forms.Label();
+            this.AddFlightBtn = new System.Windows.Forms.Button();
+            this.AerotechnicLabel = new System.Windows.Forms.Label();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.createToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.ManagerMenuStrip.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
+            this.ManagerMenuStrip.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -112,9 +131,81 @@
             this.dataGridView1.DataSource = this.flightsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 105);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(910, 399);
+            this.dataGridView1.Size = new System.Drawing.Size(475, 399);
             this.dataGridView1.TabIndex = 17;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер авиарейса";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Самолет";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // expr1DataGridViewTextBoxColumn
+            // 
+            this.expr1DataGridViewTextBoxColumn.DataPropertyName = "Expr1";
+            this.expr1DataGridViewTextBoxColumn.HeaderText = "Пункт назначения";
+            this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
+            this.expr1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateFlightDataGridViewTextBoxColumn
+            // 
+            this.dateFlightDataGridViewTextBoxColumn.DataPropertyName = "Date flight";
+            this.dateFlightDataGridViewTextBoxColumn.HeaderText = "Дата авиарейса";
+            this.dateFlightDataGridViewTextBoxColumn.Name = "dateFlightDataGridViewTextBoxColumn";
+            this.dateFlightDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // departureTimeDataGridViewTextBoxColumn
+            // 
+            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "Departure time";
+            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "Время отправления";
+            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
+            this.departureTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // timeFlightDataGridViewTextBoxColumn
+            // 
+            this.timeFlightDataGridViewTextBoxColumn.DataPropertyName = "Time flight";
+            this.timeFlightDataGridViewTextBoxColumn.HeaderText = "Время в полете";
+            this.timeFlightDataGridViewTextBoxColumn.Name = "timeFlightDataGridViewTextBoxColumn";
+            this.timeFlightDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // soldCountDataGridViewTextBoxColumn
+            // 
+            this.soldCountDataGridViewTextBoxColumn.DataPropertyName = "Sold count";
+            this.soldCountDataGridViewTextBoxColumn.HeaderText = "Количество проданных билетов";
+            this.soldCountDataGridViewTextBoxColumn.Name = "soldCountDataGridViewTextBoxColumn";
+            this.soldCountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // arrivialTimeDataGridViewTextBoxColumn
+            // 
+            this.arrivialTimeDataGridViewTextBoxColumn.DataPropertyName = "Arrivial time";
+            this.arrivialTimeDataGridViewTextBoxColumn.HeaderText = "Время прибытия";
+            this.arrivialTimeDataGridViewTextBoxColumn.Name = "arrivialTimeDataGridViewTextBoxColumn";
+            this.arrivialTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Менеджер";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // flightsBindingSource
+            // 
+            this.flightsBindingSource.DataMember = "Flights";
+            this.flightsBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ManagerMenuStrip
             // 
@@ -235,47 +326,6 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
-            // toolStrip2
-            // 
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonSave,
-            this.toolStripButtonEdit,
-            this.toolStripButtonRemove});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(942, 25);
-            this.toolStrip2.TabIndex = 25;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripButtonSave
-            // 
-            this.toolStripButtonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
-            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonSave.Text = "Сохранить изменения";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
-            // 
-            // toolStripButtonEdit
-            // 
-            this.toolStripButtonEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.Image")));
-            this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEdit.Name = "toolStripButtonEdit";
-            this.toolStripButtonEdit.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonEdit.Text = "Редактировать";
-            // 
-            // toolStripButtonRemove
-            // 
-            this.toolStripButtonRemove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonRemove.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonRemove.Image")));
-            this.toolStripButtonRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonRemove.Name = "toolStripButtonRemove";
-            this.toolStripButtonRemove.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonRemove.Text = "Удалить";
-            this.toolStripButtonRemove.Click += new System.EventHandler(this.toolStripButtonRemove_Click);
-            // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
@@ -305,82 +355,241 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
             // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // flightsBindingSource
-            // 
-            this.flightsBindingSource.DataMember = "Flights";
-            this.flightsBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
             // flightsTableAdapter
             // 
             this.flightsTableAdapter.ClearBeforeFill = true;
             // 
-            // numberDataGridViewTextBoxColumn
+            // panel1
             // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер авиарейса";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.panel1.Controls.Add(this.FlightDateTimePicker);
+            this.panel1.Controls.Add(this.NuberFlightLabel);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.AerotechnicLabel);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.AddFlightBtn);
+            this.panel1.Controls.Add(this.WeekdayLabel);
+            this.panel1.Controls.Add(this.NumberFlightTB);
+            this.panel1.Controls.Add(this.TimeInFlightTB);
+            this.panel1.Controls.Add(this.AerotechnicCB);
+            this.panel1.Controls.Add(this.TimeInFlightLabel);
+            this.panel1.Controls.Add(this.DestinationLabel);
+            this.panel1.Controls.Add(this.ArrivialTimeLabel);
+            this.panel1.Controls.Add(this.DestinationCB);
+            this.panel1.Controls.Add(this.DepartureTimeLabel);
+            this.panel1.Location = new System.Drawing.Point(493, 105);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(449, 399);
+            this.panel1.TabIndex = 26;
             // 
-            // dataGridViewTextBoxColumn1
+            // FlightDateTimePicker
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Самолет";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.FlightDateTimePicker.Location = new System.Drawing.Point(8, 286);
+            this.FlightDateTimePicker.Name = "FlightDateTimePicker";
+            this.FlightDateTimePicker.Size = new System.Drawing.Size(406, 21);
+            this.FlightDateTimePicker.TabIndex = 54;
             // 
-            // expr1DataGridViewTextBoxColumn
+            // dateTimePicker2
             // 
-            this.expr1DataGridViewTextBoxColumn.DataPropertyName = "Expr1";
-            this.expr1DataGridViewTextBoxColumn.HeaderText = "Пункт назначения";
-            this.expr1DataGridViewTextBoxColumn.Name = "expr1DataGridViewTextBoxColumn";
-            this.expr1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateTimePicker2.Location = new System.Drawing.Point(8, 239);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(236, 21);
+            this.dateTimePicker2.TabIndex = 53;
             // 
-            // dateFlightDataGridViewTextBoxColumn
+            // dateTimePicker1
             // 
-            this.dateFlightDataGridViewTextBoxColumn.DataPropertyName = "Date flight";
-            this.dateFlightDataGridViewTextBoxColumn.HeaderText = "Дата авиарейса";
-            this.dateFlightDataGridViewTextBoxColumn.Name = "dateFlightDataGridViewTextBoxColumn";
-            this.dateFlightDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(8, 189);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(236, 21);
+            this.dateTimePicker1.TabIndex = 52;
             // 
-            // departureTimeDataGridViewTextBoxColumn
+            // WeekdayLabel
             // 
-            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "Departure time";
-            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "Время отправления";
-            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
-            this.departureTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.WeekdayLabel.AutoSize = true;
+            this.WeekdayLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.WeekdayLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.WeekdayLabel.Location = new System.Drawing.Point(4, 263);
+            this.WeekdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.WeekdayLabel.Name = "WeekdayLabel";
+            this.WeekdayLabel.Size = new System.Drawing.Size(127, 20);
+            this.WeekdayLabel.TabIndex = 51;
+            this.WeekdayLabel.Text = "Дата авиарейса";
             // 
-            // timeFlightDataGridViewTextBoxColumn
+            // TimeInFlightTB
             // 
-            this.timeFlightDataGridViewTextBoxColumn.DataPropertyName = "Time flight";
-            this.timeFlightDataGridViewTextBoxColumn.HeaderText = "Время в полете";
-            this.timeFlightDataGridViewTextBoxColumn.Name = "timeFlightDataGridViewTextBoxColumn";
-            this.timeFlightDataGridViewTextBoxColumn.ReadOnly = true;
+            this.TimeInFlightTB.Location = new System.Drawing.Point(260, 212);
+            this.TimeInFlightTB.Name = "TimeInFlightTB";
+            this.TimeInFlightTB.ReadOnly = true;
+            this.TimeInFlightTB.Size = new System.Drawing.Size(154, 21);
+            this.TimeInFlightTB.TabIndex = 50;
             // 
-            // soldCountDataGridViewTextBoxColumn
+            // TimeInFlightLabel
             // 
-            this.soldCountDataGridViewTextBoxColumn.DataPropertyName = "Sold count";
-            this.soldCountDataGridViewTextBoxColumn.HeaderText = "Количество проданных билетов";
-            this.soldCountDataGridViewTextBoxColumn.Name = "soldCountDataGridViewTextBoxColumn";
-            this.soldCountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.TimeInFlightLabel.AutoSize = true;
+            this.TimeInFlightLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.TimeInFlightLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TimeInFlightLabel.Location = new System.Drawing.Point(286, 189);
+            this.TimeInFlightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TimeInFlightLabel.Name = "TimeInFlightLabel";
+            this.TimeInFlightLabel.Size = new System.Drawing.Size(107, 20);
+            this.TimeInFlightLabel.TabIndex = 49;
+            this.TimeInFlightLabel.Text = "Время в пути";
             // 
-            // arrivialTimeDataGridViewTextBoxColumn
+            // ArrivialTimeLabel
             // 
-            this.arrivialTimeDataGridViewTextBoxColumn.DataPropertyName = "Arrivial time";
-            this.arrivialTimeDataGridViewTextBoxColumn.HeaderText = "Время прибытия";
-            this.arrivialTimeDataGridViewTextBoxColumn.Name = "arrivialTimeDataGridViewTextBoxColumn";
-            this.arrivialTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ArrivialTimeLabel.AutoSize = true;
+            this.ArrivialTimeLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.ArrivialTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ArrivialTimeLabel.Location = new System.Drawing.Point(4, 213);
+            this.ArrivialTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ArrivialTimeLabel.Name = "ArrivialTimeLabel";
+            this.ArrivialTimeLabel.Size = new System.Drawing.Size(137, 20);
+            this.ArrivialTimeLabel.TabIndex = 48;
+            this.ArrivialTimeLabel.Text = "Время прибытия";
             // 
-            // loginDataGridViewTextBoxColumn
+            // DepartureTimeLabel
             // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "Менеджер";
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.DepartureTimeLabel.AutoSize = true;
+            this.DepartureTimeLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.DepartureTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DepartureTimeLabel.Location = new System.Drawing.Point(4, 163);
+            this.DepartureTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DepartureTimeLabel.Name = "DepartureTimeLabel";
+            this.DepartureTimeLabel.Size = new System.Drawing.Size(117, 20);
+            this.DepartureTimeLabel.TabIndex = 47;
+            this.DepartureTimeLabel.Text = "Время Вылета";
+            // 
+            // DestinationCB
+            // 
+            this.DestinationCB.FormattingEnabled = true;
+            this.DestinationCB.Location = new System.Drawing.Point(8, 136);
+            this.DestinationCB.Name = "DestinationCB";
+            this.DestinationCB.Size = new System.Drawing.Size(406, 24);
+            this.DestinationCB.TabIndex = 46;
+            // 
+            // DestinationLabel
+            // 
+            this.DestinationLabel.AutoSize = true;
+            this.DestinationLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.DestinationLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DestinationLabel.Location = new System.Drawing.Point(4, 113);
+            this.DestinationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DestinationLabel.Name = "DestinationLabel";
+            this.DestinationLabel.Size = new System.Drawing.Size(146, 20);
+            this.DestinationLabel.TabIndex = 45;
+            this.DestinationLabel.Text = "Пункт Назначения";
+            // 
+            // AerotechnicCB
+            // 
+            this.AerotechnicCB.FormattingEnabled = true;
+            this.AerotechnicCB.Location = new System.Drawing.Point(8, 86);
+            this.AerotechnicCB.Name = "AerotechnicCB";
+            this.AerotechnicCB.Size = new System.Drawing.Size(406, 24);
+            this.AerotechnicCB.TabIndex = 44;
+            // 
+            // NumberFlightTB
+            // 
+            this.NumberFlightTB.Location = new System.Drawing.Point(8, 35);
+            this.NumberFlightTB.Name = "NumberFlightTB";
+            this.NumberFlightTB.ReadOnly = true;
+            this.NumberFlightTB.Size = new System.Drawing.Size(406, 21);
+            this.NumberFlightTB.TabIndex = 43;
+            // 
+            // NuberFlightLabel
+            // 
+            this.NuberFlightLabel.AutoSize = true;
+            this.NuberFlightLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.NuberFlightLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.NuberFlightLabel.Location = new System.Drawing.Point(4, 12);
+            this.NuberFlightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NuberFlightLabel.Name = "NuberFlightLabel";
+            this.NuberFlightLabel.Size = new System.Drawing.Size(142, 20);
+            this.NuberFlightLabel.TabIndex = 42;
+            this.NuberFlightLabel.Text = "Номер авиарейса";
+            // 
+            // AddFlightBtn
+            // 
+            this.AddFlightBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.AddFlightBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AddFlightBtn.FlatAppearance.BorderSize = 0;
+            this.AddFlightBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddFlightBtn.ForeColor = System.Drawing.SystemColors.Info;
+            this.AddFlightBtn.Location = new System.Drawing.Point(113, 318);
+            this.AddFlightBtn.Name = "AddFlightBtn";
+            this.AddFlightBtn.Size = new System.Drawing.Size(176, 32);
+            this.AddFlightBtn.TabIndex = 41;
+            this.AddFlightBtn.Text = "Добавить авиарейс";
+            this.AddFlightBtn.UseVisualStyleBackColor = false;
+            // 
+            // AerotechnicLabel
+            // 
+            this.AerotechnicLabel.AutoSize = true;
+            this.AerotechnicLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.AerotechnicLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AerotechnicLabel.Location = new System.Drawing.Point(4, 63);
+            this.AerotechnicLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AerotechnicLabel.Name = "AerotechnicLabel";
+            this.AerotechnicLabel.Size = new System.Drawing.Size(75, 20);
+            this.AerotechnicLabel.TabIndex = 40;
+            this.AerotechnicLabel.Text = "Самолет";
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createToolStripButton,
+            this.saveToolStripButton,
+            this.editToolStripButton,
+            this.removeToolStripButton,
+            this.UnDoToolStripButton});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(942, 25);
+            this.toolStrip2.TabIndex = 27;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // createToolStripButton
+            // 
+            this.createToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.createToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("createToolStripButton.Image")));
+            this.createToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.createToolStripButton.Name = "createToolStripButton";
+            this.createToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.createToolStripButton.Text = "Создать";
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "toolStripButton1";
+            // 
+            // editToolStripButton
+            // 
+            this.editToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.editToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripButton.Image")));
+            this.editToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editToolStripButton.Name = "editToolStripButton";
+            this.editToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.editToolStripButton.Text = "Редактировать";
+            // 
+            // removeToolStripButton
+            // 
+            this.removeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.removeToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("removeToolStripButton.Image")));
+            this.removeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.removeToolStripButton.Name = "removeToolStripButton";
+            this.removeToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.removeToolStripButton.Text = "Удалить";
+            // 
+            // UnDoToolStripButton
+            // 
+            this.UnDoToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.UnDoToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("UnDoToolStripButton.Image")));
+            this.UnDoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.UnDoToolStripButton.Name = "UnDoToolStripButton";
+            this.UnDoToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.UnDoToolStripButton.Text = "Назад";
             // 
             // ManagerAllFlightForm
             // 
@@ -388,6 +597,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 561);
             this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.ManagerMenuStrip);
@@ -398,15 +608,18 @@
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,10 +644,6 @@
         private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
-        public System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
-        private System.Windows.Forms.ToolStripButton toolStripButtonEdit;
-        private System.Windows.Forms.ToolStripButton toolStripButtonRemove;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
@@ -456,5 +665,27 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn soldCountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn arrivialTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DateTimePicker FlightDateTimePicker;
+        private System.Windows.Forms.Label NuberFlightLabel;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label AerotechnicLabel;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button AddFlightBtn;
+        private System.Windows.Forms.Label WeekdayLabel;
+        private System.Windows.Forms.TextBox NumberFlightTB;
+        private System.Windows.Forms.TextBox TimeInFlightTB;
+        private System.Windows.Forms.ComboBox AerotechnicCB;
+        private System.Windows.Forms.Label TimeInFlightLabel;
+        private System.Windows.Forms.Label DestinationLabel;
+        private System.Windows.Forms.Label ArrivialTimeLabel;
+        private System.Windows.Forms.ComboBox DestinationCB;
+        private System.Windows.Forms.Label DepartureTimeLabel;
+        public System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton createToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton editToolStripButton;
+        private System.Windows.Forms.ToolStripButton removeToolStripButton;
+        private System.Windows.Forms.ToolStripButton UnDoToolStripButton;
     }
 }

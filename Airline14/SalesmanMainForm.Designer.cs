@@ -30,9 +30,7 @@
         {
             this.NameLabel = new System.Windows.Forms.Label();
             this.AllClientBtn = new System.Windows.Forms.Button();
-            this.AddClientBtn = new System.Windows.Forms.Button();
             this.AllTickettBtn = new System.Windows.Forms.Button();
-            this.AddTickettBtn = new System.Windows.Forms.Button();
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,10 +40,10 @@
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AllFlightsBTN = new System.Windows.Forms.Button();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -75,28 +73,13 @@
             this.AllClientBtn.FlatAppearance.BorderSize = 0;
             this.AllClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllClientBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllClientBtn.Location = new System.Drawing.Point(334, 216);
+            this.AllClientBtn.Location = new System.Drawing.Point(351, 132);
             this.AllClientBtn.Name = "AllClientBtn";
             this.AllClientBtn.Size = new System.Drawing.Size(241, 32);
             this.AllClientBtn.TabIndex = 16;
             this.AllClientBtn.Text = "Список всех клиентов";
             this.AllClientBtn.UseVisualStyleBackColor = false;
             this.AllClientBtn.Click += new System.EventHandler(this.AllClientBtn_Click);
-            // 
-            // AddClientBtn
-            // 
-            this.AddClientBtn.BackColor = System.Drawing.Color.MediumBlue;
-            this.AddClientBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.AddClientBtn.FlatAppearance.BorderSize = 0;
-            this.AddClientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddClientBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddClientBtn.Location = new System.Drawing.Point(334, 154);
-            this.AddClientBtn.Name = "AddClientBtn";
-            this.AddClientBtn.Size = new System.Drawing.Size(241, 32);
-            this.AddClientBtn.TabIndex = 15;
-            this.AddClientBtn.Text = "Добавить нового клиента";
-            this.AddClientBtn.UseVisualStyleBackColor = false;
-            this.AddClientBtn.Click += new System.EventHandler(this.AddClientBtn_Click);
             // 
             // AllTickettBtn
             // 
@@ -105,28 +88,13 @@
             this.AllTickettBtn.FlatAppearance.BorderSize = 0;
             this.AllTickettBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllTickettBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllTickettBtn.Location = new System.Drawing.Point(334, 337);
+            this.AllTickettBtn.Location = new System.Drawing.Point(351, 185);
             this.AllTickettBtn.Name = "AllTickettBtn";
             this.AllTickettBtn.Size = new System.Drawing.Size(241, 32);
             this.AllTickettBtn.TabIndex = 19;
             this.AllTickettBtn.Text = "Список всех  проданных билетов";
             this.AllTickettBtn.UseVisualStyleBackColor = false;
             this.AllTickettBtn.Click += new System.EventHandler(this.AllTickettBtn_Click);
-            // 
-            // AddTickettBtn
-            // 
-            this.AddTickettBtn.BackColor = System.Drawing.Color.MediumBlue;
-            this.AddTickettBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.AddTickettBtn.FlatAppearance.BorderSize = 0;
-            this.AddTickettBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddTickettBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddTickettBtn.Location = new System.Drawing.Point(334, 275);
-            this.AddTickettBtn.Name = "AddTickettBtn";
-            this.AddTickettBtn.Size = new System.Drawing.Size(241, 32);
-            this.AddTickettBtn.TabIndex = 18;
-            this.AddTickettBtn.Text = "Добавить новый билет";
-            this.AddTickettBtn.UseVisualStyleBackColor = false;
-            this.AddTickettBtn.Click += new System.EventHandler(this.AddTickettBtn_Click);
             // 
             // EngineerMenuStrip
             // 
@@ -203,6 +171,21 @@
             this.списрToolStripMenuItem.Text = "Посмотреть всех клиентов";
             this.списрToolStripMenuItem.Click += new System.EventHandler(this.списрToolStripMenuItem_Click);
             // 
+            // авиарейсыToolStripMenuItem
+            // 
+            this.авиарейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.просмотToolStripMenuItem});
+            this.авиарейсыToolStripMenuItem.Name = "авиарейсыToolStripMenuItem";
+            this.авиарейсыToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.авиарейсыToolStripMenuItem.Text = "Авиарейсы";
+            // 
+            // просмотToolStripMenuItem
+            // 
+            this.просмотToolStripMenuItem.Name = "просмотToolStripMenuItem";
+            this.просмотToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.просмотToolStripMenuItem.Text = "Посмотреть все авиарейсы";
+            this.просмотToolStripMenuItem.Click += new System.EventHandler(this.просмотToolStripMenuItem_Click);
+            // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -219,21 +202,6 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
-            // авиарейсыToolStripMenuItem
-            // 
-            this.авиарейсыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.просмотToolStripMenuItem});
-            this.авиарейсыToolStripMenuItem.Name = "авиарейсыToolStripMenuItem";
-            this.авиарейсыToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.авиарейсыToolStripMenuItem.Text = "Авиарейсы";
-            // 
-            // просмотToolStripMenuItem
-            // 
-            this.просмотToolStripMenuItem.Name = "просмотToolStripMenuItem";
-            this.просмотToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.просмотToolStripMenuItem.Text = "Посмотреть все авиарейсы";
-            this.просмотToolStripMenuItem.Click += new System.EventHandler(this.просмотToolStripMenuItem_Click);
-            // 
             // AllFlightsBTN
             // 
             this.AllFlightsBTN.BackColor = System.Drawing.Color.MediumBlue;
@@ -241,7 +209,7 @@
             this.AllFlightsBTN.FlatAppearance.BorderSize = 0;
             this.AllFlightsBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllFlightsBTN.ForeColor = System.Drawing.SystemColors.Info;
-            this.AllFlightsBTN.Location = new System.Drawing.Point(334, 390);
+            this.AllFlightsBTN.Location = new System.Drawing.Point(351, 238);
             this.AllFlightsBTN.Name = "AllFlightsBTN";
             this.AllFlightsBTN.Size = new System.Drawing.Size(241, 32);
             this.AllFlightsBTN.TabIndex = 21;
@@ -256,19 +224,15 @@
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.AllFlightsBTN);
             this.Controls.Add(this.AllTickettBtn);
-            this.Controls.Add(this.AddTickettBtn);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.AllClientBtn);
-            this.Controls.Add(this.AddClientBtn);
             this.Controls.Add(this.EngineerMenuStrip);
             this.Name = "SalesmanMainForm";
             this.Text = "Панель агента по продажам";
             this.Controls.SetChildIndex(this.EngineerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
-            this.Controls.SetChildIndex(this.AddClientBtn, 0);
             this.Controls.SetChildIndex(this.AllClientBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
-            this.Controls.SetChildIndex(this.AddTickettBtn, 0);
             this.Controls.SetChildIndex(this.AllTickettBtn, 0);
             this.Controls.SetChildIndex(this.AllFlightsBTN, 0);
             this.EngineerMenuStrip.ResumeLayout(false);
@@ -282,9 +246,7 @@
 
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Button AllClientBtn;
-        private System.Windows.Forms.Button AddClientBtn;
         private System.Windows.Forms.Button AllTickettBtn;
-        private System.Windows.Forms.Button AddTickettBtn;
         private System.Windows.Forms.MenuStrip EngineerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;

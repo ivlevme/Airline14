@@ -78,10 +78,86 @@ namespace Airline14
 
         private void EngineerAllAerotechnicsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Aerotechnics' table. You can move, or remove it, as needed.
             this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Aerotechnics' table. You can move, or remove it, as needed.
-            this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
+
+            dataGridView1.CurrentRow.Selected = false;
+
+            DisplayReadOnlyEngineer();
+
+
+
+            NameAerotechnicTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Name"));
+            CapacityTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Capacity"));
+            CrewTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Crew Count"));
+        }
+
+        private bool appModeEdit = false;
+        public void DisplayReadOnlyEngineer()
+        {
+            NameAerotechnicTB.Enabled = false;
+            CapacityTB.Enabled = false;
+            CrewTB.Enabled = false;
+
+            createToolStripButton.Enabled = true;
+            addAeroToolStripMenuItem.Enabled = true;
+            createToolStripMenuItem.Enabled = true;
+
+
+            editAeroToolStripMenuItem.Enabled = true;
+            editToolStripMenuItem.Enabled = true;
+            editToolStripButton.Enabled = true;
+
+
+
+            removeAeroToolStripMenuItem.Enabled = true;
+            removeToolStripButton.Enabled = true;
+            removeToolStripMenuItem.Enabled = true;
+
+
+
+            saveToolStripButton.Enabled = false;
+            UnDoToolStripButton.Enabled = false;
+
+            appModeEdit = false;
+        }
+
+        public void DisplayEditEngineer()
+        {
+            NameAerotechnicTB.Enabled = true;
+            CapacityTB.Enabled = true;
+            CrewTB.Enabled = true;
+
+            createToolStripButton.Enabled = false;
+            addAeroToolStripMenuItem.Enabled = false;
+            createToolStripMenuItem.Enabled = false;
+
+
+            editAeroToolStripMenuItem.Enabled = true;
+            editToolStripMenuItem.Enabled = true;
+            editToolStripButton.Enabled = true;
+
+
+
+            removeAeroToolStripMenuItem.Enabled = true;
+            removeToolStripButton.Enabled = true;
+            removeToolStripMenuItem.Enabled = true;
+
+
+
+            saveToolStripButton.Enabled = true;
+            UnDoToolStripButton.Enabled = true;
+
+            appModeEdit = true;
+        }
+
+        private void editToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayEditEngineer();
+        }
+
+        private void UnDoToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayReadOnlyEngineer();
         }
     }
 }

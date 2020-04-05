@@ -62,5 +62,12 @@ namespace Airline14
             AboutProgramForm aboutProgram = new AboutProgramForm();
             aboutProgram.Show();
         }
+
+        private void вернутьсяНаГлавнуюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalesmanMainForm salesmanMain = new SalesmanMainForm();
+            salesmanMain.Show();
+            this.Hide();
+        }
     }
 }
