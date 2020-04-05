@@ -26,8 +26,8 @@ namespace Airline14.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\AirlineDB.mdf" +
-            ";Integrated Security=True;Connect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\79266\\source\\repos\\A" +
+            "irline14\\Airline14\\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30")]
         public string AirlineDBConnectionString {
             get {
                 return ((string)(this["AirlineDBConnectionString"]));

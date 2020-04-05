@@ -84,6 +84,7 @@ namespace Airline14
         private void AdminAllUsersForm_Load(object sender, EventArgs e)
         {
             this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
+            usersDataGridView.CurrentRow.Selected = false;
             DisplayReadOnlyAdmin();
         }
 
@@ -162,9 +163,16 @@ namespace Airline14
 
         private void CloseEditUserAdminForm(object sender, EventArgs e)
         {
+            usersDataGridView.SelectedRows[0].Cells[1].ReadOnly = false;
+            usersDataGridView.BeginEdit(true);
             usersDataGridView.SelectedRows[0].Cells[1].Value = adminAddUser.LoginTB.Text;
+            usersDataGridView.EndEdit();
+
+
             usersDataGridView.SelectedRows[0].Cells[2].Value = adminAddUser.PasswordTB.Text;
             usersDataGridView.SelectedRows[0].Cells[3].Value = adminAddUser.RoleCB.SelectedItem;
+
+            //usersDataGridView.EndEdit();
 
             adminAddUser.Hide();
         }
@@ -174,17 +182,13 @@ namespace Airline14
             if (delete == true)
             {
                 MessageBox.Show(idDeletedUser.ToString());
-                this.UsersTableAdapter.Delete(
-                        idDeletedUser,
-                        usersDataGridView.SelectedRows[0].Cells[1].Value.ToString(),
-                        usersDataGridView.SelectedRows[0].Cells[2].Value.ToString(),
-                        usersDataGridView.SelectedRows[0].Cells[3].Value.ToString()
-                        );
-            } else
+                this.UsersTableAdapter.Delete(idDeletedUser + 1);
+            }
+            else
             {
+                NameLabel.Focus();
                 this.UsersTableAdapter.Update(this.airlineDBDataSet2.Users);
             }
-
             MessageBox.Show("Данные успешно обновлены!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

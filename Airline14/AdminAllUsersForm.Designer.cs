@@ -87,10 +87,10 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.usersDataGridView.DataSource = this.usersBindingSource2;
+            this.usersDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.usersDataGridView.Location = new System.Drawing.Point(263, 102);
             this.usersDataGridView.MultiSelect = false;
             this.usersDataGridView.Name = "usersDataGridView";
-            this.usersDataGridView.ReadOnly = true;
             this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.usersDataGridView.Size = new System.Drawing.Size(443, 405);
             this.usersDataGridView.TabIndex = 1;
@@ -368,8 +368,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView usersDataGridView;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.MenuStrip AdminMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
@@ -404,5 +402,6 @@
         private System.Windows.Forms.ToolStripButton UnDoToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.BindingSource usersBindingSource2;
+        public System.Windows.Forms.DataGridView usersDataGridView;
     }
 }
