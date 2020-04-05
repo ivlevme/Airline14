@@ -21,7 +21,7 @@ namespace Airline14
         {
             if (LoginTB.Text == "admin" && PasswordTB.Text == "adm")
             {
-                AdminMainForm admForm = new AdminMainForm();
+                AdminAllUsersForm admForm = new AdminAllUsersForm();
                 admForm.Show();
                 this.Hide();
             }

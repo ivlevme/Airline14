@@ -42,7 +42,6 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.AdminMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backToMainToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,8 +50,8 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.createToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -61,6 +60,14 @@
             this.editCurrentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.delCurrentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.UsersTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.AddUserBtn = new System.Windows.Forms.Button();
+            this.RoleCB = new System.Windows.Forms.ComboBox();
+            this.RoleLabel = new System.Windows.Forms.Label();
+            this.PasswordTB = new System.Windows.Forms.TextBox();
+            this.PasswordLabel = new System.Windows.Forms.Label();
+            this.LoginTB = new System.Windows.Forms.TextBox();
+            this.LoginLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
@@ -69,6 +76,7 @@
             this.AdminMenuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -88,7 +96,7 @@
             this.dataGridViewTextBoxColumn4});
             this.usersDataGridView.DataSource = this.usersBindingSource2;
             this.usersDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.usersDataGridView.Location = new System.Drawing.Point(263, 102);
+            this.usersDataGridView.Location = new System.Drawing.Point(12, 102);
             this.usersDataGridView.MultiSelect = false;
             this.usersDataGridView.Name = "usersDataGridView";
             this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -171,23 +179,15 @@
             // программаToolStripMenuItem
             // 
             this.программаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backToMainToolStripMenuItem,
             this.выйтиToolStripMenuItem});
             this.программаToolStripMenuItem.Name = "программаToolStripMenuItem";
             this.программаToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.программаToolStripMenuItem.Text = "Программа";
             // 
-            // backToMainToolStripMenuItem
-            // 
-            this.backToMainToolStripMenuItem.Name = "backToMainToolStripMenuItem";
-            this.backToMainToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
-            this.backToMainToolStripMenuItem.Text = "Вернуться на главную страницу";
-            this.backToMainToolStripMenuItem.Click += new System.EventHandler(this.backToMainToolStripMenuItem_Click);
-            // 
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -204,22 +204,22 @@
             // addNewUserToolStripMenuItem
             // 
             this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
-            this.addNewUserToolStripMenuItem.Text = "Добавить нового пользователя";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.addNewUserToolStripMenuItem.Text = "Добавить пользователя";
             this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
             // 
             // editUserToolStripMenuItem
             // 
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
-            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
-            this.editUserToolStripMenuItem.Text = "Редактировать выбранного пользователя";
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.editUserToolStripMenuItem.Text = "Редактировать пользователя";
             this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
             // 
             // delUserToolStripMenuItem
             // 
             this.delUserToolStripMenuItem.Name = "delUserToolStripMenuItem";
-            this.delUserToolStripMenuItem.Size = new System.Drawing.Size(303, 22);
-            this.delUserToolStripMenuItem.Text = "Удалить выбранного пользователя";
+            this.delUserToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.delUserToolStripMenuItem.Text = "Удалить пользователя";
             this.delUserToolStripMenuItem.Click += new System.EventHandler(this.delUserToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
@@ -240,8 +240,8 @@
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripButton,
             this.createToolStripButton,
+            this.saveToolStripButton,
             this.editToolStripButton,
             this.removeToolStripButton,
             this.UnDoToolStripButton});
@@ -250,6 +250,16 @@
             this.toolStrip2.Size = new System.Drawing.Size(934, 25);
             this.toolStrip2.TabIndex = 17;
             this.toolStrip2.Text = "toolStrip2";
+            // 
+            // createToolStripButton
+            // 
+            this.createToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.createToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("createToolStripButton.Image")));
+            this.createToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.createToolStripButton.Name = "createToolStripButton";
+            this.createToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.createToolStripButton.Text = "Создать";
+            this.createToolStripButton.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // saveToolStripButton
             // 
@@ -260,16 +270,6 @@
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "toolStripButton1";
             this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
-            // 
-            // createToolStripButton
-            // 
-            this.createToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.createToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("createToolStripButton.Image")));
-            this.createToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.createToolStripButton.Name = "createToolStripButton";
-            this.createToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.createToolStripButton.Text = "Создать нового пользователя";
-            this.createToolStripButton.Click += new System.EventHandler(this.toolStripButtonSave_Click);
             // 
             // editToolStripButton
             // 
@@ -308,25 +308,26 @@
             this.editCurrentUserToolStripMenuItem,
             this.delCurrentUserToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(238, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.createToolStripMenuItem.Text = "Создать нового пользователя";
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.createToolStripMenuItem.Text = "Создать";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // editCurrentUserToolStripMenuItem
             // 
             this.editCurrentUserToolStripMenuItem.Name = "editCurrentUserToolStripMenuItem";
-            this.editCurrentUserToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.editCurrentUserToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.editCurrentUserToolStripMenuItem.Text = "Редактировать";
+            this.editCurrentUserToolStripMenuItem.Click += new System.EventHandler(this.editCurrentUserToolStripMenuItem_Click);
             // 
             // delCurrentUserToolStripMenuItem
             // 
             this.delCurrentUserToolStripMenuItem.Name = "delCurrentUserToolStripMenuItem";
-            this.delCurrentUserToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.delCurrentUserToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.delCurrentUserToolStripMenuItem.Text = "Удалить";
             this.delCurrentUserToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
@@ -334,12 +335,104 @@
             // 
             this.UsersTableAdapter.ClearBeforeFill = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.AddUserBtn);
+            this.panel1.Controls.Add(this.RoleCB);
+            this.panel1.Controls.Add(this.RoleLabel);
+            this.panel1.Controls.Add(this.PasswordTB);
+            this.panel1.Controls.Add(this.PasswordLabel);
+            this.panel1.Controls.Add(this.LoginTB);
+            this.panel1.Controls.Add(this.LoginLabel);
+            this.panel1.Location = new System.Drawing.Point(461, 102);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(458, 402);
+            this.panel1.TabIndex = 18;
+            // 
+            // AddUserBtn
+            // 
+            this.AddUserBtn.BackColor = System.Drawing.Color.MediumBlue;
+            this.AddUserBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.AddUserBtn.FlatAppearance.BorderSize = 0;
+            this.AddUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddUserBtn.ForeColor = System.Drawing.SystemColors.Info;
+            this.AddUserBtn.Location = new System.Drawing.Point(143, 230);
+            this.AddUserBtn.Name = "AddUserBtn";
+            this.AddUserBtn.Size = new System.Drawing.Size(176, 32);
+            this.AddUserBtn.TabIndex = 20;
+            this.AddUserBtn.Text = "Добавить пользователя";
+            this.AddUserBtn.UseVisualStyleBackColor = false;
+            this.AddUserBtn.Visible = false;
+            this.AddUserBtn.Click += new System.EventHandler(this.AddUserBtn_Click);
+            // 
+            // RoleCB
+            // 
+            this.RoleCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RoleCB.FormattingEnabled = true;
+            this.RoleCB.Location = new System.Drawing.Point(40, 148);
+            this.RoleCB.Name = "RoleCB";
+            this.RoleCB.Size = new System.Drawing.Size(406, 24);
+            this.RoleCB.TabIndex = 19;
+            // 
+            // RoleLabel
+            // 
+            this.RoleLabel.AutoSize = true;
+            this.RoleLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.RoleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.RoleLabel.Location = new System.Drawing.Point(36, 125);
+            this.RoleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.RoleLabel.Name = "RoleLabel";
+            this.RoleLabel.Size = new System.Drawing.Size(158, 20);
+            this.RoleLabel.TabIndex = 18;
+            this.RoleLabel.Text = "Роль пользователя";
+            // 
+            // PasswordTB
+            // 
+            this.PasswordTB.Location = new System.Drawing.Point(40, 92);
+            this.PasswordTB.Name = "PasswordTB";
+            this.PasswordTB.Size = new System.Drawing.Size(406, 21);
+            this.PasswordTB.TabIndex = 16;
+            // 
+            // PasswordLabel
+            // 
+            this.PasswordLabel.AutoSize = true;
+            this.PasswordLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.PasswordLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PasswordLabel.Location = new System.Drawing.Point(36, 69);
+            this.PasswordLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PasswordLabel.Name = "PasswordLabel";
+            this.PasswordLabel.Size = new System.Drawing.Size(65, 20);
+            this.PasswordLabel.TabIndex = 15;
+            this.PasswordLabel.Text = "Пароль";
+            // 
+            // LoginTB
+            // 
+            this.LoginTB.Location = new System.Drawing.Point(40, 32);
+            this.LoginTB.Name = "LoginTB";
+            this.LoginTB.Size = new System.Drawing.Size(406, 21);
+            this.LoginTB.TabIndex = 14;
+            this.LoginTB.TextChanged += new System.EventHandler(this.LoginTB_TextChanged);
+            this.LoginTB.VisibleChanged += new System.EventHandler(this.LoginTB_VisibleChanged);
+            // 
+            // LoginLabel
+            // 
+            this.LoginLabel.AutoSize = true;
+            this.LoginLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.LoginLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LoginLabel.Location = new System.Drawing.Point(36, 9);
+            this.LoginLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LoginLabel.Name = "LoginLabel";
+            this.LoginLabel.Size = new System.Drawing.Size(56, 20);
+            this.LoginLabel.TabIndex = 13;
+            this.LoginLabel.Text = "Логин";
+            // 
             // AdminAllUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.usersDataGridView);
@@ -348,10 +441,11 @@
             this.Text = "Список всех пользователей";
             this.Load += new System.EventHandler(this.AdminAllUsersForm_Load);
             this.Controls.SetChildIndex(this.AdminMenuStrip, 0);
-            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.usersDataGridView, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.ExitBtn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
@@ -362,6 +456,8 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,7 +474,6 @@
         private System.Windows.Forms.ToolStripMenuItem delUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutProgramToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem backToMainToolStripMenuItem;
         public System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton createToolStripButton;
         private System.Windows.Forms.ToolStripButton editToolStripButton;
@@ -403,5 +498,13 @@
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.BindingSource usersBindingSource2;
         public System.Windows.Forms.DataGridView usersDataGridView;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.ComboBox RoleCB;
+        private System.Windows.Forms.Label RoleLabel;
+        public System.Windows.Forms.TextBox PasswordTB;
+        private System.Windows.Forms.Label PasswordLabel;
+        public System.Windows.Forms.TextBox LoginTB;
+        private System.Windows.Forms.Label LoginLabel;
+        public System.Windows.Forms.Button AddUserBtn;
     }
 }

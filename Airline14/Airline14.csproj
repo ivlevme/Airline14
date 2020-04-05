@@ -81,18 +81,6 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminMainForm.Designer.cs">
-      <DependentUpon>AdminMainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminAddUserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminAddUserForm.Designer.cs">
-      <DependentUpon>AdminAddUserForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdminAllUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,17 +206,11 @@
     <EmbeddedResource Include="AdminAllUsersForm.resx">
       <DependentUpon>AdminAllUsersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminMainForm.resx">
-      <DependentUpon>AdminMainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminAddUserForm.resx">
-      <DependentUpon>AdminAddUserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EngineerAddAerotechnicsForm.resx">
       <DependentUpon>EngineerAddAerotechnicsForm.cs</DependentUpon>
