@@ -178,7 +178,6 @@ namespace Airline14
         private void toolStripButtonEdit_Click(object sender, EventArgs e)
         {
             DisplayEditAdmin();
-            AddUserBtn.Visible = true;
             AddUserBtn.Text = "Обновить данные";
         }
 
@@ -204,8 +203,7 @@ namespace Airline14
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            NameLabel.Focus();
-
+            bool showSuccessModal = true;
             if (delete == true)
             {
                 foreach (int id in idDeletedUser)
@@ -215,12 +213,24 @@ namespace Airline14
             }
             else
             {
-                usersDataGridView.CurrentCell = usersDataGridView.Rows[0].Cells[0];
-                this.UsersTableAdapter.Update(this.airlineDBDataSet2.Users);
+                if (checkRepeatLogin(LoginTB.Text) == true)
+                {
+                    usersDataGridView.CurrentCell = usersDataGridView.Rows[0].Cells[0];
+                    this.UsersTableAdapter.Update(this.airlineDBDataSet2.Users);
+                } else
+                {
+                    showSuccessModal = false;
+                }
             }
 
             this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
-            MessageBox.Show("Данные успешно обновлены!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (showSuccessModal == true)
+            {
+                MessageBox.Show("Данные успешно обновлены!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            DisplayReadOnlyAdmin();
         }
 
         private void editCurrentUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -233,37 +243,65 @@ namespace Airline14
         {
             if (LoginTB.Text != "" && PasswordTB.Text != "" && RoleCB.SelectedIndex != -1)
             {
-                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
-                SqlConnection connection = new SqlConnection(connectionPath);
-                SqlCommand newUserInsert = new SqlCommand("INSERT INTO[dbo].[Users] ([Login], [Password], [Role]) VALUES(@Login, @Password, @Role);", connection);
-
-                connection.Open();
-                newUserInsert.Parameters.AddWithValue("Login", LoginTB.Text);
-                newUserInsert.Parameters.AddWithValue("Password", PasswordTB.Text);
-                newUserInsert.Parameters.AddWithValue("Role", RoleCB.Text);
-
-                try
+                if (checkRepeatLogin(LoginTB.Text) == true)
                 {
-                    newUserInsert.ExecuteNonQuery();
+                    string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+
+                    SqlConnection connection = new SqlConnection(connectionPath);
+                    SqlCommand newUserInsert = new SqlCommand("INSERT INTO[dbo].[Users] ([Login], [Password], [Role]) VALUES(@Login, @Password, @Role);", connection);
+
+                    connection.Open();
+                    newUserInsert.Parameters.AddWithValue("Login", LoginTB.Text);
+                    newUserInsert.Parameters.AddWithValue("Password", PasswordTB.Text);
+                    newUserInsert.Parameters.AddWithValue("Role", RoleCB.Text);
+
+                    try
+                    {
+                        newUserInsert.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    connection.Close();
+                    this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
+
+                    MessageBox.Show("Пользовать добавлен успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    AddUserBtn.Visible = false;
+
+                    DisplayReadOnlyAdmin();
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ErrorMessageBox();
                 }
-
-                connection.Close();
-                this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
-
-                MessageBox.Show("Пользовать добавлен успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                AddUserBtn.Visible = false;
-
-                DisplayReadOnlyAdmin();
             }
-            else
+                
+        }
+
+        public bool checkRepeatLogin(string login)
+        {
+            string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+
+            SqlConnection connection = new SqlConnection(connectionPath);
+            SqlCommand selectLogin = new SqlCommand("Select [Login] FROM [Users];", connection);
+
+            connection.Open();
+
+            sdr = selectLogin.ExecuteReader();
+            bool result = true;
+            while (sdr.Read())
             {
-                ErrorMessageBox();
+                if (login == sdr["Login"].ToString())
+                {
+                    MessageBox.Show("Такой логин уже есть!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    result = false;
+                    break;
+                }
             }
+            connection.Close();
+            return result;
         }
 
         private void LoginTB_VisibleChanged(object sender, EventArgs e)
