@@ -70,9 +70,33 @@ namespace Airline14
 
         private void MakeReportBTN_Click(object sender, EventArgs e)
         {
-            ManagerDoneReportForm managerDoneReport = new ManagerDoneReportForm();
-            managerDoneReport.Show();
-            this.Hide();
+            if (checkdate())
+            {
+                ManagerDoneReportForm managerDoneReport = new ManagerDoneReportForm();
+                managerDoneReport.Show();
+                this.Hide();
+            } else
+            {
+                ErrorMessageBox();
+            }
+
+        }
+
+        private bool checkdate()
+        {
+            if (PastDateTimePicker.Value <= FutureDateTimePicker.Value)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void ManagerCreateReportForm_Load(object sender, EventArgs e)
+        {
+            DateTime currentDateTime = DateTime.Now;
+            PastDateTimePicker.Value = currentDateTime;
+            FutureDateTimePicker.Value = currentDateTime;
         }
     }
 }

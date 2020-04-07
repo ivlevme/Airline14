@@ -41,10 +41,10 @@
             this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.PastDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.FutureDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.MakeReportBTN = new System.Windows.Forms.Button();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -165,12 +165,12 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
-            // dateTimePicker1
+            // PastDateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(267, 159);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(153, 21);
-            this.dateTimePicker1.TabIndex = 19;
+            this.PastDateTimePicker.Location = new System.Drawing.Point(267, 159);
+            this.PastDateTimePicker.Name = "PastDateTimePicker";
+            this.PastDateTimePicker.Size = new System.Drawing.Size(153, 21);
+            this.PastDateTimePicker.TabIndex = 19;
             // 
             // label1
             // 
@@ -192,12 +192,12 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Конец периода";
             // 
-            // dateTimePicker2
+            // FutureDateTimePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(492, 159);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(153, 21);
-            this.dateTimePicker2.TabIndex = 21;
+            this.FutureDateTimePicker.Location = new System.Drawing.Point(492, 159);
+            this.FutureDateTimePicker.Name = "FutureDateTimePicker";
+            this.FutureDateTimePicker.Size = new System.Drawing.Size(153, 21);
+            this.FutureDateTimePicker.TabIndex = 21;
             // 
             // MakeReportBTN
             // 
@@ -221,19 +221,20 @@
             this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.MakeReportBTN);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.FutureDateTimePicker);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.PastDateTimePicker);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.ManagerMenuStrip);
             this.Name = "ManagerCreateReportForm";
             this.Text = "Формирование отчета";
+            this.Load += new System.EventHandler(this.ManagerCreateReportForm_Load);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker1, 0);
+            this.Controls.SetChildIndex(this.PastDateTimePicker, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.dateTimePicker2, 0);
+            this.Controls.SetChildIndex(this.FutureDateTimePicker, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.MakeReportBTN, 0);
             this.ManagerMenuStrip.ResumeLayout(false);
@@ -254,10 +255,10 @@
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехАвиарейсовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker PastDateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker FutureDateTimePicker;
         private System.Windows.Forms.Button MakeReportBTN;
         private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
