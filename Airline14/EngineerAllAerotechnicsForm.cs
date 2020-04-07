@@ -91,6 +91,7 @@ namespace Airline14
             NameAerotechnicTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Name"));
             CapacityTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Capacity"));
             CrewTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Crew Count"));
+            ReportTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Content"));
         }
 
         private bool appModeEdit = false;
@@ -99,6 +100,7 @@ namespace Airline14
             NameAerotechnicTB.Enabled = false;
             CapacityTB.Enabled = false;
             CrewTB.Enabled = false;
+            ReportTB.Enabled = false;
 
             createToolStripButton.Enabled = true;
             addAeroToolStripMenuItem.Enabled = true;
@@ -128,6 +130,8 @@ namespace Airline14
             NameAerotechnicTB.Enabled = true;
             CapacityTB.Enabled = true;
             CrewTB.Enabled = true;
+            ReportTB.Enabled = true;
+
 
             createToolStripButton.Enabled = false;
             addAeroToolStripMenuItem.Enabled = false;
@@ -164,21 +168,37 @@ namespace Airline14
 
         private void AddReportBtn_Click(object sender, EventArgs e)
         {
-            if (NameAerotechnicTB.Text != "" && CrewTB.Text != "" && CapacityTB.Text != "")
+            if (NameAerotechnicTB.Text != "" && CrewTB.Text != "" && CapacityTB.Text != "" && ReportTB.Text != "")
             {
                 string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
 
                 SqlConnection connection = new SqlConnection(connectionPath);
-                SqlCommand newUserInsert = new SqlCommand("INSERT INTO[dbo].[Aerotechnics] ([Name], [Capacity], [Crew Count]) VALUES(@Name, @Capacity, @Crew);", connection);
+                SqlCommand newUserInsert = new SqlCommand("INSERT INTO[dbo].[Aerotechnics] ([Name], [Capacity], [Crew Count], [ID Report]) VALUES(@Name, @Capacity, @Crew, @IDReport);", connection);
+
+                SqlCommand newReportInsert = new SqlCommand("INSERT INTO[dbo].[Reports] ([Date], [Content], [ID engineer]) VALUES(@Date, @Content, @IDengineer);", connection);
+
+                SqlCommand selectLastIdReport = new SqlCommand("select max(id) from Reports", connection);
 
                 connection.Open();
-                newUserInsert.Parameters.AddWithValue("Name", NameAerotechnicTB.Text);
-                newUserInsert.Parameters.AddWithValue("Capacity", int.Parse(CapacityTB.Text));
-                newUserInsert.Parameters.AddWithValue("Crew", int.Parse(CrewTB.Text));
+
+                newReportInsert.Parameters.AddWithValue("Date", DateTime.Now);
+                newReportInsert.Parameters.AddWithValue("Content", ReportTB.Text);
+                newReportInsert.Parameters.AddWithValue("IDengineer", int.Parse("3")); //FIXME: 
+
 
                 try
                 {
+                    newReportInsert.ExecuteNonQuery();
+                    var lastId = Convert.ToInt32(selectLastIdReport.ExecuteScalar());
+                    
+
+                    newUserInsert.Parameters.AddWithValue("Name", NameAerotechnicTB.Text);
+                    newUserInsert.Parameters.AddWithValue("Capacity", int.Parse(CapacityTB.Text));
+                    newUserInsert.Parameters.AddWithValue("Crew", int.Parse(CrewTB.Text));
+                    newUserInsert.Parameters.AddWithValue("IDReport", int.Parse(lastId.ToString()));
+
                     newUserInsert.ExecuteNonQuery();
+
                 }
                 catch (Exception ex)
                 {
@@ -208,6 +228,7 @@ namespace Airline14
             NameAerotechnicTB.Text = "";
             CapacityTB.Text = "";
             CrewTB.Text = "";
+            ReportTB.Text = "";
         }
     }
 }

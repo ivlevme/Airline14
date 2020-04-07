@@ -63,13 +63,15 @@
             this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.aerotechnicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
-            this.aerotechnicsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.AerotechnicsTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aerotechnicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
+            this.aerotechnicsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.AerotechnicsTableAdapter();
+            this.ReportTB = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.EngineerMenuStrip.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -232,6 +234,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ReportTB);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.CrewTB);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.CapacityTB);
@@ -285,7 +289,7 @@
             this.AddAeroBtn.FlatAppearance.BorderSize = 0;
             this.AddAeroBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddAeroBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddAeroBtn.Location = new System.Drawing.Point(153, 161);
+            this.AddAeroBtn.Location = new System.Drawing.Point(154, 205);
             this.AddAeroBtn.Name = "AddAeroBtn";
             this.AddAeroBtn.Size = new System.Drawing.Size(176, 32);
             this.AddAeroBtn.TabIndex = 28;
@@ -389,20 +393,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(443, 406);
             this.dataGridView1.TabIndex = 23;
             // 
-            // aerotechnicsBindingSource
-            // 
-            this.aerotechnicsBindingSource.DataMember = "Aerotechnics";
-            this.aerotechnicsBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aerotechnicsTableAdapter
-            // 
-            this.aerotechnicsTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
@@ -426,6 +416,37 @@
             this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
             this.contentDataGridViewTextBoxColumn.HeaderText = "Отчет";
             this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
+            // 
+            // aerotechnicsBindingSource
+            // 
+            this.aerotechnicsBindingSource.DataMember = "Aerotechnics";
+            this.aerotechnicsBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aerotechnicsTableAdapter
+            // 
+            this.aerotechnicsTableAdapter.ClearBeforeFill = true;
+            // 
+            // ReportTB
+            // 
+            this.ReportTB.Location = new System.Drawing.Point(122, 161);
+            this.ReportTB.Name = "ReportTB";
+            this.ReportTB.Size = new System.Drawing.Size(256, 21);
+            this.ReportTB.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(119, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Отчет";
             // 
             // EngineerAllAerotechnicsForm
             // 
@@ -511,5 +532,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox ReportTB;
+        private System.Windows.Forms.Label label1;
     }
 }
