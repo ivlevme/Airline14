@@ -73,35 +73,43 @@ namespace Airline14
         {
             if (checkdate())
             {
-                //SqlDataReader sdr;
                 string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
                 SqlConnection connection = new SqlConnection(connectionPath);
-                SqlCommand selectForReports = new SqlCommand($"DECLARE @datePast DATETIME; DECLARE @dateFuture DATETIME; SET @datePast = CONVERT(DATETIME, '{PastDateTimePicker.Value.ToString("dd.MM.yyy")}', 104); SET @dateFuture = CONVERT(DATETIME, '{FutureDateTimePicker.Value.ToString("dd.MM.yyy")}', 104); SELECT* FROM Tickets WHERE [Date] >= @datePast AND [Date] <= @dateFuture", connection);
+                SqlCommand selectForReports = new SqlCommand($"DECLARE @datePast DATETIME; DECLARE @dateFuture DATETIME; SET @datePast = CONVERT(DATETIME, '{PastDateTimePicker.Value.ToString("dd.MM.yyy")}', 104); SET @dateFuture = CONVERT(DATETIME, '{FutureDateTimePicker.Value.ToString("dd.MM.yyy")}', 104); SELECT [Date], [Number Flight], COUNT(*) AS Test FROM Tickets WHERE [Date] >= @datePast AND [Date] <= @dateFuture GROUP BY [Number Flight], Date", connection);
 
+
+                ManagerDoneReportForm managerDoneReport = new ManagerDoneReportForm();
 
                 connection.Open();
 
-                //try
-                //{
+                try
+                {
+                    bool isRespEmpty = true;
                     sdr = selectForReports.ExecuteReader();
                     while (sdr.Read())
                     {
-                        MessageBox.Show(sdr["Date"].ToString());
+                        isRespEmpty = false;
+                        managerDoneReport.FirstDateLabel.Text = PastDateTimePicker.Value.ToString("dd.MM.yyy");
+                        managerDoneReport.LastDateLabel.Text = FutureDateTimePicker.Value.ToString("dd.MM.yyy");
+
+                        managerDoneReport.dataGridView1.Rows.Add(sdr["Number Flight"].ToString(), sdr["Test"].ToString(), (int.Parse(sdr["Test"].ToString()) * 65).ToString() +" $");
                     }
+
                     sdr.Close();
 
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
-
-                ManagerDoneReportForm managerDoneReport = new ManagerDoneReportForm();
-                managerDoneReport.Show();
-                this.Hide();
-            } else
-            {
-                ErrorMessageBox();
+                    if (isRespEmpty == true)
+                    {
+                        MessageBox.Show("За выбранный период данные отсутствуют, попробуйте выбрать другой диапазон дат", "Данные отсутствуют", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    } else
+                    {
+                        managerDoneReport.Show();
+                        this.Hide();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
         }

@@ -72,11 +72,11 @@ namespace Airline14
         private void ManagerDoneReportForm_Load(object sender, EventArgs e)
         {
 
-            dataGridView1.Rows.Add("1", "65", (65 * 200).ToString() + "$");
-            dataGridView1.Rows.Add("2", "35", (35 * 200).ToString() + "$");
-            dataGridView1.Rows.Add("3", "100", (35 * 200).ToString() + "$");
-            dataGridView1.Rows.Add("4", "200", (35 * 200).ToString() + "$");
-            dataGridView1.Rows.Add("5", "234", (35 * 200).ToString() + "$");
+            //dataGridView1.Rows.Add("1", "65", (65 * 200).ToString() + "$");
+            //dataGridView1.Rows.Add("2", "35", (35 * 200).ToString() + "$");
+            //dataGridView1.Rows.Add("3", "100", (35 * 200).ToString() + "$");
+            //dataGridView1.Rows.Add("4", "200", (35 * 200).ToString() + "$");
+            //dataGridView1.Rows.Add("5", "234", (35 * 200).ToString() + "$");
 
         }
 

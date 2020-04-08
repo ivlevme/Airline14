@@ -114,6 +114,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberFlight,
@@ -121,6 +123,7 @@
             this.ResumeCost});
             this.dataGridView1.Location = new System.Drawing.Point(322, 109);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(343, 407);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -129,16 +132,19 @@
             // 
             this.NumberFlight.HeaderText = "Номер рейса";
             this.NumberFlight.Name = "NumberFlight";
+            this.NumberFlight.ReadOnly = true;
             // 
             // CountSoldTicket
             // 
             this.CountSoldTicket.HeaderText = "Количество проданных билетов";
             this.CountSoldTicket.Name = "CountSoldTicket";
+            this.CountSoldTicket.ReadOnly = true;
             // 
             // ResumeCost
             // 
             this.ResumeCost.HeaderText = "Итоговая выручка";
             this.ResumeCost.Name = "ResumeCost";
+            this.ResumeCost.ReadOnly = true;
             // 
             // ManagerMenuStrip
             // 
@@ -270,10 +276,7 @@
         #endregion
 
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label FirstDateLabel;
-        private System.Windows.Forms.Label LastDateLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MenuStrip ManagerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюToolStripMenuItem;
@@ -289,5 +292,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberFlight;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountSoldTicket;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResumeCost;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Label FirstDateLabel;
+        public System.Windows.Forms.Label LastDateLabel;
     }
 }

@@ -1285,8 +1285,6 @@ namespace Airline14 {
             
             private global::System.Data.DataColumn columnPersonal_information;
             
-            private global::System.Data.DataColumn columnNumber_flight;
-            
             private global::System.Data.DataColumn columnPassport_information;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1340,14 +1338,6 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Number_flightColumn {
-                get {
-                    return this.columnNumber_flight;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn Passport_informationColumn {
                 get {
                     return this.columnPassport_information;
@@ -1391,12 +1381,11 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PassengersRow AddPassengersRow(string Personal_information, int Number_flight, string Passport_information) {
+            public PassengersRow AddPassengersRow(string Personal_information, string Passport_information) {
                 PassengersRow rowPassengersRow = ((PassengersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Personal_information,
-                        Number_flight,
                         Passport_information};
                 rowPassengersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPassengersRow);
@@ -1429,7 +1418,6 @@ namespace Airline14 {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnPersonal_information = base.Columns["Personal information"];
-                this.columnNumber_flight = base.Columns["Number flight"];
                 this.columnPassport_information = base.Columns["Passport information"];
             }
             
@@ -1440,8 +1428,6 @@ namespace Airline14 {
                 base.Columns.Add(this.columnID);
                 this.columnPersonal_information = new global::System.Data.DataColumn("Personal information", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPersonal_information);
-                this.columnNumber_flight = new global::System.Data.DataColumn("Number flight", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumber_flight);
                 this.columnPassport_information = new global::System.Data.DataColumn("Passport information", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPassport_information);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -3257,22 +3243,6 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Number_flight {
-                get {
-                    try {
-                        return ((int)(this[this.tablePassengers.Number_flightColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Number flight\' in table \'Passengers\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePassengers.Number_flightColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Passport_information {
                 get {
                     return ((string)(this[this.tablePassengers.Passport_informationColumn]));
@@ -3280,18 +3250,6 @@ namespace Airline14 {
                 set {
                     this[this.tablePassengers.Passport_informationColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNumber_flightNull() {
-                return this.IsNull(this.tablePassengers.Number_flightColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNumber_flightNull() {
-                this[this.tablePassengers.Number_flightColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4749,38 +4707,34 @@ FROM            Flights INNER JOIN
             tableMapping.DataSetTable = "Passengers";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Personal information", "Personal information");
-            tableMapping.ColumnMappings.Add("Number flight", "Number flight");
             tableMapping.ColumnMappings.Add("Passport information", "Passport information");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Passengers] WHERE (([ID] = @Original_ID) AND ([Personal information] = @Original_Personal_information) AND ((@IsNull_Number_flight = 1 AND [Number flight] IS NULL) OR ([Number flight] = @Original_Number_flight)) AND ([Passport information] = @Original_Passport_information))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Passengers] WHERE (([ID] = @Original_ID) AND ([Personal inform" +
+                "ation] = @Original_Personal_information) AND ([Passport information] = @Original" +
+                "_Passport_information))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Personal_information", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal information", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Number_flight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number flight", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Number_flight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number flight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Passport_information", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Passport information", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Passengers] ([Personal information], [Number flight], [Passport information]) VALUES (@Personal_information, @Number_flight, @Passport_information);
-SELECT ID, [Personal information], [Number flight], [Passport information] FROM Passengers WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Passengers] ([Personal information], [Passport information]) V" +
+                "ALUES (@Personal_information, @Passport_information);\r\nSELECT ID, [Personal info" +
+                "rmation], [Passport information] FROM Passengers WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Personal_information", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal information", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number_flight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number flight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Passport_information", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Passport information", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Passengers] SET [Personal information] = @Personal_information, [Number flight] = @Number_flight, [Passport information] = @Passport_information WHERE (([ID] = @Original_ID) AND ([Personal information] = @Original_Personal_information) AND ((@IsNull_Number_flight = 1 AND [Number flight] IS NULL) OR ([Number flight] = @Original_Number_flight)) AND ([Passport information] = @Original_Passport_information));
-SELECT ID, [Personal information], [Number flight], [Passport information] FROM Passengers WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Passengers] SET [Personal information] = @Personal_information, [Passport information] = @Passport_information WHERE (([ID] = @Original_ID) AND ([Personal information] = @Original_Personal_information) AND ([Passport information] = @Original_Passport_information));
+SELECT ID, [Personal information], [Passport information] FROM Passengers WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Personal_information", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal information", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number_flight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number flight", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Passport_information", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Passport information", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Personal_information", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Personal information", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Number_flight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number flight", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Number_flight", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number flight", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Passport_information", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Passport information", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -4798,8 +4752,7 @@ SELECT ID, [Personal information], [Number flight], [Passport information] FROM 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [Personal information], [Number flight], [Passport information] FROM d" +
-                "bo.Passengers";
+            this._commandCollection[0].CommandText = "SELECT ID, [Personal information], [Passport information] FROM dbo.Passengers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4860,7 +4813,7 @@ SELECT ID, [Personal information], [Number flight], [Passport information] FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Personal_information, global::System.Nullable<int> Original_Number_flight, string Original_Passport_information) {
+        public virtual int Delete(int Original_ID, string Original_Personal_information, string Original_Passport_information) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Personal_information == null)) {
                 throw new global::System.ArgumentNullException("Original_Personal_information");
@@ -4868,19 +4821,11 @@ SELECT ID, [Personal information], [Number flight], [Passport information] FROM 
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Personal_information));
             }
-            if ((Original_Number_flight.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Number_flight.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
             if ((Original_Passport_information == null)) {
                 throw new global::System.ArgumentNullException("Original_Passport_information");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Passport_information));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Passport_information));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4902,24 +4847,18 @@ SELECT ID, [Personal information], [Number flight], [Passport information] FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Personal_information, global::System.Nullable<int> Number_flight, string Passport_information) {
+        public virtual int Insert(string Personal_information, string Passport_information) {
             if ((Personal_information == null)) {
                 throw new global::System.ArgumentNullException("Personal_information");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Personal_information));
             }
-            if ((Number_flight.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Number_flight.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
             if ((Passport_information == null)) {
                 throw new global::System.ArgumentNullException("Passport_information");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Passport_information));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Passport_information));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4941,47 +4880,33 @@ SELECT ID, [Personal information], [Number flight], [Passport information] FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Personal_information, global::System.Nullable<int> Number_flight, string Passport_information, int Original_ID, string Original_Personal_information, global::System.Nullable<int> Original_Number_flight, string Original_Passport_information, int ID) {
+        public virtual int Update(string Personal_information, string Passport_information, int Original_ID, string Original_Personal_information, string Original_Passport_information, int ID) {
             if ((Personal_information == null)) {
                 throw new global::System.ArgumentNullException("Personal_information");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Personal_information));
             }
-            if ((Number_flight.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Number_flight.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
             if ((Passport_information == null)) {
                 throw new global::System.ArgumentNullException("Passport_information");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Passport_information));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Passport_information));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_ID));
             if ((Original_Personal_information == null)) {
                 throw new global::System.ArgumentNullException("Original_Personal_information");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Personal_information));
-            }
-            if ((Original_Number_flight.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Number_flight.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Personal_information));
             }
             if ((Original_Passport_information == null)) {
                 throw new global::System.ArgumentNullException("Original_Passport_information");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Passport_information));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Passport_information));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5002,8 +4927,8 @@ SELECT ID, [Personal information], [Number flight], [Passport information] FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Personal_information, global::System.Nullable<int> Number_flight, string Passport_information, int Original_ID, string Original_Personal_information, global::System.Nullable<int> Original_Number_flight, string Original_Passport_information) {
-            return this.Update(Personal_information, Number_flight, Passport_information, Original_ID, Original_Personal_information, Original_Number_flight, Original_Passport_information, Original_ID);
+        public virtual int Update(string Personal_information, string Passport_information, int Original_ID, string Original_Personal_information, string Original_Passport_information) {
+            return this.Update(Personal_information, Passport_information, Original_ID, Original_Personal_information, Original_Passport_information, Original_ID);
         }
     }
     
