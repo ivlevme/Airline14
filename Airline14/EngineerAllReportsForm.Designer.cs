@@ -57,12 +57,12 @@
             this.reportsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.ReportsTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DateTimeTB = new System.Windows.Forms.TextBox();
-            this.AddReportBtn = new System.Windows.Forms.Button();
-            this.ContentReportTB = new System.Windows.Forms.TextBox();
-            this.ContentReportLabel = new System.Windows.Forms.Label();
-            this.DateReport = new System.Windows.Forms.Label();
-            this.IDReportTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.AddReportBtn = new System.Windows.Forms.Button();
+            this.IDReportTB = new System.Windows.Forms.TextBox();
+            this.ContentReportTB = new System.Windows.Forms.TextBox();
+            this.DateReport = new System.Windows.Forms.Label();
+            this.ContentReportLabel = new System.Windows.Forms.Label();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.createToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -299,6 +299,16 @@
             this.DateTimeTB.Size = new System.Drawing.Size(256, 21);
             this.DateTimeTB.TabIndex = 39;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(134, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 16);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Идентификатор отчета";
+            // 
             // AddReportBtn
             // 
             this.AddReportBtn.BackColor = System.Drawing.Color.MediumBlue;
@@ -312,6 +322,15 @@
             this.AddReportBtn.TabIndex = 38;
             this.AddReportBtn.Text = "Добавить отчет";
             this.AddReportBtn.UseVisualStyleBackColor = false;
+            this.AddReportBtn.Click += new System.EventHandler(this.AddReportBtn_Click);
+            // 
+            // IDReportTB
+            // 
+            this.IDReportTB.Location = new System.Drawing.Point(137, 44);
+            this.IDReportTB.Name = "IDReportTB";
+            this.IDReportTB.ReadOnly = true;
+            this.IDReportTB.Size = new System.Drawing.Size(256, 21);
+            this.IDReportTB.TabIndex = 34;
             // 
             // ContentReportTB
             // 
@@ -320,16 +339,6 @@
             this.ContentReportTB.ReadOnly = true;
             this.ContentReportTB.Size = new System.Drawing.Size(256, 21);
             this.ContentReportTB.TabIndex = 37;
-            // 
-            // ContentReportLabel
-            // 
-            this.ContentReportLabel.AutoSize = true;
-            this.ContentReportLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ContentReportLabel.Location = new System.Drawing.Point(134, 137);
-            this.ContentReportLabel.Name = "ContentReportLabel";
-            this.ContentReportLabel.Size = new System.Drawing.Size(119, 16);
-            this.ContentReportLabel.TabIndex = 36;
-            this.ContentReportLabel.Text = "Содержание отчета";
             // 
             // DateReport
             // 
@@ -341,23 +350,15 @@
             this.DateReport.TabIndex = 35;
             this.DateReport.Text = "Дата Отчета";
             // 
-            // IDReportTB
+            // ContentReportLabel
             // 
-            this.IDReportTB.Location = new System.Drawing.Point(137, 44);
-            this.IDReportTB.Name = "IDReportTB";
-            this.IDReportTB.ReadOnly = true;
-            this.IDReportTB.Size = new System.Drawing.Size(256, 21);
-            this.IDReportTB.TabIndex = 34;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(134, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 16);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Идентификатор отчета";
+            this.ContentReportLabel.AutoSize = true;
+            this.ContentReportLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ContentReportLabel.Location = new System.Drawing.Point(134, 137);
+            this.ContentReportLabel.Name = "ContentReportLabel";
+            this.ContentReportLabel.Size = new System.Drawing.Size(119, 16);
+            this.ContentReportLabel.TabIndex = 36;
+            this.ContentReportLabel.Text = "Содержание отчета";
             // 
             // toolStrip2
             // 

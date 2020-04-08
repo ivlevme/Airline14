@@ -1923,6 +1923,8 @@ namespace Airline14 {
             
             private global::System.Data.DataColumn columnPersonal_information;
             
+            private global::System.Data.DataColumn columnDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TicketsDataTable() {
@@ -1998,6 +2000,14 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2033,14 +2043,15 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TicketsRow AddTicketsRow(PassengersRow parentPassengersRowByFK_Tickets_Passengers, FlightsRow parentFlightsRowByFK_Tickets_Flights, string Personal_information) {
+            public TicketsRow AddTicketsRow(PassengersRow parentPassengersRowByFK_Tickets_Passengers, FlightsRow parentFlightsRowByFK_Tickets_Flights, string Personal_information, System.DateTime Date) {
                 TicketsRow rowTicketsRow = ((TicketsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
                         null,
-                        Personal_information};
+                        Personal_information,
+                        Date};
                 if ((parentPassengersRowByFK_Tickets_Passengers != null)) {
                     columnValuesArray[1] = parentPassengersRowByFK_Tickets_Passengers[0];
                 }
@@ -2081,6 +2092,7 @@ namespace Airline14 {
                 this.columnNumber_Flight = base.Columns["Number Flight"];
                 this.columnNumber = base.Columns["Number"];
                 this.columnPersonal_information = base.Columns["Personal information"];
+                this.columnDate = base.Columns["Date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2096,6 +2108,8 @@ namespace Airline14 {
                 base.Columns.Add(this.columnNumber);
                 this.columnPersonal_information = new global::System.Data.DataColumn("Personal information", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPersonal_information);
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -3506,6 +3520,22 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableTickets.DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date\' in table \'Tickets\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTickets.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FlightsRow FlightsRow {
                 get {
                     return ((FlightsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Tickets_Flights"])));
@@ -3524,6 +3554,18 @@ namespace Airline14 {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Tickets_Passengers"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDateNull() {
+                return this.IsNull(this.tableTickets.DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDateNull() {
+                this[this.tableTickets.DateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5264,6 +5306,7 @@ SELECT ID, [Personal information], [Number flight], [Passport information] FROM 
             tableMapping.ColumnMappings.Add("Number Flight", "Number Flight");
             tableMapping.ColumnMappings.Add("Number", "Number");
             tableMapping.ColumnMappings.Add("Personal information", "Personal information");
+            tableMapping.ColumnMappings.Add("Date", "Date");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -5280,7 +5323,7 @@ SELECT ID, [Personal information], [Number flight], [Passport information] FROM 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Tickets.ID, Tickets.[ID Passenger], Tickets.[Number Flight], Flights.Number, Passengers.[Personal information]
+            this._commandCollection[0].CommandText = @"SELECT        Tickets.ID, Tickets.[ID Passenger], Tickets.[Number Flight], Flights.Number, Passengers.[Personal information], Tickets.Date
 FROM            Tickets INNER JOIN
                          Flights ON Tickets.[Number Flight] = Flights.Number INNER JOIN
                          Passengers ON Tickets.[ID Passenger] = Passengers.ID";

@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesmanAllTicketsForm));
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +49,6 @@
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ticketsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.TicketsTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.FlightCB = new System.Windows.Forms.ComboBox();
             this.FlightLabel = new System.Windows.Forms.Label();
@@ -67,13 +62,19 @@
             this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
+            this.ticketsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.TicketsTableAdapter();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.EngineerMenuStrip.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -102,36 +103,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numberDataGridViewTextBoxColumn,
-            this.personalInformationDataGridViewTextBoxColumn});
+            this.personalInformationDataGridViewTextBoxColumn,
+            this.Date});
             this.dataGridView1.DataSource = this.ticketsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 103);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(393, 401);
+            this.dataGridView1.Size = new System.Drawing.Size(494, 401);
             this.dataGridView1.TabIndex = 24;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер авиарейса";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // personalInformationDataGridViewTextBoxColumn
-            // 
-            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
-            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "ФИО";
-            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
-            this.personalInformationDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // ticketsBindingSource
-            // 
-            this.ticketsBindingSource.DataMember = "Tickets";
-            this.ticketsBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EngineerMenuStrip
             // 
@@ -267,10 +245,6 @@
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
-            // ticketsTableAdapter
-            // 
-            this.ticketsTableAdapter.ClearBeforeFill = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.FlightCB);
@@ -279,9 +253,9 @@
             this.panel1.Controls.Add(this.ClientCB);
             this.panel1.Controls.Add(this.ClientLabel);
             this.panel1.Controls.Add(this.AddTicketBtn);
-            this.panel1.Location = new System.Drawing.Point(434, 103);
+            this.panel1.Location = new System.Drawing.Point(512, 103);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(485, 401);
+            this.panel1.Size = new System.Drawing.Size(407, 401);
             this.panel1.TabIndex = 28;
             // 
             // FlightCB
@@ -407,6 +381,40 @@
             this.UnDoToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.UnDoToolStripButton.Text = "Назад";
             // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataMember = "Tickets";
+            this.ticketsBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ticketsTableAdapter
+            // 
+            this.ticketsTableAdapter.ClearBeforeFill = true;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер авиарейса";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // personalInformationDataGridViewTextBoxColumn
+            // 
+            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
+            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
+            this.personalInformationDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Дата";
+            this.Date.Name = "Date";
+            // 
             // SalesmanAllTicketsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -427,8 +435,6 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -436,6 +442,8 @@
             this.panel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,8 +471,6 @@
         private AirlineDBDataSet2 airlineDBDataSet2;
         private System.Windows.Forms.BindingSource ticketsBindingSource;
         private AirlineDBDataSet2TableAdapters.TicketsTableAdapter ticketsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn personalInformationDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem авиарейсыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотретьВсеАвиарейсыToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
@@ -480,5 +486,8 @@
         private System.Windows.Forms.ToolStripButton editToolStripButton;
         private System.Windows.Forms.ToolStripButton removeToolStripButton;
         private System.Windows.Forms.ToolStripButton UnDoToolStripButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personalInformationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
     }
 }

@@ -86,5 +86,10 @@ namespace Airline14
         {
 
         }
+
+        private void AddReportBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -72,6 +73,29 @@ namespace Airline14
         {
             if (checkdate())
             {
+                //SqlDataReader sdr;
+                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+                SqlConnection connection = new SqlConnection(connectionPath);
+                SqlCommand selectForReports = new SqlCommand($"DECLARE @datePast DATETIME; DECLARE @dateFuture DATETIME; SET @datePast = CONVERT(DATETIME, '{PastDateTimePicker.Value.ToString("dd.MM.yyy")}', 104); SET @dateFuture = CONVERT(DATETIME, '{FutureDateTimePicker.Value.ToString("dd.MM.yyy")}', 104); SELECT* FROM Tickets WHERE [Date] >= @datePast AND [Date] <= @dateFuture", connection);
+
+
+                connection.Open();
+
+                //try
+                //{
+                    sdr = selectForReports.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        MessageBox.Show(sdr["Date"].ToString());
+                    }
+                    sdr.Close();
+
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+
                 ManagerDoneReportForm managerDoneReport = new ManagerDoneReportForm();
                 managerDoneReport.Show();
                 this.Hide();
