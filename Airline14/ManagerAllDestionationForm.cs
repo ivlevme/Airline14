@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -93,9 +94,60 @@ namespace Airline14
 
         private void ManagerAllDestionationForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Destination' table. You can move, or remove it, as needed.
             this.destinationTableAdapter.Fill(this.airlineDBDataSet2.Destination);
 
+            dataGridView1.CurrentRow.Selected = false;
+
+            DisplayReadOnlyManagerDestination();
+
+            AddDestinationBtn.Visible = false;
+
+
+
+            idCurrentDestinationTB.DataBindings.Add(new Binding("Text", dataSource: destinationBindingSource, dataMember: "ID"));
+            nameDestinationTB.DataBindings.Add(new Binding("Text", dataSource: destinationBindingSource, dataMember: "Name"));
+        }
+
+        private bool appModeEdit = false;
+
+        private void DisplayReadOnlyManagerDestination()
+        {
+            nameDestinationTB.Enabled = false;
+
+            createToolStripButton.Enabled = true;
+            addToolStripMenuItem.Enabled = true;
+            createDestToolStripMenuItem.Enabled = true;
+
+            editDestToolStripMenuItem.Enabled = true;
+            editToolStripButton.Enabled = true;
+            editToolStripMenuItem.Enabled = true;
+
+            saveToolStripButton.Enabled = false;
+
+            UnDoToolStripButton.Enabled = false;
+
+            appModeEdit = false;
+
+            AddDestinationBtn.Visible = false;
+        }
+
+        private void DisplayEditManagerDestination()
+        {
+            nameDestinationTB.Enabled = true;
+
+            createToolStripButton.Enabled = false;
+            addToolStripMenuItem.Enabled = false;
+            createDestToolStripMenuItem.Enabled = false;
+
+            editDestToolStripMenuItem.Enabled = false;
+            editToolStripButton.Enabled = false;
+            editToolStripMenuItem.Enabled = false;
+
+            saveToolStripButton.Enabled = true;
+
+            UnDoToolStripButton.Enabled = true;
+
+            appModeEdit = true;
         }
 
         private void списокВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,6 +155,159 @@ namespace Airline14
             ManagerAllFlightForm managerAllFlight = new ManagerAllFlightForm();
             managerAllFlight.Show();
             this.Hide();
+        }
+
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayEditManagerDestination();
+
+            AddDestinationBtn.Visible = true;
+
+            nameDestinationTB.Text = "";
+        }
+
+        private void editToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayEditManagerDestination();
+        }
+
+        private void UnDoToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayReadOnlyManagerDestination();
+        }
+
+        private void removeCurrentDestination () {
+            if (appModeEdit == true)
+            {
+
+                idCurrentDestinationTB.Visible = true;
+                int idCurrentDestination = int.Parse(idCurrentDestinationTB.Text);
+                idCurrentDestinationTB.Visible = false;
+
+
+                SqlConnection connection = new SqlConnection(connectionPath);
+
+                SqlCommand destDelete = new SqlCommand("DELETE FROM [Destination] WHERE [ID] =@ID", connection);
+
+                connection.Open();
+
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        destDelete.Parameters.AddWithValue("ID", idCurrentDestination);
+
+
+                        destDelete.ExecuteNonQuery();
+
+                        MessageBox.Show("Запись удалена успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        DisplayReadOnlyManagerDestination();
+
+                        this.destinationTableAdapter.Fill(this.airlineDBDataSet2.Destination);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+
+        private void removeToolStripButton_Click(object sender, EventArgs e)
+        {
+            removeCurrentDestination();
+        }
+
+            private void saveToolStripButton_Click(object sender, EventArgs e)
+            {
+            idCurrentDestinationTB.Visible = true;
+            int idCurrentDestination = int.Parse(idCurrentDestinationTB.Text);
+            idCurrentDestinationTB.Visible = false;
+
+
+            SqlConnection connection = new SqlConnection(connectionPath);
+
+            SqlCommand destUpdate = new SqlCommand("UPDATE [Destination] SET [Name] = @Name WHERE [ID] =@ID", connection);
+
+
+
+            connection.Open();
+            try
+            {
+                destUpdate.Parameters.AddWithValue("ID", idCurrentDestination);
+                destUpdate.Parameters.AddWithValue("Name", nameDestinationTB.Text);
+
+                destUpdate.ExecuteNonQuery();
+
+                MessageBox.Show("Данные успешно обновлены!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.destinationTableAdapter.Fill(this.airlineDBDataSet2.Destination);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            connection.Close();
+
+            DisplayReadOnlyManagerDestination();
+        }
+
+        private void AddDestinationBtn_Click(object sender, EventArgs e)
+        {
+            if (nameDestinationTB.Text != "")
+            {
+                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+
+                SqlConnection connection = new SqlConnection(connectionPath);
+                SqlCommand newDestInsert = new SqlCommand("INSERT INTO[dbo].[Destination] ([Name]) VALUES(@Name);", connection);
+
+                connection.Open();
+
+                newDestInsert.Parameters.AddWithValue("Name", nameDestinationTB.Text);
+
+                try
+                {
+                    newDestInsert.ExecuteNonQuery();
+
+                    MessageBox.Show("Пункт назначения добавлен успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                connection.Close();
+
+                this.destinationTableAdapter.Fill(this.airlineDBDataSet2.Destination);
+
+                AddDestinationBtn.Visible = false;
+
+                DisplayReadOnlyManagerDestination();
+            }
+            else
+            {
+                ErrorMessageBox();
+            }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisplayEditManagerDestination();
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            removeCurrentDestination();
         }
     }
 }

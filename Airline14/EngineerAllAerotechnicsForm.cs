@@ -203,6 +203,7 @@ namespace Airline14
 
                     newUserInsert.ExecuteNonQuery();
 
+                    MessageBox.Show("Аэротехника добавлена успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
                 catch (Exception ex)
                 {
@@ -213,7 +214,6 @@ namespace Airline14
 
                 this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
 
-                MessageBox.Show("Аэротехника добавлена успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 AddAeroBtn.Visible = false;
 
                 DisplayReadOnlyEngineer();
