@@ -32,6 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesmanAllTicketsForm));
             this.NameLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,19 +67,14 @@
             this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.ticketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.ticketsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.TicketsTableAdapter();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.personalInformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.EngineerMenuStrip.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -110,6 +110,36 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(494, 401);
             this.dataGridView1.TabIndex = 24;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер авиарейса";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // personalInformationDataGridViewTextBoxColumn
+            // 
+            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
+            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "ФИО";
+            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
+            this.personalInformationDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Дата";
+            this.Date.Name = "Date";
+            // 
+            // ticketsBindingSource
+            // 
+            this.ticketsBindingSource.DataMember = "Tickets";
+            this.ticketsBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // EngineerMenuStrip
             // 
@@ -283,12 +313,13 @@
             this.AddNewClient.FlatAppearance.BorderSize = 0;
             this.AddNewClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewClient.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.AddNewClient.Location = new System.Drawing.Point(280, 37);
+            this.AddNewClient.Location = new System.Drawing.Point(280, 22);
             this.AddNewClient.Name = "AddNewClient";
-            this.AddNewClient.Size = new System.Drawing.Size(176, 24);
+            this.AddNewClient.Size = new System.Drawing.Size(124, 53);
             this.AddNewClient.TabIndex = 28;
             this.AddNewClient.Text = "Добавить нового клиента";
             this.AddNewClient.UseVisualStyleBackColor = false;
+            this.AddNewClient.Click += new System.EventHandler(this.AddNewClient_Click);
             // 
             // ClientCB
             // 
@@ -381,39 +412,9 @@
             this.UnDoToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.UnDoToolStripButton.Text = "Назад";
             // 
-            // ticketsBindingSource
-            // 
-            this.ticketsBindingSource.DataMember = "Tickets";
-            this.ticketsBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // ticketsTableAdapter
             // 
             this.ticketsTableAdapter.ClearBeforeFill = true;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Номер авиарейса";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // personalInformationDataGridViewTextBoxColumn
-            // 
-            this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
-            this.personalInformationDataGridViewTextBoxColumn.HeaderText = "ФИО";
-            this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
-            this.personalInformationDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Дата";
-            this.Date.Name = "Date";
             // 
             // SalesmanAllTicketsForm
             // 
@@ -435,6 +436,8 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.toolStrip2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -442,8 +445,6 @@
             this.panel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -70,7 +70,10 @@ namespace Airline14
 
         public void AdminAllUsersForm_Load(object sender, EventArgs e)
         {
+
             this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
+
+            MessageBox.Show(idCurrentUser.ToString());
 
             int countUsers = usersDataGridView.Rows.Count;
 

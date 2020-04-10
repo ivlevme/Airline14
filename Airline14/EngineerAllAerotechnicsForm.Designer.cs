@@ -49,6 +49,8 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ReportTB = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.CrewTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CapacityTB = new System.Windows.Forms.TextBox();
@@ -70,8 +72,8 @@
             this.aerotechnicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.aerotechnicsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.AerotechnicsTableAdapter();
-            this.ReportTB = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.idCurrentAeroTB = new System.Windows.Forms.TextBox();
+            this.idCurrentReportTB = new System.Windows.Forms.TextBox();
             this.EngineerMenuStrip.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -234,6 +236,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.idCurrentReportTB);
+            this.panel1.Controls.Add(this.idCurrentAeroTB);
             this.panel1.Controls.Add(this.ReportTB);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.CrewTB);
@@ -248,12 +252,29 @@
             this.panel1.Size = new System.Drawing.Size(458, 406);
             this.panel1.TabIndex = 21;
             // 
+            // ReportTB
+            // 
+            this.ReportTB.Location = new System.Drawing.Point(122, 161);
+            this.ReportTB.Name = "ReportTB";
+            this.ReportTB.Size = new System.Drawing.Size(256, 21);
+            this.ReportTB.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(119, 142);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Отчет";
+            // 
             // CrewTB
             // 
             this.CrewTB.Location = new System.Drawing.Point(122, 118);
             this.CrewTB.Name = "CrewTB";
             this.CrewTB.Size = new System.Drawing.Size(256, 21);
-            this.CrewTB.TabIndex = 32;
+            this.CrewTB.TabIndex = 3;
             // 
             // label3
             // 
@@ -270,7 +291,7 @@
             this.CapacityTB.Location = new System.Drawing.Point(122, 75);
             this.CapacityTB.Name = "CapacityTB";
             this.CapacityTB.Size = new System.Drawing.Size(256, 21);
-            this.CapacityTB.TabIndex = 30;
+            this.CapacityTB.TabIndex = 2;
             // 
             // label2
             // 
@@ -292,7 +313,7 @@
             this.AddAeroBtn.Location = new System.Drawing.Point(154, 205);
             this.AddAeroBtn.Name = "AddAeroBtn";
             this.AddAeroBtn.Size = new System.Drawing.Size(176, 32);
-            this.AddAeroBtn.TabIndex = 28;
+            this.AddAeroBtn.TabIndex = 5;
             this.AddAeroBtn.Text = "Добавить аэротехнику";
             this.AddAeroBtn.UseVisualStyleBackColor = false;
             this.AddAeroBtn.Click += new System.EventHandler(this.AddReportBtn_Click);
@@ -302,7 +323,7 @@
             this.NameAerotechnicTB.Location = new System.Drawing.Point(122, 32);
             this.NameAerotechnicTB.Name = "NameAerotechnicTB";
             this.NameAerotechnicTB.Size = new System.Drawing.Size(256, 21);
-            this.NameAerotechnicTB.TabIndex = 27;
+            this.NameAerotechnicTB.TabIndex = 1;
             // 
             // NameAerotechnicLabel
             // 
@@ -346,6 +367,7 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "toolStripButton1";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // editToolStripButton
             // 
@@ -365,6 +387,7 @@
             this.removeToolStripButton.Name = "removeToolStripButton";
             this.removeToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.removeToolStripButton.Text = "Удалить";
+            this.removeToolStripButton.Click += new System.EventHandler(this.removeToolStripButton_Click);
             // 
             // UnDoToolStripButton
             // 
@@ -390,6 +413,8 @@
             this.dataGridView1.DataSource = this.aerotechnicsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 98);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(443, 406);
             this.dataGridView1.TabIndex = 23;
             // 
@@ -398,24 +423,28 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
             this.dataGridViewTextBoxColumn2.HeaderText = "Название";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Capacity";
             this.dataGridViewTextBoxColumn4.HeaderText = "Вместимость";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Crew Count";
             this.dataGridViewTextBoxColumn5.HeaderText = "Количество экипажа";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // contentDataGridViewTextBoxColumn
             // 
             this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
             this.contentDataGridViewTextBoxColumn.HeaderText = "Отчет";
             this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
+            this.contentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // aerotechnicsBindingSource
             // 
@@ -431,22 +460,21 @@
             // 
             this.aerotechnicsTableAdapter.ClearBeforeFill = true;
             // 
-            // ReportTB
+            // idCurrentAeroTB
             // 
-            this.ReportTB.Location = new System.Drawing.Point(122, 161);
-            this.ReportTB.Name = "ReportTB";
-            this.ReportTB.Size = new System.Drawing.Size(256, 21);
-            this.ReportTB.TabIndex = 34;
+            this.idCurrentAeroTB.Location = new System.Drawing.Point(355, 5);
+            this.idCurrentAeroTB.Name = "idCurrentAeroTB";
+            this.idCurrentAeroTB.Size = new System.Drawing.Size(100, 21);
+            this.idCurrentAeroTB.TabIndex = 34;
+            this.idCurrentAeroTB.Visible = false;
             // 
-            // label1
+            // idCurrentReportTB
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(119, 142);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 16);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Отчет";
+            this.idCurrentReportTB.Location = new System.Drawing.Point(249, 5);
+            this.idCurrentReportTB.Name = "idCurrentReportTB";
+            this.idCurrentReportTB.Size = new System.Drawing.Size(100, 21);
+            this.idCurrentReportTB.TabIndex = 35;
+            this.idCurrentReportTB.Visible = false;
             // 
             // EngineerAllAerotechnicsForm
             // 
@@ -534,5 +562,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn contentDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox ReportTB;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox idCurrentAeroTB;
+        public System.Windows.Forms.TextBox idCurrentReportTB;
     }
 }

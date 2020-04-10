@@ -91,5 +91,10 @@ namespace Airline14
             salesmanAllFlight.Show();
             this.Hide();
         }
+
+        private void AddNewClient_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

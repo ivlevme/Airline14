@@ -77,6 +77,7 @@ namespace Airline14
             delRecord();
         }
 
+
         private void EngineerAllAerotechnicsForm_Load(object sender, EventArgs e)
         {
             this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
@@ -92,10 +93,13 @@ namespace Airline14
             CapacityTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Capacity"));
             CrewTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Crew Count"));
             ReportTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Content"));
+            idCurrentAeroTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "ID"));
+            idCurrentReportTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "ID Report"));
+
         }
 
         private bool appModeEdit = false;
-        public void DisplayReadOnlyEngineer()
+        private void DisplayReadOnlyEngineer()
         {
             NameAerotechnicTB.Enabled = false;
             CapacityTB.Enabled = false;
@@ -125,7 +129,7 @@ namespace Airline14
             appModeEdit = false;
         }
 
-        public void DisplayEditEngineer()
+        private void DisplayEditEngineer()
         {
             NameAerotechnicTB.Enabled = true;
             CapacityTB.Enabled = true;
@@ -183,7 +187,7 @@ namespace Airline14
 
                 newReportInsert.Parameters.AddWithValue("Date", DateTime.Now);
                 newReportInsert.Parameters.AddWithValue("Content", ReportTB.Text);
-                newReportInsert.Parameters.AddWithValue("IDengineer", int.Parse("3")); //FIXME: 
+                newReportInsert.Parameters.AddWithValue("IDengineer", idCurrentUser);
 
 
                 try
@@ -229,6 +233,104 @@ namespace Airline14
             CapacityTB.Text = "";
             CrewTB.Text = "";
             ReportTB.Text = "";
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            idCurrentAeroTB.Visible = true;
+            int idCurrentAero = int.Parse(idCurrentAeroTB.Text);
+            idCurrentAeroTB.Visible = false;
+
+            idCurrentReportTB.Visible = true;
+            int idCurrentReport = int.Parse(idCurrentReportTB.Text);
+            idCurrentReportTB.Visible = false;
+
+
+            SqlConnection connection = new SqlConnection(connectionPath);
+
+            SqlCommand aeroUpdate = new SqlCommand("UPDATE [Aerotechnics] SET [Name] = @Name, [Capacity] = @Capacity, [Crew Count] = @Crew WHERE [ID] =@ID", connection);
+
+            SqlCommand reportUpdate = new SqlCommand("UPDATE [Reports] SET [Content] = @Content WHERE [ID] =@ID", connection);
+
+
+
+            connection.Open();
+            try
+            {
+                aeroUpdate.Parameters.AddWithValue("ID", idCurrentAero);
+                aeroUpdate.Parameters.AddWithValue("Name", NameAerotechnicTB.Text);
+                aeroUpdate.Parameters.AddWithValue("Capacity", int.Parse(CapacityTB.Text));
+                aeroUpdate.Parameters.AddWithValue("Crew", int.Parse(CrewTB.Text));
+
+                reportUpdate.Parameters.AddWithValue("ID", idCurrentReport);
+                reportUpdate.Parameters.AddWithValue("Content", ReportTB.Text);
+
+                aeroUpdate.ExecuteNonQuery();
+                reportUpdate.ExecuteNonQuery();
+
+                MessageBox.Show("Данные успешно обновлены!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            connection.Close();
+
+            DisplayReadOnlyEngineer();
+        }
+
+        private void removeToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (appModeEdit == true)
+            {
+
+                idCurrentAeroTB.Visible = true;
+                int idCurrentAero = int.Parse(idCurrentAeroTB.Text);
+                idCurrentAeroTB.Visible = false;
+
+                idCurrentReportTB.Visible = true;
+                int idCurrentReport = int.Parse(idCurrentReportTB.Text);
+                idCurrentReportTB.Visible = false;
+
+                SqlConnection connection = new SqlConnection(connectionPath);
+
+                SqlCommand aeroDelete = new SqlCommand("DELETE FROM [Aerotechnics] WHERE [ID] =@ID", connection);
+                SqlCommand reportDelete = new SqlCommand("DELETE FROM [Reports] WHERE [ID] =@ID", connection);
+
+                connection.Open();
+
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        aeroDelete.Parameters.AddWithValue("ID", idCurrentAero);
+                        reportDelete.Parameters.AddWithValue("ID", idCurrentReport);
+
+
+                        aeroDelete.ExecuteNonQuery();
+                        reportDelete.ExecuteNonQuery();
+
+                        MessageBox.Show("Запись удалена успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
+                        this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

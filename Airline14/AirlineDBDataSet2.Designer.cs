@@ -5762,6 +5762,10 @@ SELECT ID, Login, Password, Role FROM Users WHERE (ID = @ID)";
             tableMapping.ColumnMappings.Add("ID Report", "ID Report");
             tableMapping.ColumnMappings.Add("Content", "Content");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5806,6 +5810,35 @@ FROM            Aerotechnics FULL OUTER JOIN
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AirlineDBDataSet2.AerotechnicsDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AirlineDBDataSet2 dataSet) {
+            return this.Adapter.Update(dataSet, "Aerotechnics");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
     }
     
     /// <summary>
@@ -5825,6 +5858,8 @@ FROM            Aerotechnics FULL OUTER JOIN
         private PassengersTableAdapter _passengersTableAdapter;
         
         private UsersTableAdapter _usersTableAdapter;
+        
+        private AerotechnicsTableAdapter _aerotechnicsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5885,6 +5920,20 @@ FROM            Aerotechnics FULL OUTER JOIN
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AerotechnicsTableAdapter AerotechnicsTableAdapter {
+            get {
+                return this._aerotechnicsTableAdapter;
+            }
+            set {
+                this._aerotechnicsTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -5914,6 +5963,10 @@ FROM            Aerotechnics FULL OUTER JOIN
                             && (this._usersTableAdapter.Connection != null))) {
                     return this._usersTableAdapter.Connection;
                 }
+                if (((this._aerotechnicsTableAdapter != null) 
+                            && (this._aerotechnicsTableAdapter.Connection != null))) {
+                    return this._aerotechnicsTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -5934,6 +5987,9 @@ FROM            Aerotechnics FULL OUTER JOIN
                     count = (count + 1);
                 }
                 if ((this._usersTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._aerotechnicsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -5962,6 +6018,15 @@ FROM            Aerotechnics FULL OUTER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._destinationTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._aerotechnicsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Aerotechnics.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aerotechnicsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6000,6 +6065,14 @@ FROM            Aerotechnics FULL OUTER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._aerotechnicsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Aerotechnics.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aerotechnicsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._passengersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Passengers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -6023,6 +6096,14 @@ FROM            Aerotechnics FULL OUTER JOIN
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._passengersTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aerotechnicsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Aerotechnics.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aerotechnicsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -6096,6 +6177,11 @@ FROM            Aerotechnics FULL OUTER JOIN
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._aerotechnicsTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aerotechnicsTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -6153,6 +6239,15 @@ FROM            Aerotechnics FULL OUTER JOIN
                     if (this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._usersTableAdapter.Adapter);
+                    }
+                }
+                if ((this._aerotechnicsTableAdapter != null)) {
+                    revertConnections.Add(this._aerotechnicsTableAdapter, this._aerotechnicsTableAdapter.Connection);
+                    this._aerotechnicsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._aerotechnicsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._aerotechnicsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aerotechnicsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aerotechnicsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -6224,6 +6319,10 @@ FROM            Aerotechnics FULL OUTER JOIN
                 if ((this._usersTableAdapter != null)) {
                     this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usersTableAdapter]));
                     this._usersTableAdapter.Transaction = null;
+                }
+                if ((this._aerotechnicsTableAdapter != null)) {
+                    this._aerotechnicsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aerotechnicsTableAdapter]));
+                    this._aerotechnicsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

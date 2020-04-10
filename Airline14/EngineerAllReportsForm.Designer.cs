@@ -42,32 +42,25 @@
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьНовогоПользователяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.просмотрВсехПользователейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалениеВыбранногоОтчетаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editRepoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.аэротехникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьАэротехнкикуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокВсейАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.ReportsTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DateTimeTB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.AddReportBtn = new System.Windows.Forms.Button();
             this.IDReportTB = new System.Windows.Forms.TextBox();
             this.ContentReportTB = new System.Windows.Forms.TextBox();
             this.DateReport = new System.Windows.Forms.Label();
             this.ContentReportLabel = new System.Windows.Forms.Label();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.createToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.editToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportsBindingSource)).BeginInit();
@@ -109,6 +102,8 @@
             this.dataGridView1.DataSource = this.reportsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(72, 100);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(343, 404);
             this.dataGridView1.TabIndex = 5;
             // 
@@ -179,31 +174,17 @@
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьНовогоПользователяToolStripMenuItem,
-            this.просмотрВсехПользователейToolStripMenuItem,
-            this.удалениеВыбранногоОтчетаToolStripMenuItem});
+            this.editRepoToolStripMenuItem});
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.пользователиToolStripMenuItem.Text = "Отчеты";
             // 
-            // добавитьНовогоПользователяToolStripMenuItem
+            // editRepoToolStripMenuItem
             // 
-            this.добавитьНовогоПользователяToolStripMenuItem.Name = "добавитьНовогоПользователяToolStripMenuItem";
-            this.добавитьНовогоПользователяToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
-            this.добавитьНовогоПользователяToolStripMenuItem.Text = "Добавить новый отчет";
-            this.добавитьНовогоПользователяToolStripMenuItem.Click += new System.EventHandler(this.добавитьНовогоПользователяToolStripMenuItem_Click);
-            // 
-            // просмотрВсехПользователейToolStripMenuItem
-            // 
-            this.просмотрВсехПользователейToolStripMenuItem.Name = "просмотрВсехПользователейToolStripMenuItem";
-            this.просмотрВсехПользователейToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
-            this.просмотрВсехПользователейToolStripMenuItem.Text = "Редактирование выбранного отчета";
-            // 
-            // удалениеВыбранногоОтчетаToolStripMenuItem
-            // 
-            this.удалениеВыбранногоОтчетаToolStripMenuItem.Name = "удалениеВыбранногоОтчетаToolStripMenuItem";
-            this.удалениеВыбранногоОтчетаToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
-            this.удалениеВыбранногоОтчетаToolStripMenuItem.Text = "Удаление выбранного отчета";
+            this.editRepoToolStripMenuItem.Name = "editRepoToolStripMenuItem";
+            this.editRepoToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.editRepoToolStripMenuItem.Text = "Редактирование выбранного отчета";
+            this.editRepoToolStripMenuItem.Click += new System.EventHandler(this.editRepoToolStripMenuItem_Click);
             // 
             // аэротехникаToolStripMenuItem
             // 
@@ -246,31 +227,15 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьToolStripMenuItem,
-            this.редактироватьToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
+            this.editReportToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 26);
             // 
-            // сохранитьToolStripMenuItem
+            // editReportToolStripMenuItem
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
-            // 
-            // редактироватьToolStripMenuItem
-            // 
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
-            // 
-            // удалитьToolStripMenuItem
-            // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
-            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            this.editReportToolStripMenuItem.Name = "editReportToolStripMenuItem";
+            this.editReportToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.editReportToolStripMenuItem.Text = "Редактировать";
             // 
             // reportsTableAdapter
             // 
@@ -280,7 +245,6 @@
             // 
             this.panel1.Controls.Add(this.DateTimeTB);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.AddReportBtn);
             this.panel1.Controls.Add(this.IDReportTB);
             this.panel1.Controls.Add(this.ContentReportTB);
             this.panel1.Controls.Add(this.DateReport);
@@ -309,21 +273,6 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Идентификатор отчета";
             // 
-            // AddReportBtn
-            // 
-            this.AddReportBtn.BackColor = System.Drawing.Color.MediumBlue;
-            this.AddReportBtn.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
-            this.AddReportBtn.FlatAppearance.BorderSize = 0;
-            this.AddReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddReportBtn.ForeColor = System.Drawing.SystemColors.Info;
-            this.AddReportBtn.Location = new System.Drawing.Point(169, 201);
-            this.AddReportBtn.Name = "AddReportBtn";
-            this.AddReportBtn.Size = new System.Drawing.Size(176, 32);
-            this.AddReportBtn.TabIndex = 38;
-            this.AddReportBtn.Text = "Добавить отчет";
-            this.AddReportBtn.UseVisualStyleBackColor = false;
-            this.AddReportBtn.Click += new System.EventHandler(this.AddReportBtn_Click);
-            // 
             // IDReportTB
             // 
             this.IDReportTB.Location = new System.Drawing.Point(137, 44);
@@ -336,7 +285,6 @@
             // 
             this.ContentReportTB.Location = new System.Drawing.Point(137, 156);
             this.ContentReportTB.Name = "ContentReportTB";
-            this.ContentReportTB.ReadOnly = true;
             this.ContentReportTB.Size = new System.Drawing.Size(256, 21);
             this.ContentReportTB.TabIndex = 37;
             // 
@@ -363,25 +311,14 @@
             // toolStrip2
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createToolStripButton,
             this.saveToolStripButton,
             this.editToolStripButton,
-            this.removeToolStripButton,
             this.UnDoToolStripButton});
             this.toolStrip2.Location = new System.Drawing.Point(0, 24);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(934, 25);
             this.toolStrip2.TabIndex = 20;
             this.toolStrip2.Text = "toolStrip2";
-            // 
-            // createToolStripButton
-            // 
-            this.createToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.createToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("createToolStripButton.Image")));
-            this.createToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.createToolStripButton.Name = "createToolStripButton";
-            this.createToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.createToolStripButton.Text = "Создать";
             // 
             // saveToolStripButton
             // 
@@ -391,6 +328,7 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "toolStripButton1";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // editToolStripButton
             // 
@@ -400,15 +338,7 @@
             this.editToolStripButton.Name = "editToolStripButton";
             this.editToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.editToolStripButton.Text = "Редактировать";
-            // 
-            // removeToolStripButton
-            // 
-            this.removeToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.removeToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("removeToolStripButton.Image")));
-            this.removeToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.removeToolStripButton.Name = "removeToolStripButton";
-            this.removeToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.removeToolStripButton.Text = "Удалить";
+            this.editToolStripButton.Click += new System.EventHandler(this.editToolStripButton_Click);
             // 
             // UnDoToolStripButton
             // 
@@ -418,6 +348,7 @@
             this.UnDoToolStripButton.Name = "UnDoToolStripButton";
             this.UnDoToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.UnDoToolStripButton.Text = "Назад";
+            this.UnDoToolStripButton.Click += new System.EventHandler(this.UnDoToolStripButton_Click);
             // 
             // EngineerAllReportsForm
             // 
@@ -462,18 +393,14 @@
         private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавитьНовогоПользователяToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem просмотрВсехПользователейToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editRepoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem аэротехникаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьАэротехнкикуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокВсейАэротехнкикиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалениеВыбранногоОтчетаToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editReportToolStripMenuItem;
         private AirlineDBDataSet2 airlineDBDataSet2;
         private System.Windows.Forms.BindingSource reportsBindingSource;
         private AirlineDBDataSet2TableAdapters.ReportsTableAdapter reportsTableAdapter;
@@ -483,16 +410,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox DateTimeTB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button AddReportBtn;
         private System.Windows.Forms.TextBox IDReportTB;
         private System.Windows.Forms.TextBox ContentReportTB;
         private System.Windows.Forms.Label DateReport;
         private System.Windows.Forms.Label ContentReportLabel;
         public System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton createToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.ToolStripButton editToolStripButton;
-        private System.Windows.Forms.ToolStripButton removeToolStripButton;
         private System.Windows.Forms.ToolStripButton UnDoToolStripButton;
     }
 }

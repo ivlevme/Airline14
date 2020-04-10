@@ -65,20 +65,20 @@
             this.flightsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.FlightsTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.FlightDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.WeekdayLabel = new System.Windows.Forms.Label();
-            this.TimeInFlightTB = new System.Windows.Forms.TextBox();
-            this.TimeInFlightLabel = new System.Windows.Forms.Label();
-            this.ArrivialTimeLabel = new System.Windows.Forms.Label();
-            this.DepartureTimeLabel = new System.Windows.Forms.Label();
-            this.DestinationCB = new System.Windows.Forms.ComboBox();
-            this.DestinationLabel = new System.Windows.Forms.Label();
-            this.AerotechnicCB = new System.Windows.Forms.ComboBox();
-            this.NumberFlightTB = new System.Windows.Forms.TextBox();
             this.NuberFlightLabel = new System.Windows.Forms.Label();
-            this.AddFlightBtn = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.AerotechnicLabel = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.AddFlightBtn = new System.Windows.Forms.Button();
+            this.WeekdayLabel = new System.Windows.Forms.Label();
+            this.NumberFlightTB = new System.Windows.Forms.TextBox();
+            this.TimeInFlightTB = new System.Windows.Forms.TextBox();
+            this.AerotechnicCB = new System.Windows.Forms.ComboBox();
+            this.TimeInFlightLabel = new System.Windows.Forms.Label();
+            this.DestinationLabel = new System.Windows.Forms.Label();
+            this.ArrivialTimeLabel = new System.Windows.Forms.Label();
+            this.DestinationCB = new System.Windows.Forms.ComboBox();
+            this.DepartureTimeLabel = new System.Windows.Forms.Label();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.createToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -388,112 +388,6 @@
             this.FlightDateTimePicker.Size = new System.Drawing.Size(406, 21);
             this.FlightDateTimePicker.TabIndex = 54;
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(8, 239);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(236, 21);
-            this.dateTimePicker2.TabIndex = 53;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(8, 189);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(236, 21);
-            this.dateTimePicker1.TabIndex = 52;
-            // 
-            // WeekdayLabel
-            // 
-            this.WeekdayLabel.AutoSize = true;
-            this.WeekdayLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
-            this.WeekdayLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.WeekdayLabel.Location = new System.Drawing.Point(4, 263);
-            this.WeekdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.WeekdayLabel.Name = "WeekdayLabel";
-            this.WeekdayLabel.Size = new System.Drawing.Size(127, 20);
-            this.WeekdayLabel.TabIndex = 51;
-            this.WeekdayLabel.Text = "Дата авиарейса";
-            // 
-            // TimeInFlightTB
-            // 
-            this.TimeInFlightTB.Location = new System.Drawing.Point(260, 212);
-            this.TimeInFlightTB.Name = "TimeInFlightTB";
-            this.TimeInFlightTB.ReadOnly = true;
-            this.TimeInFlightTB.Size = new System.Drawing.Size(154, 21);
-            this.TimeInFlightTB.TabIndex = 50;
-            // 
-            // TimeInFlightLabel
-            // 
-            this.TimeInFlightLabel.AutoSize = true;
-            this.TimeInFlightLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
-            this.TimeInFlightLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.TimeInFlightLabel.Location = new System.Drawing.Point(286, 189);
-            this.TimeInFlightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.TimeInFlightLabel.Name = "TimeInFlightLabel";
-            this.TimeInFlightLabel.Size = new System.Drawing.Size(107, 20);
-            this.TimeInFlightLabel.TabIndex = 49;
-            this.TimeInFlightLabel.Text = "Время в пути";
-            // 
-            // ArrivialTimeLabel
-            // 
-            this.ArrivialTimeLabel.AutoSize = true;
-            this.ArrivialTimeLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
-            this.ArrivialTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ArrivialTimeLabel.Location = new System.Drawing.Point(4, 213);
-            this.ArrivialTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ArrivialTimeLabel.Name = "ArrivialTimeLabel";
-            this.ArrivialTimeLabel.Size = new System.Drawing.Size(137, 20);
-            this.ArrivialTimeLabel.TabIndex = 48;
-            this.ArrivialTimeLabel.Text = "Время прибытия";
-            // 
-            // DepartureTimeLabel
-            // 
-            this.DepartureTimeLabel.AutoSize = true;
-            this.DepartureTimeLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
-            this.DepartureTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DepartureTimeLabel.Location = new System.Drawing.Point(4, 163);
-            this.DepartureTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.DepartureTimeLabel.Name = "DepartureTimeLabel";
-            this.DepartureTimeLabel.Size = new System.Drawing.Size(117, 20);
-            this.DepartureTimeLabel.TabIndex = 47;
-            this.DepartureTimeLabel.Text = "Время Вылета";
-            // 
-            // DestinationCB
-            // 
-            this.DestinationCB.FormattingEnabled = true;
-            this.DestinationCB.Location = new System.Drawing.Point(8, 136);
-            this.DestinationCB.Name = "DestinationCB";
-            this.DestinationCB.Size = new System.Drawing.Size(406, 24);
-            this.DestinationCB.TabIndex = 46;
-            // 
-            // DestinationLabel
-            // 
-            this.DestinationLabel.AutoSize = true;
-            this.DestinationLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
-            this.DestinationLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DestinationLabel.Location = new System.Drawing.Point(4, 113);
-            this.DestinationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.DestinationLabel.Name = "DestinationLabel";
-            this.DestinationLabel.Size = new System.Drawing.Size(146, 20);
-            this.DestinationLabel.TabIndex = 45;
-            this.DestinationLabel.Text = "Пункт Назначения";
-            // 
-            // AerotechnicCB
-            // 
-            this.AerotechnicCB.FormattingEnabled = true;
-            this.AerotechnicCB.Location = new System.Drawing.Point(8, 86);
-            this.AerotechnicCB.Name = "AerotechnicCB";
-            this.AerotechnicCB.Size = new System.Drawing.Size(406, 24);
-            this.AerotechnicCB.TabIndex = 44;
-            // 
-            // NumberFlightTB
-            // 
-            this.NumberFlightTB.Location = new System.Drawing.Point(8, 35);
-            this.NumberFlightTB.Name = "NumberFlightTB";
-            this.NumberFlightTB.ReadOnly = true;
-            this.NumberFlightTB.Size = new System.Drawing.Size(406, 21);
-            this.NumberFlightTB.TabIndex = 43;
-            // 
             // NuberFlightLabel
             // 
             this.NuberFlightLabel.AutoSize = true;
@@ -505,6 +399,36 @@
             this.NuberFlightLabel.Size = new System.Drawing.Size(142, 20);
             this.NuberFlightLabel.TabIndex = 42;
             this.NuberFlightLabel.Text = "Номер авиарейса";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker2.Location = new System.Drawing.Point(8, 239);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(236, 21);
+            this.dateTimePicker2.TabIndex = 53;
+            // 
+            // AerotechnicLabel
+            // 
+            this.AerotechnicLabel.AutoSize = true;
+            this.AerotechnicLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.AerotechnicLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AerotechnicLabel.Location = new System.Drawing.Point(4, 63);
+            this.AerotechnicLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AerotechnicLabel.Name = "AerotechnicLabel";
+            this.AerotechnicLabel.Size = new System.Drawing.Size(75, 20);
+            this.AerotechnicLabel.TabIndex = 40;
+            this.AerotechnicLabel.Text = "Самолет";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker1.Location = new System.Drawing.Point(8, 189);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePicker1.Size = new System.Drawing.Size(236, 21);
+            this.dateTimePicker1.TabIndex = 52;
             // 
             // AddFlightBtn
             // 
@@ -520,17 +444,97 @@
             this.AddFlightBtn.Text = "Добавить авиарейс";
             this.AddFlightBtn.UseVisualStyleBackColor = false;
             // 
-            // AerotechnicLabel
+            // WeekdayLabel
             // 
-            this.AerotechnicLabel.AutoSize = true;
-            this.AerotechnicLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
-            this.AerotechnicLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AerotechnicLabel.Location = new System.Drawing.Point(4, 63);
-            this.AerotechnicLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.AerotechnicLabel.Name = "AerotechnicLabel";
-            this.AerotechnicLabel.Size = new System.Drawing.Size(75, 20);
-            this.AerotechnicLabel.TabIndex = 40;
-            this.AerotechnicLabel.Text = "Самолет";
+            this.WeekdayLabel.AutoSize = true;
+            this.WeekdayLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.WeekdayLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.WeekdayLabel.Location = new System.Drawing.Point(4, 263);
+            this.WeekdayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.WeekdayLabel.Name = "WeekdayLabel";
+            this.WeekdayLabel.Size = new System.Drawing.Size(127, 20);
+            this.WeekdayLabel.TabIndex = 51;
+            this.WeekdayLabel.Text = "Дата авиарейса";
+            // 
+            // NumberFlightTB
+            // 
+            this.NumberFlightTB.Location = new System.Drawing.Point(8, 35);
+            this.NumberFlightTB.Name = "NumberFlightTB";
+            this.NumberFlightTB.ReadOnly = true;
+            this.NumberFlightTB.Size = new System.Drawing.Size(406, 21);
+            this.NumberFlightTB.TabIndex = 43;
+            // 
+            // TimeInFlightTB
+            // 
+            this.TimeInFlightTB.Location = new System.Drawing.Point(260, 212);
+            this.TimeInFlightTB.Name = "TimeInFlightTB";
+            this.TimeInFlightTB.ReadOnly = true;
+            this.TimeInFlightTB.Size = new System.Drawing.Size(154, 21);
+            this.TimeInFlightTB.TabIndex = 50;
+            // 
+            // AerotechnicCB
+            // 
+            this.AerotechnicCB.FormattingEnabled = true;
+            this.AerotechnicCB.Location = new System.Drawing.Point(8, 86);
+            this.AerotechnicCB.Name = "AerotechnicCB";
+            this.AerotechnicCB.Size = new System.Drawing.Size(406, 24);
+            this.AerotechnicCB.TabIndex = 44;
+            // 
+            // TimeInFlightLabel
+            // 
+            this.TimeInFlightLabel.AutoSize = true;
+            this.TimeInFlightLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.TimeInFlightLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.TimeInFlightLabel.Location = new System.Drawing.Point(286, 189);
+            this.TimeInFlightLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TimeInFlightLabel.Name = "TimeInFlightLabel";
+            this.TimeInFlightLabel.Size = new System.Drawing.Size(107, 20);
+            this.TimeInFlightLabel.TabIndex = 49;
+            this.TimeInFlightLabel.Text = "Время в пути";
+            // 
+            // DestinationLabel
+            // 
+            this.DestinationLabel.AutoSize = true;
+            this.DestinationLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.DestinationLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DestinationLabel.Location = new System.Drawing.Point(4, 113);
+            this.DestinationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DestinationLabel.Name = "DestinationLabel";
+            this.DestinationLabel.Size = new System.Drawing.Size(146, 20);
+            this.DestinationLabel.TabIndex = 45;
+            this.DestinationLabel.Text = "Пункт Назначения";
+            // 
+            // ArrivialTimeLabel
+            // 
+            this.ArrivialTimeLabel.AutoSize = true;
+            this.ArrivialTimeLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.ArrivialTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ArrivialTimeLabel.Location = new System.Drawing.Point(4, 213);
+            this.ArrivialTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ArrivialTimeLabel.Name = "ArrivialTimeLabel";
+            this.ArrivialTimeLabel.Size = new System.Drawing.Size(137, 20);
+            this.ArrivialTimeLabel.TabIndex = 48;
+            this.ArrivialTimeLabel.Text = "Время прибытия";
+            // 
+            // DestinationCB
+            // 
+            this.DestinationCB.FormattingEnabled = true;
+            this.DestinationCB.Location = new System.Drawing.Point(8, 136);
+            this.DestinationCB.Name = "DestinationCB";
+            this.DestinationCB.Size = new System.Drawing.Size(406, 24);
+            this.DestinationCB.TabIndex = 46;
+            // 
+            // DepartureTimeLabel
+            // 
+            this.DepartureTimeLabel.AutoSize = true;
+            this.DepartureTimeLabel.Font = new System.Drawing.Font("Ubuntu", 12F);
+            this.DepartureTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DepartureTimeLabel.Location = new System.Drawing.Point(4, 163);
+            this.DepartureTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DepartureTimeLabel.Name = "DepartureTimeLabel";
+            this.DepartureTimeLabel.Size = new System.Drawing.Size(117, 20);
+            this.DepartureTimeLabel.TabIndex = 47;
+            this.DepartureTimeLabel.Text = "Время Вылета";
             // 
             // toolStrip2
             // 
