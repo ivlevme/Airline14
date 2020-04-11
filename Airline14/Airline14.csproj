@@ -135,12 +135,6 @@
     <Compile Include="ManagerAllDestionationForm.Designer.cs">
       <DependentUpon>ManagerAllDestionationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerAddDestinationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerAddDestinationForm.Designer.cs">
-      <DependentUpon>ManagerAddDestinationForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalesmanAllTicketsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,12 +171,6 @@
     <Compile Include="ManagerAllFlightForm.Designer.cs">
       <DependentUpon>ManagerAllFlightForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerAddFlightForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManagerAddFlightForm.Designer.cs">
-      <DependentUpon>ManagerAddFlightForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,12 +205,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AboutProgramForm.resx">
       <DependentUpon>AboutProgramForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerAddDestinationForm.resx">
-      <DependentUpon>ManagerAddDestinationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManagerAddFlightForm.resx">
-      <DependentUpon>ManagerAddFlightForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerAllDestionationForm.resx">
       <DependentUpon>ManagerAllDestionationForm.cs</DependentUpon>

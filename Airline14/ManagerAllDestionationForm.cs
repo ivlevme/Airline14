@@ -38,9 +38,6 @@ namespace Airline14
 
         private void просмотрВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManagerAddFlightForm addFlightForm = new ManagerAddFlightForm();
-            addFlightForm.Show();
-            this.Hide();
         }
 
         private void сформироватьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,9 +49,7 @@ namespace Airline14
 
         private void просмотрВсехПунктовНазначенияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManagerAddDestinationForm managerAddDestination = new ManagerAddDestinationForm();
-            managerAddDestination.Show();
-            this.Hide();
+            createButton();
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,16 +92,9 @@ namespace Airline14
 
             this.destinationTableAdapter.Fill(this.airlineDBDataSet2.Destination);
 
-            dataGridView1.CurrentRow.Selected = false;
-
             DisplayReadOnlyManagerDestination();
 
             AddDestinationBtn.Visible = false;
-
-
-
-            idCurrentDestinationTB.DataBindings.Add(new Binding("Text", dataSource: destinationBindingSource, dataMember: "ID"));
-            nameDestinationTB.DataBindings.Add(new Binding("Text", dataSource: destinationBindingSource, dataMember: "Name"));
         }
 
         private bool appModeEdit = false;
@@ -130,6 +118,10 @@ namespace Airline14
             appModeEdit = false;
 
             AddDestinationBtn.Visible = false;
+
+            enableChangeSortMode(false);
+
+            addBingings();
         }
 
         private void DisplayEditManagerDestination()
@@ -149,6 +141,11 @@ namespace Airline14
             UnDoToolStripButton.Enabled = true;
 
             appModeEdit = true;
+
+            idCurrentDestinationTB.DataBindings.Clear();
+            nameDestinationTB.DataBindings.Clear();
+            isBinding = false;
+
         }
 
         private void списокВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
@@ -158,7 +155,8 @@ namespace Airline14
             this.Hide();
         }
 
-        private void createToolStripButton_Click(object sender, EventArgs e)
+
+        private void createButton ()
         {
             DisplayEditManagerDestination();
 
@@ -167,9 +165,51 @@ namespace Airline14
             nameDestinationTB.Text = "";
         }
 
+        bool isBinding = false;
+
+        private void addBingings()
+        {
+            if (isBinding == false)
+            {
+                idCurrentDestinationTB.DataBindings.Add(new Binding("Text", dataSource: destinationBindingSource, dataMember: "ID"));
+                nameDestinationTB.DataBindings.Add(new Binding("Text", dataSource: destinationBindingSource, dataMember: "Name"));
+
+                isBinding = true;
+            }
+        }
+
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            createButton();
+        }
+
+        int indexCurrentRow;
+
         private void editToolStripButton_Click(object sender, EventArgs e)
         {
             DisplayEditManagerDestination();
+
+            indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+
+            enableChangeSortMode(false);
+        }
+
+        private void enableChangeSortMode(bool mode)
+        {
+            if (mode == true)
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+            }
         }
 
         private void UnDoToolStripButton_Click(object sender, EventArgs e)
@@ -180,6 +220,8 @@ namespace Airline14
         private void removeCurrentDestination () {
             if (appModeEdit == true)
             {
+
+                addBingings();
 
                 idCurrentDestinationTB.Visible = true;
                 int idCurrentDestination = int.Parse(idCurrentDestinationTB.Text);
@@ -309,6 +351,18 @@ namespace Airline14
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             removeCurrentDestination();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if (appModeEdit == true)
+                {
+                    if (MouseButtons != System.Windows.Forms.MouseButtons.None)
+                        ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
+                }
+            }
         }
     }
 }

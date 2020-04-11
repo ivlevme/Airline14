@@ -54,7 +54,6 @@
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пунктНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.всеПToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,12 +129,14 @@
             this.loginDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.flightsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 105);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(475, 399);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // numberDataGridViewTextBoxColumn
             // 
@@ -276,6 +277,7 @@
             this.removeFlightToolStripMenuItem.Name = "removeFlightToolStripMenuItem";
             this.removeFlightToolStripMenuItem.Size = new System.Drawing.Size(276, 22);
             this.removeFlightToolStripMenuItem.Text = "Удалить выбранный рейс";
+            this.removeFlightToolStripMenuItem.Click += new System.EventHandler(this.removeFlightToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
             // 
@@ -295,18 +297,10 @@
             // пунктНазначенияToolStripMenuItem
             // 
             this.пунктНазначенияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавлениеПунктаНазначенияToolStripMenuItem,
             this.всеПToolStripMenuItem});
             this.пунктНазначенияToolStripMenuItem.Name = "пунктНазначенияToolStripMenuItem";
             this.пунктНазначенияToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.пунктНазначенияToolStripMenuItem.Text = "Пункты назначения";
-            // 
-            // добавлениеПунктаНазначенияToolStripMenuItem
-            // 
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Name = "добавлениеПунктаНазначенияToolStripMenuItem";
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Text = "Добавление пункта назначения";
-            this.добавлениеПунктаНазначенияToolStripMenuItem.Click += new System.EventHandler(this.добавлениеПунктаНазначенияToolStripMenuItem_Click);
             // 
             // всеПToolStripMenuItem
             // 
@@ -326,27 +320,27 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click_1);
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.createToolStripMenuItem.Text = "Создать";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.editToolStripMenuItem.Text = "Редактировать";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.removeToolStripMenuItem.Text = "Удалить";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -482,6 +476,7 @@
             // 
             // AerotechnicCB
             // 
+            this.AerotechnicCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AerotechnicCB.FormattingEnabled = true;
             this.AerotechnicCB.Location = new System.Drawing.Point(8, 86);
             this.AerotechnicCB.Name = "AerotechnicCB";
@@ -526,6 +521,7 @@
             // 
             // DestinationCB
             // 
+            this.DestinationCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DestinationCB.FormattingEnabled = true;
             this.DestinationCB.Location = new System.Drawing.Point(8, 136);
             this.DestinationCB.Name = "DestinationCB";
@@ -660,7 +656,6 @@
         private System.Windows.Forms.ToolStripMenuItem removeFlightToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;

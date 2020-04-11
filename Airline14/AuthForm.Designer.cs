@@ -79,7 +79,7 @@
             this.LoginTB.Name = "LoginTB";
             this.LoginTB.Size = new System.Drawing.Size(406, 21);
             this.LoginTB.TabIndex = 4;
-            this.LoginTB.Text = "salesman";
+            this.LoginTB.Text = "manager";
             // 
             // PasswordTB
             // 
@@ -89,7 +89,7 @@
             this.PasswordTB.PasswordChar = '●';
             this.PasswordTB.Size = new System.Drawing.Size(406, 21);
             this.PasswordTB.TabIndex = 6;
-            this.PasswordTB.Text = "sls";
+            this.PasswordTB.Text = "mng";
             this.PasswordTB.TextChanged += new System.EventHandler(this.PasswordTB_TextChanged);
             // 
             // PasswordLabel

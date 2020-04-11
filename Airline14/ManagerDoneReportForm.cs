@@ -37,9 +37,6 @@ namespace Airline14
 
         private void создатьАвирейсToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManagerAddFlightForm addFlightForm = new ManagerAddFlightForm();
-            addFlightForm.Show();
-            this.Hide();
         }
 
         private void просмотрВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,9 +55,6 @@ namespace Airline14
 
         private void добавлениеПунктаНазначенияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManagerAddDestinationForm managerAddDestination = new ManagerAddDestinationForm();
-            managerAddDestination.Show();
-            this.Hide();
         }
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)

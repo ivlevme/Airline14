@@ -247,7 +247,7 @@
             // 
             // Date
             // 
-            this.Date.HeaderText = "Дата";
+            this.Date.HeaderText = "Дата продажи билетов";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
             // 
@@ -265,7 +265,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "ManagerDoneReportForm";
             this.Text = "Отчет";
-            this.Load += new System.EventHandler(this.ManagerDoneReportForm_Load);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);

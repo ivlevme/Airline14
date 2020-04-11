@@ -38,9 +38,7 @@ namespace Airline14
 
         private void создатьАвирейсToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManagerAddFlightForm addFlightForm = new ManagerAddFlightForm();
-            addFlightForm.Show();
-            this.Hide();
+            createButton();
         }
 
         private void сформироватьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,9 +57,6 @@ namespace Airline14
 
         private void добавлениеПунктаНазначенияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManagerAddDestinationForm managerAddDestination = new ManagerAddDestinationForm();
-            managerAddDestination.Show();
-            this.Hide();
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,8 +138,6 @@ namespace Airline14
         {
             this.flightsTableAdapter.Fill(this.airlineDBDataSet2.Flights);
 
-            dataGridView1.CurrentRow.Selected = false;
-
             DisplayReadOnlyManagerFlight();
 
             fillComboBoxes();
@@ -152,11 +145,29 @@ namespace Airline14
             AddFlightBtn.Visible = false;
             dateTimePicker3.Enabled = false;
 
-            NumberFlightTB.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Number"));
         }
 
-        bool isBinding = false;
         bool appEditMode = false;
+
+        bool isBinding = false;
+        private void addBingings ()
+        {
+            if (isBinding == false)
+            {
+                NumberFlightTB.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Number"));
+
+                dateTimePicker1.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Departure time"));
+                dateTimePicker2.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Arrivial time"));
+                dateTimePicker3.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Time flight"));
+
+                AerotechnicCB.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Name"));
+                DestinationCB.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Expr1"));
+
+                FlightDateTimePicker.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Date flight"));
+
+                isBinding = true;
+            }
+        }
 
         private void DisplayReadOnlyManagerFlight() {
             AerotechnicCB.Enabled = false;
@@ -175,14 +186,12 @@ namespace Airline14
 
             createFlightToolStripMenuItem.Enabled = true;
 
-            dateTimePicker1.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Departure time"));
-            dateTimePicker2.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Arrivial time"));
-            dateTimePicker3.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Time flight"));
+            removeToolStripButton.Enabled = true;
 
-            AerotechnicCB.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Name"));
-            DestinationCB.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Expr1"));
+            addBingings();
 
-            FlightDateTimePicker.DataBindings.Add(new Binding("Text", dataSource: flightsBindingSource, dataMember: "Date flight"));
+
+            enableChangeSortMode(true);
 
             isBinding = true;
             appEditMode = false;
@@ -207,6 +216,8 @@ namespace Airline14
             createFlightToolStripMenuItem.Enabled = false;
             appEditMode = true;
 
+            removeToolStripButton.Enabled = true;
+
         }
 
         private void fillByTestToolStripButton_Click(object sender, EventArgs e)
@@ -223,9 +234,8 @@ namespace Airline14
 
         private DateTime startDateTime = DateTime.Now;
 
-        private void createToolStripButton_Click(object sender, EventArgs e)
+        private void createButton ()
         {
-
             dateTimePicker1.DataBindings.Clear();
             dateTimePicker2.DataBindings.Clear();
             dateTimePicker3.DataBindings.Clear();
@@ -233,13 +243,11 @@ namespace Airline14
             AerotechnicCB.DataBindings.Clear();
             DestinationCB.DataBindings.Clear();
             FlightDateTimePicker.DataBindings.Clear();
+            NumberFlightTB.DataBindings.Clear();
+
+
             isBinding = false;
 
-
-
-
-
-            dataGridView1.CurrentRow.Selected = false;
 
             DisplayEditManagerFlight();
             AddFlightBtn.Visible = true;
@@ -251,6 +259,13 @@ namespace Airline14
             dateTimePicker1.Value = startDateTime;
             dateTimePicker2.Value = startDateTime;
             FlightDateTimePicker.Value = startDateTime;
+
+            removeToolStripButton.Enabled = false;
+        }
+
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            createButton();
         }
 
         private void saveFlight ()
@@ -318,15 +333,40 @@ namespace Airline14
             AerotechnicCB.DataBindings.Clear();
             DestinationCB.DataBindings.Clear();
             FlightDateTimePicker.DataBindings.Clear();
+            NumberFlightTB.DataBindings.Clear();
 
             isBinding = false;
 
             DisplayEditManagerFlight();
         }
 
+        private void enableChangeSortMode(bool mode)
+        {
+            if (mode == true)
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+            }
+        }
+
+        int indexCurrentRow = 1;
+
         private void editToolStripButton_Click(object sender, EventArgs e)
         {
             editFlight();
+
+            indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+
+            enableChangeSortMode(false);
         }
 
         private void editFlightToolStripMenuItem_Click(object sender, EventArgs e)
@@ -482,7 +522,7 @@ namespace Airline14
 
         }
 
-        private void removeToolStripButton_Click(object sender, EventArgs e)
+        private void deleteButton ()
         {
             if (appEditMode == true)
             {
@@ -523,6 +563,28 @@ namespace Airline14
                     MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+            }
+        }
+
+        private void removeToolStripButton_Click(object sender, EventArgs e)
+        {
+            deleteButton();
+        }
+
+        private void removeFlightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteButton();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if (appEditMode == true)
+                {
+                    if (MouseButtons != System.Windows.Forms.MouseButtons.None)
+                        ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
+                }
             }
         }
     }

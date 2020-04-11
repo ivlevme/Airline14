@@ -68,7 +68,6 @@ namespace Airline14
         {
             this.ticketsTableAdapter.Fill(this.airlineDBDataSet2.Tickets);
 
-            dataGridView1.CurrentRow.Selected = false;
 
             DisplayReadOnlySalesmanTickets();
 
