@@ -39,8 +39,8 @@
             this.создатьАвирейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьВыбранногоКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createUserMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editUserMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьВыбранногоКлиентаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотретьВсеАвиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,11 +53,12 @@
             this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.passengersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.PassengersTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.currentIDReport = new System.Windows.Forms.TextBox();
             this.PassportTB = new System.Windows.Forms.TextBox();
             this.FioTB = new System.Windows.Forms.TextBox();
             this.PassportLabel = new System.Windows.Forms.Label();
@@ -145,25 +146,25 @@
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сформироватьОтчетToolStripMenuItem,
-            this.редактироватьВыбранногоКлиентаToolStripMenuItem,
+            this.createUserMenuToolStripMenuItem,
+            this.editUserMenuToolStripMenuItem,
             this.удалитьВыбранногоКлиентаToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.отчетыToolStripMenuItem.Text = "Клиенты";
             // 
-            // сформироватьОтчетToolStripMenuItem
+            // createUserMenuToolStripMenuItem
             // 
-            this.сформироватьОтчетToolStripMenuItem.Name = "сформироватьОтчетToolStripMenuItem";
-            this.сформироватьОтчетToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.сформироватьОтчетToolStripMenuItem.Text = "Добавить нового клиента";
-            this.сформироватьОтчетToolStripMenuItem.Click += new System.EventHandler(this.сформироватьОтчетToolStripMenuItem_Click);
+            this.createUserMenuToolStripMenuItem.Name = "createUserMenuToolStripMenuItem";
+            this.createUserMenuToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.createUserMenuToolStripMenuItem.Text = "Добавить нового клиента";
+            this.createUserMenuToolStripMenuItem.Click += new System.EventHandler(this.сформироватьОтчетToolStripMenuItem_Click);
             // 
-            // редактироватьВыбранногоКлиентаToolStripMenuItem
+            // editUserMenuToolStripMenuItem
             // 
-            this.редактироватьВыбранногоКлиентаToolStripMenuItem.Name = "редактироватьВыбранногоКлиентаToolStripMenuItem";
-            this.редактироватьВыбранногоКлиентаToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
-            this.редактироватьВыбранногоКлиентаToolStripMenuItem.Text = "Редактировать выбранного клиента";
+            this.editUserMenuToolStripMenuItem.Name = "editUserMenuToolStripMenuItem";
+            this.editUserMenuToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
+            this.editUserMenuToolStripMenuItem.Text = "Редактировать выбранного клиента";
             // 
             // удалитьВыбранногоКлиентаToolStripMenuItem
             // 
@@ -227,6 +228,8 @@
             this.dataGridView1.DataSource = this.passengersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 99);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(393, 405);
             this.dataGridView1.TabIndex = 22;
             // 
@@ -235,6 +238,7 @@
             this.personalInformationDataGridViewTextBoxColumn.DataPropertyName = "Personal information";
             this.personalInformationDataGridViewTextBoxColumn.HeaderText = "Фамилия Имя Отчество";
             this.personalInformationDataGridViewTextBoxColumn.Name = "personalInformationDataGridViewTextBoxColumn";
+            this.personalInformationDataGridViewTextBoxColumn.ReadOnly = true;
             this.personalInformationDataGridViewTextBoxColumn.Width = 250;
             // 
             // passportInformationDataGridViewTextBoxColumn
@@ -242,6 +246,7 @@
             this.passportInformationDataGridViewTextBoxColumn.DataPropertyName = "Passport information";
             this.passportInformationDataGridViewTextBoxColumn.HeaderText = "Паспортные данные";
             this.passportInformationDataGridViewTextBoxColumn.Name = "passportInformationDataGridViewTextBoxColumn";
+            this.passportInformationDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // passengersBindingSource
             // 
@@ -256,24 +261,24 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьToolStripMenuItem,
-            this.редактироватьToolStripMenuItem,
+            this.createToolStripMenuItem,
+            this.editUserToolStripMenuItem,
             this.удалитьToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
             // 
-            // сохранитьToolStripMenuItem
+            // createToolStripMenuItem
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
+            this.createToolStripMenuItem.Name = "createToolStripMenuItem";
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.createToolStripMenuItem.Text = "Создать";
+            this.createToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
-            // редактироватьToolStripMenuItem
+            // editUserToolStripMenuItem
             // 
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
+            this.editUserToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.editUserToolStripMenuItem.Text = "Редактировать";
             // 
             // удалитьToolStripMenuItem
             // 
@@ -288,6 +293,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.currentIDReport);
             this.panel1.Controls.Add(this.PassportTB);
             this.panel1.Controls.Add(this.FioTB);
             this.panel1.Controls.Add(this.PassportLabel);
@@ -297,6 +303,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(511, 405);
             this.panel1.TabIndex = 25;
+            // 
+            // currentIDReport
+            // 
+            this.currentIDReport.Location = new System.Drawing.Point(398, 240);
+            this.currentIDReport.Name = "currentIDReport";
+            this.currentIDReport.Size = new System.Drawing.Size(100, 21);
+            this.currentIDReport.TabIndex = 40;
+            this.currentIDReport.Visible = false;
             // 
             // PassportTB
             // 
@@ -345,6 +359,7 @@
             this.AddClientBtn.TabIndex = 35;
             this.AddClientBtn.Text = "Добавить клиента";
             this.AddClientBtn.UseVisualStyleBackColor = false;
+            this.AddClientBtn.Click += new System.EventHandler(this.AddClientBtn_Click);
             // 
             // toolStrip2
             // 
@@ -368,6 +383,7 @@
             this.createToolStripButton.Name = "createToolStripButton";
             this.createToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.createToolStripButton.Text = "Создать";
+            this.createToolStripButton.Click += new System.EventHandler(this.createToolStripButton_Click);
             // 
             // saveToolStripButton
             // 
@@ -377,6 +393,7 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "toolStripButton1";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // editToolStripButton
             // 
@@ -386,6 +403,7 @@
             this.editToolStripButton.Name = "editToolStripButton";
             this.editToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.editToolStripButton.Text = "Редактировать";
+            this.editToolStripButton.Click += new System.EventHandler(this.editToolStripButton_Click);
             // 
             // removeToolStripButton
             // 
@@ -395,6 +413,7 @@
             this.removeToolStripButton.Name = "removeToolStripButton";
             this.removeToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.removeToolStripButton.Text = "Удалить";
+            this.removeToolStripButton.Click += new System.EventHandler(this.removeToolStripButton_Click);
             // 
             // UnDoToolStripButton
             // 
@@ -404,12 +423,14 @@
             this.UnDoToolStripButton.Name = "UnDoToolStripButton";
             this.UnDoToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.UnDoToolStripButton.Text = "Назад";
+            this.UnDoToolStripButton.Click += new System.EventHandler(this.UnDoToolStripButton_Click);
             // 
             // SalesmanAllUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.NameLabel);
@@ -448,17 +469,17 @@
         private System.Windows.Forms.ToolStripMenuItem создатьАвирейсToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехАвиарейсовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createUserMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьВыбранногоКлиентаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editUserMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьВыбранногоКлиентаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вернутьсяНаГлавнуюСтраницуToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
         private AirlineDBDataSet2 airlineDBDataSet2;
         private System.Windows.Forms.BindingSource passengersBindingSource;
@@ -479,5 +500,6 @@
         private System.Windows.Forms.ToolStripButton editToolStripButton;
         private System.Windows.Forms.ToolStripButton removeToolStripButton;
         private System.Windows.Forms.ToolStripButton UnDoToolStripButton;
+        private System.Windows.Forms.TextBox currentIDReport;
     }
 }

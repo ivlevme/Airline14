@@ -92,7 +92,7 @@ namespace Airline14
                         managerDoneReport.FirstDateLabel.Text = PastDateTimePicker.Value.ToString("dd.MM.yyy");
                         managerDoneReport.LastDateLabel.Text = FutureDateTimePicker.Value.ToString("dd.MM.yyy");
 
-                        managerDoneReport.dataGridView1.Rows.Add(sdr["Number Flight"].ToString(), sdr["Test"].ToString(), (int.Parse(sdr["Test"].ToString()) * 65).ToString() +" $");
+                        managerDoneReport.dataGridView1.Rows.Add(sdr["Number Flight"].ToString(), sdr["Test"].ToString(), (int.Parse(sdr["Test"].ToString()) * 65).ToString() +" $", sdr["Date"].ToString());
                     }
 
                     sdr.Close();

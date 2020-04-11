@@ -99,6 +99,7 @@
             this.usersDataGridView.Location = new System.Drawing.Point(12, 102);
             this.usersDataGridView.MultiSelect = false;
             this.usersDataGridView.Name = "usersDataGridView";
+            this.usersDataGridView.ReadOnly = true;
             this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.usersDataGridView.Size = new System.Drawing.Size(443, 405);
             this.usersDataGridView.TabIndex = 1;

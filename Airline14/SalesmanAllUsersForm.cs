@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -75,15 +76,62 @@ namespace Airline14
         {
             delRecord();
         }
+        bool appModeEdit = false;
+        public void DisplayReadOnlySalesmanUsers()
+        {
+            createToolStripButton.Enabled = true;
+            createUserMenuToolStripMenuItem.Enabled = true;
+            createToolStripMenuItem.Enabled = true;
+
+            editToolStripButton.Enabled = true;
+            editUserMenuToolStripMenuItem.Enabled = true;
+            editUserToolStripMenuItem.Enabled = true;
+
+            saveToolStripButton.Enabled = false;
+            UnDoToolStripButton.Enabled = false;
+
+            FioTB.Enabled = false;
+            PassportTB.Enabled = false;
+
+            AddClientBtn.Visible = false;
+
+            appModeEdit = false;
+
+            this.passengersTableAdapter.Fill(this.airlineDBDataSet2.Passengers);
+        }
+
+        public void DisplayEditSalesmanUsers()
+        {
+            createToolStripButton.Enabled = false;
+            createUserMenuToolStripMenuItem.Enabled = false;
+            createToolStripMenuItem.Enabled = false;
+
+            editToolStripButton.Enabled = false;
+            editUserMenuToolStripMenuItem.Enabled = false;
+            editUserToolStripMenuItem.Enabled = false;
+
+            saveToolStripButton.Enabled = true;
+            UnDoToolStripButton.Enabled = true;
+
+            FioTB.Enabled = true;
+            PassportTB.Enabled = true;
+
+            appModeEdit = true;
+        }
 
         private void SalesmanAllUsersForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Passengers' table. You can move, or remove it, as needed.
             this.passengersTableAdapter.Fill(this.airlineDBDataSet2.Passengers);
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Passengers' table. You can move, or remove it, as needed.
-            this.passengersTableAdapter.Fill(this.airlineDBDataSet2.Passengers);
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Passengers' table. You can move, or remove it, as needed.
-            this.passengersTableAdapter.Fill(this.airlineDBDataSet2.Passengers);
+
+            dataGridView1.CurrentRow.Selected = false;
+
+            DisplayReadOnlySalesmanUsers();
+
+            AddClientBtn.Visible = false;
+
+            currentIDReport.DataBindings.Add(new Binding("Text", dataSource: passengersBindingSource, dataMember: "ID"));
+            FioTB.DataBindings.Add(new Binding("Text", dataSource: passengersBindingSource, dataMember: "Personal Information"));
+            PassportTB.DataBindings.Add(new Binding("Text", dataSource: passengersBindingSource, dataMember: "Passport Information"));
         }
 
         private void просмотретьВсеАвиарейсыToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,6 +139,138 @@ namespace Airline14
             SalesmanAllFlight salesmanAllFlight = new SalesmanAllFlight();
             salesmanAllFlight.Show();
             this.Hide();
+        }
+
+        private void UnDoToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayReadOnlySalesmanUsers();
+        }
+
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayEditSalesmanUsers();
+
+            saveToolStripButton.Enabled = false;
+
+            FioTB.Text = "";
+            PassportTB.Text = "";
+
+            AddClientBtn.Visible = true;
+        }
+
+        private void AddClientBtn_Click(object sender, EventArgs e)
+        {
+            if (FioTB.Text != "" && PassportTB.Text != "")
+            {
+                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+
+                SqlConnection connection = new SqlConnection(connectionPath);
+                SqlCommand addPassengerInsert = new SqlCommand("INSERT INTO [dbo].[Passengers] ([Personal information], [Passport information]) VALUES(@PersInf, @PassInf);", connection);
+
+
+
+                connection.Open();
+
+                addPassengerInsert.Parameters.AddWithValue("PersInf", FioTB.Text);
+                addPassengerInsert.Parameters.AddWithValue("PassInf", PassportTB.Text);
+
+
+
+                try
+                {
+                    addPassengerInsert.ExecuteNonQuery();
+
+                    MessageBox.Show("Клиент добавлен успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                DisplayReadOnlySalesmanUsers();
+            }
+        }
+
+        private void editToolStripButton_Click(object sender, EventArgs e)
+        {
+            DisplayEditSalesmanUsers();
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+
+            currentIDReport.Visible = true;
+            int currentReportID = int.Parse(currentIDReport.Text);
+            currentIDReport.Visible = false;
+
+            SqlConnection connection = new SqlConnection(connectionPath);
+
+            SqlCommand ticketUpdate = new SqlCommand("UPDATE [Passengers] SET [Personal information] = @PersInf, [Passport information] = @PassInf WHERE [ID] =@ID", connection);
+
+
+            connection.Open();
+            try
+            {
+                ticketUpdate.Parameters.AddWithValue("PersInf", FioTB.Text);
+                ticketUpdate.Parameters.AddWithValue("PassInf", PassportTB.Text);
+                ticketUpdate.Parameters.AddWithValue("ID", currentReportID);
+
+
+                ticketUpdate.ExecuteNonQuery();
+
+                MessageBox.Show("Данные успешно обновлены!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            connection.Close();
+
+            DisplayReadOnlySalesmanUsers();
+        }
+
+        private void removeToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (appModeEdit == true)
+            {
+
+                currentIDReport.Visible = true;
+                int currentReportID = int.Parse(currentIDReport.Text);
+                currentIDReport.Visible = false;
+
+                SqlConnection connection = new SqlConnection(connectionPath);
+
+                SqlCommand passDelete = new SqlCommand("DELETE FROM [Passengers] WHERE [ID] =@ID", connection);
+
+                connection.Open();
+
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        passDelete.Parameters.AddWithValue("ID", currentReportID);
+
+
+                        passDelete.ExecuteNonQuery();
+
+                        MessageBox.Show("Запись удалена успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        DisplayReadOnlySalesmanUsers();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
     }
 }

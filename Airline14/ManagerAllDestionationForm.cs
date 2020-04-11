@@ -59,7 +59,7 @@ namespace Airline14
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            delRecord();
+            removeCurrentDestination();
         }
 
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
@@ -94,6 +94,7 @@ namespace Airline14
 
         private void ManagerAllDestionationForm_Load(object sender, EventArgs e)
         {
+
             this.destinationTableAdapter.Fill(this.airlineDBDataSet2.Destination);
 
             dataGridView1.CurrentRow.Selected = false;

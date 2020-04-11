@@ -82,6 +82,8 @@ namespace Airline14
             DisplayReadOnlyAdmin();
             this.RoleCB.Items.AddRange(new object[] { "admin", "manager", "engineer", "salesman"});
 
+            contextMenuStrip1.Enabled = true;
+
 
 
             LoginTB.DataBindings.Add(new Binding("Text", dataSource: usersBindingSource2, dataMember: "Login"));

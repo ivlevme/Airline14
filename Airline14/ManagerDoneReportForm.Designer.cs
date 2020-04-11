@@ -33,9 +33,6 @@
             this.LastDateLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.NumberFlight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountSoldTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ResumeCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +45,10 @@
             this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NumberFlight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountSoldTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResumeCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -120,31 +121,14 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumberFlight,
             this.CountSoldTicket,
-            this.ResumeCost});
-            this.dataGridView1.Location = new System.Drawing.Point(322, 109);
+            this.ResumeCost,
+            this.Date});
+            this.dataGridView1.Location = new System.Drawing.Point(276, 97);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(343, 407);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 407);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // NumberFlight
-            // 
-            this.NumberFlight.HeaderText = "Номер рейса";
-            this.NumberFlight.Name = "NumberFlight";
-            this.NumberFlight.ReadOnly = true;
-            // 
-            // CountSoldTicket
-            // 
-            this.CountSoldTicket.HeaderText = "Количество проданных билетов";
-            this.CountSoldTicket.Name = "CountSoldTicket";
-            this.CountSoldTicket.ReadOnly = true;
-            // 
-            // ResumeCost
-            // 
-            this.ResumeCost.HeaderText = "Итоговая выручка";
-            this.ResumeCost.Name = "ResumeCost";
-            this.ResumeCost.ReadOnly = true;
             // 
             // ManagerMenuStrip
             // 
@@ -243,6 +227,30 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
+            // NumberFlight
+            // 
+            this.NumberFlight.HeaderText = "Номер рейса";
+            this.NumberFlight.Name = "NumberFlight";
+            this.NumberFlight.ReadOnly = true;
+            // 
+            // CountSoldTicket
+            // 
+            this.CountSoldTicket.HeaderText = "Количество проданных билетов";
+            this.CountSoldTicket.Name = "CountSoldTicket";
+            this.CountSoldTicket.ReadOnly = true;
+            // 
+            // ResumeCost
+            // 
+            this.ResumeCost.HeaderText = "Итоговая выручка";
+            this.ResumeCost.Name = "ResumeCost";
+            this.ResumeCost.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Дата";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
             // ManagerDoneReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -289,11 +297,12 @@
         private System.Windows.Forms.ToolStripMenuItem добавлениеПунктаНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumberFlight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CountSoldTicket;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ResumeCost;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Label FirstDateLabel;
         public System.Windows.Forms.Label LastDateLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberFlight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CountSoldTicket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResumeCost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
     }
 }
