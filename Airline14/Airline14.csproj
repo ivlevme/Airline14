@@ -153,18 +153,6 @@
     <Compile Include="SalesmanAllUsersForm.Designer.cs">
       <DependentUpon>SalesmanAllUsersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalesmanAddTicketForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SalesmanAddTicketForm.Designer.cs">
-      <DependentUpon>SalesmanAddTicketForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SalesmanAddUserForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SalesmanAddUserForm.Designer.cs">
-      <DependentUpon>SalesmanAddUserForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalesmanMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,12 +248,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SalesmanAddTicketForm.resx">
-      <DependentUpon>SalesmanAddTicketForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SalesmanAddUserForm.resx">
-      <DependentUpon>SalesmanAddUserForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SalesmanAllFlight.resx">
       <DependentUpon>SalesmanAllFlight.cs</DependentUpon>
     </EmbeddedResource>

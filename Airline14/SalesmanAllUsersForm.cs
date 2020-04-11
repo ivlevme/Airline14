@@ -36,24 +36,10 @@ namespace Airline14
             exitMenuStrip();
         }
 
-        private void создатьАвирейсToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SalesmanAddTicketForm salesmanAddTicket = new SalesmanAddTicketForm();
-            salesmanAddTicket.Show();
-            this.Hide();
-        }
-
         private void просмотрВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SalesmanAllTicketsForm salesmanAllTicketsForm = new SalesmanAllTicketsForm();
             salesmanAllTicketsForm.Show();
-            this.Hide();
-        }
-
-        private void сформироватьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SalesmanAddUserForm salesmanAddUser = new SalesmanAddUserForm();
-            salesmanAddUser.Show();
             this.Hide();
         }
 
@@ -151,7 +137,7 @@ namespace Airline14
 
         bool dataBind = true;
 
-        private void createToolStripButton_Click(object sender, EventArgs e)
+        private void createButton ()
         {
             DisplayEditSalesmanUsers();
 
@@ -171,9 +157,14 @@ namespace Airline14
             AddClientBtn.Visible = true;
         }
 
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            createButton();
+        }
+
         private void AddClientBtn_Click(object sender, EventArgs e)
         {
-            if (FioTB.Text != "" && PassportTB.Text != "")
+            if (FioTB.Text != "" && PassportTB.Text != "" && FioTB.Text.Length <= 100 && PassportTB.Text.Length <= 40)
             {
                 string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
 
@@ -204,6 +195,10 @@ namespace Airline14
 
                 addBind();
             }
+            else
+            {
+                ErrorMessageBox();
+            }
         }
 
         private void addBind ()
@@ -214,13 +209,20 @@ namespace Airline14
                 PassportTB.DataBindings.Add(new Binding("Text", dataSource: passengersBindingSource, dataMember: "Passport Information"));
             }
         }
+
         int indexCurrentRow;
-        private void editToolStripButton_Click(object sender, EventArgs e)
+
+        private void editButton ()
         {
             DisplayEditSalesmanUsers();
             indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
 
             enableChangeSortMode(false);
+        }
+
+        private void editToolStripButton_Click(object sender, EventArgs e)
+        {
+            editButton();
         }
 
         private void enableChangeSortMode (bool mode)
@@ -242,39 +244,44 @@ namespace Airline14
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-
-            currentIDReport.Visible = true;
-            int currentReportID = int.Parse(currentIDReport.Text);
-            currentIDReport.Visible = false;
-
-            SqlConnection connection = new SqlConnection(connectionPath);
-
-            SqlCommand ticketUpdate = new SqlCommand("UPDATE [Passengers] SET [Personal information] = @PersInf, [Passport information] = @PassInf WHERE [ID] =@ID", connection);
-
-
-            connection.Open();
-            try
+            if (FioTB.Text != "" && PassportTB.Text != "" && FioTB.Text.Length <= 100 && PassportTB.Text.Length <= 40)
             {
-                ticketUpdate.Parameters.AddWithValue("PersInf", FioTB.Text);
-                ticketUpdate.Parameters.AddWithValue("PassInf", PassportTB.Text);
-                ticketUpdate.Parameters.AddWithValue("ID", currentReportID);
+                currentIDReport.Visible = true;
+                int currentReportID = int.Parse(currentIDReport.Text);
+                currentIDReport.Visible = false;
+
+                SqlConnection connection = new SqlConnection(connectionPath);
+
+                SqlCommand ticketUpdate = new SqlCommand("UPDATE [Passengers] SET [Personal information] = @PersInf, [Passport information] = @PassInf WHERE [ID] =@ID", connection);
 
 
-                ticketUpdate.ExecuteNonQuery();
+                connection.Open();
+                try
+                {
+                    ticketUpdate.Parameters.AddWithValue("PersInf", FioTB.Text);
+                    ticketUpdate.Parameters.AddWithValue("PassInf", PassportTB.Text);
+                    ticketUpdate.Parameters.AddWithValue("ID", currentReportID);
 
-                MessageBox.Show("Данные успешно обновлены!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
+
+                    ticketUpdate.ExecuteNonQuery();
+
+                    MessageBox.Show("Данные успешно обновлены!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                connection.Close();
+
+                DisplayReadOnlySalesmanUsers();
+            } else
             {
-                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessageBox();
             }
-
-            connection.Close();
-
-            DisplayReadOnlySalesmanUsers();
         }
 
-        private void removeToolStripButton_Click(object sender, EventArgs e)
+        private void dellButton ()
         {
             if (appModeEdit == true)
             {
@@ -317,6 +324,11 @@ namespace Airline14
             }
         }
 
+        private void removeToolStripButton_Click(object sender, EventArgs e)
+        {
+            dellButton();
+        }
+
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -327,6 +339,21 @@ namespace Airline14
                         ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
                 }
             }
+        }
+
+        private void createUserMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createButton();
+        }
+
+        private void editUserMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton();
+        }
+
+        private void удалитьВыбранногоКлиентаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dellButton();
         }
     }
 }

@@ -36,19 +36,6 @@ namespace Airline14
             exitMenuStrip();
         }
 
-        private void создатьАвирейсToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SalesmanAddTicketForm salesmanAddTicket = new SalesmanAddTicketForm();
-            salesmanAddTicket.Show();
-            this.Hide();
-        }
-
-        private void сформироватьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SalesmanAddUserForm salesmanAddUser = new SalesmanAddUserForm();
-            salesmanAddUser.Show();
-            this.Hide();
-        }
 
         private void списрToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -93,6 +80,7 @@ namespace Airline14
 
             ClientCB.DataBindings.Add(new Binding("Text", dataSource: ticketsBindingSource, dataMember: "Personal Information"));
             FlightCB.DataBindings.Add(new Binding("Text", dataSource: ticketsBindingSource, dataMember: "Number"));
+
             currentIDrecord.DataBindings.Add(new Binding("Text", dataSource: ticketsBindingSource, dataMember: "ID"));
 
         }
@@ -138,6 +126,15 @@ namespace Airline14
 
         bool appModeEdit = false;
 
+        private void addBind()
+        {
+            if (dataBind == false)
+            {
+                ClientCB.DataBindings.Add(new Binding("Text", dataSource: ticketsBindingSource, dataMember: "Personal Information"));
+                FlightCB.DataBindings.Add(new Binding("Text", dataSource: ticketsBindingSource, dataMember: "Number"));
+            }
+        }
+
         private void DisplayReadOnlySalesmanTickets ()
         {
             ClientCB.Enabled = false;
@@ -160,8 +157,9 @@ namespace Airline14
 
             appModeEdit = false;
 
-            this.ticketsTableAdapter.Fill(this.airlineDBDataSet2.Tickets);
+            enableChangeSortMode(true);
 
+            this.ticketsTableAdapter.Fill(this.airlineDBDataSet2.Tickets);
         }
 
         private void DisplayEditSalesmanTickets()
@@ -199,14 +197,45 @@ namespace Airline14
             this.Hide();
         }
 
-        private void editToolStripButton_Click(object sender, EventArgs e)
+        int indexCurrentRow;
+
+        private void editButton ()
         {
             DisplayEditSalesmanTickets();
+
+            indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+
+            enableChangeSortMode(false);
+        }
+
+        private void editToolStripButton_Click(object sender, EventArgs e)
+        {
+            editButton();
+        }
+
+        private void enableChangeSortMode(bool mode)
+        {
+            if (mode == true)
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+            }
         }
 
         private void UnDoToolStripButton_Click(object sender, EventArgs e)
         {
             DisplayReadOnlySalesmanTickets();
+
+            addBind();
         }
 
         private void removeCurrentTicket ()
@@ -330,9 +359,15 @@ namespace Airline14
             DisplayReadOnlySalesmanTickets();
         }
 
-        private void createToolStripButton_Click(object sender, EventArgs e)
+        bool dataBind = true;
+
+        private void createButton ()
         {
             DisplayEditSalesmanTickets();
+
+            ClientCB.DataBindings.Clear();
+            FlightCB.DataBindings.Clear();
+            dataBind = false;
 
             dataGridView1.CurrentRow.Selected = false;
 
@@ -340,6 +375,11 @@ namespace Airline14
             FlightCB.Text = "";
 
             AddTicketBtn.Visible = true;
+        }
+
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            createButton();
         }
 
         private void AddTicketBtn_Click(object sender, EventArgs e)
@@ -408,11 +448,40 @@ namespace Airline14
                 AddNewClient.Visible = false;
 
                 DisplayReadOnlySalesmanTickets();
+
+                addBind();
             }
             else
             {
                 ErrorMessageBox();
             }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if (appModeEdit == true)
+                {
+                    if (MouseButtons != System.Windows.Forms.MouseButtons.None)
+                        ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
+                }
+            }
+        }
+
+        private void createMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createButton();
+        }
+
+        private void editMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton();
+        }
+
+        private void удалитьВыбранныйБилетToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            removeCurrentTicket();
         }
     }
 }

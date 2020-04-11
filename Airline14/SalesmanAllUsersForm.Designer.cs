@@ -36,7 +36,6 @@
             this.вернутьсяНаГлавнуюСтраницуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.создатьАвирейсToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотрВсехАвиарейсовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createUserMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -123,23 +122,15 @@
             // пользователиToolStripMenuItem
             // 
             this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.создатьАвирейсToolStripMenuItem,
             this.просмотрВсехАвиарейсовToolStripMenuItem});
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
             this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.пользователиToolStripMenuItem.Text = "Билеты";
             // 
-            // создатьАвирейсToolStripMenuItem
-            // 
-            this.создатьАвирейсToolStripMenuItem.Name = "создатьАвирейсToolStripMenuItem";
-            this.создатьАвирейсToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.создатьАвирейсToolStripMenuItem.Text = "Добавить проданный билет";
-            this.создатьАвирейсToolStripMenuItem.Click += new System.EventHandler(this.создатьАвирейсToolStripMenuItem_Click);
-            // 
             // просмотрВсехАвиарейсовToolStripMenuItem
             // 
             this.просмотрВсехАвиарейсовToolStripMenuItem.Name = "просмотрВсехАвиарейсовToolStripMenuItem";
-            this.просмотрВсехАвиарейсовToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.просмотрВсехАвиарейсовToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.просмотрВсехАвиарейсовToolStripMenuItem.Text = "Просмотреть все билеты";
             this.просмотрВсехАвиарейсовToolStripMenuItem.Click += new System.EventHandler(this.просмотрВсехАвиарейсовToolStripMenuItem_Click);
             // 
@@ -158,19 +149,21 @@
             this.createUserMenuToolStripMenuItem.Name = "createUserMenuToolStripMenuItem";
             this.createUserMenuToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.createUserMenuToolStripMenuItem.Text = "Добавить нового клиента";
-            this.createUserMenuToolStripMenuItem.Click += new System.EventHandler(this.сформироватьОтчетToolStripMenuItem_Click);
+            this.createUserMenuToolStripMenuItem.Click += new System.EventHandler(this.createUserMenuToolStripMenuItem_Click);
             // 
             // editUserMenuToolStripMenuItem
             // 
             this.editUserMenuToolStripMenuItem.Name = "editUserMenuToolStripMenuItem";
             this.editUserMenuToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.editUserMenuToolStripMenuItem.Text = "Редактировать выбранного клиента";
+            this.editUserMenuToolStripMenuItem.Click += new System.EventHandler(this.editUserMenuToolStripMenuItem_Click);
             // 
             // удалитьВыбранногоКлиентаToolStripMenuItem
             // 
             this.удалитьВыбранногоКлиентаToolStripMenuItem.Name = "удалитьВыбранногоКлиентаToolStripMenuItem";
             this.удалитьВыбранногоКлиентаToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.удалитьВыбранногоКлиентаToolStripMenuItem.Text = "Удалить выбранного клиента";
+            this.удалитьВыбранногоКлиентаToolStripMenuItem.Click += new System.EventHandler(this.удалитьВыбранногоКлиентаToolStripMenuItem_Click);
             // 
             // авиарейсыToolStripMenuItem
             // 
@@ -468,7 +461,6 @@
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem создатьАвирейсToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem просмотрВсехАвиарейсовToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createUserMenuToolStripMenuItem;

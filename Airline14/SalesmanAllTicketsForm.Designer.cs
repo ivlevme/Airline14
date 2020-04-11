@@ -46,7 +46,6 @@
             this.editMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьВыбранныйБилетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сформироватьОтчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.просмотретьВсеАвиарейсыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,11 +109,13 @@
             this.Date});
             this.dataGridView1.DataSource = this.ticketsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 103);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(494, 401);
             this.dataGridView1.TabIndex = 24;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // numberDataGridViewTextBoxColumn
             // 
@@ -200,35 +201,29 @@
             this.createMenuToolStripMenuItem.Name = "createMenuToolStripMenuItem";
             this.createMenuToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.createMenuToolStripMenuItem.Text = "Добавить проданный билет";
-            this.createMenuToolStripMenuItem.Click += new System.EventHandler(this.создатьАвирейсToolStripMenuItem_Click);
+            this.createMenuToolStripMenuItem.Click += new System.EventHandler(this.createMenuToolStripMenuItem_Click);
             // 
             // editMenuToolStripMenuItem
             // 
             this.editMenuToolStripMenuItem.Name = "editMenuToolStripMenuItem";
             this.editMenuToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.editMenuToolStripMenuItem.Text = "Редактировать выбранный билет";
+            this.editMenuToolStripMenuItem.Click += new System.EventHandler(this.editMenuToolStripMenuItem_Click);
             // 
             // удалитьВыбранныйБилетToolStripMenuItem
             // 
             this.удалитьВыбранныйБилетToolStripMenuItem.Name = "удалитьВыбранныйБилетToolStripMenuItem";
             this.удалитьВыбранныйБилетToolStripMenuItem.Size = new System.Drawing.Size(257, 22);
             this.удалитьВыбранныйБилетToolStripMenuItem.Text = "Удалить выбранный билет";
+            this.удалитьВыбранныйБилетToolStripMenuItem.Click += new System.EventHandler(this.удалитьВыбранныйБилетToolStripMenuItem_Click);
             // 
             // отчетыToolStripMenuItem
             // 
             this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сформироватьОтчетToolStripMenuItem,
             this.списрToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.отчетыToolStripMenuItem.Text = "Клиенты";
-            // 
-            // сформироватьОтчетToolStripMenuItem
-            // 
-            this.сформироватьОтчетToolStripMenuItem.Name = "сформироватьОтчетToolStripMenuItem";
-            this.сформироватьОтчетToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.сформироватьОтчетToolStripMenuItem.Text = "Добавить нового клиента";
-            this.сформироватьОтчетToolStripMenuItem.Click += new System.EventHandler(this.сформироватьОтчетToolStripMenuItem_Click);
             // 
             // списрToolStripMenuItem
             // 
@@ -320,6 +315,7 @@
             // 
             // FlightCB
             // 
+            this.FlightCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FlightCB.FormattingEnabled = true;
             this.FlightCB.Location = new System.Drawing.Point(19, 93);
             this.FlightCB.Name = "FlightCB";
@@ -353,6 +349,7 @@
             // 
             // ClientCB
             // 
+            this.ClientCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ClientCB.FormattingEnabled = true;
             this.ClientCB.Location = new System.Drawing.Point(19, 37);
             this.ClientCB.Name = "ClientCB";
@@ -496,7 +493,6 @@
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem отчетыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сформироватьОтчетToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списрToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;

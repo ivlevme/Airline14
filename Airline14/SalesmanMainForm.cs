@@ -28,20 +28,6 @@ namespace Airline14
             exitMenuStrip();
         }
 
-        private void создатьАвирейсToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SalesmanAddTicketForm salesmanAddTicket = new SalesmanAddTicketForm();
-            salesmanAddTicket.Show();
-            this.Hide();
-        }
-
-        private void AddTickettBtn_Click(object sender, EventArgs e)
-        {
-            SalesmanAddTicketForm salesmanAddTicket = new SalesmanAddTicketForm();
-            salesmanAddTicket.Show();
-            this.Hide();
-        }
-
         private void просмотрВсехАвиарейсовToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SalesmanAllTicketsForm salesmanAllTicketsForm = new SalesmanAllTicketsForm();
@@ -53,20 +39,6 @@ namespace Airline14
         {
             SalesmanAllTicketsForm salesmanAllTicketsForm = new SalesmanAllTicketsForm();
             salesmanAllTicketsForm.Show();
-            this.Hide();
-        }
-
-        private void сформироватьОтчетToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SalesmanAddUserForm salesmanAddUser = new SalesmanAddUserForm();
-            salesmanAddUser.Show();
-            this.Hide();
-        }
-
-        private void AddClientBtn_Click(object sender, EventArgs e)
-        {
-            SalesmanAddUserForm salesmanAddUser = new SalesmanAddUserForm();
-            salesmanAddUser.Show();
             this.Hide();
         }
 
