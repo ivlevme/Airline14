@@ -221,7 +221,6 @@ namespace Airline14
         private void editButton ()
         {
             DisplayEditAdmin();
-            AddUserBtn.Text = "Обновить данные";
 
             indexCurrentRow = usersDataGridView.SelectedCells[0].RowIndex;
 
