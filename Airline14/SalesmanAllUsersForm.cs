@@ -144,11 +144,22 @@ namespace Airline14
         private void UnDoToolStripButton_Click(object sender, EventArgs e)
         {
             DisplayReadOnlySalesmanUsers();
+            addBind();
         }
+
+        bool dataBind = true;
 
         private void createToolStripButton_Click(object sender, EventArgs e)
         {
             DisplayEditSalesmanUsers();
+
+            dataGridView1.CurrentRow.Selected = false;
+
+            FioTB.DataBindings.Clear();
+            PassportTB.DataBindings.Clear();
+            dataBind = false;
+
+
 
             saveToolStripButton.Enabled = false;
 
@@ -188,12 +199,24 @@ namespace Airline14
                 }
 
                 DisplayReadOnlySalesmanUsers();
+
+                addBind();
+            }
+        }
+
+        private void addBind ()
+        {
+            if (dataBind == false)
+            {
+                FioTB.DataBindings.Add(new Binding("Text", dataSource: passengersBindingSource, dataMember: "Personal Information"));
+                PassportTB.DataBindings.Add(new Binding("Text", dataSource: passengersBindingSource, dataMember: "Passport Information"));
             }
         }
 
         private void editToolStripButton_Click(object sender, EventArgs e)
         {
             DisplayEditSalesmanUsers();
+
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
@@ -269,6 +292,16 @@ namespace Airline14
                 {
                     MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+            }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (appModeEdit == true)
+            {
+                if (MouseButtons != System.Windows.Forms.MouseButtons.None)
+                    ((DataGridView)sender).CurrentCell = null;
 
             }
         }

@@ -227,11 +227,13 @@
             this.passportInformationDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.passengersBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 99);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(393, 405);
             this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // personalInformationDataGridViewTextBoxColumn
             // 
