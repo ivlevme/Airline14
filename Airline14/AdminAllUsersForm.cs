@@ -36,7 +36,7 @@ namespace Airline14
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveRecord();
+            createButton();
         }
 
         private void delToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +67,10 @@ namespace Airline14
             LoginTB.DataBindings.Clear();
             PasswordTB.DataBindings.Clear();
             RoleCB.DataBindings.Clear();
+
+            editToolStripButton.Enabled = false;
+            editCurrentUserToolStripMenuItem.Enabled = false;
+            editUserToolStripMenuItem.Enabled = false;
 
             isBinding = false;
 
@@ -172,7 +176,7 @@ namespace Airline14
 
 
             delUserToolStripMenuItem.Enabled = false;
-            delCurrentUserToolStripMenuItem.Enabled = false;
+            delCurrentUserToolStripMenuItem.Enabled = true;
             removeToolStripButton.Enabled = true;
 
 
@@ -302,8 +306,7 @@ namespace Airline14
 
         private void editCurrentUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisplayEditAdmin();
-
+            editButton();
         }
 
         private void AddUserBtn_Click(object sender, EventArgs e)

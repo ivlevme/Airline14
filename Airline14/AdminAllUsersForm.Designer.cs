@@ -61,6 +61,7 @@
             this.delCurrentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UsersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.UsersTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.currentIDUser = new System.Windows.Forms.TextBox();
             this.AddUserBtn = new System.Windows.Forms.Button();
             this.RoleCB = new System.Windows.Forms.ComboBox();
             this.RoleLabel = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.LoginTB = new System.Windows.Forms.TextBox();
             this.LoginLabel = new System.Windows.Forms.Label();
-            this.currentIDUser = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
@@ -353,6 +353,14 @@
             this.panel1.Size = new System.Drawing.Size(458, 402);
             this.panel1.TabIndex = 18;
             // 
+            // currentIDUser
+            // 
+            this.currentIDUser.Location = new System.Drawing.Point(346, 298);
+            this.currentIDUser.Name = "currentIDUser";
+            this.currentIDUser.Size = new System.Drawing.Size(100, 21);
+            this.currentIDUser.TabIndex = 21;
+            this.currentIDUser.Visible = false;
+            // 
             // AddUserBtn
             // 
             this.AddUserBtn.BackColor = System.Drawing.Color.MediumBlue;
@@ -430,14 +438,6 @@
             this.LoginLabel.TabIndex = 13;
             this.LoginLabel.Text = "Логин";
             // 
-            // currentIDUser
-            // 
-            this.currentIDUser.Location = new System.Drawing.Point(346, 298);
-            this.currentIDUser.Name = "currentIDUser";
-            this.currentIDUser.Size = new System.Drawing.Size(100, 21);
-            this.currentIDUser.TabIndex = 21;
-            this.currentIDUser.Visible = false;
-            // 
             // AdminAllUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -449,6 +449,7 @@
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.usersDataGridView);
             this.Controls.Add(this.AdminMenuStrip);
+            this.MainMenuStrip = this.AdminMenuStrip;
             this.Name = "AdminAllUsersForm";
             this.Text = "Список всех пользователей";
             this.Load += new System.EventHandler(this.AdminAllUsersForm_Load);

@@ -50,7 +50,7 @@ namespace Airline14
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveRecord();
+            createButton();
         }
 
         private void toolStripButtonRemove_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace Airline14
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            delRecord();
+            dellButton();
         }
         bool appModeEdit = false;
         public void DisplayReadOnlySalesmanUsers()
@@ -72,6 +72,7 @@ namespace Airline14
             editToolStripButton.Enabled = true;
             editUserMenuToolStripMenuItem.Enabled = true;
             editUserToolStripMenuItem.Enabled = true;
+
 
             saveToolStripButton.Enabled = false;
             UnDoToolStripButton.Enabled = false;
@@ -94,9 +95,9 @@ namespace Airline14
             createUserMenuToolStripMenuItem.Enabled = false;
             createToolStripMenuItem.Enabled = false;
 
-            editToolStripButton.Enabled = false;
-            editUserMenuToolStripMenuItem.Enabled = false;
-            editUserToolStripMenuItem.Enabled = false;
+            editToolStripButton.Enabled = true;
+            editUserMenuToolStripMenuItem.Enabled = true;
+            editUserToolStripMenuItem.Enabled = true;
 
             saveToolStripButton.Enabled = true;
             UnDoToolStripButton.Enabled = true;
@@ -155,6 +156,10 @@ namespace Airline14
             PassportTB.Text = "";
 
             AddClientBtn.Visible = true;
+
+            editToolStripButton.Enabled = false;
+            editUserMenuToolStripMenuItem.Enabled = false;
+            editUserToolStripMenuItem.Enabled = false;
         }
 
         private void createToolStripButton_Click(object sender, EventArgs e)
@@ -354,6 +359,11 @@ namespace Airline14
         private void удалитьВыбранногоКлиентаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dellButton();
+        }
+
+        private void editUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton();
         }
     }
 }

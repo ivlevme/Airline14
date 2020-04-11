@@ -274,6 +274,7 @@
             this.editUserToolStripMenuItem.Name = "editUserToolStripMenuItem";
             this.editUserToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.editUserToolStripMenuItem.Text = "Редактировать";
+            this.editUserToolStripMenuItem.Click += new System.EventHandler(this.editUserToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 

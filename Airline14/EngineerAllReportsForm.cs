@@ -216,5 +216,10 @@ namespace Airline14
                 }
             }
         }
+
+        private void editReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton();
+        }
     }
 }

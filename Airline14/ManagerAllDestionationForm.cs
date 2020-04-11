@@ -84,7 +84,7 @@ namespace Airline14
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveRecord();
+            createButton();
         }
 
         private void ManagerAllDestionationForm_Load(object sender, EventArgs e)
@@ -106,6 +106,7 @@ namespace Airline14
             createToolStripButton.Enabled = true;
             addToolStripMenuItem.Enabled = true;
             createDestToolStripMenuItem.Enabled = true;
+
 
             editDestToolStripMenuItem.Enabled = true;
             editToolStripButton.Enabled = true;
@@ -163,6 +164,12 @@ namespace Airline14
             AddDestinationBtn.Visible = true;
 
             nameDestinationTB.Text = "";
+
+            editToolStripButton.Enabled = false;
+            editToolStripMenuItem.Enabled = false;
+            editDestToolStripMenuItem.Enabled = false;
+
+            enableChangeSortMode(false);
         }
 
         bool isBinding = false;
@@ -368,6 +375,11 @@ namespace Airline14
                         ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
                 }
             }
+        }
+
+        private void editDestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton();
         }
     }
 }

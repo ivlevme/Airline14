@@ -66,20 +66,20 @@
             this.removeToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.UnDoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
-            this.aerotechnicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aerotechnicsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.AerotechnicsTableAdapter();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aerotechnicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
+            this.aerotechnicsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.AerotechnicsTableAdapter();
             this.EngineerMenuStrip.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aerotechnicsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -205,25 +205,26 @@
             this.editToolStripMenuItem,
             this.removeAeroToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createToolStripMenuItem.Text = "Создать";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Редактировать";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // removeAeroToolStripMenuItem
             // 
             this.removeAeroToolStripMenuItem.Name = "removeAeroToolStripMenuItem";
-            this.removeAeroToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.removeAeroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeAeroToolStripMenuItem.Text = "Удалить";
             this.removeAeroToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -431,20 +432,6 @@
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // airlineDBDataSet2
-            // 
-            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
-            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // aerotechnicsBindingSource
-            // 
-            this.aerotechnicsBindingSource.DataMember = "Aerotechnics";
-            this.aerotechnicsBindingSource.DataSource = this.airlineDBDataSet2;
-            // 
-            // aerotechnicsTableAdapter
-            // 
-            this.aerotechnicsTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
@@ -473,11 +460,26 @@
             this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
             this.contentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // aerotechnicsBindingSource
+            // 
+            this.aerotechnicsBindingSource.DataMember = "Aerotechnics";
+            this.aerotechnicsBindingSource.DataSource = this.airlineDBDataSet2;
+            // 
+            // airlineDBDataSet2
+            // 
+            this.airlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.airlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aerotechnicsTableAdapter
+            // 
+            this.aerotechnicsTableAdapter.ClearBeforeFill = true;
+            // 
             // EngineerAllAerotechnicsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.panel1);
@@ -501,8 +503,8 @@
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aerotechnicsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

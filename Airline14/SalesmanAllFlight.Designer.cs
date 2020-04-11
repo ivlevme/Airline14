@@ -43,10 +43,6 @@
             this.flightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.airlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.flightsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.FlightsTableAdapter();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.EngineerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +58,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.EngineerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,33 +180,6 @@
             // 
             this.flightsTableAdapter.ClearBeforeFill = true;
             // 
-            // сохранитьToolStripMenuItem
-            // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            // 
-            // редактироватьToolStripMenuItem
-            // 
-            this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
-            this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.редактироватьToolStripMenuItem.Text = "Редактировать";
-            // 
-            // удалитьToolStripMenuItem
-            // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьToolStripMenuItem,
-            this.редактироватьToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 70);
-            // 
             // EngineerMenuStrip
             // 
             this.EngineerMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -326,7 +294,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flightsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.EngineerMenuStrip.ResumeLayout(false);
             this.EngineerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -341,10 +308,6 @@
         private AirlineDBDataSet2 airlineDBDataSet2;
         private System.Windows.Forms.BindingSource flightsBindingSource;
         private AirlineDBDataSet2TableAdapters.FlightsTableAdapter flightsTableAdapter;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.MenuStrip EngineerMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;

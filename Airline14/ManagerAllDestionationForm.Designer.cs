@@ -262,6 +262,7 @@
             this.editDestToolStripMenuItem.Name = "editDestToolStripMenuItem";
             this.editDestToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.editDestToolStripMenuItem.Text = "Редактировать";
+            this.editDestToolStripMenuItem.Click += new System.EventHandler(this.editDestToolStripMenuItem_Click);
             // 
             // removeDestToolStripMenuItem
             // 

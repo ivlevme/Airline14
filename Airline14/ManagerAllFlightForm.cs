@@ -61,7 +61,7 @@ namespace Airline14
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveRecord();
+            createButton();
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace Airline14
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            delRecord();
+            deleteButton();
         }
 
         string[] aeroTypes = new string[100];
@@ -177,9 +177,11 @@ namespace Airline14
             FlightDateTimePicker.Enabled = false;
 
             createToolStripButton.Enabled = true;
+            createToolStripMenuItem.Enabled = true;
             saveToolStripButton.Enabled = false;
             editToolStripButton.Enabled = true;
             UnDoToolStripButton.Enabled = false;
+
 
             editFlightToolStripMenuItem.Enabled = true;
             editToolStripMenuItem.Enabled = true;
@@ -205,6 +207,7 @@ namespace Airline14
             dateTimePicker2.Enabled = true;
             FlightDateTimePicker.Enabled = true;
 
+            createToolStripMenuItem.Enabled = false;
             createToolStripButton.Enabled = false;
             saveToolStripButton.Enabled = true;
             editToolStripButton.Enabled = false;
@@ -261,6 +264,10 @@ namespace Airline14
             FlightDateTimePicker.Value = startDateTime;
 
             removeToolStripButton.Enabled = false;
+
+            editToolStripButton.Enabled = false;
+            editToolStripMenuItem.Enabled = false;
+            editFlightToolStripMenuItem.Enabled = false;
         }
 
         private void createToolStripButton_Click(object sender, EventArgs e)
@@ -586,6 +593,11 @@ namespace Airline14
                         ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
                 }
             }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editFlight();
         }
     }
 }

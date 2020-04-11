@@ -46,7 +46,7 @@ namespace Airline14
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveRecord();
+            createButton();
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace Airline14
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            delRecord();
+            removeCurrentTicket();
         }
 
         private void SalesmanAllTicketsForm_Load(object sender, EventArgs e)
@@ -173,9 +173,9 @@ namespace Airline14
 
             saveToolStripButton.Enabled = true;
 
-            editToolStripButton.Enabled = false;
-            editMenuToolStripMenuItem.Enabled = false;
-            editToolStripMenuItem.Enabled = false;
+            editToolStripButton.Enabled = true;
+            editMenuToolStripMenuItem.Enabled = true;
+            editToolStripMenuItem.Enabled = true;
 
             UnDoToolStripButton.Enabled = true;
 
@@ -374,6 +374,10 @@ namespace Airline14
             FlightCB.Text = "";
 
             AddTicketBtn.Visible = true;
+
+            editToolStripButton.Enabled = false;
+            editMenuToolStripMenuItem.Enabled = false;
+            editToolStripMenuItem.Enabled = false;
         }
 
         private void createToolStripButton_Click(object sender, EventArgs e)
@@ -481,6 +485,11 @@ namespace Airline14
         private void удалитьВыбранныйБилетToolStripMenuItem_Click(object sender, EventArgs e)
         {
             removeCurrentTicket();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton();
         }
     }
 }

@@ -54,12 +54,12 @@ namespace Airline14
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveRecord();
+            createButton();
         }
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            delRecord();
+            delButton();
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
@@ -109,6 +109,7 @@ namespace Airline14
             createToolStripButton.Enabled = true;
             addAeroToolStripMenuItem.Enabled = true;
             createToolStripMenuItem.Enabled = true;
+
 
 
             editAeroToolStripMenuItem.Enabled = true;
@@ -372,7 +373,7 @@ namespace Airline14
                         MessageBox.Show("Запись удалена успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-
+                        DisplayReadOnlyEngineer();
                         this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
                     }
                     catch (Exception ex)
@@ -432,6 +433,11 @@ namespace Airline14
                 if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
                     e.Handled = true;
             }
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton();
         }
     }
 }
