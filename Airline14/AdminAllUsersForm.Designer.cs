@@ -68,6 +68,7 @@
             this.PasswordLabel = new System.Windows.Forms.Label();
             this.LoginTB = new System.Windows.Forms.TextBox();
             this.LoginLabel = new System.Windows.Forms.Label();
+            this.currentIDUser = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2)).BeginInit();
@@ -103,6 +104,7 @@
             this.usersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.usersDataGridView.Size = new System.Drawing.Size(443, 405);
             this.usersDataGridView.TabIndex = 1;
+            this.usersDataGridView.SelectionChanged += new System.EventHandler(this.usersDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -338,6 +340,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.currentIDUser);
             this.panel1.Controls.Add(this.AddUserBtn);
             this.panel1.Controls.Add(this.RoleCB);
             this.panel1.Controls.Add(this.RoleLabel);
@@ -427,6 +430,14 @@
             this.LoginLabel.TabIndex = 13;
             this.LoginLabel.Text = "Логин";
             // 
+            // currentIDUser
+            // 
+            this.currentIDUser.Location = new System.Drawing.Point(346, 298);
+            this.currentIDUser.Name = "currentIDUser";
+            this.currentIDUser.Size = new System.Drawing.Size(100, 21);
+            this.currentIDUser.TabIndex = 21;
+            this.currentIDUser.Visible = false;
+            // 
             // AdminAllUsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -507,5 +518,6 @@
         public System.Windows.Forms.TextBox LoginTB;
         private System.Windows.Forms.Label LoginLabel;
         public System.Windows.Forms.Button AddUserBtn;
+        private System.Windows.Forms.TextBox currentIDUser;
     }
 }

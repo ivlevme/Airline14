@@ -31,8 +31,7 @@ namespace Airline14
 
         private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisplayEditAdmin();
-            AddUserBtn.Visible = true;
+            createButton();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,7 +54,7 @@ namespace Airline14
             deleteUser();
         }
 
-        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        private void createButton ()
         {
             DisplayEditAdmin();
             AddUserBtn.Visible = true;
@@ -64,6 +63,19 @@ namespace Airline14
             LoginTB.Text = "";
             PasswordTB.Text = "";
             RoleCB.SelectedIndex = -1;
+
+            LoginTB.DataBindings.Clear();
+            PasswordTB.DataBindings.Clear();
+            RoleCB.DataBindings.Clear();
+
+            isBinding = false;
+
+            enableChangeSortMode(false);
+        }
+
+        private void toolStripButtonSave_Click(object sender, EventArgs e)
+        {
+            createButton();
         }
 
         bool appModeEdit = false;
@@ -73,22 +85,28 @@ namespace Airline14
 
             this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
 
-            MessageBox.Show(idCurrentUser.ToString());
-
             int countUsers = usersDataGridView.Rows.Count;
 
-            usersDataGridView.CurrentRow.Selected = false;
-
-            DisplayReadOnlyAdmin();
             this.RoleCB.Items.AddRange(new object[] { "admin", "manager", "engineer", "salesman"});
 
             contextMenuStrip1.Enabled = true;
 
+            currentIDUser.DataBindings.Add(new Binding("Text", dataSource: usersBindingSource2, dataMember: "ID"));
 
+            DisplayReadOnlyAdmin();
+        }
 
-            LoginTB.DataBindings.Add(new Binding("Text", dataSource: usersBindingSource2, dataMember: "Login"));
-            PasswordTB.DataBindings.Add(new Binding("Text", dataSource: usersBindingSource2, dataMember: "Password"));
-            RoleCB.DataBindings.Add(new Binding("Text", dataSource: usersBindingSource2, dataMember: "Role"));
+        bool isBinding = false;
+        private void addBindings ()
+        {
+            if (isBinding == false)
+            {
+                LoginTB.DataBindings.Add(new Binding("Text", dataSource: usersBindingSource2, dataMember: "Login"));
+                PasswordTB.DataBindings.Add(new Binding("Text", dataSource: usersBindingSource2, dataMember: "Password"));
+                RoleCB.DataBindings.Add(new Binding("Text", dataSource: usersBindingSource2, dataMember: "Role"));
+
+                isBinding = true;
+            }
         }
 
         private void delUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,23 +118,40 @@ namespace Airline14
         {
             if (appModeEdit == true)
             {
-                if (usersDataGridView.SelectedRows.Count > 0)
+                DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
                 {
-                    DialogResult result = MessageBox.Show("Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    currentIDUser.Visible = true;
+                    int currentUserID = int.Parse(currentIDUser.Text);
+                    currentIDUser.Visible = false;
 
-                    if (result == DialogResult.Yes)
-                    {
-                        idDeletedUser[currentIndexUser] = int.Parse(usersDataGridView.SelectedRows[0].Cells[0].Value.ToString());
-                        currentIndexUser++;
-                        usersDataGridView.Rows.RemoveAt(usersDataGridView.SelectedCells[0].RowIndex);
-                        delete = true;
 
-                        MessageBox.Show("Пользовать удалён! Необходимо сохранить внесенные изменения!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    }
-                    else
+                    SqlConnection connection = new SqlConnection(connectionPath);
+
+                    SqlCommand passDelete = new SqlCommand("DELETE FROM [Users] WHERE [ID] =@ID", connection);
+
+                    connection.Open();
+
+                    passDelete.Parameters.AddWithValue("ID", currentUserID);
+                    try
                     {
-                        MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        passDelete.ExecuteNonQuery();
+
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+
+                    MessageBox.Show("Запись удалена успешно!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    DisplayReadOnlyAdmin();
+                }
+                else
+                {
+                    MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -132,7 +167,7 @@ namespace Airline14
             createToolStripMenuItem.Enabled = true;
 
 
-            editUserToolStripMenuItem.Enabled = false;
+            editUserToolStripMenuItem.Enabled = true;
             editCurrentUserToolStripMenuItem.Enabled = true;
 
 
@@ -143,6 +178,12 @@ namespace Airline14
 
             saveToolStripButton.Enabled = false;
             UnDoToolStripButton.Enabled = false;
+
+            addBindings();
+
+            enableChangeSortMode(true);
+
+            this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
 
             appModeEdit = false;
         }
@@ -159,7 +200,7 @@ namespace Airline14
 
 
             editUserToolStripMenuItem.Enabled = true;
-            editCurrentUserToolStripMenuItem.Enabled = false;
+            editCurrentUserToolStripMenuItem.Enabled = true;
 
 
             delCurrentUserToolStripMenuItem.Enabled = true;
@@ -173,62 +214,90 @@ namespace Airline14
             appModeEdit = true;
         }
 
-        private void toolStripButtonEdit_Click(object sender, EventArgs e)
+        private void editButton ()
         {
             DisplayEditAdmin();
             AddUserBtn.Text = "Обновить данные";
+
+            indexCurrentRow = usersDataGridView.SelectedCells[0].RowIndex;
+
+            enableChangeSortMode(false);
+        }
+
+        private void toolStripButtonEdit_Click(object sender, EventArgs e)
+        {
+            editButton();
+        }
+
+        private void enableChangeSortMode(bool mode)
+        {
+            if (mode == true)
+            {
+                foreach (DataGridViewColumn column in usersDataGridView.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in usersDataGridView.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+            }
         }
 
         private void UnDotoolStripButton_Click(object sender, EventArgs e)
         {
             DisplayReadOnlyAdmin();
-            this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
-
-            int countUsers = usersDataGridView.Rows.Count;
-            currentIndexUser = 0;
         }
 
         private void editUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (usersDataGridView.SelectedRows.Count > 0)
-            {
-                DisplayEditAdmin();
-            } else
-            {
-                MessageBox.Show("Выберете пользователя!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            editButton();
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
         {
-            bool showSuccessModal = true;
-            if (delete == true)
+            if (LoginTB.Text != "" && PasswordTB.Text != "" && RoleCB.SelectedIndex != -1 && LoginTB.TextLength <= 40 && PasswordTB.TextLength <= 40)
             {
-                foreach (int id in idDeletedUser)
+                currentIDUser.Visible = true;
+                int currentUserID = int.Parse(currentIDUser.Text);
+                currentIDUser.Visible = false;
+
+
+                SqlConnection connection = new SqlConnection(connectionPath);
+
+                SqlCommand usersUpdate = new SqlCommand("UPDATE [Users] SET [Login] = @Login, [Password] = @Password, [Role] = @Role WHERE [ID] =@ID", connection);
+
+
+                connection.Open();
+                try
                 {
-                    this.UsersTableAdapter.Delete(id);
+                    usersUpdate.Parameters.AddWithValue("Login", LoginTB.Text);
+                    usersUpdate.Parameters.AddWithValue("Password", PasswordTB.Text);
+                    usersUpdate.Parameters.AddWithValue("Role", RoleCB.SelectedItem.ToString());
+
+                    usersUpdate.Parameters.AddWithValue("ID", currentUserID);
+
+
+                    usersUpdate.ExecuteNonQuery();
+
+                    MessageBox.Show("Данные успешно обновлены!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                connection.Close();
+
+                DisplayReadOnlyAdmin();
             }
             else
             {
-                if (checkRepeatLogin(LoginTB.Text) == true)
-                {
-                    usersDataGridView.CurrentCell = usersDataGridView.Rows[0].Cells[0];
-                    this.UsersTableAdapter.Update(this.airlineDBDataSet2.Users);
-                } else
-                {
-                    showSuccessModal = false;
-                }
+                ErrorMessageBox();
             }
-
-            this.UsersTableAdapter.Fill(this.airlineDBDataSet2.Users);
-            if (showSuccessModal == true)
-            {
-                MessageBox.Show("Данные успешно обновлены!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-
-            DisplayReadOnlyAdmin();
         }
 
         private void editCurrentUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -308,6 +377,18 @@ namespace Airline14
         private void LoginTB_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        int indexCurrentRow;
+        private void usersDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (usersDataGridView.SelectedRows.Count > 0)
+            {
+                if (appModeEdit == true)
+                {
+                    if (MouseButtons != System.Windows.Forms.MouseButtons.None)
+                        ((DataGridView)sender).CurrentCell = usersDataGridView.Rows[indexCurrentRow].Cells[0];
+                }
+            }
         }
     }
 }
