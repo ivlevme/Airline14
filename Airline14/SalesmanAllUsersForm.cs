@@ -97,6 +97,8 @@ namespace Airline14
 
             appModeEdit = false;
 
+            enableChangeSortMode(true);
+
             this.passengersTableAdapter.Fill(this.airlineDBDataSet2.Passengers);
         }
 
@@ -212,11 +214,30 @@ namespace Airline14
                 PassportTB.DataBindings.Add(new Binding("Text", dataSource: passengersBindingSource, dataMember: "Passport Information"));
             }
         }
-
+        int indexCurrentRow;
         private void editToolStripButton_Click(object sender, EventArgs e)
         {
             DisplayEditSalesmanUsers();
+            indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
 
+            enableChangeSortMode(false);
+        }
+
+        private void enableChangeSortMode (bool mode)
+        {
+            if (mode == true)
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
+            } else
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+            }
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
@@ -298,11 +319,13 @@ namespace Airline14
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (appModeEdit == true)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                if (MouseButtons != System.Windows.Forms.MouseButtons.None)
-                    ((DataGridView)sender).CurrentCell = null;
-
+                if (appModeEdit == true)
+                {
+                    if (MouseButtons != System.Windows.Forms.MouseButtons.None)
+                        ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
+                }
             }
         }
     }
