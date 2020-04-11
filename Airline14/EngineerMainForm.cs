@@ -44,30 +44,22 @@ namespace Airline14
 
         private void добавитьНовогоПользователяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EngineerAddReportsForm engAddReports = new EngineerAddReportsForm();
-            engAddReports.Show();
-            this.Hide();
+
         }
 
         private void AddUserBtn_Click(object sender, EventArgs e)
         {
-            EngineerAddReportsForm engAddReports = new EngineerAddReportsForm();
-            engAddReports.Show();
-            this.Hide();
+
         }
 
         private void добавитьАэротехнкикуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EngineerAddAerotechnicsForm engineerAddAerotechnics = new EngineerAddAerotechnicsForm();
-            engineerAddAerotechnics.Show();
-            this.Hide();
+
         }
 
         private void AddAerotechnicBtn_Click(object sender, EventArgs e)
         {
-            EngineerAddAerotechnicsForm engineerAddAerotechnics = new EngineerAddAerotechnicsForm();
-            engineerAddAerotechnics.Show();
-            this.Hide();
+
         }
 
         private void списокВсейАэротехнкикиToolStripMenuItem_Click(object sender, EventArgs e)

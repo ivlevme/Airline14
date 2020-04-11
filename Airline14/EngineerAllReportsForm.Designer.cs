@@ -44,7 +44,6 @@
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editRepoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.аэротехникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьАэротехнкикуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокВсейАэротехнкикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,29 +100,34 @@
             this.loginDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.reportsBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(72, 100);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(343, 404);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
             this.dateDataGridViewTextBoxColumn.HeaderText = "Дата";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // contentDataGridViewTextBoxColumn
             // 
             this.contentDataGridViewTextBoxColumn.DataPropertyName = "Content";
             this.contentDataGridViewTextBoxColumn.HeaderText = "Содержание";
             this.contentDataGridViewTextBoxColumn.Name = "contentDataGridViewTextBoxColumn";
+            this.contentDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // loginDataGridViewTextBoxColumn
             // 
             this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
             this.loginDataGridViewTextBoxColumn.HeaderText = "Инженер";
             this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // reportsBindingSource
             // 
@@ -189,18 +193,10 @@
             // аэротехникаToolStripMenuItem
             // 
             this.аэротехникаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьАэротехнкикуToolStripMenuItem,
             this.списокВсейАэротехнкикиToolStripMenuItem});
             this.аэротехникаToolStripMenuItem.Name = "аэротехникаToolStripMenuItem";
             this.аэротехникаToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.аэротехникаToolStripMenuItem.Text = "Аэротехника";
-            // 
-            // добавитьАэротехнкикуToolStripMenuItem
-            // 
-            this.добавитьАэротехнкикуToolStripMenuItem.Name = "добавитьАэротехнкикуToolStripMenuItem";
-            this.добавитьАэротехнкикуToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
-            this.добавитьАэротехнкикуToolStripMenuItem.Text = "Добавить аэротехнкику";
-            this.добавитьАэротехнкикуToolStripMenuItem.Click += new System.EventHandler(this.добавитьАэротехнкикуToolStripMenuItem_Click);
             // 
             // списокВсейАэротехнкикиToolStripMenuItem
             // 
@@ -395,7 +391,6 @@
         private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editRepoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem аэротехникаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавитьАэротехнкикуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокВсейАэротехнкикиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;

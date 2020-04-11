@@ -33,16 +33,11 @@ namespace Airline14
 
         private void добавитьНовогоПользователяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EngineerAddReportsForm engAddReports = new EngineerAddReportsForm();
-            engAddReports.Show();
-            this.Hide();
         }
 
         private void добавитьАэротехнкикуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EngineerAddAerotechnicsForm engineerAddAerotechnics = new EngineerAddAerotechnicsForm();
-            engineerAddAerotechnics.Show();
-            this.Hide();
+            createButton();
         }
 
         private void вернутьсяНаГлавнуюСтраницуToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,25 +72,30 @@ namespace Airline14
             delRecord();
         }
 
-
+        bool isBinding = false;
         private void EngineerAllAerotechnicsForm_Load(object sender, EventArgs e)
         {
             this.aerotechnicsTableAdapter.Fill(this.airlineDBDataSet2.Aerotechnics);
-            dataGridView1.CurrentRow.Selected = false;
 
             DisplayReadOnlyEngineer();
 
             AddAeroBtn.Visible = false;
 
+        }
 
+        private void addBinding()
+        {
+            if (isBinding == false)
+            {
+                NameAerotechnicTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Name"));
+                CapacityTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Capacity"));
+                CrewTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Crew Count"));
+                ReportTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Content"));
+                idCurrentAeroTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "ID"));
+                idCurrentReportTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "ID Report"));
 
-            NameAerotechnicTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Name"));
-            CapacityTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Capacity"));
-            CrewTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Crew Count"));
-            ReportTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "Content"));
-            idCurrentAeroTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "ID"));
-            idCurrentReportTB.DataBindings.Add(new Binding("Text", dataSource: aerotechnicsBindingSource, dataMember: "ID Report"));
-
+                isBinding = true;
+            }
         }
 
         private bool appModeEdit = false;
@@ -127,6 +127,12 @@ namespace Airline14
             UnDoToolStripButton.Enabled = false;
 
             appModeEdit = false;
+
+            addBinding();
+
+            enableChangeSortMode(true);
+
+            AddAeroBtn.Visible = false;
         }
 
         private void DisplayEditEngineer()
@@ -160,9 +166,37 @@ namespace Airline14
             appModeEdit = true;
         }
 
-        private void editToolStripButton_Click(object sender, EventArgs e)
+        private void enableChangeSortMode(bool mode)
+        {
+            if (mode == true)
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+            }
+        }
+
+        private void editButton ()
         {
             DisplayEditEngineer();
+
+            indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+
+            enableChangeSortMode(false);
+        }
+
+        private void editToolStripButton_Click(object sender, EventArgs e)
+        {
+            editButton();
+
         }
 
         private void UnDoToolStripButton_Click(object sender, EventArgs e)
@@ -224,7 +258,7 @@ namespace Airline14
             }
         }
 
-        private void createToolStripButton_Click(object sender, EventArgs e)
+        private void createButton ()
         {
             DisplayEditEngineer();
             AddAeroBtn.Visible = true;
@@ -233,6 +267,26 @@ namespace Airline14
             CapacityTB.Text = "";
             CrewTB.Text = "";
             ReportTB.Text = "";
+
+            NameAerotechnicTB.DataBindings.Clear();
+            CapacityTB.DataBindings.Clear();
+            CrewTB.DataBindings.Clear();
+            ReportTB.DataBindings.Clear();
+            idCurrentAeroTB.DataBindings.Clear();
+            idCurrentReportTB.DataBindings.Clear();
+
+            enableChangeSortMode(false);
+
+            isBinding = false;
+
+            editAeroToolStripMenuItem.Enabled = false;
+            editToolStripMenuItem.Enabled = false;
+            editToolStripButton.Enabled = false;
+        }
+
+        private void createToolStripButton_Click(object sender, EventArgs e)
+        {
+            createButton();
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
@@ -282,7 +336,7 @@ namespace Airline14
             DisplayReadOnlyEngineer();
         }
 
-        private void removeToolStripButton_Click(object sender, EventArgs e)
+        private void delButton ()
         {
             if (appModeEdit == true)
             {
@@ -330,6 +384,53 @@ namespace Airline14
                 {
                     MessageBox.Show("Необходимо подтвердить удаление!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void removeToolStripButton_Click(object sender, EventArgs e)
+        {
+            delButton();
+        }
+
+        int indexCurrentRow = 1;
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if (appModeEdit == true)
+                {
+                    if (MouseButtons != System.Windows.Forms.MouseButtons.None)
+                        ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
+                }
+            }
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            delButton();
+        }
+
+        private void editAeroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            editButton();
+        }
+
+        private void CapacityTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (CapacityTB.TextLength <= 1000)
+            {
+                if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                    e.Handled = true;
+            }
+        }
+
+        private void CrewTB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (CrewTB.TextLength <= 1000)
+            {
+                if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                    e.Handled = true;
             }
         }
     }

@@ -99,12 +99,6 @@
     <Compile Include="EngineerAllReportsForm.Designer.cs">
       <DependentUpon>EngineerAllReportsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EngineerAddReportsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EngineerAddReportsForm.Designer.cs">
-      <DependentUpon>EngineerAddReportsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="AboutProgramForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,12 +110,6 @@
     </Compile>
     <Compile Include="EngineerAllAerotechnicsForm.Designer.cs">
       <DependentUpon>EngineerAllAerotechnicsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EngineerAddAerotechnicsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EngineerAddAerotechnicsForm.Designer.cs">
-      <DependentUpon>EngineerAddAerotechnicsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SalesmanAllFlight.cs">
       <SubType>Form</SubType>
@@ -187,12 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EngineerAddAerotechnicsForm.resx">
-      <DependentUpon>EngineerAddAerotechnicsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EngineerAddReportsForm.resx">
-      <DependentUpon>EngineerAddReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EngineerAllAerotechnicsForm.resx">
       <DependentUpon>EngineerAllAerotechnicsForm.cs</DependentUpon>

@@ -2560,15 +2560,15 @@ namespace Airline14 {
             
             private global::System.Data.DataColumn columnName;
             
-            private global::System.Data.DataColumn columnCapacity;
-            
-            private global::System.Data.DataColumn columnCrew_Count;
-            
             private global::System.Data.DataColumn columnID_Report;
             
             private global::System.Data.DataColumn columnFK_Report;
             
             private global::System.Data.DataColumn columnContent;
+            
+            private global::System.Data.DataColumn columnCapacity;
+            
+            private global::System.Data.DataColumn columnCrew_Count;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2630,22 +2630,6 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CapacityColumn {
-                get {
-                    return this.columnCapacity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Crew_CountColumn {
-                get {
-                    return this.columnCrew_Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn ID_ReportColumn {
                 get {
                     return this.columnID_Report;
@@ -2665,6 +2649,22 @@ namespace Airline14 {
             public global::System.Data.DataColumn ContentColumn {
                 get {
                     return this.columnContent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CapacityColumn {
+                get {
+                    return this.columnCapacity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Crew_CountColumn {
+                get {
+                    return this.columnCrew_Count;
                 }
             }
             
@@ -2705,18 +2705,18 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AerotechnicsRow AddAerotechnicsRow(string Name, string Capacity, string Crew_Count, ReportsRow parentReportsRowByFK_Aerotechnics_Reports, string FK_Report, string Content) {
+            public AerotechnicsRow AddAerotechnicsRow(string Name, ReportsRow parentReportsRowByFK_Aerotechnics_Reports, string FK_Report, string Content, int Capacity, int Crew_Count) {
                 AerotechnicsRow rowAerotechnicsRow = ((AerotechnicsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
-                        Capacity,
-                        Crew_Count,
                         null,
                         FK_Report,
-                        Content};
+                        Content,
+                        Capacity,
+                        Crew_Count};
                 if ((parentReportsRowByFK_Aerotechnics_Reports != null)) {
-                    columnValuesArray[4] = parentReportsRowByFK_Aerotechnics_Reports[0];
+                    columnValuesArray[2] = parentReportsRowByFK_Aerotechnics_Reports[0];
                 }
                 rowAerotechnicsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAerotechnicsRow);
@@ -2725,18 +2725,18 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AerotechnicsRow AddAerotechnicsRow(string Name, string Capacity, string Crew_Count, ReportsRow parentReportsRowByFK_Aerotechnics_Reports, string Content) {
+            public AerotechnicsRow AddAerotechnicsRow(string Name, ReportsRow parentReportsRowByFK_Aerotechnics_Reports, string Content, int Capacity, int Crew_Count) {
                 AerotechnicsRow rowAerotechnicsRow = ((AerotechnicsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
+                        null,
+                        null,
+                        Content,
                         Capacity,
-                        Crew_Count,
-                        null,
-                        null,
-                        Content};
+                        Crew_Count};
                 if ((parentReportsRowByFK_Aerotechnics_Reports != null)) {
-                    columnValuesArray[4] = parentReportsRowByFK_Aerotechnics_Reports[0];
+                    columnValuesArray[2] = parentReportsRowByFK_Aerotechnics_Reports[0];
                 }
                 rowAerotechnicsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAerotechnicsRow);
@@ -2769,11 +2769,11 @@ namespace Airline14 {
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
                 this.columnName = base.Columns["Name"];
-                this.columnCapacity = base.Columns["Capacity"];
-                this.columnCrew_Count = base.Columns["Crew Count"];
                 this.columnID_Report = base.Columns["ID Report"];
                 this.columnFK_Report = base.Columns["FK_Report"];
                 this.columnContent = base.Columns["Content"];
+                this.columnCapacity = base.Columns["Capacity"];
+                this.columnCrew_Count = base.Columns["Crew Count"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2783,16 +2783,16 @@ namespace Airline14 {
                 base.Columns.Add(this.columnID);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
-                this.columnCapacity = new global::System.Data.DataColumn("Capacity", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCapacity);
-                this.columnCrew_Count = new global::System.Data.DataColumn("Crew Count", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCrew_Count);
                 this.columnID_Report = new global::System.Data.DataColumn("ID Report", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Report);
                 this.columnFK_Report = new global::System.Data.DataColumn("FK_Report", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFK_Report);
                 this.columnContent = new global::System.Data.DataColumn("Content", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnContent);
+                this.columnCapacity = new global::System.Data.DataColumn("Capacity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCapacity);
+                this.columnCrew_Count = new global::System.Data.DataColumn("Crew Count", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCrew_Count);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -2802,8 +2802,6 @@ namespace Airline14 {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnName.MaxLength = 40;
-                this.columnCapacity.MaxLength = 40;
-                this.columnCrew_Count.MaxLength = 40;
                 this.columnFK_Report.ReadOnly = true;
                 this.columnContent.MaxLength = 300;
             }
@@ -3651,38 +3649,6 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Capacity {
-                get {
-                    try {
-                        return ((string)(this[this.tableAerotechnics.CapacityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Capacity\' in table \'Aerotechnics\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAerotechnics.CapacityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Crew_Count {
-                get {
-                    try {
-                        return ((string)(this[this.tableAerotechnics.Crew_CountColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Crew Count\' in table \'Aerotechnics\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAerotechnics.Crew_CountColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int ID_Report {
                 get {
                     try {
@@ -3731,6 +3697,38 @@ namespace Airline14 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Capacity {
+                get {
+                    try {
+                        return ((int)(this[this.tableAerotechnics.CapacityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Capacity\' in table \'Aerotechnics\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAerotechnics.CapacityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Crew_Count {
+                get {
+                    try {
+                        return ((int)(this[this.tableAerotechnics.Crew_CountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Crew Count\' in table \'Aerotechnics\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAerotechnics.Crew_CountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ReportsRow ReportsRow {
                 get {
                     return ((ReportsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Aerotechnics_Reports"])));
@@ -3750,30 +3748,6 @@ namespace Airline14 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetNameNull() {
                 this[this.tableAerotechnics.NameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCapacityNull() {
-                return this.IsNull(this.tableAerotechnics.CapacityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCapacityNull() {
-                this[this.tableAerotechnics.CapacityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCrew_CountNull() {
-                return this.IsNull(this.tableAerotechnics.Crew_CountColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCrew_CountNull() {
-                this[this.tableAerotechnics.Crew_CountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3810,6 +3784,30 @@ namespace Airline14 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetContentNull() {
                 this[this.tableAerotechnics.ContentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCapacityNull() {
+                return this.IsNull(this.tableAerotechnics.CapacityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCapacityNull() {
+                this[this.tableAerotechnics.CapacityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCrew_CountNull() {
+                return this.IsNull(this.tableAerotechnics.Crew_CountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCrew_CountNull() {
+                this[this.tableAerotechnics.Crew_CountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5757,15 +5755,11 @@ SELECT ID, Login, Password, Role FROM Users WHERE (ID = @ID)";
             tableMapping.DataSetTable = "Aerotechnics";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Capacity", "Capacity");
-            tableMapping.ColumnMappings.Add("Crew Count", "Crew Count");
             tableMapping.ColumnMappings.Add("ID Report", "ID Report");
             tableMapping.ColumnMappings.Add("Content", "Content");
+            tableMapping.ColumnMappings.Add("Capacity", "Capacity");
+            tableMapping.ColumnMappings.Add("Crew Count", "Crew Count");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5810,35 +5804,6 @@ FROM            Aerotechnics FULL OUTER JOIN
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(AirlineDBDataSet2.AerotechnicsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(AirlineDBDataSet2 dataSet) {
-            return this.Adapter.Update(dataSet, "Aerotechnics");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
     }
     
     /// <summary>
@@ -5858,8 +5823,6 @@ FROM            Aerotechnics FULL OUTER JOIN
         private PassengersTableAdapter _passengersTableAdapter;
         
         private UsersTableAdapter _usersTableAdapter;
-        
-        private AerotechnicsTableAdapter _aerotechnicsTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5920,20 +5883,6 @@ FROM            Aerotechnics FULL OUTER JOIN
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public AerotechnicsTableAdapter AerotechnicsTableAdapter {
-            get {
-                return this._aerotechnicsTableAdapter;
-            }
-            set {
-                this._aerotechnicsTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -5963,10 +5912,6 @@ FROM            Aerotechnics FULL OUTER JOIN
                             && (this._usersTableAdapter.Connection != null))) {
                     return this._usersTableAdapter.Connection;
                 }
-                if (((this._aerotechnicsTableAdapter != null) 
-                            && (this._aerotechnicsTableAdapter.Connection != null))) {
-                    return this._aerotechnicsTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -5987,9 +5932,6 @@ FROM            Aerotechnics FULL OUTER JOIN
                     count = (count + 1);
                 }
                 if ((this._usersTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._aerotechnicsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -6018,15 +5960,6 @@ FROM            Aerotechnics FULL OUTER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._destinationTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._aerotechnicsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Aerotechnics.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._aerotechnicsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -6065,14 +5998,6 @@ FROM            Aerotechnics FULL OUTER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._aerotechnicsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Aerotechnics.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._aerotechnicsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._passengersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Passengers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -6096,14 +6021,6 @@ FROM            Aerotechnics FULL OUTER JOIN
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._passengersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._aerotechnicsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Aerotechnics.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._aerotechnicsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -6177,11 +6094,6 @@ FROM            Aerotechnics FULL OUTER JOIN
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._aerotechnicsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._aerotechnicsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -6239,15 +6151,6 @@ FROM            Aerotechnics FULL OUTER JOIN
                     if (this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._usersTableAdapter.Adapter);
-                    }
-                }
-                if ((this._aerotechnicsTableAdapter != null)) {
-                    revertConnections.Add(this._aerotechnicsTableAdapter, this._aerotechnicsTableAdapter.Connection);
-                    this._aerotechnicsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._aerotechnicsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._aerotechnicsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._aerotechnicsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._aerotechnicsTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -6319,10 +6222,6 @@ FROM            Aerotechnics FULL OUTER JOIN
                 if ((this._usersTableAdapter != null)) {
                     this._usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._usersTableAdapter]));
                     this._usersTableAdapter.Transaction = null;
-                }
-                if ((this._aerotechnicsTableAdapter != null)) {
-                    this._aerotechnicsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aerotechnicsTableAdapter]));
-                    this._aerotechnicsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

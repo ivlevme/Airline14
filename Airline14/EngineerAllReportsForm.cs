@@ -38,16 +38,10 @@ namespace Airline14
 
         private void добавитьНовогоПользователяToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EngineerAddReportsForm engAddreports = new EngineerAddReportsForm();
-            engAddreports.Show();
-            this.Hide();
         }
 
         private void добавитьАэротехнкикуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EngineerAddAerotechnicsForm engineerAddAerotechnics = new EngineerAddAerotechnicsForm();
-            engineerAddAerotechnics.Show();
-            this.Hide();
         }
 
         private void списокВсейАэротехнкикиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,7 +75,6 @@ namespace Airline14
         {
             this.reportsTableAdapter.Fill(this.airlineDBDataSet2.Reports);
 
-            dataGridView1.CurrentRow.Selected = false;
 
             DisplayReadOnlyEngineer();
 
@@ -103,14 +96,16 @@ namespace Airline14
 
 
             editToolStripButton.Enabled = true;
-            editReportToolStripMenuItem.Enabled = false;
-            editRepoToolStripMenuItem.Enabled = false;
+            editReportToolStripMenuItem.Enabled = true;
+            editRepoToolStripMenuItem.Enabled = true;
 
 
             saveToolStripButton.Enabled = false;
             UnDoToolStripButton.Enabled = false;
 
             appModeEdit = false;
+
+            enableChangeSortMode(true);
         }
 
         private void DisplayEditEngineer()
@@ -133,10 +128,20 @@ namespace Airline14
 
         }
 
+        int indexCurrentRow = 1;
+
+        private void editButton ()
+        {
+            DisplayEditEngineer();
+
+            indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
+
+            enableChangeSortMode(false);
+        }
 
         private void editToolStripButton_Click(object sender, EventArgs e)
         {
-            DisplayEditEngineer();
+            editButton();
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
@@ -174,12 +179,42 @@ namespace Airline14
 
         private void editRepoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisplayEditEngineer();
+            editButton();
         }
 
         private void UnDoToolStripButton_Click(object sender, EventArgs e)
         {
             DisplayReadOnlyEngineer();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if (appModeEdit == true)
+                {
+                    if (MouseButtons != System.Windows.Forms.MouseButtons.None)
+                        ((DataGridView)sender).CurrentCell = dataGridView1.Rows[indexCurrentRow].Cells[0];
+                }
+            }
+        }
+
+        private void enableChangeSortMode(bool mode)
+        {
+            if (mode == true)
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.Automatic;
+                }
+            }
+            else
+            {
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    column.SortMode = DataGridViewColumnSortMode.NotSortable;
+                }
+            }
         }
     }
 }

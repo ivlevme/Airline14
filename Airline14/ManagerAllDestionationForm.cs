@@ -185,13 +185,18 @@ namespace Airline14
 
         int indexCurrentRow;
 
-        private void editToolStripButton_Click(object sender, EventArgs e)
+        private void editButton ()
         {
             DisplayEditManagerDestination();
 
             indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
 
             enableChangeSortMode(false);
+        }
+
+        private void editToolStripButton_Click(object sender, EventArgs e)
+        {
+            editButton();
         }
 
         private void enableChangeSortMode(bool mode)
@@ -345,7 +350,7 @@ namespace Airline14
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisplayEditManagerDestination();
+            editButton();
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
