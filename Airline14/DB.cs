@@ -1,0 +1,23 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Airline14
+{
+    class DB
+    {
+        public static MySqlConnection GetDBConnection()
+        {
+            string host = "std-mysql";
+            int port = 3306;
+            string database = "std_1313";
+            string username = "std_1313";
+            string password = "Ivl23SD0";
+
+            return DBMySQLUnits.GetDBConnection(host, port, database, username, password);
+        }
+    }
+}

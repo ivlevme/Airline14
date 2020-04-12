@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,73 +23,157 @@ namespace Airline14
 
         private void SinginButton_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlConnection;
-            string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-            sqlConnection = new SqlConnection(connectionPath);
-            sqlConnection.Open();
-            SqlDataReader sdr = null;
-            SqlCommand cmdSelect = new SqlCommand("SELECT * FROM Users", sqlConnection);
-            bool checklogin = false;
+            bool isConnected = false;
 
+            MySqlConnection conn = DB.GetDBConnection();
             try
             {
-                sdr = cmdSelect.ExecuteReader();
-
-                while (sdr.Read())
-                {
-                    
-                    if (LoginTB.Text == Convert.ToString(sdr["Login"]))
-                    {
-                        checklogin = true;
-
-                        if (PasswordTB.Text == Convert.ToString(sdr["Password"]))
-                        {
-                            BaseForm.idCurrentUser = Convert.ToInt32(Convert.ToString(sdr["ID"]));
-
-                            switch (Convert.ToString(sdr["Role"]))
-                            {
-                                case "admin":
-                                    AdminAllUsersForm admForm = new AdminAllUsersForm();
-                                    admForm.Show();
-                                    this.Hide();
-                                    break;
-
-                                case "engineer":
-                                    EngineerMainForm engineer = new EngineerMainForm();
-                                    engineer.Show();
-                                    this.Hide();
-                                    break;
-
-                                case "salesman":
-                                    SalesmanMainForm salesman = new SalesmanMainForm();
-                                    salesman.Show();
-                                    this.Hide();
-                                    break;
-
-                                case "manager":
-                                    ManagerMainForm managerForm = new ManagerMainForm();
-                                    managerForm.Show();
-                                    this.Hide();
-                                    break;
-                            }
-                        } else
-                        {
-                            PasswordTB.Text = "";
-                            MessageBox.Show("Введеный пароль некорректный. Попробуйте еще раз.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            break;
-                        }
-                    }
-                }
-
-                if (checklogin == false)
-                {
-                    MessageBox.Show("Введеный логин некорректный. Попробуйте еще раз.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                conn.Open();
+                MessageBox.Show("Work");
+                isConnected = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            //if (isConnected == true)
+            //{
+            //    try
+            //    {
+            //        string sql = $"SELECT * FROM `dbo.Users` ";
+            //        MySqlCommand cmd = conn.CreateCommand();
+            //        cmd.CommandText = sql;
+            //        MySqlDataReader reader = cmd.ExecuteReader();
+
+            //        bool checklogin = false;
+
+
+            //        while (reader.Read())
+            //        {
+            //            if (LoginTB.Text == Convert.ToString(reader["Login"]))
+            //            {
+            //                checklogin = true;
+
+            //                if (PasswordTB.Text == Convert.ToString(reader["Password"]))
+            //                {
+            //                    BaseForm.idCurrentUser = Convert.ToInt32(Convert.ToString(reader["ID"]));
+
+            //                    switch (Convert.ToString(reader["Role"]))
+            //                    {
+            //                        case "admin":
+            //                            AdminAllUsersForm admForm = new AdminAllUsersForm();
+            //                            admForm.Show();
+            //                            this.Hide();
+            //                            break;
+
+            //                        case "engineer":
+            //                            EngineerMainForm engineer = new EngineerMainForm();
+            //                            engineer.Show();
+            //                            this.Hide();
+            //                            break;
+
+            //                        case "salesman":
+            //                            SalesmanMainForm salesman = new SalesmanMainForm();
+            //                            salesman.Show();
+            //                            this.Hide();
+            //                            break;
+
+            //                        case "manager":
+            //                            ManagerMainForm managerForm = new ManagerMainForm();
+            //                            managerForm.Show();
+            //                            this.Hide();
+            //                            break;
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    PasswordTB.Text = "";
+            //                    MessageBox.Show("Введеный пароль некорректный. Попробуйте еще раз.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //                    break;
+            //                }
+            //            }
+            //        }
+
+            //        if (checklogin == false)
+            //        {
+            //            MessageBox.Show("Введеный логин некорректный. Попробуйте еще раз.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            
+
+            //SqlConnection sqlConnection;
+            //string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+            //sqlConnection = new SqlConnection(connectionPath);
+            //sqlConnection.Open();
+            //SqlDataReader sdr = null;
+            //SqlCommand cmdSelect = new SqlCommand("SELECT * FROM Users", sqlConnection);
+            //bool checklogin = false;
+
+            //try
+            //{
+            //    sdr = cmdSelect.ExecuteReader();
+
+            //    while (sdr.Read())
+            //    {
+
+            //        if (LoginTB.Text == Convert.ToString(sdr["Login"]))
+            //        {
+            //            checklogin = true;
+
+            //            if (PasswordTB.Text == Convert.ToString(sdr["Password"]))
+            //            {
+            //                BaseForm.idCurrentUser = Convert.ToInt32(Convert.ToString(sdr["ID"]));
+
+            //                switch (Convert.ToString(sdr["Role"]))
+            //                {
+            //                    case "admin":
+            //                        AdminAllUsersForm admForm = new AdminAllUsersForm();
+            //                        admForm.Show();
+            //                        this.Hide();
+            //                        break;
+
+            //                    case "engineer":
+            //                        EngineerMainForm engineer = new EngineerMainForm();
+            //                        engineer.Show();
+            //                        this.Hide();
+            //                        break;
+
+            //                    case "salesman":
+            //                        SalesmanMainForm salesman = new SalesmanMainForm();
+            //                        salesman.Show();
+            //                        this.Hide();
+            //                        break;
+
+            //                    case "manager":
+            //                        ManagerMainForm managerForm = new ManagerMainForm();
+            //                        managerForm.Show();
+            //                        this.Hide();
+            //                        break;
+            //                }
+            //            } else
+            //            {
+            //                PasswordTB.Text = "";
+            //                MessageBox.Show("Введеный пароль некорректный. Попробуйте еще раз.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //                break;
+            //            }
+            //        }
+            //    }
+
+            //    if (checklogin == false)
+            //    {
+            //        MessageBox.Show("Введеный логин некорректный. Попробуйте еще раз.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void PasswordTB_TextChanged(object sender, EventArgs e)
