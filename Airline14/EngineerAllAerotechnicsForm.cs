@@ -209,8 +209,7 @@ namespace Airline14
         {
             if (NameAerotechnicTB.Text != "" && CrewTB.Text != "" && CapacityTB.Text != "" && ReportTB.Text != "")
             {
-                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
+               
                 SqlConnection connection = new SqlConnection(connectionPath);
                 SqlCommand newUserInsert = new SqlCommand("INSERT INTO[dbo].[Aerotechnics] ([Name], [Capacity], [Crew Count], [ID Report]) VALUES(@Name, @Capacity, @Crew, @IDReport);", connection);
 

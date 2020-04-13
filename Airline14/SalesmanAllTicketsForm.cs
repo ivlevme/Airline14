@@ -156,6 +156,8 @@ namespace Airline14
 
             appModeEdit = false;
 
+            AddNewClient.Enabled = true;
+
             enableChangeSortMode(true);
 
             this.ticketsTableAdapter.Fill(this.airlineDBDataSet2.Tickets);
@@ -201,6 +203,8 @@ namespace Airline14
         private void editButton ()
         {
             DisplayEditSalesmanTickets();
+
+            dataBind = true;
 
             indexCurrentRow = dataGridView1.SelectedCells[0].RowIndex;
 
@@ -398,8 +402,7 @@ namespace Airline14
             {
                 int currentNumberFlight = int.Parse(FlightCB.SelectedItem.ToString());
 
-                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
+               
                 SqlConnection connection = new SqlConnection(connectionPath);
                 SqlCommand newTicketInsert = new SqlCommand("INSERT INTO [dbo].[Tickets] ([ID Passenger], [Number Flight], [Date]) VALUES(@IDPass, @NumberFlight, @Date);", connection);
                 

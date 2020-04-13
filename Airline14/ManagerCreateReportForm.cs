@@ -67,7 +67,7 @@ namespace Airline14
         {
             if (checkdate())
             {
-                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+                
                 SqlConnection connection = new SqlConnection(connectionPath);
                 SqlCommand selectForReports = new SqlCommand($"DECLARE @datePast DATETIME; DECLARE @dateFuture DATETIME; SET @datePast = CONVERT(DATETIME, '{PastDateTimePicker.Value.ToString("dd.MM.yyy")}', 104); SET @dateFuture = CONVERT(DATETIME, '{FutureDateTimePicker.Value.ToString("dd.MM.yyy")}', 104); SELECT [Date], [Number Flight], COUNT(*) AS Test FROM Tickets WHERE [Date] >= @datePast AND [Date] <= @dateFuture GROUP BY [Number Flight], Date", connection);
 

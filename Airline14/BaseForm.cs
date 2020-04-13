@@ -13,8 +13,7 @@ namespace Airline14
 {
     public partial class BaseForm : Form
     {
-
-        public string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
+        public string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
         public static int idCurrentUser = -1;
         public SqlDataReader sdr;
         public BaseForm()

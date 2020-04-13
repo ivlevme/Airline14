@@ -171,8 +171,7 @@ namespace Airline14
         {
             if (FioTB.Text != "" && PassportTB.Text != "" && FioTB.Text.Length <= 100 && PassportTB.Text.Length <= 40)
             {
-                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
+                
                 SqlConnection connection = new SqlConnection(connectionPath);
                 SqlCommand addPassengerInsert = new SqlCommand("INSERT INTO [dbo].[Passengers] ([Personal information], [Passport information]) VALUES(@PersInf, @PassInf);", connection);
 

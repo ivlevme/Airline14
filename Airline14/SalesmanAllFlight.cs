@@ -19,7 +19,6 @@ namespace Airline14
 
         private void SalesmanAllFlight_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'airlineDBDataSet2.Flights' table. You can move, or remove it, as needed.
             this.flightsTableAdapter.Fill(this.airlineDBDataSet2.Flights);
 
         }

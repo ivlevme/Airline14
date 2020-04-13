@@ -421,8 +421,7 @@ namespace Airline14
 
             if (checkFlightCorrectData() == true)
             {
-                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
+               
                 SqlConnection connection = new SqlConnection(connectionPath);
                 SqlCommand newFlightInsert = new SqlCommand("INSERT INTO[dbo].[Flights] ([ID Aerotechnic], [ID Destination], [Departure time], [Time flight], [Date flight], [Sold Count], [Arrivial time], [ID Manager])" +
                     "VALUES(@IDAerotechnic, @IDDestination, @Departuretime, @Timeflight, @Dateflight, @Soldcount, @Arrivialtime, @IDManager);", connection);
