@@ -282,8 +282,13 @@ namespace Airline14
             removeCurrentDestination();
         }
 
-            private void saveToolStripButton_Click(object sender, EventArgs e)
-            {
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+
+            string currentName = nameDestinationTB.Text;
+
+            addBingings();
+
             idCurrentDestinationTB.Visible = true;
             int idCurrentDestination = int.Parse(idCurrentDestinationTB.Text);
             idCurrentDestinationTB.Visible = false;
@@ -293,13 +298,11 @@ namespace Airline14
 
             SqlCommand destUpdate = new SqlCommand("UPDATE [Destination] SET [Name] = @Name WHERE [ID] =@ID", connection);
 
-
-
             connection.Open();
             try
             {
                 destUpdate.Parameters.AddWithValue("ID", idCurrentDestination);
-                destUpdate.Parameters.AddWithValue("Name", nameDestinationTB.Text);
+                destUpdate.Parameters.AddWithValue("Name", currentName);
 
                 destUpdate.ExecuteNonQuery();
 
@@ -321,8 +324,7 @@ namespace Airline14
         {
             if (nameDestinationTB.Text != "")
             {
-                string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
+                
                 SqlConnection connection = new SqlConnection(connectionPath);
                 SqlCommand newDestInsert = new SqlCommand("INSERT INTO[dbo].[Destination] ([Name]) VALUES(@Name);", connection);
 

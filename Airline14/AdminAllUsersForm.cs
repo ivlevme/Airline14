@@ -173,6 +173,7 @@ namespace Airline14
 
             editUserToolStripMenuItem.Enabled = true;
             editCurrentUserToolStripMenuItem.Enabled = true;
+            editToolStripButton.Enabled = true;
 
 
             delUserToolStripMenuItem.Enabled = false;
@@ -313,9 +314,7 @@ namespace Airline14
             if (LoginTB.Text != "" && PasswordTB.Text != "" && RoleCB.SelectedIndex != -1)
             {
                 if (checkRepeatLogin(LoginTB.Text) == true)
-                {
-                    string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
+                { 
                     SqlConnection connection = new SqlConnection(connectionPath);
                     SqlCommand newUserInsert = new SqlCommand("INSERT INTO[dbo].[Users] ([Login], [Password], [Role]) VALUES(@Login, @Password, @Role);", connection);
 
@@ -349,8 +348,6 @@ namespace Airline14
 
         public bool checkRepeatLogin(string login)
         {
-            string connectionPath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\79266\source\repos\Airline14\Airline14\AirlineDB.mdf;Integrated Security=True;Connect Timeout=30";
-
             SqlConnection connection = new SqlConnection(connectionPath);
             SqlCommand selectLogin = new SqlCommand("Select [Login] FROM [Users];", connection);
 
