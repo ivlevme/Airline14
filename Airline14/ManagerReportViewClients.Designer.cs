@@ -1,6 +1,6 @@
 ﻿namespace Airline14
 {
-    partial class ManagerReportView
+    partial class ManagerReportViewClients
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.NameLabel = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.personalinformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new Airline14.DataSet1();
             this.passengersTableAdapter = new Airline14.DataSet1TableAdapters.PassengersTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
@@ -61,19 +60,14 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Airline14.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(94, 87);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.passengersBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Airline14.Report2.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(94, 86);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(498, 405);
+            this.reportViewer1.Size = new System.Drawing.Size(748, 405);
             this.reportViewer1.TabIndex = 20;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(598, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(324, 189);
-            this.dataGridView1.TabIndex = 21;
             // 
             // personalinformationDataGridViewTextBoxColumn
             // 
@@ -95,20 +89,17 @@
             // 
             this.passengersTableAdapter.ClearBeforeFill = true;
             // 
-            // ManagerReportView
+            // ManagerReportViewClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.ClientSize = new System.Drawing.Size(934, 561);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.NameLabel);
-            this.Name = "ManagerReportView";
+            this.Name = "ManagerReportViewClients";
             this.Load += new System.EventHandler(this.ManagerReportView_Load);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.reportViewer1, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
@@ -120,7 +111,6 @@
 
         private System.Windows.Forms.Label NameLabel;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn personalinformationDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn personalInformationDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn passportInformationDataGridViewTextBoxColumn;

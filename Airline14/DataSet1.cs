@@ -7,9 +7,11 @@
     }
 }
 
-namespace Airline14.DataSet1TableAdapters {
-    
-    
-    public partial class DataTable1TableAdapter {
+namespace Airline14.DataSet1TableAdapters
+{
+
+
+    public partial class StatsTableAdapter
+    {
     }
 }

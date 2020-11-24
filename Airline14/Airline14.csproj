@@ -277,11 +277,17 @@
     <Compile Include="EngineerAllAerotechnicsForm.Designer.cs">
       <DependentUpon>EngineerAllAerotechnicsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerReportView.cs">
+    <Compile Include="ManageReportViewMoney.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerReportView.Designer.cs">
-      <DependentUpon>ManagerReportView.cs</DependentUpon>
+    <Compile Include="ManageReportViewMoney.Designer.cs">
+      <DependentUpon>ManageReportViewMoney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerReportViewClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerReportViewClients.Designer.cs">
+      <DependentUpon>ManagerReportViewClients.cs</DependentUpon>
     </Compile>
     <Compile Include="SalesmanAllFlight.cs">
       <SubType>Form</SubType>
@@ -373,11 +379,14 @@
     <EmbeddedResource Include="ManagerDoneReportForm.resx">
       <DependentUpon>ManagerDoneReportForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageReportViewMoney.resx">
+      <DependentUpon>ManageReportViewMoney.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerReportView.resx">
-      <DependentUpon>ManagerReportView.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerReportViewClients.resx">
+      <DependentUpon>ManagerReportViewClients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -389,6 +398,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="SalesmanAllFlight.resx">
       <DependentUpon>SalesmanAllFlight.cs</DependentUpon>
     </EmbeddedResource>

@@ -88,8 +88,15 @@ namespace Airline14
 
         private void createReportViewBTN_Click(object sender, EventArgs e)
         {
-            ManagerReportView managerReportView = new ManagerReportView();
+            ManagerReportViewClients managerReportView = new ManagerReportViewClients();
             managerReportView.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ManageReportViewMoney manageReportViewMoney = new ManageReportViewMoney();
+            manageReportViewMoney.Show();
             this.Hide();
         }
     }

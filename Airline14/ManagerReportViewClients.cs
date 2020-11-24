@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Airline14
 {
-    public partial class ManagerReportView : Airline14.BaseForm
+    public partial class ManagerReportViewClients : Airline14.BaseForm
     {
-        public ManagerReportView()
+        public ManagerReportViewClients()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace Airline14
         {
             // TODO: This line of code loads data into the 'dataSet1.Passengers' table. You can move, or remove it, as needed.
             this.passengersTableAdapter.Fill(this.dataSet1.Passengers);
-            // TODO: This line of code loads data into the 'dataSet1.Passengers' table. You can move, or remove it, as needed.
+            //// TODO: This line of code loads data into the 'dataSet1.Passengers' table. You can move, or remove it, as needed.
             this.passengersTableAdapter.Fill(this.dataSet1.Passengers);
 
             ReportDataSource datasource = new ReportDataSource("DataSet1", this.dataSet1.Tables["Passengers"]);
