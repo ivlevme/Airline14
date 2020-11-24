@@ -456,13 +456,6 @@
     </Content>
     <Content Include="favicon-1.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
-    <None Include="AirlineDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Content Include="AirlineDB_log.ldf">
-      <DependentUpon>AirlineDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
