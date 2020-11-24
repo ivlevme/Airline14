@@ -28,11 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.UsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.AirlineDBDataSet2 = new Airline14.AirlineDBDataSet2();
             this.NameLabel = new System.Windows.Forms.Label();
             this.FirstDateLabel = new System.Windows.Forms.Label();
             this.LastDateLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.NumberFlight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CountSoldTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResumeCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManagerMenuStrip = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вернутьсяНаГлавнуюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,17 +52,36 @@
             this.добавлениеПунктаНазначенияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NumberFlight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CountSoldTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ResumeCost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reportsTableAdapter1 = new Airline14.AirlineDBDataSet2TableAdapters.ReportsTableAdapter();
+            this.TicketsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TicketsTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.TicketsTableAdapter();
+            this.airlineDBDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ticketsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.UsersTableAdapter = new Airline14.AirlineDBDataSet2TableAdapters.UsersTableAdapter();
+            this.ticketsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.UsersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AirlineDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ManagerMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TicketsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitBtn
             // 
             this.ExitBtn.FlatAppearance.BorderSize = 0;
+            // 
+            // UsersBindingSource
+            // 
+            this.UsersBindingSource.DataMember = "Users";
+            this.UsersBindingSource.DataSource = this.AirlineDBDataSet2;
+            // 
+            // AirlineDBDataSet2
+            // 
+            this.AirlineDBDataSet2.DataSetName = "AirlineDBDataSet2";
+            this.AirlineDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // NameLabel
             // 
@@ -123,12 +149,36 @@
             this.CountSoldTicket,
             this.ResumeCost,
             this.Date});
-            this.dataGridView1.Location = new System.Drawing.Point(276, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(29, 97);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(444, 407);
+            this.dataGridView1.Size = new System.Drawing.Size(890, 407);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // NumberFlight
+            // 
+            this.NumberFlight.HeaderText = "Номер рейса";
+            this.NumberFlight.Name = "NumberFlight";
+            this.NumberFlight.ReadOnly = true;
+            // 
+            // CountSoldTicket
+            // 
+            this.CountSoldTicket.HeaderText = "Количество проданных билетов";
+            this.CountSoldTicket.Name = "CountSoldTicket";
+            this.CountSoldTicket.ReadOnly = true;
+            // 
+            // ResumeCost
+            // 
+            this.ResumeCost.HeaderText = "Итоговая выручка";
+            this.ResumeCost.Name = "ResumeCost";
+            this.ResumeCost.ReadOnly = true;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Дата продажи билетов";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
             // 
             // ManagerMenuStrip
             // 
@@ -227,29 +277,37 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
-            // NumberFlight
+            // reportsTableAdapter1
             // 
-            this.NumberFlight.HeaderText = "Номер рейса";
-            this.NumberFlight.Name = "NumberFlight";
-            this.NumberFlight.ReadOnly = true;
+            this.reportsTableAdapter1.ClearBeforeFill = true;
             // 
-            // CountSoldTicket
+            // TicketsBindingSource
             // 
-            this.CountSoldTicket.HeaderText = "Количество проданных билетов";
-            this.CountSoldTicket.Name = "CountSoldTicket";
-            this.CountSoldTicket.ReadOnly = true;
+            this.TicketsBindingSource.DataMember = "Tickets";
+            this.TicketsBindingSource.DataSource = this.AirlineDBDataSet2;
             // 
-            // ResumeCost
+            // TicketsTableAdapter
             // 
-            this.ResumeCost.HeaderText = "Итоговая выручка";
-            this.ResumeCost.Name = "ResumeCost";
-            this.ResumeCost.ReadOnly = true;
+            this.TicketsTableAdapter.ClearBeforeFill = true;
             // 
-            // Date
+            // airlineDBDataSet2BindingSource
             // 
-            this.Date.HeaderText = "Дата продажи билетов";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
+            this.airlineDBDataSet2BindingSource.DataSource = this.AirlineDBDataSet2;
+            this.airlineDBDataSet2BindingSource.Position = 0;
+            // 
+            // ticketsBindingSource1
+            // 
+            this.ticketsBindingSource1.DataMember = "Tickets";
+            this.ticketsBindingSource1.DataSource = this.AirlineDBDataSet2;
+            // 
+            // UsersTableAdapter
+            // 
+            this.UsersTableAdapter.ClearBeforeFill = true;
+            // 
+            // ticketsBindingSource2
+            // 
+            this.ticketsBindingSource2.DataMember = "Tickets";
+            this.ticketsBindingSource2.DataSource = this.AirlineDBDataSet2;
             // 
             // ManagerDoneReportForm
             // 
@@ -265,6 +323,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "ManagerDoneReportForm";
             this.Text = "Отчет";
+            this.Load += new System.EventHandler(this.ManagerDoneReportForm_Load_1);
             this.Controls.SetChildIndex(this.ManagerMenuStrip, 0);
             this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
@@ -272,9 +331,15 @@
             this.Controls.SetChildIndex(this.LastDateLabel, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.UsersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AirlineDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TicketsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlineDBDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketsBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +368,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CountSoldTicket;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResumeCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private AirlineDBDataSet2TableAdapters.ReportsTableAdapter reportsTableAdapter1;
+        private System.Windows.Forms.BindingSource TicketsBindingSource;
+        private AirlineDBDataSet2 AirlineDBDataSet2;
+        private AirlineDBDataSet2TableAdapters.TicketsTableAdapter TicketsTableAdapter;
+        private System.Windows.Forms.BindingSource airlineDBDataSet2BindingSource;
+        private System.Windows.Forms.BindingSource ticketsBindingSource1;
+        private System.Windows.Forms.BindingSource UsersBindingSource;
+        private AirlineDBDataSet2TableAdapters.UsersTableAdapter UsersTableAdapter;
+        private System.Windows.Forms.BindingSource ticketsBindingSource2;
     }
 }

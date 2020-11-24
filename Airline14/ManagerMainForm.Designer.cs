@@ -43,6 +43,7 @@
             this.NameLabel = new System.Windows.Forms.Label();
             this.createReportBTN = new System.Windows.Forms.Button();
             this.AllDestinationBTN = new System.Windows.Forms.Button();
+            this.createReportViewBTN = new System.Windows.Forms.Button();
             this.ManagerMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             // выйтиToolStripMenuItem
             // 
             this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
@@ -136,7 +137,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -176,11 +177,11 @@
             this.createReportBTN.FlatAppearance.BorderSize = 0;
             this.createReportBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createReportBTN.ForeColor = System.Drawing.SystemColors.Info;
-            this.createReportBTN.Location = new System.Drawing.Point(342, 186);
+            this.createReportBTN.Location = new System.Drawing.Point(342, 304);
             this.createReportBTN.Name = "createReportBTN";
             this.createReportBTN.Size = new System.Drawing.Size(241, 32);
             this.createReportBTN.TabIndex = 14;
-            this.createReportBTN.Text = "Сформировать отчет";
+            this.createReportBTN.Text = "Сформировать отчет по продажам";
             this.createReportBTN.UseVisualStyleBackColor = false;
             this.createReportBTN.Click += new System.EventHandler(this.createReportBTN_Click);
             // 
@@ -199,11 +200,27 @@
             this.AllDestinationBTN.UseVisualStyleBackColor = false;
             this.AllDestinationBTN.Click += new System.EventHandler(this.AllDestinationBTN_Click);
             // 
+            // createReportViewBTN
+            // 
+            this.createReportViewBTN.BackColor = System.Drawing.Color.MediumBlue;
+            this.createReportViewBTN.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.createReportViewBTN.FlatAppearance.BorderSize = 0;
+            this.createReportViewBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.createReportViewBTN.ForeColor = System.Drawing.SystemColors.Info;
+            this.createReportViewBTN.Location = new System.Drawing.Point(342, 184);
+            this.createReportViewBTN.Name = "createReportViewBTN";
+            this.createReportViewBTN.Size = new System.Drawing.Size(241, 32);
+            this.createReportViewBTN.TabIndex = 17;
+            this.createReportViewBTN.Text = "Сформировать отчет по клиентам";
+            this.createReportViewBTN.UseVisualStyleBackColor = false;
+            this.createReportViewBTN.Click += new System.EventHandler(this.createReportViewBTN_Click);
+            // 
             // ManagerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.createReportViewBTN);
             this.Controls.Add(this.AllDestinationBTN);
             this.Controls.Add(this.createReportBTN);
             this.Controls.Add(this.NameLabel);
@@ -218,6 +235,7 @@
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.createReportBTN, 0);
             this.Controls.SetChildIndex(this.AllDestinationBTN, 0);
+            this.Controls.SetChildIndex(this.createReportViewBTN, 0);
             this.ManagerMenuStrip.ResumeLayout(false);
             this.ManagerMenuStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -242,5 +260,6 @@
         private System.Windows.Forms.ToolStripMenuItem пунктНазначенияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПToolStripMenuItem;
         private System.Windows.Forms.Button AllDestinationBTN;
+        private System.Windows.Forms.Button createReportViewBTN;
     }
 }

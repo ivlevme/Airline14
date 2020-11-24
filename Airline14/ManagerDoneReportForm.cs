@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,6 +81,12 @@ namespace Airline14
             {
                 MessageBox.Show(dataGridView1.SelectedCells[0].RowIndex.ToString());
             }
+        }
+
+        private void ManagerDoneReportForm_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'AirlineDBDataSet2.Tickets' table. You can move, or remove it, as needed.
+            this.TicketsTableAdapter.Fill(this.AirlineDBDataSet2.Tickets);
         }
     }
 }

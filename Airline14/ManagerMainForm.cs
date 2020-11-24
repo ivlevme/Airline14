@@ -85,5 +85,12 @@ namespace Airline14
         private void AddDestinationBTN_Click(object sender, EventArgs e)
         {
         }
+
+        private void createReportViewBTN_Click(object sender, EventArgs e)
+        {
+            ManagerReportView managerReportView = new ManagerReportView();
+            managerReportView.Show();
+            this.Hide();
+        }
     }
 }

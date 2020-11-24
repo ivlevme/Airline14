@@ -67,6 +67,13 @@ namespace Airline14
         private void SalesmanAllTicketsForm_Load(object sender, EventArgs e)
         {
             this.ticketsTableAdapter.Fill(this.airlineDBDataSet2.Tickets);
+            BindingSource bs1 = new BindingSource();
+            bs1.DataSource = this.airlineDBDataSet2.Tickets;
+            bindingNavigator1.BindingSource = bs1;
+
+            textBox1.DataBindings.Add("Text", bs1, "Personal information");
+            textBox2.DataBindings.Add("Text", bs1, "Number");
+            textBox3.DataBindings.Add("Text", bs1, "Date");
 
 
             DisplayReadOnlySalesmanTickets();
@@ -493,6 +500,21 @@ namespace Airline14
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             editButton();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void NameLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
