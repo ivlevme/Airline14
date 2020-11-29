@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new Airline14.DataSet1();
             this.NameLabel = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.personalinformationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passengersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new Airline14.DataSet1();
             this.passengersTableAdapter = new Airline14.DataSet1TableAdapters.PassengersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -43,6 +43,16 @@
             // ExitBtn
             // 
             this.ExitBtn.FlatAppearance.BorderSize = 0;
+            // 
+            // passengersBindingSource
+            // 
+            this.passengersBindingSource.DataMember = "Passengers";
+            this.passengersBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // NameLabel
             // 
@@ -60,9 +70,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.passengersBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.passengersBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Airline14.Report2.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(94, 86);
             this.reportViewer1.Name = "reportViewer1";
@@ -75,16 +85,6 @@
             this.personalinformationDataGridViewTextBoxColumn.HeaderText = "Personal_information";
             this.personalinformationDataGridViewTextBoxColumn.Name = "personalinformationDataGridViewTextBoxColumn";
             // 
-            // passengersBindingSource
-            // 
-            this.passengersBindingSource.DataMember = "Passengers";
-            this.passengersBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // passengersTableAdapter
             // 
             this.passengersTableAdapter.ClearBeforeFill = true;
@@ -96,10 +96,11 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.NameLabel);
             this.Name = "ManagerReportViewClients";
+            this.Text = "v";
             this.Load += new System.EventHandler(this.ManagerReportView_Load);
-            this.Controls.SetChildIndex(this.ExitBtn, 0);
             this.Controls.SetChildIndex(this.NameLabel, 0);
             this.Controls.SetChildIndex(this.reportViewer1, 0);
+            this.Controls.SetChildIndex(this.ExitBtn, 0);
             ((System.ComponentModel.ISupportInitialize)(this.passengersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
